@@ -12,7 +12,7 @@ server = {{ hostvars['statsd01'].ansible_host }}
 {%- if inventory_hostname in groups['zuul-scheduler'] -%}
 [gearman]
 port = 4730
-server = {{ hostvars['gear01'].ansible_host }}
+server = {{ hostvars['zs01'].ansible_host }}
 ssl_ca = {{ zuul_file_gearman_ssl_ca_dest }}
 ssl_cert = {{ zuul_file_gearman_ssl_cert_dest }}
 ssl_key = {{ zuul_file_gearman_ssl_key_dest }}
