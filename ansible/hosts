@@ -1,0 +1,41 @@
+bastion ansible_connection=local
+
+[gear]
+zs01 ansible_host=38.108.68.16
+
+[nodepool-builder]
+nb01 ansible_host=38.108.68.29
+nb02 ansible_host=38.108.68.95
+
+[nodepool-launcher]
+nl01 ansible_host=38.108.68.109
+nl02 ansible_host=38.108.68.98
+
+[nodepool:children]
+nodepool-builder
+nodepool-launcher
+
+[statsd]
+
+[zookeeper]
+zk01 ansible_host=38.108.68.39
+zk02 ansible_host=38.108.68.106
+zk03 ansible_host=38.108.68.33
+
+[zuul-executor]
+
+[zuul-fingergw]
+
+[zuul-merger]
+
+[zuul-scheduler]
+zs01 ansible_host=38.108.68.16
+
+[zuul-web]
+
+[zuul:children]
+zuul-executor
+zuul-fingergw
+zuul-merger
+zuul-scheduler
+zuul-web
