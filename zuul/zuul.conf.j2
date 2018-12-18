@@ -4,12 +4,6 @@
 [zookeeper]
 hosts = {{ groups['zookeeper'] | map('extract', hostvars, ['ansible_host']) | join(':2181,') }}:2181
 
-{% if groups['statsd'] | list and ansible_host | ipv4 %}
-[statsd]
-server = {{ hostvars['statsd01'].ansible_host }}
-{% endif %}
-
-{%- if inventory_hostname in groups['zuul-scheduler'] -%}
 [gearman]
 port = 4730
 server = {{ hostvars['zs01'].ansible_host }}
@@ -17,6 +11,12 @@ ssl_ca = {{ zuul_file_gearman_ssl_ca_dest }}
 ssl_cert = {{ zuul_file_gearman_ssl_cert_dest }}
 ssl_key = {{ zuul_file_gearman_ssl_key_dest }}
 
+{% if groups['statsd'] | list and ansible_host | ipv4 %}
+[statsd]
+server = {{ hostvars['statsd01'].ansible_host }}
+{% endif -%}
+
+{% if inventory_hostname in groups['zuul-scheduler'] %}
 [gearman_server]
 start = False
 
@@ -25,24 +25,24 @@ tenant_config = {{ zuul_file_main_yaml_dest }}
 log_config = /etc/zuul/scheduler-logging.conf
 pidfile = /var/run/zuul-scheduler/zuul-scheduler.pid
 state_dir = {{ zuul_user_home }}
-{% endif %}
+{% endif -%}
 
-{%- if inventory_hostname in groups['zuul-executor'] -%}
+{% if inventory_hostname in groups['zuul-executor'] %}
 [executor]
 finger_port = 17979
 log_config = /etc/zuul/executor-logging.conf
 private_key_file = {{ zuul_user_home }}/.ssh/nodepool_id_rsa
 workspace_root = {{ zuul_user_home }}/workspace
-{% endif %}
+{% endif -%}
 
-{%- if inventory_hostname in groups['zuul-fingergw'] -%}
+{% if inventory_hostname in groups['zuul-fingergw'] %}
 [fingergw]
 listen_address = {{ hostvars['zf01'].ansible_host }}
 log_config = /etc/zuul/fingergw-logging.conf
 user = {{ zuul_user_name }}
-{% endif %}
+{% endif -%}
 
-{%- if inventory_hostname in groups['zuul-merger'] -%}
+{% if inventory_hostname in groups['zuul-merger'] %}
 [merger]
 git_dir = {{ zuul_user_home }}/git
 git_user_email = windmill@example.org
@@ -50,9 +50,9 @@ git_user_name = windmill
 log_config = /etc/zuul/merger-logging.conf
 pidfile = /var/run/zuul-merger/zuul-merger.pid
 zuul_url = {{ hostvars['zs01'].ansible_host }}
-{% endif %}
+{% endif -%}
 
-{%- if inventory_hostname in groups['zuul-web'] -%}
+{% if inventory_hostname in groups['zuul-web'] %}
 [web]
 log_config = /etc/zuul/web-logging.conf
 listen_address = {{ hostvars['zw01'].ansible_host }}
