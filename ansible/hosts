@@ -27,6 +27,7 @@ zk03 ansible_host=38.108.68.33
 [zuul-fingergw]
 
 [zuul-merger]
+zm01 ansible_host=38.108.68.12
 
 [zuul-scheduler]
 zs01 ansible_host=38.108.68.16
