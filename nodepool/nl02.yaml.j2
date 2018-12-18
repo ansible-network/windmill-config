@@ -12,13 +12,17 @@ zookeeper-servers:
 {% endfor %}
 {% endif %}
 
+# NOTE(pabelanger): To avoid a race conditions between multiple launchers, only
+# nl01 will manage min-ready of our labels.  If nl01 is ever disabled, another
+# launcher will need to assume this logic.
 labels:
   - name: ubuntu-bionic-1vcpu
-    min-ready: 1
+    max-ready-age: 600
+  - name: ubuntu-xenial-1vcpu
     max-ready-age: 600
 
 providers:
-  - name: vexxhost-ansible-network-mtl1
+  - name: vexxhost-ansible-network-sjc1
     cloud: vexxhost-ansible-network
     region-name: 'ca-ymq-1'
     boot-timeout: 120
@@ -26,9 +30,11 @@ providers:
     rate: 0.001
     # NOTE(pabelanger): Strip ansible-network from provider.name to keep
     # hostname length under 64.
-    hostname-format: '{label.name}-vexxhost-mtl1-{node.id}'
+    hostname-format: '{label.name}-vexxhost-sjc1-{node.id}'
     diskimages: &provider_diskimages
       - name: ubuntu-bionic
+        config-drive: true
+      - name: ubuntu-xenial
         config-drive: true
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
@@ -42,20 +48,13 @@ providers:
             flavor-name: v2-highcpu-1
             diskimage: ubuntu-bionic
             boot-from-volume: True
-            volume-size: 40
+            volume-size: 80
+          - name: ubuntu-xenial-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: ubuntu-xenial
+            boot-from-volume: True
+            volume-size: 80
 
 diskimages:
   - name: ubuntu-bionic
-    elements:
-      - ubuntu-minimal
-      - growroot
-      - openssh-server
-      - simple-init
-      - vm
-      - zuul-worker
-    release: bionic
-    env-vars:
-      TMPDIR: /opt/nodepool/tmp
-      DIB_CHECKSUM: '1'
-      DIB_DEBIAN_COMPONENTS: 'main,universe'
-      DIB_IMAGE_CACHE: /opt/nodepool/cache
+  - name: ubuntu-xenial
