@@ -55,7 +55,7 @@ zuul_url = {{ hostvars['zs01'].ansible_host }}
 {% if inventory_hostname in groups['zuul-web'] %}
 [web]
 log_config = /etc/zuul/web-logging.conf
-listen_address = {{ hostvars['zw01'].ansible_host }}
+listen_address = 127.0.0.1
 {% endif %}
 
 [connection gerrit]
