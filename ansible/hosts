@@ -23,16 +23,21 @@ zk02 ansible_host=38.108.68.106
 zk03 ansible_host=38.108.68.33
 
 [zuul-executor]
+ze01 ansible_host=38.108.68.133
+ze02 ansible_host=38.108.68.161
 
 [zuul-fingergw]
+zf01 ansible_host=38.108.68.137
 
 [zuul-merger]
 zm01 ansible_host=38.108.68.12
+zm02 ansible_host=38.108.68.110
 
 [zuul-scheduler]
 zs01 ansible_host=38.108.68.16
 
 [zuul-web]
+zw01 ansible_host=38.108.68.135
 
 [zuul:children]
 zuul-executor
