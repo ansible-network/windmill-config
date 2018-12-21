@@ -18,8 +18,6 @@ zookeeper-servers:
 labels:
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 60
-  - name: ubuntu-xenial-1vcpu
-    max-ready-age: 60
 
 providers:
   - name: vexxhost-ansible-network-sjc1
@@ -34,8 +32,6 @@ providers:
     diskimages: &provider_diskimages
       - name: ubuntu-bionic
         config-drive: true
-      - name: ubuntu-xenial
-        config-drive: true
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
@@ -49,12 +45,6 @@ providers:
             diskimage: ubuntu-bionic
             boot-from-volume: True
             volume-size: 80
-          - name: ubuntu-xenial-1vcpu
-            flavor-name: v2-highcpu-1
-            diskimage: ubuntu-xenial
-            boot-from-volume: True
-            volume-size: 80
 
 diskimages:
   - name: ubuntu-bionic
-  - name: ubuntu-xenial

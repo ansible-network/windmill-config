@@ -20,8 +20,6 @@ providers:
     diskimages: &provider_diskimages
       - name: ubuntu-bionic
         config-drive: true
-      - name: ubuntu-xenial
-        config-drive: true
 
   - name: vexxhost-ansible-network-sjc1
     cloud: vexxhost-ansible-network
@@ -39,20 +37,6 @@ diskimages:
       - vm
       - zuul-worker
     release: bionic
-    env-vars:
-      TMPDIR: /opt/nodepool/tmp
-      DIB_CHECKSUM: '1'
-      DIB_DEBIAN_COMPONENTS: 'main,universe'
-      DIB_IMAGE_CACHE: /opt/nodepool/cache
-  - name: ubuntu-xenial
-    elements:
-      - ubuntu-minimal
-      - growroot
-      - openssh-server
-      - simple-init
-      - vm
-      - zuul-worker
-    release: xenial
     env-vars:
       TMPDIR: /opt/nodepool/tmp
       DIB_CHECKSUM: '1'
