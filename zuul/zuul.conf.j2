@@ -59,7 +59,8 @@ listen_address = 127.0.0.1
 {% endif %}
 
 [connection gerrit]
+canonical_hostname = git.openstack.org
 driver = gerrit
-server = 127.0.0.1
+server = review.openstack.org
 sshkey = {{ zuul_user_home }}/.ssh/gerrit_id_rsa
-user = windmill
+user = CaptPants
