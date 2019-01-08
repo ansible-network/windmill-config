@@ -11,9 +11,10 @@
 # under the License.
 ---
 # windmill.zuul
-zuul_file_zuul_executor_service_config_src: zuul/etc/systemd/system/zuul-executor.service.d/override.conf.j2
+zuul_file_executor_logging_conf_manage: true
 
 zuul_file_zuul_executor_service_config_manage: true
+zuul_file_zuul_executor_service_config_src: zuul/etc/systemd/system/zuul-executor.service.d/override.conf.j2
 zuul_file_zuul_executor_service_manage: true
 
 zuul_service_zuul_executor_enabled: true
@@ -32,8 +33,8 @@ logrotate_configs:
       - notifempty
 
 # windmill.ssh
-ssh_user_name: "{{ zuul_user_name|default('zuul') }}"
-ssh_user_home: "{{ zuul_user_home|default('/var/lib/zuul') }}"
+ssh_user_name: zuul
+ssh_user_home: /var/lib/zuul
 
 ssh_key_private_dest: "{{ ssh_user_home }}/.ssh/nodepool_id_rsa"
 ssh_key_private_content: !vault |
