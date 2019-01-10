@@ -58,6 +58,11 @@ log_config = /etc/zuul/web-logging.conf
 listen_address = 127.0.0.1
 {% endif %}
 
+[connection github.com]
+driver = git
+baseurl = https://github.com
+poll_delay = 600
+
 [connection git.openstack.org]
 canonical_hostname = git.openstack.org
 driver = gerrit
