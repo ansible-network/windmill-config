@@ -1,0 +1,12 @@
+- job:
+    name: windmill-config-deploy
+    pre-run: tests/playbooks/pre.yaml
+    run: tests/playbooks/run.yaml
+    post-run: tests/playbooks/post.yaml
+    allowed-projects:
+      - github.com/ansible-network/windmill-config
+    required-projects:
+      - name: git.openstack.org/openstack/windmill
+    secrets:
+      - site_windmill_config_bastion
+    nodeset: fedora-latest-1vcpu

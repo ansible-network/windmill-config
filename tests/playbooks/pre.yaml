@@ -1,0 +1,28 @@
+- hosts: all
+  tasks:
+    - name: Add bastion server to known hosts
+      known_hosts:
+        name: "{{ site_windmill_config_bastion.fqdn }}"
+        key: "{{ site_windmill_config_bastion.ssh_known_hosts }}"
+
+    - name: Start SSH Agent
+      shell: "ssh-agent -a {{ site_windmill_config_bastion.ssh_auth_sock }}"
+
+    - name: Create SSH private key tempfile
+      tempfile:
+        state: file
+      register: ssh_private_key_tmp
+
+    - name: Create SSH private key from secret
+      copy:
+        content: "{{ site_windmill_config_bastion.ssh_private_key }}"
+        dest: "{{ ssh_private_key_tmp.path }}"
+        mode: 0600
+
+    - name: Add bastion ssh key
+      command: "ssh-add {{ ssh_private_key_tmp.path }}"
+      environment:
+        SSH_AUTH_SOCK: "{{ site_windmill_config_bastion.ssh_auth_sock }}"
+
+    - name: Remove SSH private key from disk
+      command: "shred {{ ssh_private_key_tmp.path }}"
