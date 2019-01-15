@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - name: Add bastion server
+      add_host:
+        name: bastion.poctron.xyz
+        ansible_user: ubuntu
+        group: bastion
+
+- hosts: bastion
+  tasks:
+    - name: hello
+      shell: echo world
