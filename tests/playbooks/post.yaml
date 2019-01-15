@@ -2,5 +2,5 @@
   tasks:
     - name: Delete all identies from the agent
       shell: "ssh-add -D"
-        environment:
-          SSH_AUTH_SOCK: "{{ site_windmill_config_bastion.ssh_auth_sock }}"
+      environment:
+        SSH_AUTH_SOCK: "{{ site_windmill_config_bastion.ssh_auth_sock }}"
