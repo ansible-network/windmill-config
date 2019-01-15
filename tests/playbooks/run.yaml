@@ -9,3 +9,5 @@
       args:
         chdir: "{{ zuul.project.src_dir }}"
       shell: tox -evenv -- ansible-playbook -v playbooks/bastion.yaml
+      environment:
+        SSH_AUTH_SOCK: "{{ site_windmill_config_bastion.ssh_auth_sock }}"
