@@ -1,0 +1,4 @@
+- project:
+    post:
+      jobs:
+        - windmill-config-deploy
