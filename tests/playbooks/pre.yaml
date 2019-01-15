@@ -25,10 +25,11 @@
         dest: "{{ ssh_private_key_tmp.path }}"
         mode: 0600
 
-    - name: Add bastion ssh key
-      command: "ssh-add {{ ssh_private_key_tmp.path }}"
-      environment:
-        SSH_AUTH_SOCK: "{{ site_windmill_config_bastion.ssh_auth_sock }}"
-
-    - name: Remove SSH private key from disk
-      command: "shred {{ ssh_private_key_tmp.path }}"
+    - block:
+      - name: Add bastion ssh key
+        shell: "ssh-add {{ ssh_private_key_tmp.path }}"
+        environment:
+          SSH_AUTH_SOCK: "{{ site_windmill_config_bastion.ssh_auth_sock }}"
+      always:
+      - name: Remove SSH private key from disk
+        command: "shred {{ ssh_private_key_tmp.path }}"
