@@ -1,5 +1,11 @@
 - hosts: all
   tasks:
+    - name: Run bindep role
+      include_role:
+        name: bindep
+      vars:
+        bindep_dir: "{{ zuul.project.src_dir }}"
+
     - name: Add bastion server to known hosts
       known_hosts:
         name: "{{ site_windmill_config_bastion.fqdn }}"
