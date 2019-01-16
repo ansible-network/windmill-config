@@ -8,7 +8,7 @@
 
 - hosts: bastion
   tasks:
-    - name: Synchronize windmill repo
+    - name: Synchronize required-project to bastion
       synchronize:
-        dest: ~/src/git.openstack.org/openstack/windmill
-        src: ~/src/git.openstack.org/openstack/windmill
+        dest: ~/src
+        src: ~/src
