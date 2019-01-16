@@ -9,4 +9,5 @@
       - name: git.openstack.org/openstack/windmill
     secrets:
       - site_windmill_config_bastion
+    semaphore: windmill-config-deploy
     nodeset: fedora-latest-1vcpu
