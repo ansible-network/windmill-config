@@ -39,7 +39,7 @@
     - name: Generate static HTML for ARA results
       args:
         chdir: ~/src/git.openstack.org/openstack/windmill
-      shell: ".tox/venv/bin/ara generate html {{ ara_html_directory }} --playbook {{ uuid.stdout }}"
+      shell: ".tox/venv/bin/ara generate html {{ ara_html_directory.path }} --playbook {{ uuid.stdout }}"
 
     - name: Ensure ara-report directory exists
       delegate_to: localhost
@@ -51,9 +51,9 @@
       synchronize:
         dest: ~/zuul-output/logs/logs/ara-report
         mode: pull
-        src: "{{ ara_html_directory }}/"
+        src: "{{ ara_html_directory.path }}/"
 
     - name: Delete temp directory for ARA results
       file:
-        path: "{{ ara_html_directory}}"
+        path: "{{ ara_html_directory.path }}"
         state: absent
