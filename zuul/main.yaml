@@ -17,3 +17,13 @@
       git.openstack.org:
         untrusted-projects:
           - openstack-infra/zuul-jobs
+
+- tenant:
+    name: pabelanger
+    source:
+      github.com:
+        config-projects:
+          - pabelanger/base-jobs
+      git.openstack.org:
+        untrusted-projects:
+          - openstack-infra/zuul-jobs
