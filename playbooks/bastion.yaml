@@ -12,3 +12,13 @@
       synchronize:
         dest: "{{ ansible_user_dir }}"
         src: ~/src
+
+    - name: Bootstrap tox environment
+      args:
+        chdir: ~/src/git.openstack.org/openstack/windmill
+      shell: tox -evenv --notest
+
+    - name: Run ansible-playbook for site.yaml
+      args:
+        chdir: ~/src/git.openstack.org/openstack/windmill
+      shell: tox -evenv -- ansible-playbook -v playbooks/site.yaml
