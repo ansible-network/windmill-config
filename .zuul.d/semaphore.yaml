@@ -1,0 +1,3 @@
+- semaphore:
+    name: windmill-config-deploy
+    max: 1
