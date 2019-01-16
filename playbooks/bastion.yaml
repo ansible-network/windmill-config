@@ -8,5 +8,8 @@
 
 - hosts: bastion
   tasks:
-    - name: hello
-      shell: echo world
+    - name: Synchronize windmill repo
+      synchronize:
+        dest: ~/src/git.openstack.org/windmill
+        src: ~/src/git.openstack.org/windmill
+      no_log: true
