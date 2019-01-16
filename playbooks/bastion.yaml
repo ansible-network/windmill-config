@@ -12,4 +12,3 @@
       synchronize:
         dest: ~/src/git.openstack.org/windmill
         src: ~/src/git.openstack.org/windmill
-      no_log: true
