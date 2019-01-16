@@ -12,7 +12,7 @@
 ---
 # windmill.diskimage-builder
 diskimage_builder_pip_virtualenv_python: python3
-diskimage_builder_pip_virtualenv: /opt/venv/nodepool
+diskimage_builder_pip_virtualenv: "{{ nodepool_pip_virtualenv }}"
 
 # windmill.nodepool
 nodepool_file_nodepool_builder_service_config_src: nodepool-builder/etc/systemd/system/nodepool-builder.service.d/override.conf.j2

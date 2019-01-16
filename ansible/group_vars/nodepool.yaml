@@ -15,8 +15,9 @@ nodepool_user_shell: /bin/bash
 
 nodepool_file_nodepool_yaml_src: "{{ windmill_config_git_dest }}/nodepool/nodepool.yaml.j2"
 
+nodepool_pip_version: 3.3.1
 nodepool_pip_virtualenv_python: python3
-nodepool_pip_virtualenv: /opt/venv/nodepool
+nodepool_pip_virtualenv: "/opt/venv/nodepool-{{ nodepool_pip_version }}"
 
 # windmill.openstacksdk
 openstacksdk_user_name: nodepool
@@ -24,7 +25,7 @@ openstacksdk_user_group: nodepool
 openstacksdk_user_home: /var/lib/nodepool
 
 openstacksdk_pip_virtualenv_python: python3
-openstacksdk_pip_virtualenv: /opt/venv/nodepool
+openstacksdk_pip_virtualenv: "{{ nodepool_pip_virtualenv }}"
 
 openstacksdk_file_clouds_yaml_src: "{{ windmill_config_git_dest }}/nodepool/clouds.yaml.j2"
 
