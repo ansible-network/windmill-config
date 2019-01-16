@@ -29,7 +29,7 @@
       args:
         chdir: ~/src/git.openstack.org/openstack/windmill
       register: uuid
-      shell: .tox/venv/bin/ara playbook list | grep playbooks/site.yaml | tail -1 | cut -d\" \" -f2
+      shell: ".tox/venv/bin/ara playbook list | grep playbooks/site.yaml | tail -1 | cut -d' ' -f2"
 
     - name: Create temp directory for ARA results
       register: ara_html_directory
