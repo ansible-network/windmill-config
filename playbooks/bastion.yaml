@@ -10,5 +10,5 @@
   tasks:
     - name: Synchronize windmill repo
       synchronize:
-        dest: ~/src/git.openstack.org/windmill
-        src: ~/src/git.openstack.org/windmill
+        dest: ~/src/git.openstack.org/openstack/windmill
+        src: ~/src/git.openstack.org/openstack/windmill
