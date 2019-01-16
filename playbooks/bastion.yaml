@@ -10,5 +10,5 @@
   tasks:
     - name: Synchronize required-project to bastion
       synchronize:
-        dest: ~/src
+        dest: "{{ ansible_user_dir }}"
         src: ~/src
