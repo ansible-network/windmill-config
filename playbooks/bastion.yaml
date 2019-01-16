@@ -12,7 +12,7 @@
       synchronize:
         dest: "{{ ansible_user_dir }}"
         src: ~/src
-        rsync_options:
+        rsync_opts:
           - "--exclude=.tox"
 
     - name: Bootstrap tox environment
