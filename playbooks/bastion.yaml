@@ -12,13 +12,15 @@
       synchronize:
         dest: "{{ ansible_user_dir }}"
         src: ~/src
+        rsync_options:
+          - "--exclude=.tox"
 
     - name: Bootstrap tox environment
       args:
         chdir: ~/src/git.openstack.org/openstack/windmill
-      shell: tox -evenv --notest
+      shell: /home/ubuntu/.local/bin/tox -evenv --notest
 
     - name: Run ansible-playbook for site.yaml
       args:
         chdir: ~/src/git.openstack.org/openstack/windmill
-      shell: tox -evenv -- ansible-playbook -v playbooks/site.yaml
+      shell: /home/ubuntu/.local/bin/tox -evenv -- ansible-playbook -v playbooks/site.yaml
