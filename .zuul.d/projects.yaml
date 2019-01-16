@@ -1,4 +1,7 @@
 - project:
+    periodic:
+      jobs:
+        - windmill-config-deploy
     post:
       jobs:
         - windmill-config-deploy
