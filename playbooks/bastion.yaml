@@ -15,6 +15,12 @@
         rsync_opts:
           - "--exclude=.tox"
 
+    - name: Symlink ansible-network/windmill-config directory
+      file:
+        src: ~/src/github.com/ansible-network/windmill-config
+        dest: ~/.config/windmill
+        state: link
+
     - name: Bootstrap tox environment
       args:
         chdir: ~/src/git.openstack.org/openstack/windmill
