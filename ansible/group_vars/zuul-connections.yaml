@@ -287,3 +287,6 @@ zuul_connections_ssh:
       316661303165353062643166393735366161
 
     ssh_key_private_dest: /var/lib/zuul/.ssh/github_id_rsa
+    # NOTE(pabelanger): This should be the default in windmill, push upstream.
+    ssh_key_public_content: False
+    ssh_known_hosts_content: False
