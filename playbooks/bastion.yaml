@@ -26,40 +26,42 @@
         chdir: ~/src/git.openstack.org/openstack/windmill
       shell: /home/ubuntu/.local/bin/tox -evenv --notest
 
-    - name: Run ansible-playbook for site.yaml
-      args:
-        chdir: ~/src/git.openstack.org/openstack/windmill
-      shell: /home/ubuntu/.local/bin/tox -evenv -- ansible-playbook -v playbooks/site.yaml
+    - block:
+      - name: Run ansible-playbook for site.yaml
+        args:
+          chdir: ~/src/git.openstack.org/openstack/windmill
+        shell: /home/ubuntu/.local/bin/tox -evenv -- ansible-playbook -v playbooks/site.yaml
 
-    - name: Generage UUID from ARA
-      args:
-        chdir: ~/src/git.openstack.org/openstack/windmill
-      register: uuid
-      shell: ".tox/venv/bin/ara playbook list | grep playbooks/site.yaml | tail -1 | cut -d' ' -f2"
+      always:
+      - name: Generage UUID from ARA
+        args:
+          chdir: ~/src/git.openstack.org/openstack/windmill
+        register: uuid
+        shell: ".tox/venv/bin/ara playbook list | grep playbooks/site.yaml | tail -1 | cut -d' ' -f2"
 
-    - name: Create temp directory for ARA results
-      register: ara_html_directory
-      tempfile:
-        state: directory
+      - name: Create temp directory for ARA results
+        register: ara_html_directory
+        tempfile:
+          state: directory
 
-    - name: Generate static HTML for ARA results
-      args:
-        chdir: ~/src/git.openstack.org/openstack/windmill
-      shell: ".tox/venv/bin/ara generate html {{ ara_html_directory.path }} --playbook {{ uuid.stdout }}"
+      - name: Generate static HTML for ARA results
+        args:
+          chdir: ~/src/git.openstack.org/openstack/windmill
+        shell: ".tox/venv/bin/ara generate html {{ ara_html_directory.path }} --playbook {{ uuid.stdout }}"
 
-    - name: Ensure ara-report directory exists
-      delegate_to: localhost
-      file:
-        path: ~/zuul-output/logs/logs/ara-report
-        state: directory
+      - name: Ensure ara-report directory exists
+        delegate_to: localhost
+        file:
+          path: ~/zuul-output/logs/logs/ara-report
+          state: directory
 
-    - name: Synchronize ARA results back to zuul
-      synchronize:
-        dest: ~/zuul-output/logs/logs/ara-report
-        mode: pull
-        src: "{{ ara_html_directory.path }}/"
+      - name: Synchronize ARA results back to zuul
+        synchronize:
+          dest: ~/zuul-output/logs/logs/ara-report
+          mode: pull
+          src: "{{ ara_html_directory.path }}/"
 
-    - name: Delete temp directory for ARA results
-      file:
-        path: "{{ ara_html_directory.path }}"
-        state: absent
+      - name: Delete temp directory for ARA results
+        file:
+          path: "{{ ara_html_directory.path }}"
+          state: absent
