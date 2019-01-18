@@ -45,14 +45,16 @@ log_config = /etc/zuul/fingergw-logging.conf
 user = {{ zuul_user_name }}
 {% endif -%}
 
-{% if inventory_hostname in groups['zuul-merger'] %}
+{% if inventory_hostname in groups['zuul-merger'] or inventory_hostname in groups['zuul-executor'] %}
 [merger]
+{% if inventory_hostname in groups['zuul-merger'] %}
 git_dir = {{ zuul_user_home }}/git
-git_user_email = windmill@example.org
-git_user_name = windmill
 log_config = /etc/zuul/merger-logging.conf
 pidfile = /var/run/zuul-merger/zuul-merger.pid
 zuul_url = {{ hostvars['zs01'].ansible_host }}
+{% endif %}
+git_user_email = windmill@example.org
+git_user_name = windmill
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-web'] %}
