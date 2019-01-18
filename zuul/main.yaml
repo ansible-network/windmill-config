@@ -20,6 +20,7 @@
 
 - tenant:
     name: pabelanger
+    exclude-unprotected-branches: true
     source:
       github.com:
         config-projects:
