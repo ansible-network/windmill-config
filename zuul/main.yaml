@@ -15,6 +15,10 @@
     name: openstack.org
     source:
       git.openstack.org:
+        config-projects:
+          - openstack-dev/ci-sandbox:
+              include: pipeline
+
         untrusted-projects:
           - openstack-infra/zuul-jobs
 
