@@ -26,6 +26,12 @@
         chdir: ~/src/git.openstack.org/openstack/windmill
       shell: /home/ubuntu/.local/bin/tox -evenv --notest
 
+    - name: Install ansible roles via galaxy
+      args:
+        chdir: ~/src/git.openstack.org/openstack/windmill
+        executable: /bin/bash
+      shell: source .tox/venv/bin/activate; ./tools/install_roles.sh --force
+
     - block:
       - name: Run ansible-playbook for site.yaml
         args:
