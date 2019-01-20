@@ -1,7 +1,4 @@
 - project:
-    periodic:
-      jobs:
-        - windmill-config-deploy
     periodic-1hr:
       jobs:
         - windmill-config-deploy
