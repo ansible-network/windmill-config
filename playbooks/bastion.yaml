@@ -65,12 +65,12 @@
         - name: Ensure zuul-output directory exists
           delegate_to: localhost
           file:
-            path: ~/zuul-output/logs/logs
+            path: ~/zuul-output/logs/bastion
             state: directory
 
         - name: Synchronize zuul-output back to zuul
           synchronize:
-            dest: ~/zuul-output/logs/logs
+            dest: ~/zuul-output/logs/bastion
             mode: pull
             src: "{{ tmp_logs.path }}/"
 
