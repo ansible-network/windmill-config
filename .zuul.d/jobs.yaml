@@ -1,3 +1,4 @@
+---
 - job:
     name: windmill-config-deploy
     pre-run: tests/playbooks/pre.yaml

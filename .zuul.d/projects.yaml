@@ -1,4 +1,7 @@
+---
 - project:
+    templates:
+      - ansible-python-jobs
     periodic-1hr:
       jobs:
         - windmill-config-deploy
