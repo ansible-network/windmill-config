@@ -22,6 +22,12 @@
         dest: ~/.config/windmill
         state: link
 
+    - name: Symlink ansible configuration file
+      file:
+        src: ~/src/github.com/ansible-network/windmill-config/ansible/ansible.cfg
+        dest: ~/.ansible.cfg
+        state: link
+
     - name: Create tmp directory for logs
       register: tmp_logs
       tempfile:
