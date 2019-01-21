@@ -33,6 +33,7 @@ state_dir = {{ zuul_user_home }}
 {% if inventory_hostname in groups['zuul-executor'] %}
 [executor]
 finger_port = 17979
+hostname = {{ hostvars[inventory_hostname].ansible_host }}
 log_config = /etc/zuul/executor-logging.conf
 private_key_file = {{ zuul_user_home }}/.ssh/nodepool_id_rsa
 workspace_root = {{ zuul_user_home }}/workspace
