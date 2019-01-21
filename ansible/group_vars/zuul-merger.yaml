@@ -17,7 +17,6 @@ zuul_file_zuul_merger_service_manage: true
 
 zuul_service_zuul_merger_enabled: true
 zuul_service_zuul_merger_manage: true
-zuul_service_zuul_merger_state: false
 
 # openstack.logrotate
 logrotate_configs:
