@@ -16,5 +16,5 @@
   tasks:
     - name: Bootstrap tox environment
       args:
-        chdir: ~/src/git.openstack.org/openstack/windmill
+        chdir: "{{ ansible_user_dir}}/src/git.openstack.org/openstack/windmill"
       shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv --notest"
