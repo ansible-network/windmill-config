@@ -14,6 +14,11 @@
 
 - hosts: bastion
   tasks:
+    - name: Synchronize required-project to bastion
+      synchronize:
+        dest: "{{ ansible_user_dir }}"
+        src: "{{ zuul.executor.src_root }}"
+
     - name: Bootstrap tox environment
       args:
         chdir: ~/src/git.openstack.org/openstack/windmill
