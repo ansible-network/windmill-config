@@ -1,24 +1,8 @@
 ---
-- hosts: localhost
-  tasks:
-    - name: Add bastion server
-      add_host:
-        name: "{{ site_windmill_config_bastion.fqdn }}"
-        ansible_user: "{{ site_windmill_config_bastion.ssh_username }}"
-        group: bastion
-
-    - name: Add bastion server to known hosts
-      known_hosts:
-        name: "{{ site_windmill_config_bastion.fqdn }}"
-        key: "{{ site_windmill_config_bastion.ssh_known_hosts }}"
+- import_playbook: bastion.yaml
 
 - hosts: bastion
   tasks:
-    - name: Synchronize required-project to bastion
-      synchronize:
-        dest: "{{ ansible_user_dir }}"
-        src: "{{ zuul.executor.src_root }}"
-
     - name: Symlink ansible-network/windmill-config directory
       file:
         src: ~/src/github.com/ansible-network/windmill-config

@@ -1,0 +1,8 @@
+---
+- import_playbook: bastion.yaml
+
+- hosts: bastion
+  tasks:
+    - name: Stop zuul_console daemon
+      zuul_console:
+        state: absent

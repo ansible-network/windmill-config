@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Add bastion server
+      add_host:
+        name: "{{ site_windmill_config_bastion.fqdn }}"
+        ansible_user: "{{ site_windmill_config_bastion.ssh_username }}"
+        group: bastion
+
+    - name: Add bastion server to known hosts
+      known_hosts:
+        name: "{{ site_windmill_config_bastion.fqdn }}"
+        key: "{{ site_windmill_config_bastion.ssh_known_hosts }}"

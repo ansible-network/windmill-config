@@ -1,7 +1,9 @@
 ---
 - job:
     name: windmill-config-deploy
+    pre-run: tests/playbooks/pre.yaml
     run: tests/playbooks/run.yaml
+    post-run: tests/playbooks/post.yaml
     allowed-projects:
       - github.com/ansible-network/windmill-config
     required-projects:
