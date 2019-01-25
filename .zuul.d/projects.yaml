@@ -7,4 +7,4 @@
         - windmill-config-deploy
     post:
       jobs:
-        - windmill-config-deploy
+        - windmill-config-deploy2

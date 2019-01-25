@@ -13,3 +13,17 @@
       - site_windmill_config_bastion
     semaphore: windmill-config-deploy
     nodeset: fedora-latest-1vcpu
+
+- job:
+    name: windmill-config-deploy2
+    run: playbooks/bastion2.yaml
+    allowed-projects:
+      - github.com/ansible-network/windmill-config
+    required-projects:
+      - name: git.openstack.org/openstack/windmill
+      - name: git.openstack.org/openstack/windmill-ops
+    secrets:
+      - site_windmill_config_bastion
+    semaphore: windmill-config-deploy
+    nodeset:
+      nodes: []
