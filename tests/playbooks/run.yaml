@@ -35,7 +35,7 @@
         - name: Run ansible-playbook for site.yaml
           args:
             chdir: ~/src/git.openstack.org/openstack/windmill
-          shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv -- ansible-playbook -v playbooks/site.yaml | tee {{ tmp_logs.path }}/job-output.txt"
+          shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv -- ansible-playbook -v playbooks/site.yaml"
 
       always:
         - name: Generage UUID from ARA
