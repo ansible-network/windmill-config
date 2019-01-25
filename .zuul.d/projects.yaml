@@ -4,4 +4,4 @@
       - ansible-python-jobs
     post:
       jobs:
-        - windmill-config-deploy2
+        - windmill-config-deploy
