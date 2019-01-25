@@ -23,30 +23,40 @@
     - name: Bootstrap tox environment
       args:
         chdir: ~/src/git.openstack.org/openstack/windmill
+      environment:
+        PYTHONUNBUFFERED: 1
       shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv --notest"
 
     - name: Install ansible roles via galaxy
       args:
         chdir: ~/src/git.openstack.org/openstack/windmill
         executable: /bin/bash
+      environment:
+        PYTHONUNBUFFERED: 1
       shell: source .tox/venv/bin/activate; ./tools/install_roles.sh --force
 
     - block:
         - name: Run ansible-playbook for site.yaml
           args:
             chdir: ~/src/git.openstack.org/openstack/windmill
+          environment:
+            PYTHONUNBUFFERED: 1
           shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv -- ansible-playbook -v playbooks/site.yaml"
 
       always:
         - name: Generage UUID from ARA
           args:
             chdir: ~/src/git.openstack.org/openstack/windmill
+          environment:
+            PYTHONUNBUFFERED: 1
           register: uuid
           shell: ".tox/venv/bin/ara playbook list | grep playbooks/site.yaml | tail -1 | cut -d' ' -f2"
 
         - name: Generate static HTML for ARA results
           args:
             chdir: ~/src/git.openstack.org/openstack/windmill
+          environment:
+            PYTHONUNBUFFERED: 1
           shell: ".tox/venv/bin/ara generate html {{ tmp_logs.path }}/ara-report --playbook {{ uuid.stdout }}"
 
         - name: Ensure zuul-output directory exists
