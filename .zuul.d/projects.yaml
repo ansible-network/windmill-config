@@ -2,9 +2,6 @@
 - project:
     templates:
       - ansible-python-jobs
-    periodic-1hr:
-      jobs:
-        - windmill-config-deploy
     post:
       jobs:
         - windmill-config-deploy2
