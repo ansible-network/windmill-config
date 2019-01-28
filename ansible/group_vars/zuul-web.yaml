@@ -17,6 +17,7 @@ zuul_file_zuul_web_service_manage: true
 
 zuul_service_zuul_web_enabled: true
 zuul_service_zuul_web_manage: true
+zuul_service_zuul_web_state: started
 
 # openstack.logrotate
 logrotate_configs:
