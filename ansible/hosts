@@ -27,6 +27,7 @@ zk02 ansible_host=38.108.68.106
 zk03 ansible_host=38.108.68.33
 
 [zuul-executor]
+ze01 ansible_host=38.108.68.104
 ze03 ansible_host=38.108.68.49
 
 [zuul-fingergw]
