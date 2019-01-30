@@ -4,6 +4,9 @@ bastion ansible_connection=local
 # against them.
 [disabled]
 
+[borg]
+borg01 ansible_host=38.108.68.89
+
 [gear]
 zs01 ansible_host=38.108.68.16
 
