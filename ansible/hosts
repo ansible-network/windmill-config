@@ -4,7 +4,10 @@ bastion ansible_connection=local
 # against them.
 [disabled]
 
-[borg]
+[borg-client:children]
+zuul-scheduler
+
+[borg-server]
 borg01 ansible_host=38.108.68.89
 
 [gear]
