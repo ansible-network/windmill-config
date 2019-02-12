@@ -4,6 +4,10 @@ bastion ansible_connection=local
 # against them.
 [disabled]
 
+[borg:children]
+borg-client
+borg-server
+
 [borg-client:children]
 zuul-scheduler
 
