@@ -48,9 +48,9 @@
           environment:
             PYTHONUNBUFFERED: 1
           shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv -- ansible-playbook -v playbooks/site.yaml"
-      with_items:
-        - ~/src/git.openstack.org/openstack/windmill
-        - ~/src/git.openstack.org/openstack/windmill-backup
+          with_items:
+            - ~/src/git.openstack.org/openstack/windmill
+            - ~/src/git.openstack.org/openstack/windmill-backup
 
       always:
         - name: Generage UUID from ARA
