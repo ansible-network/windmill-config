@@ -3,7 +3,6 @@ bastion ansible_connection=local
 # NOTE(pabelanger): Hosts added to this group will not have playbooks run
 # against them.
 [disabled]
-borg01
 
 [borg:children]
 borg-client
@@ -13,7 +12,7 @@ borg-server
 zuul-scheduler
 
 [borg-server]
-borg01 ansible_host=38.108.68.89
+borg01 ansible_host=38.108.68.96
 
 [gear]
 zs01 ansible_host=38.108.68.16
