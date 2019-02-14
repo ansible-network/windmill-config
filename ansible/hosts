@@ -9,6 +9,7 @@ borg-client
 borg-server
 
 [borg-client:children]
+zookeeper
 zuul-scheduler
 
 [borg-server]
