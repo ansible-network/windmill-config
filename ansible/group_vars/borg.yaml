@@ -18,3 +18,7 @@ borgbackup_user_shell: /bin/bash
 borgmatic_pip_version: 1.2.15
 borgmatic_pip_virtualenv_python: python3
 borgmatic_pip_virtualenv: "/opt/venv/borgmatic-{{ borgmatic_pip_version }}"
+
+borgmatic_user_name: borgbackup
+borgmatic_user_group: borgbackup
+borgmatic_user_home: /var/lib/borgbackup
