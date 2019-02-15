@@ -10,5 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
+borgmatic_file_config_yaml_src: "{{ windmill_config_git_dest }}/borgmatic/zookeeper.yaml.j2"
+
 zookeeper_file_myid_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/myid"
 zookeeper_file_zoo_conf_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/zoo.cfg"
