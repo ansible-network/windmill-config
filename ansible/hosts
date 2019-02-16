@@ -8,6 +8,8 @@ bastion ansible_connection=local
 borg-client
 borg-server
 
+# NOTE(pabelanger): Remember to create borgmatic configuration and
+# encryption_passphrase each time we add a new host to borg-client group.
 [borg-client:children]
 zookeeper
 zuul-scheduler
