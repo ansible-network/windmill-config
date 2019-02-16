@@ -14,7 +14,11 @@ location:
         - borg_{{ inventory_hostname }}@{{ hostvars[host].ansible_host }}:sourcehostname.borg
 {% endfor %}
 {% endif %}
+
     local_path: {{ borgbackup_pip_virtualenv }}/bin/borg
+
+storage:
+    encryption_passphrase: {{ __borgmatic_encryption_passphrase }}
 
 retention:
     # Retention policy for how many backups to keep in each category.
