@@ -10,6 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
+borgbackup_user_groups: zookeeper
 borgmatic_file_config_yaml_src: "{{ windmill_config_git_dest }}/borgmatic/zookeeper.yaml.j2"
 
 __borgmatic_encryption_passphrase: !vault |
