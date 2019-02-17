@@ -22,3 +22,5 @@ borgmatic_pip_virtualenv: "/opt/venv/borgmatic-{{ borgmatic_pip_version }}"
 borgmatic_user_name: borgbackup
 borgmatic_user_group: borgbackup
 borgmatic_user_home: /var/lib/borgbackup
+
+borgmatic_file_crontab_src: "{{ windmill_config_git_dest }}/borgmatic/cron.d/borgmatic.j2"
