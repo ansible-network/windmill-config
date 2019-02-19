@@ -16,6 +16,7 @@ zuul-scheduler
 
 [borg-server]
 borg01 ansible_host=38.108.68.96
+borg02 ansible_host=38.108.68.45
 
 [gear]
 zs01 ansible_host=38.108.68.16
