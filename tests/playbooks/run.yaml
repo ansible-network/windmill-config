@@ -27,6 +27,7 @@
         PYTHONUNBUFFERED: 1
       shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv --notest"
       with_items:
+        - ~/src/git.openstack.org/openstack/windmill-ops
         - ~/src/git.openstack.org/openstack/windmill
         - ~/src/git.openstack.org/openstack/windmill-backup
 
@@ -38,10 +39,18 @@
         PYTHONUNBUFFERED: 1
       shell: source .tox/venv/bin/activate; ./tools/install_roles.sh --force
       with_items:
+        - ~/src/git.openstack.org/openstack/windmill-ops
         - ~/src/git.openstack.org/openstack/windmill
         - ~/src/git.openstack.org/openstack/windmill-backup
 
     - block:
+        - name: Deploy windmill-ops with ansible-playbook
+          args:
+            chdir: ~/src/git.openstack.org/openstack/windmill-ops
+          environment:
+            PYTHONUNBUFFERED: 1
+          shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv -- ansible-playbook -v playbooks/bootstrap/site.yaml"
+
         - name: Deploy windmill with ansible-playbook
           args:
             chdir: "{{ item }}"
