@@ -15,19 +15,19 @@ zookeeper
 zuul-scheduler
 
 [borg-server]
-borg01 ansible_host=38.108.68.96
-borg02 ansible_host=38.108.68.45
+borg01 ansible_host=38.108.68.96 ansible_user=windmill
+borg02 ansible_host=38.108.68.45 ansible_user=windmill
 
 [gear]
-zs01 ansible_host=38.108.68.16
+zs01 ansible_host=38.108.68.16 ansible_user=windmill
 
 [nodepool-builder]
-nb01 ansible_host=38.108.68.29
-nb02 ansible_host=38.108.68.95
+nb01 ansible_host=38.108.68.29 ansible_user=windmill
+nb02 ansible_host=38.108.68.95 ansible_user=windmill
 
 [nodepool-launcher]
-nl01 ansible_host=38.108.68.109
-nl02 ansible_host=38.108.68.98
+nl01 ansible_host=38.108.68.109 ansible_user=windmill
+nl02 ansible_host=38.108.68.98 ansible_user=windmill
 
 [nodepool:children]
 nodepool-builder
@@ -36,25 +36,25 @@ nodepool-launcher
 [statsd]
 
 [zookeeper]
-zk01 ansible_host=38.108.68.39
-zk02 ansible_host=38.108.68.106
-zk03 ansible_host=38.108.68.33
+zk01 ansible_host=38.108.68.39 ansible_user=windmill
+zk02 ansible_host=38.108.68.106 ansible_user=windmill
+zk03 ansible_host=38.108.68.33 ansible_user=windmill
 
 [zuul-executor]
-ze01 ansible_host=38.108.68.104
+ze01 ansible_host=38.108.68.104 ansible_user=windmill
 
 [zuul-fingergw]
-zf01 ansible_host=38.108.68.137
+zf01 ansible_host=38.108.68.137 ansible_user=windmill
 
 [zuul-merger]
-zm01 ansible_host=38.108.68.12
-zm02 ansible_host=38.108.68.110
+zm01 ansible_host=38.108.68.12 ansible_user=windmill
+zm02 ansible_host=38.108.68.110 ansible_user=windmill
 
 [zuul-scheduler]
-zs01 ansible_host=38.108.68.16
+zs01 ansible_host=38.108.68.16 ansible_user=windmill
 
 [zuul-web]
-zw01 ansible_host=38.108.68.135
+zw01 ansible_host=38.108.68.135 ansible_user=windmill
 
 [zuul:children]
 zuul-executor
