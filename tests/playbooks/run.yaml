@@ -48,7 +48,6 @@
           args:
             chdir: ~/src/git.openstack.org/openstack/windmill-ops
           environment:
-            ANSIBLE_ROLES_PATH: "{{ ansible_user_dir }}/src/git.openstack.org/openstack/windmill-ops/playbooks/roles"
             PYTHONUNBUFFERED: 1
           shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv -- ansible-playbook -v playbooks/bootstrap/site.yaml"
 
