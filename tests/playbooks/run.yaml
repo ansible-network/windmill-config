@@ -67,6 +67,14 @@
             chdir: ~/src/git.openstack.org/openstack/windmill
           environment:
             PYTHONUNBUFFERED: 1
+          register: windmill_ops_uuid
+          shell: ".tox/venv/bin/ara playbook list | grep windmill-ops/playbooks/bootstrap/site.yaml | tail -1 | cut -d' ' -f2"
+
+        - name: Generage UUID from ARA
+          args:
+            chdir: ~/src/git.openstack.org/openstack/windmill
+          environment:
+            PYTHONUNBUFFERED: 1
           register: windmill_uuid
           shell: ".tox/venv/bin/ara playbook list | grep windmill/playbooks/site.yaml | tail -1 | cut -d' ' -f2"
 
@@ -83,7 +91,7 @@
             chdir: ~/src/git.openstack.org/openstack/windmill
           environment:
             PYTHONUNBUFFERED: 1
-          shell: ".tox/venv/bin/ara generate html {{ tmp_logs.path }}/ara-report --playbook {{ windmill_uuid.stdout }} {{ windmill_backup_uuid.stdout }}"
+          shell: ".tox/venv/bin/ara generate html {{ tmp_logs.path }}/ara-report --playbook {{ windmill_ops_uuid.stdout }} {{ windmill_uuid.stdout }} {{ windmill_backup_uuid.stdout }}"
 
         - name: Ensure zuul-output directory exists
           delegate_to: localhost
