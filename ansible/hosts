@@ -1,3 +1,4 @@
+[bastion]
 bastion ansible_connection=local
 
 # NOTE(pabelanger): Hosts added to this group will not have playbooks run
