@@ -20,24 +20,13 @@
       tempfile:
         state: directory
 
-    - name: Bootstrap tox environment
-      args:
-        chdir: "{{ item }}"
-      environment:
-        PYTHONUNBUFFERED: 1
-      shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv --notest"
-      with_items:
-        - ~/src/git.openstack.org/openstack/windmill-ops
-        - ~/src/git.openstack.org/openstack/windmill
-        - ~/src/git.openstack.org/openstack/windmill-backup
-
     - name: Install ansible roles via galaxy
       args:
         chdir: "{{ item }}"
         executable: /bin/bash
       environment:
         PYTHONUNBUFFERED: 1
-      shell: source .tox/venv/bin/activate; ./tools/install_roles.sh --force
+      shell: source /opt/venv/ansible/bin/activate; ./tools/install_roles.sh --force
       with_items:
         - ~/src/git.openstack.org/openstack/windmill-ops
         - ~/src/git.openstack.org/openstack/windmill
@@ -49,14 +38,14 @@
             chdir: ~/src/git.openstack.org/openstack/windmill-ops
           environment:
             PYTHONUNBUFFERED: 1
-          shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv -- ansible-playbook -v playbooks/bootstrap/site.yaml"
+          shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/bootstrap/site.yaml
 
         - name: Deploy windmill with ansible-playbook
           args:
             chdir: "{{ item }}"
           environment:
             PYTHONUNBUFFERED: 1
-          shell: "{{ ansible_user_dir }}/.local/bin/tox -evenv -- ansible-playbook -v playbooks/site.yaml"
+          shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/site.yaml
           with_items:
             - ~/src/git.openstack.org/openstack/windmill
             - ~/src/git.openstack.org/openstack/windmill-backup
@@ -68,7 +57,7 @@
           environment:
             PYTHONUNBUFFERED: 1
           register: windmill_ops_uuid
-          shell: ".tox/venv/bin/ara playbook list | grep windmill-ops/playbooks/bootstrap/site.yaml | tail -1 | cut -d' ' -f2"
+          shell: "/opt/venv/ansible/bin/ara playbook list | grep windmill-ops/playbooks/bootstrap/site.yaml | tail -1 | cut -d' ' -f2"
 
         - name: Generage UUID from ARA
           args:
@@ -76,7 +65,7 @@
           environment:
             PYTHONUNBUFFERED: 1
           register: windmill_uuid
-          shell: ".tox/venv/bin/ara playbook list | grep windmill/playbooks/site.yaml | tail -1 | cut -d' ' -f2"
+          shell: "/opt/venv/ansible/bin/ara playbook list | grep windmill/playbooks/site.yaml | tail -1 | cut -d' ' -f2"
 
         - name: Generage UUID from ARA
           args:
@@ -84,14 +73,14 @@
           environment:
             PYTHONUNBUFFERED: 1
           register: windmill_backup_uuid
-          shell: ".tox/venv/bin/ara playbook list | grep windmill-backup/playbooks/site.yaml | tail -1 | cut -d' ' -f2"
+          shell: "/opt/venv/ansible/bin/ara playbook list | grep windmill-backup/playbooks/site.yaml | tail -1 | cut -d' ' -f2"
 
         - name: Generate static HTML for ARA results
           args:
             chdir: ~/src/git.openstack.org/openstack/windmill
           environment:
             PYTHONUNBUFFERED: 1
-          shell: ".tox/venv/bin/ara generate html {{ tmp_logs.path }}/ara-report --playbook {{ windmill_ops_uuid.stdout }} {{ windmill_uuid.stdout }} {{ windmill_backup_uuid.stdout }}"
+          shell: "/opt/venv/ansible/bin/ara generate html {{ tmp_logs.path }}/ara-report --playbook {{ windmill_ops_uuid.stdout }} {{ windmill_uuid.stdout }} {{ windmill_backup_uuid.stdout }}"
 
         - name: Ensure zuul-output directory exists
           delegate_to: localhost
