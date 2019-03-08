@@ -32,7 +32,7 @@ nodepool_service_nodepool_launcher_enabled: false
 nodepool_service_nodepool_launcher_manage: false
 nodepool_service_nodepool_launcher_state: false
 
-nodepool_pip_version: 3.4.0
+nodepool_pip_version: 3.5.0
 nodepool_pip_virtualenv_python: python3
 nodepool_pip_virtualenv: "/opt/venv/nodepool-{{ nodepool_pip_version }}"
 
