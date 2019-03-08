@@ -98,3 +98,9 @@
           file:
             path: "{{ tmp_logs.path }}"
             state: absent
+
+        # TODO(pabelanger): Move ara into mysql database
+        - name: Delete ara ansible.sqlite database
+          file:
+            path: ~/.ara/ansible.sqlite
+            state: absent
