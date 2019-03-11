@@ -13,8 +13,8 @@
 # under the License.
 ---
 ansible_pip_name:
-  - ansible
+  - ansible==2.7.8
   - ara
   - netaddr
 ansible_pip_virtualenv_python: python3
-ansible_pip_virtualenv: /opt/venv/ansible
+ansible_pip_virtualenv: /opt/venv/ansible-2.7.8
