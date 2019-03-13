@@ -1,70 +1,105 @@
-[bastion]
-bastion ansible_connection=local
-
-# NOTE(pabelanger): Hosts added to this group will not have playbooks run
-# against them.
-[disabled]
-
-[borg:children]
-borg-client
-borg-server
-
-# NOTE(pabelanger): Remember to create borgmatic configuration and
-# encryption_passphrase each time we add a new host to borg-client group.
-[borg-client:children]
-zookeeper
-zuul-scheduler
-
-[borg-server]
-borg01 ansible_host=38.108.68.96 ansible_user=windmill
-borg02 ansible_host=38.108.68.45 ansible_user=windmill
-
-[gear]
-zs01 ansible_host=38.108.68.16 ansible_user=windmill
-
-[nodepool-builder]
-nb01 ansible_host=38.108.68.29 ansible_user=windmill
-nb02 ansible_host=38.108.68.95 ansible_user=windmill
-
-[nodepool-launcher]
-nl01 ansible_host=38.108.68.109 ansible_user=windmill
-nl02 ansible_host=38.108.68.98 ansible_user=windmill
-
-[nodepool:children]
-nodepool-builder
-nodepool-launcher
-
-[statsd]
-
-[zookeeper]
-zk01 ansible_host=38.108.68.39 ansible_user=windmill
-zk02 ansible_host=38.108.68.106 ansible_user=windmill
-zk03 ansible_host=38.108.68.33 ansible_user=windmill
-
-[zuul-executor]
-ze01 ansible_host=38.108.68.104 ansible_user=windmill
-
-[zuul-fingergw]
-zf01 ansible_host=38.108.68.137 ansible_user=windmill
-
-[zuul-merger]
-zm01 ansible_host=38.108.68.12 ansible_user=windmill
-zm02 ansible_host=38.108.68.110 ansible_user=windmill
-
-[zuul-scheduler]
-zs01 ansible_host=38.108.68.16 ansible_user=windmill
-
-[zuul-web]
-zw01 ansible_host=38.108.68.135 ansible_user=windmill
-
-[zuul:children]
-zuul-executor
-zuul-fingergw
-zuul-merger
-zuul-scheduler
-zuul-web
-
-[zuul-connections:children]
-zuul-executor
-zuul-merger
-zuul-scheduler
+all:
+  children:
+    bastion:
+      hosts:
+        bastion:
+          ansible_connection: local
+    borg:
+      children:
+        borg-client: {}
+        borg-server: {}
+    borg-client:
+      children:
+        # NOTE(pabelanger): Remember to create borgmatic configuration and
+        # encryption_passphrase each time we add a new host to borg-client
+        # group.
+        zookeeper: {}
+        zuul-scheduler: {}
+    borg-server:
+      hosts:
+        borg01:
+          ansible_host: 38.108.68.96
+          ansible_user: windmill
+        borg02:
+          ansible_host: 38.108.68.45
+          ansible_user: windmill
+    # NOTE(pabelanger): Hosts added to the disabled group will not have
+    # playbooks run against them.
+    disabled: {}
+    gear:
+      hosts:
+        zs01:
+          ansible_host: 38.108.68.16
+          ansible_user: windmill
+    nodepool:
+      children:
+        nodepool-builder: {}
+        nodepool-launcher: {}
+    nodepool-builder:
+      hosts:
+        nb01:
+          ansible_host: 38.108.68.29
+          ansible_user: windmill
+        nb02:
+          ansible_host: 38.108.68.95
+          ansible_user: windmill
+    nodepool-launcher:
+      hosts:
+        nl01:
+          ansible_host: 38.108.68.109
+          ansible_user: windmill
+        nl02:
+          ansible_host: 38.108.68.98
+          ansible_user: windmill
+    statsd: {}
+    zookeeper:
+      hosts:
+        zk01:
+          ansible_host: 38.108.68.39
+          ansible_user: windmill
+        zk02:
+          ansible_host: 38.108.68.106
+          ansible_user: windmill
+        zk03:
+          ansible_host: 38.108.68.33
+          ansible_user: windmill
+    zuul:
+      children:
+        zuul-executor: {}
+        zuul-fingergw: {}
+        zuul-merger: {}
+        zuul-scheduler: {}
+        zuul-web: {}
+    zuul-connections:
+      children:
+        zuul-executor: {}
+        zuul-merger: {}
+        zuul-scheduler: {}
+    zuul-executor:
+      hosts:
+        ze01:
+          ansible_host: 38.108.68.104
+          ansible_user: windmill
+    zuul-fingergw:
+      hosts:
+        zf01:
+          ansible_host: 38.108.68.137
+          ansible_user: windmill
+    zuul-merger:
+      hosts:
+        zm01:
+          ansible_host: 38.108.68.12
+          ansible_user: windmill
+        zm02:
+          ansible_host: 38.108.68.110
+          ansible_user: windmill
+    zuul-scheduler:
+      hosts:
+        zs01:
+          ansible_host: 38.108.68.16
+          ansible_user: windmill
+    zuul-web:
+      hosts:
+        zw01:
+          ansible_host: 38.108.68.135
+          ansible_user: windmill
