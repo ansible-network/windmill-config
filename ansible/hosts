@@ -40,6 +40,7 @@ all:
       hosts:
         nb01:
           ansible_host: 38.108.68.29
+          ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIKn1kJxF4u/yg7qXb9YS7XLRCj6tw1IrHc49zQmyLOU0
           ansible_user: windmill
         nb02:
           ansible_host: 38.108.68.95
