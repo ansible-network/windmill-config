@@ -6,7 +6,7 @@ all:
       ansible_user: windmill
     # TODO(pabelanger): We'll be removing the servers below as we are in the
     # process of rebuilding everything.
-    bastion:
+    bastion01:
       ansible_host: 38.108.68.57
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIOOaqWfpmnMiCYaLUq0ugyQ6OUIvTpZKIqLTG03HXxU5
     borg01:
@@ -72,7 +72,7 @@ all:
   children:
     bastion:
       hosts:
-        bastion:
+        bastion01:
         bastion01.eng.ansible.com:
     borg:
       children:
