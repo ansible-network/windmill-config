@@ -5,13 +5,13 @@
 location:
     # List of source directories to backup. Globs are expanded.
     source_directories:
-        - /var/lib/zuul/times
+      - /var/lib/zuul/times
 
     # Paths to local or remote repositories.
     repositories:
 {% if 'borg-server' in groups %}
 {% for host in groups['borg-server'] %}
-        - borg_{{ inventory_hostname }}@{{ hostvars[host].ansible_host }}:backup.borg
+      - borg_{{ inventory_hostname }}@{{ hostvars[host].ansible_host }}:backup.borg
 {% endfor %}
 {% endif %}
 
@@ -30,5 +30,5 @@ retention:
 consistency:
     # List of consistency checks to run: "repository", "archives", or both.
     checks:
-        - repository
-        - archives
+      - repository
+      - archives
