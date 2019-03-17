@@ -12,14 +12,6 @@ all:
 
     # TODO(pabelanger): We'll be removing the servers below as we are in the
     # process of rebuilding everything.
-    borg01:
-      ansible_host: 38.108.68.96
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIP4IzsYhfA6r5KkwV95Nzz5P2DKQU7xyHlXg1ANu6Y4X
-      ansible_user: windmill
-    borg02:
-      ansible_host: 38.108.68.45
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIASKTG74QOJ4gKOV8qLIfrarKT8+3wfUmhzy1o+kHFED
-      ansible_user: windmill
     nb01:
       ansible_host: 38.108.68.29
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIKn1kJxF4u/yg7qXb9YS7XLRCj6tw1IrHc49zQmyLOU0
@@ -86,9 +78,7 @@ all:
     borg-client: {}
     borg-server:
       hosts:
-        borg01:
         borg01.eng.ansible.com:
-        borg02:
     # NOTE(pabelanger): Hosts added to the disabled group will not have
     # playbooks run against them.
     disabled: {}
