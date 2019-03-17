@@ -3,6 +3,11 @@
 
 - hosts: bastion
   tasks:
+    - name: Create config directory
+      file:
+        dest: ~/.config
+        state: directory
+
     - name: Symlink ansible-network/windmill-config directory
       file:
         src: ~/src/github.com/ansible-network/windmill-config
