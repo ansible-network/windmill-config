@@ -6,7 +6,6 @@
         name: "{{ site_windmill_config_bastion.fqdn }}"
         ansible_user: "{{ site_windmill_config_bastion.ssh_username }}"
         group: bastion
-        ansible_python_interpreter: python3
 
     - name: Add bastion server to known hosts
       known_hosts:
