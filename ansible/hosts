@@ -74,13 +74,10 @@ all:
       children:
         borg-client: {}
         borg-server: {}
-    borg-client:
-      children:
-        # NOTE(pabelanger): Remember to create borgmatic configuration and
-        # encryption_passphrase each time we add a new host to borg-client
-        # group.
-        zookeeper: {}
-        zuul-scheduler: {}
+    # NOTE(pabelanger): Remember to create borgmatic configuration and
+    # encryption_passphrase each time we add a new host to borg-client
+    # group.
+    borg-client: {}
     borg-server:
       hosts:
         borg01:
