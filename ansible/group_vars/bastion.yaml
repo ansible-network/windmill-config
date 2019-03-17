@@ -19,6 +19,17 @@ ansible_pip_name:
 ansible_pip_virtualenv_python: python3
 ansible_pip_virtualenv: /opt/venv/ansible-2.7.8
 
+borgbackup_user_groups: windmill
+borgmatic_file_config_yaml_src: "{{ windmill_config_git_dest }}/borgmatic/bastion.yaml.j2"
+
+__borgmatic_encryption_passphrase: !vault |
+    $ANSIBLE_VAULT;1.1;AES256
+    61393038633634376432663732653334613731396661623965396639386361373435366664336465
+    3935306533656538663237336235336434383738303438390a343664626134396534346438313930
+    39356261633435383634613430313935333965653565313663656336663262326566376332653062
+    3233353231336466610a613366373334646239383838363633373161363035613964353365636131
+    32666636636165316138366661653964636637376231306630663835363139303563
+
 # NOTE(pabelanger): We only want the zuul to have access to bastion servers,
 # so we need to dynamically inject the SSH public key into windmill_users.
 __windmill_users:
