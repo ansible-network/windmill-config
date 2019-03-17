@@ -52,11 +52,13 @@
 
         - name: Deploy windmill with ansible-playbook
           args:
-            chdir: "{{ item }}"
+            chdir: ~/src/git.openstack.org/openstack/windmill
           shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/site.yaml
-          with_items:
-            - ~/src/git.openstack.org/openstack/windmill
-            - ~/src/git.openstack.org/openstack/windmill-backup
+
+        - name: Deploy windmill-backup with ansible-playbook
+          args:
+            chdir: ~/src/git.openstack.org/openstack/windmill-backup
+          shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/site.yaml
 
       always:
         - name: Generage UUID from ARA
