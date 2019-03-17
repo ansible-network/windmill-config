@@ -3,6 +3,15 @@
 
 - hosts: bastion
   tasks:
+    # NOTE(pabelanger): We need to find a better way to manage this. Chances
+    # are we will forget about it everything we upgrade ansible.
+    - name: Symlink /opt/venv/ansible
+      become: true
+      file:
+        src: /opt/venv/ansible-2.7.8
+        dest: /opt/venv/ansible
+        state: link
+
     - name: Create config directory
       file:
         dest: ~/.config
