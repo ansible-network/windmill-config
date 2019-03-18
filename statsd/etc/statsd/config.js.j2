@@ -1,8 +1,10 @@
 {
-{% if ansible_host | ipv6 %}
-  address_ipv6: true,
-{% endif %}
-  backends: [ "./backends/console" ],
-  host: "{{ ansible_host }}",
+  flushInterval: 10000,
+  graphite: {
+    legacyNamespace: false,
+    globalPrefix: "{{ __statsd_config_js_graphite_globalPrefix }}"
+  },
+  graphiteHost: "carbon.hostedgraphite.com",
+  graphitePort: 2003,
   port: 8125
 }
