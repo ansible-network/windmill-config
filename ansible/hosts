@@ -10,6 +10,11 @@ all:
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIC4L0c4GOEPe/tM0ndXIegpvMf9m+pOVr9S75igbTmui
       ansible_user: windmill
 
+    statsd01.eng.ansible.com:
+      ansible_host: 38.108.68.43
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIP75IqNNuOHS5WQ9U6PZiPp27wIQlrOrQgC7N36/K+GN
+      ansible_user: windmill
+
     zk01.eng.ansible.com:
       ansible_host: 38.108.68.83
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIGXhKWmHQlgEPDfz24VNSDg0oTgUyVXbRoSqttVvhkgZ
@@ -62,7 +67,9 @@ all:
 
     nodepool-launcher: {}
 
-    statsd: {}
+    statsd:
+      hosts:
+        statsd01.eng.ansible.com:
 
     zookeeper:
       hosts:
