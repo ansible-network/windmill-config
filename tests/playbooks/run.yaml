@@ -95,6 +95,7 @@
             dest: "{{ zuul.executor.log_root }}/bastion"
             mode: pull
             src: "{{ tmp_logs.path }}/"
+          no_log: true
 
         - name: Delete tmp directory for logs
           file:
