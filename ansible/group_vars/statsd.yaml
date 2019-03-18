@@ -11,7 +11,7 @@
 # under the License.
 ---
 # windmill.statsd
-statsd_file_config_js_src: statsd/etc/statsd/config.js.j2
+statsd_file_config_js_src: "{{ windmill_config_git_dest }}/statsd/etc/statsd/config.js.j2"
 
 # openstack.logrotate
 logrotate_configs:
