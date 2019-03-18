@@ -61,28 +61,10 @@
           shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/site.yaml
 
       always:
-        - name: Generage UUID from ARA
-          args:
-            chdir: ~/src/git.openstack.org/openstack/windmill
-          register: windmill_ops_uuid
-          shell: "/opt/venv/ansible/bin/ara playbook list | grep windmill-ops/playbooks/bootstrap/site.yaml | tail -1 | cut -d' ' -f2"
-
-        - name: Generage UUID from ARA
-          args:
-            chdir: ~/src/git.openstack.org/openstack/windmill
-          register: windmill_uuid
-          shell: "/opt/venv/ansible/bin/ara playbook list | grep windmill/playbooks/site.yaml | tail -1 | cut -d' ' -f2"
-
-        - name: Generage UUID from ARA
-          args:
-            chdir: ~/src/git.openstack.org/openstack/windmill
-          register: windmill_backup_uuid
-          shell: "/opt/venv/ansible/bin/ara playbook list | grep windmill-backup/playbooks/site.yaml | tail -1 | cut -d' ' -f2"
-
         - name: Generate static HTML for ARA results
           args:
             chdir: ~/src/git.openstack.org/openstack/windmill
-          shell: "/opt/venv/ansible/bin/ara generate html {{ tmp_logs.path }}/ara-report --playbook {{ windmill_ops_uuid.stdout }} {{ windmill_uuid.stdout }} {{ windmill_backup_uuid.stdout }}"
+          shell: "/opt/venv/ansible/bin/ara generate html {{ tmp_logs.path }}/ara-report"
 
         - name: Ensure zuul-output directory exists
           delegate_to: localhost
