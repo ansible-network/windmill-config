@@ -10,101 +10,46 @@ all:
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIC4L0c4GOEPe/tM0ndXIegpvMf9m+pOVr9S75igbTmui
       ansible_user: windmill
 
-    # TODO(pabelanger): We'll be removing the servers below as we are in the
-    # process of rebuilding everything.
-    nb01:
-      ansible_host: 38.108.68.29
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIKn1kJxF4u/yg7qXb9YS7XLRCj6tw1IrHc49zQmyLOU0
-      ansible_user: windmill
-    nb02:
-      ansible_host: 38.108.68.95
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIANuuc1bEMbjKgcr+XH6hlobR6J2BvHg9+RS7U7NzN6j
-      ansible_user: windmill
-    nl01:
-      ansible_host: 38.108.68.109
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAINgd2l1FHxa7EO56k++u780J74O7DQ/RgKxgBa4b4fSl
-      ansible_user: windmill
-    nl02:
-      ansible_host: 38.108.68.98
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIOxOFZoUg8xystPamPVkRrnqwVemG7bj+rVkLzp5D/0Y
-      ansible_user: windmill
-    ze01:
-      ansible_host: 38.108.68.104
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIOSIhbE7coJYLz/FAuYA6AmhuTZhZaH7C8VkLgwORUMz
-      ansible_user: windmill
-    zf01:
-      ansible_host: 38.108.68.137
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAII8DkSFhxH/jRw/Wc5P9Ra7WwqPbnrqzsyXo1ng+2HJm
-      ansible_user: windmill
-    zk01:
-      ansible_host: 38.108.68.39
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIJV10E4FoCw+Bp6KqWdZiWIhafLVRa4oBE1M0Ti/w7cu
-      ansible_user: windmill
-    zk02:
-      ansible_host: 38.108.68.106
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAID1nJ/NSK/nTPzkIhi80aSfSpiAncb3MmXr7/IiP7aD6
-      ansible_user: windmill
-    zk03:
-      ansible_host: 38.108.68.33
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAINiEAxUZKtG7028y6Yj7C4MuUUwjWVLq3Gd2mnKmRqWQ
-      ansible_user: windmill
-    zm01:
-      ansible_host: 38.108.68.12
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIJxY9v/5wKgWURzXM3RRa4dW42ArQqKNkUzRnCvpxIr6
-      ansible_user: windmill
-    zm02:
-      ansible_host: 38.108.68.110
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAILCBMJHnncKc7EPpG4rKVWBaPXJ9ITWsqBtwx1hNexsc
-      ansible_user: windmill
-    zs01:
-      ansible_host: 38.108.68.16
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIO6X6m2J4Z7HlsKPNk6LtlGDGyaysPdP29klHYUUaBpJ
-      ansible_user: windmill
-    zw01:
-      ansible_host: 38.108.68.135
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIK1ZwJ74IRWcf1xzkgw9KCJcsOE/cU/Stat8+Y4yWCUO
-      ansible_user: windmill
   children:
     bastion:
       hosts:
         bastion01.eng.ansible.com:
+
     borg:
       children:
         borg-client: {}
         borg-server: {}
+
     # NOTE(pabelanger): Remember to create borgmatic configuration and
     # encryption_passphrase each time we add a new host to borg-client
     # group.
     borg-client:
       children:
         bastion: {}
+
     borg-server:
       hosts:
         borg01.eng.ansible.com:
+
     # NOTE(pabelanger): Hosts added to the disabled group will not have
     # playbooks run against them.
     disabled: {}
-    gear:
-      hosts:
-        zs01:
+
+    gear: {}
+
     nodepool:
       children:
         nodepool-builder: {}
         nodepool-launcher: {}
-    nodepool-builder:
-      hosts:
-        nb01:
-        nb02:
-    nodepool-launcher:
-      hosts:
-        nl01:
-        nl02:
+
+    nodepool-builder: {}
+
+    nodepool-launcher: {}
+
     statsd: {}
-    zookeeper:
-      hosts:
-        zk01:
-        zk02:
-        zk03:
+
+    zookeeper: {}
+
     zuul:
       children:
         zuul-executor: {}
@@ -112,24 +57,19 @@ all:
         zuul-merger: {}
         zuul-scheduler: {}
         zuul-web: {}
+
     zuul-connections:
       children:
         zuul-executor: {}
         zuul-merger: {}
         zuul-scheduler: {}
-    zuul-executor:
-      hosts:
-        ze01:
-    zuul-fingergw:
-      hosts:
-        zf01:
-    zuul-merger:
-      hosts:
-        zm01:
-        zm02:
-    zuul-scheduler:
-      hosts:
-        zs01:
-    zuul-web:
-      hosts:
-        zw01:
+
+    zuul-executor: {}
+
+    zuul-fingergw: {}
+
+    zuul-merger: {}
+
+    zuul-scheduler: {}
+
+    zuul-web: {}
