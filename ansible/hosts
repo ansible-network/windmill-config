@@ -15,6 +15,16 @@ all:
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIP75IqNNuOHS5WQ9U6PZiPp27wIQlrOrQgC7N36/K+GN
       ansible_user: windmill
 
+    nb01.eng.ansible.com:
+      ansible_host: 38.108.68.104
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIDQqjsgjFZr90G9GgODCLzGh9MocDklTkoBGPqVG95Dv
+      ansible_user: windmill
+
+    nb02.eng.ansible.com:
+      ansible_host: 38.108.68.30
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIPbWYi03XDenX6ew5/GENcdZcCXomCLQD7x09RkXBRga
+      ansible_user: windmill
+
     zk01.eng.ansible.com:
       ansible_host: 38.108.68.83
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIGXhKWmHQlgEPDfz24VNSDg0oTgUyVXbRoSqttVvhkgZ
@@ -63,7 +73,10 @@ all:
         nodepool-builder: {}
         nodepool-launcher: {}
 
-    nodepool-builder: {}
+    nodepool-builder:
+      hosts:
+        nb01.eng.ansible.com:
+        nb02.eng.ansible.com:
 
     nodepool-launcher: {}
 
