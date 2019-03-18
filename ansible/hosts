@@ -10,6 +10,21 @@ all:
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIC4L0c4GOEPe/tM0ndXIegpvMf9m+pOVr9S75igbTmui
       ansible_user: windmill
 
+    zk01.eng.ansible.com:
+      ansible_host: 38.108.68.83
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIGXhKWmHQlgEPDfz24VNSDg0oTgUyVXbRoSqttVvhkgZ
+      ansible_user: windmill
+
+    zk02.eng.ansible.com:
+      ansible_host: 38.108.68.117
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIApucp05mbxgtCcYs/E5Qh7XJ7Xdeq6OTWaBqhZv+NRb
+      ansible_user: windmill
+
+    zk02.eng.ansible.com:
+      ansible_host: 38.108.68.145
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIHk+oJWKqG80UBkRhqqAiwBpF29lIpyq/T0Zszup+DI1
+      ansible_user: windmill
+
   children:
     bastion:
       hosts:
@@ -48,7 +63,11 @@ all:
 
     statsd: {}
 
-    zookeeper: {}
+    zookeeper:
+      hosts:
+        zk01.eng.ansible.com:
+        zk02.eng.ansible.com:
+        zk03.eng.ansible.com:
 
     zuul:
       children:
