@@ -50,6 +50,7 @@ all:
     bastion:
       hosts:
         bastion01.eng.ansible.com:
+        bastion01.sjc1.vexxhost.zuul.ci.ansible.com:
 
     borg:
       children:
