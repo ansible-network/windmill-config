@@ -5,6 +5,11 @@ all:
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIPVbbkDWEwZkas6hldXONrqO40vO9PdZnuxf8D8oNnmg
       ansible_user: windmill
 
+    borg01.ca-ymq-1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 162.253.55.23
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIMeiv4sN/0j29kgcV5XCaJknedppNUDc9ggW8ehHg0It
+      ansible_user: windmill
+
   children:
     bastion:
       hosts:
@@ -20,7 +25,9 @@ all:
     # group.
     borg-client: {}
 
-    borg-server: {}
+    borg-server:
+      hosts:
+        borg01.ca-ymq-1.vexxhost.zuul-ci.ansible.com:
 
     # NOTE(pabelanger): Hosts added to the disabled group will not have
     # playbooks run against them.
