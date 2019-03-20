@@ -5,6 +5,6 @@
     periodic-1hr:
       jobs:
         - windmill-config-deploy
-    post:
+    promote:
       jobs:
         - windmill-config-deploy
