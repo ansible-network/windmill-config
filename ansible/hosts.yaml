@@ -114,6 +114,9 @@ all:
     # playbooks run against them.
     disabled: {}
 
+    # NOTE(pabelanger): We currently only support a single gear host in this
+    # group.  This means, the first host listed will only be used by our
+    # configuration.
     gear:
       hosts:
         zs01.sjc1.vexxhost.zuul-ci.ansible.com:
@@ -130,6 +133,9 @@ all:
 
     nodepool-launcher: {}
 
+    # NOTE(pabelanger): We currently only support a single statsd host in this
+    # group.  This means, the first host listed will only be used by our
+    # configuration.
     statsd:
       hosts:
         statsd01.sjc1.vexxhost.zuul-ci.ansible.com:
