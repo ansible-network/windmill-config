@@ -9,14 +9,14 @@ hosts = {{ groups['zookeeper'] | map('extract', hostvars, ['ansible_host']) | jo
 
 [gearman]
 port = 4730
-server = {{ hostvars['zs01'].ansible_host }}
+server = {{ hostvars[groups['gear'][0]].ansible_host }}
 ssl_ca = {{ zuul_file_gearman_ssl_ca_dest }}
 ssl_cert = {{ zuul_file_gearman_ssl_cert_dest }}
 ssl_key = {{ zuul_file_gearman_ssl_key_dest }}
 
 {% if groups['statsd'] | list and ansible_host | ipv4 %}
 [statsd]
-server = {{ hostvars['statsd01'].ansible_host }}
+server = {{ hostvars[groups['statsd'][0]].ansible_host }}
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-scheduler'] %}
@@ -52,7 +52,6 @@ user = {{ zuul_user_name }}
 git_dir = {{ zuul_user_home }}/git
 log_config = /etc/zuul/merger-logging.conf
 pidfile = /var/run/zuul-merger/zuul-merger.pid
-zuul_url = {{ hostvars['zs01'].ansible_host }}
 {% endif %}
 git_user_email = windmill@example.org
 git_user_name = windmill
