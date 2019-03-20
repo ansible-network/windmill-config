@@ -25,6 +25,30 @@ all:
         public_ipv4: 38.108.68.117
         public_ipv6: ''
 
+    zk01.sjc1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 38.108.68.97
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIN7x0nEbApqqA28Lw8oB/fXu84POXFkhKMxt1oJQLvvC
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.97
+        public_ipv6: ''
+
+    zk02.sjc1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 38.108.68.12
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIDoX3vpy54WaeA7tH4aX5X1DJ3kTzN/02uHv/D7rd5+k
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.12
+        public_ipv6: ''
+
+    zk03.sjc1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 38.108.68.67
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIEX/4a+sxmCPBKdUB+hXjB7A9oSeyywUcj1GUFLhfiC6
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.67
+        public_ipv6: ''
+
   children:
     bastion:
       hosts:
@@ -65,7 +89,11 @@ all:
       hosts:
         statsd01.sjc1.vexxhost.zuul-ci.ansible.com:
 
-    zookeeper: {}
+    zookeeper:
+      hosts:
+        zk01.sjc1.vexxhost.zuul-ci.ansible.com:
+        zk02.sjc1.vexxhost.zuul-ci.ansible.com:
+        zk03.sjc1.vexxhost.zuul-ci.ansible.com:
 
     zuul:
       children:
