@@ -17,6 +17,14 @@ all:
         public_ipv4: 162.253.55.23
         public_ipv6: 2604:e100:1:0:f816:3eff:fe5a:72fd
 
+    statsd01.sjc1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 38.108.68.117
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIPkS6ZefSc9bBW7qRAPW364JsJ2DVrQonhs3OaxFMfAI
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.117
+        public_ipv6: ''
+
   children:
     bastion:
       hosts:
@@ -53,7 +61,9 @@ all:
 
     nodepool-launcher: {}
 
-    statsd: {}
+    statsd:
+      hosts:
+        statsd01.sjc1.vexxhost.zuul-ci.ansible.com:
 
     zookeeper: {}
 
