@@ -64,12 +64,6 @@ log_config = /etc/zuul/web-logging.conf
 listen_address = 127.0.0.1
 {% endif %}
 
-[connection github.com]
-driver = github
-app_id = {{ __zuul_conf_connection_github_app_id }}
-app_key = {{ zuul_user_home }}/.ssh/github_id_rsa
-webhook_token = {{ __zuul_conf_connection_github_webhook_token }}
-
 [connection git.openstack.org]
 canonical_hostname = git.openstack.org
 driver = gerrit
