@@ -5,11 +5,17 @@ all:
       ansible_host: 38.108.68.114
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIPVbbkDWEwZkas6hldXONrqO40vO9PdZnuxf8D8oNnmg
       ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.114
+        public_ipv6: ''
 
     borg01.ca-ymq-1.vexxhost.zuul-ci.ansible.com:
       ansible_host: 162.253.55.23
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIMeiv4sN/0j29kgcV5XCaJknedppNUDc9ggW8ehHg0It
       ansible_user: windmill
+      node_attributes:
+        public_ipv4: 162.253.55.23
+        public_ipv6: 2604:e100:1:0:f816:3eff:fe5a:72fd
 
   children:
     bastion:
