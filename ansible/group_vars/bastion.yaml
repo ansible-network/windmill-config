@@ -39,3 +39,7 @@ __windmill_users:
       ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXfZWYKCxQznnrELlXkeHmArdzUJt4CUeKbLNI1dDx1ZDF7xsu+QmSFeXNyLuL8QzZSXw+lgN+DeMiXKuFBvX/xjUXxGWNHF0VKLOdQzcHgkFymX40+2nxxlzOGMYDpihomg6yrSIrkpV63lTB4HVT3pURf5mA8kzj6KD5r+wsX1DFWLrgfPjwMv2mDnzd9jcHP/AvP7sTnaqW6u4TDFEuZSpkbVzLxvhZh3k3zXn3zoPIeIvrXn8ybakobYv+e292Oe29Nt4SYl50AgafrijKLzV+fqiJ8g4rlEYXXfqqWHx2drcIHMI/6RABT6JMuoQuJtt+oMtFKF/jggZ8h/yZ zuul@ansible-network.softwarefactory-project.io
 
 windmill_users: "{{ _windmill_users|combine(__windmill_users, recursive=true) }}"
+
+# NOTE(pabelanger): This is so we can stream console logs with zuul_console.
+_iptables_public_tcp_ports_extra:
+  - 19885
