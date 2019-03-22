@@ -25,7 +25,7 @@ zookeeper_file_myid_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper
 zookeeper_file_zoo_conf_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/zoo.cfg"
 
 iptables_allowed_hosts:
-  # nodepool-builders
+  # nodepool-builder
   - address: nb01.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: tcp
     port: 2181
@@ -34,7 +34,7 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 2181
 
-  # nodepool-launchers
+  # nodepool-launcher
   - address: nl01.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: tcp
     port: 2181
@@ -43,8 +43,13 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 2181
 
-  # zuul-schedulers
+  # zuul-scheduler
   - address: zs01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 2181
+
+  # zuul-web
+  - address: zw01.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: tcp
     port: 2181
 
