@@ -169,6 +169,15 @@ logrotate_configs:
       - notifempty
 
 iptables_allowed_hosts:
+  # zuul-executors
+  - address: ze01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 4730
+
+  - address: ze02.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 4730
+
   # zuul-mergers
   - address: zm01.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: tcp
