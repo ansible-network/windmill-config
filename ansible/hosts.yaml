@@ -129,6 +129,14 @@ all:
         public_ipv4: 38.108.68.149
         public_ipv6: ''
 
+    zw01.sjc1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 38.108.68.57
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIKQUxUcOYEcYb274Um1UDdtyZmG2y88wvocUKSZArLcy
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.57
+        public_ipv6: ''
+
   children:
     bastion:
       hosts:
@@ -221,4 +229,6 @@ all:
       hosts:
         zs01.sjc1.vexxhost.zuul-ci.ansible.com:
 
-    zuul-web: {}
+    zuul-web:
+      hosts:
+        zw01.sjc1.vexxhost.zuul-ci.ansible.com:
