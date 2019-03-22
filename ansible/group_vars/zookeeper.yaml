@@ -43,6 +43,11 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 2181
 
+  # zuul-schedulers
+  - address: zs01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 2181
+
   # Zookeeper election
   - address: zk01.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: tcp
