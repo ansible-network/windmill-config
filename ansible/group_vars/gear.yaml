@@ -167,3 +167,12 @@ logrotate_configs:
       - rotate 7
       - daily
       - notifempty
+
+iptables_allowed_hosts:
+  - address: zm01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 4730
+
+  - address: zm02.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 4730
