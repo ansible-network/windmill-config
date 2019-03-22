@@ -23,3 +23,30 @@ __borgmatic_encryption_passphrase: !vault |
 
 zookeeper_file_myid_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/myid"
 zookeeper_file_zoo_conf_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/zoo.cfg"
+
+iptables_allowed_hosts:
+  # Zookeeper election
+  - address: zk01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 2888
+
+  - address: zk02.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 2888
+
+  - address: zk03.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 2888
+
+  # Zookeeper leader
+  - address: zk01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 3888
+
+  - address: zk02.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 3888
+
+  - address: zk03.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 3888
