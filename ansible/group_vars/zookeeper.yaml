@@ -25,6 +25,14 @@ zookeeper_file_myid_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper
 zookeeper_file_zoo_conf_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/zoo.cfg"
 
 iptables_allowed_hosts:
+  - address: nb01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 2181
+
+  - address: nb02.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 2181
+
   # Zookeeper election
   - address: zk01.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: tcp
