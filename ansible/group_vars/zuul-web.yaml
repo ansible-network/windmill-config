@@ -29,3 +29,6 @@ logrotate_configs:
       - rotate 7
       - daily
       - notifempty
+
+_iptables_public_tcp_ports_extra:
+  - 80
