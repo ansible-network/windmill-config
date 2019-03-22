@@ -41,5 +41,7 @@ __windmill_users:
 windmill_users: "{{ _windmill_users|combine(__windmill_users, recursive=true) }}"
 
 # NOTE(pabelanger): This is so we can stream console logs with zuul_console.
-_iptables_public_tcp_ports_extra:
-  - 19885
+iptables_allowed_hosts:
+  - address: 38.145.32.61
+    protocol: tcp
+    port: 19885
