@@ -188,6 +188,8 @@ all:
         zm01.sjc1.vexxhost.zuul-ci.ansible.com:
         zm02.sjc1.vexxhost.zuul-ci.ansible.com:
 
-    zuul-scheduler: {}
+    zuul-scheduler:
+      hosts:
+        zs01.sjc1.vexxhost.zuul-ci.ansible.com:
 
     zuul-web: {}
