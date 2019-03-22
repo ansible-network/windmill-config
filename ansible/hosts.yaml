@@ -33,6 +33,22 @@ all:
         public_ipv4: 38.108.68.31
         public_ipv6: ''
 
+    nl01.sjc1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 38.108.68.104
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIEC+ZVbLHjqOX6vci00zWqtHqQNib4O11M+Za6qv1DP7
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.104
+        public_ipv6: ''
+
+    nl02.sjc1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 38.108.68.110
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIKvYjzTewh25emHpK5DCTRE/QKzT1aQ15x9ogWVlnq+O
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.110
+        public_ipv6: ''
+
     statsd01.sjc1.vexxhost.zuul-ci.ansible.com:
       ansible_host: 38.108.68.117
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIPkS6ZefSc9bBW7qRAPW364JsJ2DVrQonhs3OaxFMfAI
@@ -131,7 +147,10 @@ all:
         nb01.sjc1.vexxhost.zuul-ci.ansible.com:
         nb02.sjc1.vexxhost.zuul-ci.ansible.com:
 
-    nodepool-launcher: {}
+    nodepool-launcher:
+      hosts:
+        nl01.sjc1.vexxhost.zuul-ci.ansible.com:
+        nl02.sjc1.vexxhost.zuul-ci.ansible.com:
 
     # NOTE(pabelanger): We currently only support a single statsd host in this
     # group.  This means, the first host listed will only be used by our
