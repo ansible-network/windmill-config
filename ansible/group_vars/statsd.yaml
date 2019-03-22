@@ -25,11 +25,21 @@ logrotate_configs:
       - notifempty
 
 iptables_allowed_hosts:
+  # nodepool-builders
   - address: nb01.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: udp
     port: 8125
 
   - address: nb02.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: udp
+    port: 8125
+
+  # nodepool-launchers
+  - address: nl01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: udp
+    port: 8125
+
+  - address: nl02.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: udp
     port: 8125
 
