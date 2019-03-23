@@ -17,7 +17,7 @@ nodepool_file_nodepool_launcher_service_config_manage: true
 nodepool_file_nodepool_launcher_service_config_src: nodepool-launcher/etc/systemd/system/nodepool-launcher.service.d/override.conf.j2
 nodepool_file_nodepool_launcher_service_manage: true
 
-nodepool_file_nodepool_yaml_src: "{{ windmill_config_git_dest }}/nodepool/{{ inventory_hostname }}.yaml.j2"
+nodepool_file_nodepool_yaml_src: "{{ windmill_config_git_dest }}/nodepool/{{ inventory_hostname }}.yaml"
 
 nodepool_service_nodepool_launcher_enabled: true
 nodepool_service_nodepool_launcher_manage: true
