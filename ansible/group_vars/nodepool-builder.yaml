@@ -21,8 +21,6 @@ nodepool_file_nodepool_builder_service_config_manage: true
 nodepool_file_nodepool_builder_service_config_src: nodepool-builder/etc/systemd/system/nodepool-builder.service.d/override.conf.j2
 nodepool_file_nodepool_builder_service_manage: true
 
-nodepool_file_nodepool_yaml_src: "{{ windmill_config_git_dest }}/nodepool/nodepool.yaml.j2"
-
 nodepool_service_nodepool_builder_enabled: true
 nodepool_service_nodepool_builder_manage: true
 nodepool_service_nodepool_builder_state: started
