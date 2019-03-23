@@ -4,14 +4,6 @@
 elements-dir: /etc/nodepool/elements
 images-dir: /opt/nodepool/images
 
-zookeeper-servers:
-{% if 'zookeeper' in groups %}
-{% for host in groups['zookeeper'] %}
-  - host: '{{ hostvars[host].ansible_host | ipwrap }}'
-    port: 2181
-{% endfor %}
-{% endif %}
-
 # NOTE(pabelanger): To avoid a race conditions between multiple launchers, only
 # nl01 will manage min-ready of our labels.  If nl01 is ever disabled, another
 # launcher will need to assume this logic.

@@ -4,14 +4,6 @@
 elements-dir: /etc/nodepool/elements
 images-dir: /opt/nodepool/images
 
-zookeeper-servers:
-{% if 'zookeeper' in groups %}
-{% for host in groups['zookeeper'] %}
-  - host: '{{ hostvars[host].ansible_host | ipwrap }}'
-    port: 2181
-{% endfor %}
-{% endif %}
-
 providers:
   - name: vexxhost-ansible-network-mtl1
     cloud: vexxhost-ansible-network
