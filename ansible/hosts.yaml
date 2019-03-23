@@ -153,6 +153,7 @@ all:
     borg-client:
       children:
         bastion: {}
+        zookeeper: {}
 
     borg-server:
       hosts:
