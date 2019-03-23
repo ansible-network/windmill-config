@@ -18,6 +18,7 @@ ansible_pip_name:
   - netaddr
 ansible_pip_virtualenv_python: python3
 ansible_pip_virtualenv: /opt/venv/ansible-2.7.9
+ansible_pip_virtualenv_symlink: /opt/venv/ansible
 
 borgbackup_user_groups: windmill
 borgmatic_file_config_yaml_src: "{{ windmill_config_git_dest }}/borgmatic/bastion.yaml.j2"
