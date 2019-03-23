@@ -8,7 +8,7 @@
     - name: Symlink /opt/venv/ansible
       become: true
       file:
-        src: /opt/venv/ansible-2.7.8
+        src: /opt/venv/ansible-2.7.9
         dest: /opt/venv/ansible
         state: link
 
