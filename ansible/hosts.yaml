@@ -17,6 +17,14 @@ all:
         public_ipv4: 162.253.55.23
         public_ipv6: 2604:e100:1:0:f816:3eff:fe5a:72fd
 
+    db01.sjc1.vexxhost.zuul-ci.ansible.com:
+      ansible_host: 38.108.68.17
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIP4phT2/1LXLDfkR7tp8z6/TG/xTWXy/8cVYdSxpNcTw
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.17
+        public_ipv6: ''
+
     nb01.sjc1.vexxhost.zuul-ci.ansible.com:
       ansible_host: 38.108.68.45
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAICw+MQLKhoYGsHd/KGDNVlc5Cp5fzhZc2bPNEbzPT7ZO
@@ -158,6 +166,10 @@ all:
     borg-server:
       hosts:
         borg01.ca-ymq-1.vexxhost.zuul-ci.ansible.com:
+
+    database:
+      hosts:
+        db01.sjc1.vexxhost.zuul-ci.ansible.com:
 
     # NOTE(pabelanger): Hosts added to the disabled group will not have
     # playbooks run against them.
