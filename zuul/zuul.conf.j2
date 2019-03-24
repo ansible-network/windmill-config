@@ -64,6 +64,12 @@ log_config = /etc/zuul/web-logging.conf
 listen_address = 127.0.0.1
 {% endif %}
 
+{% if inventory_hostname in groups['zuul-scheduler'] or inventory_hostname in groups['zuul-web'] %}
+[connection mysql]
+driver = sql
+dburi = mysql+pymysql://{{ __zuul_zuul_conf_connection_mysql_username_and_password }}@{{ hostvars[groups['database'][0]].ansible_host }}/zuul
+{% endif -%}
+
 [connection git.openstack.org]
 canonical_hostname = git.openstack.org
 driver = gerrit
