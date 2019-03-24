@@ -167,6 +167,14 @@ all:
       hosts:
         borg01.ca-ymq-1.vexxhost.zuul-ci.ansible.com:
 
+    # NOTE(pabelanger): We currently only support a single database host in
+    # this group.  This means, the first host listed will only be used by our
+    # configuration.
+    #
+    # The host in this group was manually provisioned, this means if we lose
+    # this host for any reason, we need to rebuild it by hand. ASAP create
+    # ansible playbooks / roles to properly automate this into a fully HA
+    # deployment.
     database:
       hosts:
         db01.sjc1.vexxhost.zuul-ci.ansible.com:
