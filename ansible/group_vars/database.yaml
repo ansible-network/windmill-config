@@ -15,3 +15,7 @@ iptables_allowed_hosts:
   - address: zs01.sjc1.vexxhost.zuul-ci.ansible.com
     protocol: tcp
     port: 3306
+  # zuul-web
+  - address: zw01.sjc1.vexxhost.zuul-ci.ansible.com
+    protocol: tcp
+    port: 3306
