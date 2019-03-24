@@ -17,11 +17,29 @@ zuul_file_zuul_executor_service_config_manage: true
 zuul_file_zuul_executor_service_config_src: zuul/etc/systemd/system/zuul-executor.service.d/override.conf.j2
 zuul_file_zuul_executor_service_manage: true
 
-zuul_pip_name: zuul[zuul_executor]
-
 zuul_service_zuul_executor_enabled: true
 zuul_service_zuul_executor_manage: true
 zuul_service_zuul_executor_state: started
+
+zuul_executor_ansible:
+  - ansible_pip_name:
+      - ansible==2.5.15
+      - ara
+    ansible_pip_virtualenv_python: python3
+    ansible_pip_virtualenv: /opt/venv/ansible-2.5.15
+    ansible_pip_virtualenv_symlink: /opt/venv/zuul-ansible/2.5
+  - ansible_pip_name:
+      - ansible==2.6.15
+      - ara
+    ansible_pip_virtualenv_python: python3
+    ansible_pip_virtualenv: /opt/venv/ansible-2.6.15
+    ansible_pip_virtualenv_symlink: /opt/venv/zuul-ansible/2.6
+  - ansible_pip_name:
+      - ansible==2.7.9
+      - ara
+    ansible_pip_virtualenv_python: python3
+    ansible_pip_virtualenv: /opt/venv/ansible-2.7.9
+    ansible_pip_virtualenv_symlink: /opt/venv/zuul-ansible/2.7
 
 # openstack.logrotate
 logrotate_configs:
