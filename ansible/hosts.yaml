@@ -148,6 +148,7 @@ all:
   children:
     bastion:
       hosts:
+        bastion01.sjc1.vexxhost.zuul.ansible.com:
         bastion01.sjc1.vexxhost.zuul-ci.ansible.com:
 
     borg:
