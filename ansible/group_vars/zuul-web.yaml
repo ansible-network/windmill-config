@@ -10,6 +10,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
+nginx_package_name:
+  - certbot
+  - nginx
+
 # windmill.zuul
 zuul_file_web_logging_conf_manage: true
 
