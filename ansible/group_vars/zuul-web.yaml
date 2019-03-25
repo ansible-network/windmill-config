@@ -38,3 +38,4 @@ logrotate_configs:
 
 _iptables_public_tcp_ports_extra:
   - 80
+  - 443
