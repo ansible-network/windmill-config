@@ -17,6 +17,13 @@ zuul_file_scheduler_logging_conf_manage: true
 
 zuul_file_zuul_scheduler_service_manage: true
 
+# NOTE(pabelanger): Manually install pymysql for database access. We should
+# fix this upstream.
+zuul_pip_version: "{{ blah | default(omit) }}"
+zuul_pip_name:
+  - "zuul=={{ _zuul_pip_version }}"
+  - pymysql
+
 zuul_service_zuul_scheduler_enabled: true
 zuul_service_zuul_scheduler_manage: true
 zuul_service_zuul_scheduler_state: started
