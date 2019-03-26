@@ -24,39 +24,6 @@ logrotate_configs:
       - daily
       - notifempty
 
-iptables_allowed_hosts:
-  # nodepool-builders
-  - address: nb01.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: udp
-    port: 8125
-
-  - address: nb02.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: udp
-    port: 8125
-
-  # nodepool-launchers
-  - address: nl01.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: udp
-    port: 8125
-
-  - address: nl02.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: udp
-    port: 8125
-
-  # zuul-executors
-  - address: ze01.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: udp
-    port: 8125
-
-  - address: ze02.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: udp
-    port: 8125
-
-  # zuul-schedulers
-  - address: zs01.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: udp
-    port: 8125
-
 __statsd_config_js_graphite_globalPrefix: !vault |
   $ANSIBLE_VAULT;1.1;AES256
   32363765303138633366643962633464643432643436343038663461313363623663343139386161

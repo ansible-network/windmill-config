@@ -10,12 +10,3 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
-iptables_allowed_hosts:
-  # zuul-scheduler
-  - address: zs01.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: tcp
-    port: 3306
-  # zuul-web
-  - address: zw01.sjc1.vexxhost.zuul-ci.ansible.com
-    protocol: tcp
-    port: 3306

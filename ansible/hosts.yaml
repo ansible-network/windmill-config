@@ -9,142 +9,6 @@ all:
         public_ipv4: 38.108.68.150
         public_ipv6: ''
 
-    borg01.ca-ymq-1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 162.253.55.23
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIMeiv4sN/0j29kgcV5XCaJknedppNUDc9ggW8ehHg0It
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 162.253.55.23
-        public_ipv6: 2604:e100:1:0:f816:3eff:fe5a:72fd
-
-    db01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.17
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIP4phT2/1LXLDfkR7tp8z6/TG/xTWXy/8cVYdSxpNcTw
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.17
-        public_ipv6: ''
-
-    nb01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.45
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAICw+MQLKhoYGsHd/KGDNVlc5Cp5fzhZc2bPNEbzPT7ZO
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.45
-        public_ipv6: ''
-
-    nb02.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.31
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIBpeGFXuISxoWfpXRB2AgcWFca4TYn6W+CHLQi+oMkxw
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.31
-        public_ipv6: ''
-
-    nl01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.104
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIEC+ZVbLHjqOX6vci00zWqtHqQNib4O11M+Za6qv1DP7
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.104
-        public_ipv6: ''
-
-    nl02.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.110
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIKvYjzTewh25emHpK5DCTRE/QKzT1aQ15x9ogWVlnq+O
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.110
-        public_ipv6: ''
-
-    statsd01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.117
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIPkS6ZefSc9bBW7qRAPW364JsJ2DVrQonhs3OaxFMfAI
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.117
-        public_ipv6: ''
-
-    zk01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.97
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIN7x0nEbApqqA28Lw8oB/fXu84POXFkhKMxt1oJQLvvC
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.97
-        public_ipv6: ''
-
-    zk02.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.12
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIDoX3vpy54WaeA7tH4aX5X1DJ3kTzN/02uHv/D7rd5+k
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.12
-        public_ipv6: ''
-
-    zk03.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.67
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIEX/4a+sxmCPBKdUB+hXjB7A9oSeyywUcj1GUFLhfiC6
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.67
-        public_ipv6: ''
-
-    ze01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.143
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAINNZ9CpqZA8Q3qqbrTwPu+Ucwf8AXLuDa+YE9lZG0Pmm
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.143
-        public_ipv6: ''
-
-    ze02.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.43
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIOu1dliQ1ZFenkttzIN2a0T23ObjegPEUX3XS+EGuE49
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.43
-        public_ipv6: ''
-
-    zf01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.83
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIIOwIw/se5073jH9onCoBwqLG6qD+q/vEGqfVSKT3bZn
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.83
-        public_ipv6: ''
-
-    zm01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.105
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIBOTPBmbKw4ByM+YAtT+/9SihQ3RhuHiimOV0k3LByhf
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.105
-        public_ipv6: ''
-
-    zm02.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.109
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIHQLi61brUfmRxnCSeU20HkkebNt3rGnvO7jtQmfjBUr
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.109
-        public_ipv6: ''
-
-    zs01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.149
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIAI6H3XPa3/mKX1ZM7B3SHn/bGwcbYPmcMFNAk5MxbaL
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.149
-        public_ipv6: ''
-
-    zw01.sjc1.vexxhost.zuul-ci.ansible.com:
-      ansible_host: 38.108.68.57
-      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIKQUxUcOYEcYb274Um1UDdtyZmG2y88wvocUKSZArLcy
-      ansible_user: windmill
-      node_attributes:
-        public_ipv4: 38.108.68.57
-        public_ipv6: ''
-
   children:
     bastion:
       hosts:
@@ -170,9 +34,7 @@ all:
     # this host for any reason, we need to rebuild it by hand. ASAP create
     # ansible playbooks / roles to properly automate this into a fully HA
     # deployment.
-    database:
-      hosts:
-        db01.sjc1.vexxhost.zuul-ci.ansible.com:
+    database: {}
 
     # NOTE(pabelanger): Hosts added to the disabled group will not have
     # playbooks run against them.
@@ -181,37 +43,23 @@ all:
     # NOTE(pabelanger): We currently only support a single gear host in this
     # group.  This means, the first host listed will only be used by our
     # configuration.
-    gear:
-      hosts:
-        zs01.sjc1.vexxhost.zuul-ci.ansible.com:
+    gear: {}
 
     nodepool:
       children:
         nodepool-builder: {}
         nodepool-launcher: {}
 
-    nodepool-builder:
-      hosts:
-        nb01.sjc1.vexxhost.zuul-ci.ansible.com:
-        nb02.sjc1.vexxhost.zuul-ci.ansible.com:
+    nodepool-builder: {}
 
-    nodepool-launcher:
-      hosts:
-        nl01.sjc1.vexxhost.zuul-ci.ansible.com:
-        nl02.sjc1.vexxhost.zuul-ci.ansible.com:
+    nodepool-launcher: {}
 
     # NOTE(pabelanger): We currently only support a single statsd host in this
     # group.  This means, the first host listed will only be used by our
     # configuration.
-    statsd:
-      hosts:
-        statsd01.sjc1.vexxhost.zuul-ci.ansible.com:
+    statsd: {}
 
-    zookeeper:
-      hosts:
-        zk01.sjc1.vexxhost.zuul-ci.ansible.com:
-        zk02.sjc1.vexxhost.zuul-ci.ansible.com:
-        zk03.sjc1.vexxhost.zuul-ci.ansible.com:
+    zookeeper: {}
 
     zuul:
       children:
@@ -227,27 +75,15 @@ all:
         zuul-merger: {}
         zuul-scheduler: {}
 
-    zuul-executor:
-      hosts:
-        ze01.sjc1.vexxhost.zuul-ci.ansible.com:
-        ze02.sjc1.vexxhost.zuul-ci.ansible.com:
+    zuul-executor: {}
 
     # NOTE(pabelanger): We currently only support a single zuul-fingergw host
     # in this group.  This means, the first host listed will only be used by
     # our configuration.
-    zuul-fingergw:
-      hosts:
-        zf01.sjc1.vexxhost.zuul-ci.ansible.com:
+    zuul-fingergw: {}
 
-    zuul-merger:
-      hosts:
-        zm01.sjc1.vexxhost.zuul-ci.ansible.com:
-        zm02.sjc1.vexxhost.zuul-ci.ansible.com:
+    zuul-merger: {}
 
-    zuul-scheduler:
-      hosts:
-        zs01.sjc1.vexxhost.zuul-ci.ansible.com:
+    zuul-scheduler: {}
 
-    zuul-web:
-      hosts:
-        zw01.sjc1.vexxhost.zuul-ci.ansible.com:
+    zuul-web: {}
