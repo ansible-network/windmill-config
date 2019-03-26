@@ -62,7 +62,10 @@ all:
     # NOTE(pabelanger): Remember to create borgmatic configuration and
     # encryption_passphrase each time we add a new host to borg-client
     # group.
-    borg-client: {}
+    borg-client:
+      children:
+        bastion: {}
+        zookeeper: {}
 
     borg-server:
       hosts:
