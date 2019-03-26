@@ -17,6 +17,14 @@ all:
         public_ipv4: 199.204.45.30
         public_ipv6: 2604:e100:1:0:f816:3eff:feb5:6f21
 
+    db01.sjc1.vexxhost.zuul.ansible.com:
+      ansible_host: 38.108.68.31
+      ansible_ssh_host_key_ed25519_public:
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.31
+        public_ipv6: ''
+
     nb01.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.140
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAINcr0VzVHKiwur5AsyhwmrcghNYKL5Hu6/4CslP5hhwA
@@ -95,7 +103,9 @@ all:
     # this host for any reason, we need to rebuild it by hand. ASAP create
     # ansible playbooks / roles to properly automate this into a fully HA
     # deployment.
-    database: {}
+    database:
+      hosts:
+        db01.sjc1.vexxhost.zuul.ansible.com:
 
     # NOTE(pabelanger): Hosts added to the disabled group will not have
     # playbooks run against them.
