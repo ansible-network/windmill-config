@@ -51,3 +51,8 @@ iptables_allowed_hosts:
   - address: nl02.sjc1.vexxhost.zuul.ansible.com
     protocol: udp
     port: 8125
+
+  # zuul-scheduler
+  - address: zs01.sjc1.vexxhost.zuul.ansible.com
+    protocol: udp
+    port: 8125
