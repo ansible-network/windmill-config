@@ -17,6 +17,14 @@ all:
         public_ipv4: 199.204.45.30
         public_ipv6: 2604:e100:1:0:f816:3eff:feb5:6f21
 
+    statsd01.sjc1.vexxhost.zuul.ansible.com:
+      ansible_host: 38.108.68.105
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIA9SfExmj54EAYNj3oqqIYC/YyF8kkkKeiedUrRnlviZ
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.105
+        public_ipv6: ''
+
   children:
     bastion:
       hosts:
@@ -67,7 +75,9 @@ all:
     # NOTE(pabelanger): We currently only support a single statsd host in this
     # group.  This means, the first host listed will only be used by our
     # configuration.
-    statsd: {}
+    statsd:
+      hosts:
+        statsd01.sjc1.vexxhost.zuul.ansible.com:
 
     zookeeper: {}
 
