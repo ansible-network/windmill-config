@@ -34,6 +34,15 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 2181
 
+  # nodepool-launcher
+  - address: nl01.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2181
+
+  - address: nl02.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2181
+
   # zookeeper election
   - address: zk01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
