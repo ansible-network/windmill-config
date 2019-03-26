@@ -32,3 +32,22 @@ __statsd_config_js_graphite_globalPrefix: !vault |
   3965633439663432370a633661663935623834366137373266663861353766313638346239666536
   37663733383461303836633966303932356439333932363736363232336165313833643438623661
   6261626436613838336330363462313532616236663935653130
+
+iptables_allowed_hosts:
+  # nodepool-builders
+  - address: nb01.sjc1.vexxhost.zuul.ansible.com
+    protocol: udp
+    port: 8125
+
+  - address: nb02.sjc1.vexxhost.zuul.ansible.com
+    protocol: udp
+    port: 8125
+
+  # nodepool-launchers
+  - address: nl01.sjc1.vexxhost.zuul.ansible.com
+    protocol: udp
+    port: 8125
+
+  - address: nl02.sjc1.vexxhost.zuul.ansible.com
+    protocol: udp
+    port: 8125
