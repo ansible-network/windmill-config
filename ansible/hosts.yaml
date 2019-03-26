@@ -89,6 +89,22 @@ all:
         public_ipv4: 38.108.68.107
         public_ipv6: ''
 
+    ze01.sjc1.vexxhost.zuul.ansible.com:
+      ansible_host: 38.108.68.47
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIFNrufAvxwAY0kfwMAZ2krcsDiNoZeVjWLR6OL8RpnrL
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.47
+        public_ipv6: ''
+
+    ze02.sjc1.vexxhost.zuul.ansible.com:
+      ansible_host: 38.108.68.96
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIGFl/5+R/TIaexvri4A0E0qyAEzTTLTHytc5ZwEHfKzY
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.96
+        public_ipv6: ''
+
     zm01.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.39
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIOwE3sPLUKq5Vui6w541Dc4MekWPFkbp80BddboKF3VD
@@ -200,7 +216,10 @@ all:
         zuul-merger: {}
         zuul-scheduler: {}
 
-    zuul-executor: {}
+    zuul-executor:
+      hosts:
+        ze01.sjc1.vexxhost.zuul.ansible.com:
+        ze02.sjc1.vexxhost.zuul.ansible.com:
 
     # NOTE(pabelanger): We currently only support a single zuul-fingergw host
     # in this group.  This means, the first host listed will only be used by
