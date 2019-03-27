@@ -154,6 +154,7 @@ all:
       children:
         bastion: {}
         zookeeper: {}
+        zuul-scheduler: {}
 
     borg-server:
       hosts:
