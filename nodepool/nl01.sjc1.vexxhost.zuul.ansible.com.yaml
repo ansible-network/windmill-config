@@ -9,6 +9,9 @@ images-dir: /opt/nodepool/images
 # nl01 will manage min-ready of our labels.  If nl01 is ever disabled, another
 # launcher will need to assume this logic.
 labels:
+  - name: fedora-29-1vcpu
+    min-ready: 1
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     min-ready: 1
     max-ready-age: 600
