@@ -5,6 +5,12 @@
 - tenant:
     name: ansible
     source:
+      github.com:
+        config-projects:
+          - ansible/project-config
+        untrusted-projects:
+          - ansible/ansible-zuul-jobs
+
       git.openstack.org:
         untrusted-projects:
           - openstack-infra/zuul-jobs
