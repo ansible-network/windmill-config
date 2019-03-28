@@ -21,6 +21,20 @@ providers:
     diskimages: *provider_diskimages
 
 diskimages:
+  - name: fedora-29
+    elements:
+      - fedora-minimal
+      - growroot
+      - nodepool-base
+      - openssh-server
+      - simple-init
+      - vm
+    env-vars:
+      DIB_CHECKSUM: '1'
+      DIB_GRUB_TIMEOUT: '0'
+      DIB_RELEASE: '29'
+      QEMU_IMG_OPTIONS: compat=0.10
+
   - name: ubuntu-bionic
     elements:
       - ubuntu-minimal
