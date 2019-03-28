@@ -1,0 +1,11 @@
+{
+  "distro": {
+    "centos": {
+      "haveged": ""
+    }
+  },
+  "default": {
+    "haveged": "haveged",
+    "unbound": "unbound"
+  }
+}

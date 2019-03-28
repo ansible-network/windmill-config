@@ -24,6 +24,8 @@ providers:
     # hostname length under 64.
     hostname-format: '{label.name}-vexxhost-mtl1-{node.id}'
     diskimages: &provider_diskimages
+      - name: fedora-29
+        config-drive: true
       - name: ubuntu-bionic
         config-drive: true
     pools:
@@ -34,6 +36,11 @@ providers:
       - name: v2-highcpu-1
         max-servers: 8
         labels: &provider_pools_v2_highcpu_1_labels
+          - name: fedora-29-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: fedora-29
+            boot-from-volume: true
+            volume-size: 80
           - name: ubuntu-bionic-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: ubuntu-bionic
@@ -41,4 +48,5 @@ providers:
             volume-size: 80
 
 diskimages:
+  - name: fedora-29
   - name: ubuntu-bionic
