@@ -17,6 +17,7 @@ ssl_key = {{ zuul_file_gearman_ssl_key_dest }}
 {% if groups['statsd'] | list and ansible_host | ipv4 %}
 [statsd]
 server = {{ hostvars[groups['statsd'][0]].ansible_host }}
+
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-scheduler'] %}
@@ -28,18 +29,19 @@ tenant_config = {{ zuul_file_main_yaml_dest }}
 log_config = /etc/zuul/scheduler-logging.conf
 pidfile = /var/run/zuul-scheduler/zuul-scheduler.pid
 state_dir = {{ zuul_user_home }}
+
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-executor'] %}
 [executor]
 ansible_root = /var/lib/zuul/venv/ansible
-hostname = {{ hostvars[inventory_hostname].ansible_host }}
 log_config = /etc/zuul/executor-logging.conf
 manage_ansible = false
 private_key_file = {{ zuul_user_home }}/.ssh/nodepool_id_rsa
 trusted_ro_paths = /opt/venv/zuul-ansible
 untrusted_ro_paths = /opt/venv/zuul-ansible
 workspace_root = {{ zuul_user_home }}/workspace
+
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-fingergw'] %}
@@ -47,6 +49,7 @@ workspace_root = {{ zuul_user_home }}/workspace
 listen_address = {{ hostvars[groups['zuul-fingergw'][0]].ansible_host }}
 log_config = /etc/zuul/fingergw-logging.conf
 user = {{ zuul_user_name }}
+
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-merger'] or inventory_hostname in groups['zuul-executor'] %}
@@ -58,12 +61,14 @@ pidfile = /var/run/zuul-merger/zuul-merger.pid
 {% endif %}
 git_user_email = windmill@example.org
 git_user_name = windmill
+
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-web'] %}
 [web]
 log_config = /etc/zuul/web-logging.conf
 listen_address = 127.0.0.1
+
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-scheduler'] or inventory_hostname in groups['zuul-web'] %}
