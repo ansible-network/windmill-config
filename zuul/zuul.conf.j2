@@ -32,11 +32,13 @@ state_dir = {{ zuul_user_home }}
 
 {% if inventory_hostname in groups['zuul-executor'] %}
 [executor]
-ansible_root = /opt/venv/zuul-ansible
+ansible_root = /var/lib/zuul/venv/ansible
 hostname = {{ hostvars[inventory_hostname].ansible_host }}
 log_config = /etc/zuul/executor-logging.conf
 manage_ansible = false
 private_key_file = {{ zuul_user_home }}/.ssh/nodepool_id_rsa
+trusted_ro_paths = /opt/venv/zuul-ansible
+untrusted_ro_paths = /opt/venv/zuul-ansible
 workspace_root = {{ zuul_user_home }}/workspace
 {% endif -%}
 
