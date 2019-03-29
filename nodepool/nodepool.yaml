@@ -22,6 +22,7 @@ providers:
 
 diskimages:
   - name: fedora-29
+    pause: true
     elements:
       - fedora-minimal
       - growroot
