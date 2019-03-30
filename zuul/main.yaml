@@ -4,6 +4,9 @@
 #
 - tenant:
     name: ansible
+    # NOTE(pabelanger): By default, we don't want to load any branches
+    # that are unprotected.
+    exclude-unprotected-branches: true
     source:
       github.com:
         config-projects:
