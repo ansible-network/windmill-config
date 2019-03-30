@@ -11,6 +11,6 @@
       synchronize:
         delete: true
         dest: .
-        force: true
+        recursive: true
         src: "{{ zuul.executor.src_root }}"
       no_log: true
