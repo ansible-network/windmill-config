@@ -9,6 +9,8 @@ images-dir: /opt/nodepool/images
 # nl01 will manage min-ready of our labels.  If nl01 is ever disabled, another
 # launcher will need to assume this logic.
 labels:
+  - name: centos-7-1vcpu
+    max-ready-age: 600
   - name: fedora-29-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
@@ -25,6 +27,8 @@ providers:
     # hostname length under 64.
     hostname-format: '{label.name}-vexxhost-sjc1-{node.id}'
     diskimages: &provider_diskimages
+      - name: centos-7
+        config-drive: true
       - name: fedora-29
         config-drive: true
       - name: ubuntu-bionic
@@ -37,6 +41,11 @@ providers:
       - name: v2-highcpu-1
         max-servers: 8
         labels: &provider_pools_v2_highcpu_1_labels
+          - name: centos-7-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: centos-7
+            boot-from-volume: true
+            volume-size: 80
           - name: fedora-29-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-29
@@ -50,5 +59,6 @@ providers:
 
 
 diskimages:
+  - name: centos-7
   - name: fedora-29
   - name: ubuntu-bionic

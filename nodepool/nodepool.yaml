@@ -11,6 +11,10 @@ providers:
     region-name: 'ca-ymq-1'
     rate: 0.001
     diskimages: &provider_diskimages
+      - name: centos-7
+        config-drive: true
+      - name: fedora-29
+        config-drive: true
       - name: ubuntu-bionic
         config-drive: true
 
@@ -21,6 +25,22 @@ providers:
     diskimages: *provider_diskimages
 
 diskimages:
+  - name: centos-7
+    elements:
+      - centos-minimal
+      - epel
+      - growroot
+      - nodepool-base
+      - openssh-server
+      - simple-init
+      - vm
+    env-vars:
+      DIB_CHECKSUM: '1'
+      DIB_EPEL_DISABLED: '1'
+      DIB_GRUB_TIMEOUT: '0'
+      DIB_SIMPLE_INIT_NETWORKMANAGER: '1'
+      QEMU_IMG_OPTIONS: compat=0.10
+
   - name: fedora-29
     pause: true
     elements:
