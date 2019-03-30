@@ -7,6 +7,10 @@
       include_role:
         name: start-zuul-console
 
-    - name: Run prepare-workspace role
-      include_role:
-        name: prepare-workspace
+    - name: Synchronize src repos to workspace directory
+      synchronize:
+        delete: true
+        dest: .
+        force: true
+        src: "{{ zuul.executor.src_root }}"
+      no_log: true
