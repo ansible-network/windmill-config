@@ -36,6 +36,14 @@ logrotate_configs:
       - daily
       - notifempty
 
+nginx_file_nginx_config:
+  - dest: /etc/nginx/sites-available/dashboard-ssl
+    src: "{{ windmill_config_git_dest }}/zuul/etc/nginx/sites-available/dashboard-ssl.j2"
+  - dest: /etc/nginx/sites-available/default
+    src: "{{ windmill_config_git_dest }}/zuul/etc/nginx/sites-available/default.j2"
+  - dest: /etc/nginx/sites-available/logs-ssl
+    src: "{{ windmill_config_git_dest }}/zuul/etc/nginx/sites-available/logs-ssl.j2"
+
 _iptables_public_tcp_ports_extra:
   - 80
   - 443
