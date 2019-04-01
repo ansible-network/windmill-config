@@ -7,6 +7,18 @@ cache:
     port: 5
 
 clouds:
+  limestone:
+    profile: limestonenetworks
+    auth:
+      password: {{ __nodepool_clouds_yaml_limestone_password }}
+      username: {{ __nodepool_clouds_yaml_limestone_username }}
+      project_name: {{ __nodepool_clouds_yaml_limestone_project_name }}
+      project_domain_id: default
+      user_domain_id: default
+    regions:
+      - us-dfw-1
+      - us-slc
+
   vexxhost-ansible-network:
     profile: vexxhost
     auth:
