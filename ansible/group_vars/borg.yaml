@@ -12,7 +12,7 @@
 ---
 borgbackup_pip_version: 1.1.9
 borgbackup_pip_virtualenv_python: python3
-borgbackup_pip_virtualenv: "/opt/venv/borgbackup-{{ borgbackup_pip_version }}"
+borgbackup_pip_virtualenv: "/opt/venv/borgbackup-{{ borgbackup_pip_version }}-1"
 borgbackup_user_shell: /bin/bash
 
 borgmatic_pip_version: 1.2.18
