@@ -11,7 +11,11 @@ images-dir: /opt/nodepool/images
 labels:
   - name: centos-7-1vcpu
     max-ready-age: 600
+  - name: centos-7-4vcpu
+    max-ready-age: 600
   - name: fedora-29-1vcpu
+    max-ready-age: 600
+  - name: fedora-29-4vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
