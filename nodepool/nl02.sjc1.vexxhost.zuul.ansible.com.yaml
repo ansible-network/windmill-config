@@ -30,21 +30,7 @@ providers:
     # NOTE(pabelanger): Strip ansible-network from provider.name to keep
     # hostname length under 64.
     hostname-format: '{label.name}-vexxhost-sjc1-{node.id}'
-    diskimages: &provider_diskimages
-      - name: centos-7
-        config-drive: true
-      - name: fedora-29
-        config-drive: true
-      - name: ubuntu-bionic
-        config-drive: true
-    pools:
-      # NOTE(pabelanger): Please contact pabelanger before making changes to
-      # this pool, especially increasing max-servers or changing labels. There
-      # is a real world financial cost in doing so that is charged to the
-      # Ansible org.
-      - name: v2-highcpu-1
-        max-servers: 0
-        labels: []
+    diskimages: []
 
 diskimages:
   - name: centos-7
