@@ -43,7 +43,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: v2-highcpu-1
-        max-servers: 8
+        max-servers: 0
         labels: &provider_pools_v2_highcpu_1_labels
           - name: centos-7-1vcpu
             flavor-name: v2-highcpu-1
