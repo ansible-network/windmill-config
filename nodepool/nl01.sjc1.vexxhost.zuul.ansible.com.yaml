@@ -44,22 +44,7 @@ providers:
       # Ansible org.
       - name: v2-highcpu-1
         max-servers: 0
-        labels: &provider_pools_v2_highcpu_1_labels
-          - name: centos-7-1vcpu
-            flavor-name: v2-highcpu-1
-            diskimage: centos-7
-            boot-from-volume: true
-            volume-size: 80
-          - name: fedora-29-1vcpu
-            flavor-name: v2-highcpu-1
-            diskimage: fedora-29
-            boot-from-volume: true
-            volume-size: 80
-          - name: ubuntu-bionic-1vcpu
-            flavor-name: v2-highcpu-1
-            diskimage: ubuntu-bionic
-            boot-from-volume: true
-            volume-size: 80
+        labels: []
 
   - name: limestone-us-dfw-1
     cloud: limestone
