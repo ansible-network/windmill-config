@@ -6,9 +6,9 @@ elements-dir: /etc/nodepool/elements
 images-dir: /opt/nodepool/images
 
 providers:
-  - name: vexxhost-ansible-network-mtl1
-    cloud: vexxhost-ansible-network
-    region-name: 'ca-ymq-1'
+  - name: limestone-us-dfw-1
+    cloud: limestone
+    region-name: us-dfw-1
     rate: 0.001
     diskimages: &provider_diskimages
       - name: centos-7
@@ -17,6 +17,18 @@ providers:
         config-drive: true
       - name: ubuntu-bionic
         config-drive: true
+
+  - name: limestone-us-slc
+    cloud: limestone
+    region-name: us-slc
+    rate: 0.001
+    diskimages: *provider_diskimages
+
+  - name: vexxhost-ansible-network-mtl1
+    cloud: vexxhost-ansible-network
+    region-name: 'ca-ymq-1'
+    rate: 0.001
+    diskimages: *provider_diskimages
 
   - name: vexxhost-ansible-network-sjc1
     cloud: vexxhost-ansible-network
