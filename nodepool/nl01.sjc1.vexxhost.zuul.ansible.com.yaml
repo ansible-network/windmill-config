@@ -57,6 +57,68 @@ providers:
             boot-from-volume: true
             volume-size: 80
 
+  - name: limestone-us-dfw-1
+    cloud: limestone
+    region-name: us-dfw-1
+    boot-timeout: 120
+    launch-timeout: 300
+    rate: 0.001
+    diskimages: &provider_limestone_diskimages
+      - name: centos-7
+        config-drive: true
+      - name: fedora-29
+        config-drive: true
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: s1.small
+        max-servers: 8
+        networks:
+          - Public Internet
+        labels: &provider_limestone_pools_s1_small_labels
+          - name: centos-7-1vcpu
+            flavor-name: s1.small
+            diskimage: centos-7
+          - name: fedora-29-1vcpu
+            flavor-name: s1.small
+            diskimage: fedora-29
+      - name: s1.large
+        max-servers: 2
+        networks:
+          - Public Internet
+        labels: &provider_limestone_pools_s1_large_labels
+          - name: centos-7-4vcpu
+            flavor-name: s1.large
+            diskimage: centos-7
+          - name: fedora-29-4vcpu
+            flavor-name: s1.large
+            diskimage: fedora-29
+
+  - name: limestone-us-slc
+    cloud: limestone
+    region-name: us-slc
+    boot-timeout: 120
+    launch-timeout: 300
+    rate: 0.001
+    diskimages: *provider_limestone_diskimages
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: s1.small
+        max-servers: 0
+        networks:
+          - Public Internet
+        labels: *provider_limestone_pools_s1_small_labels
+      - name: s1.large
+        max-servers: 0
+        networks:
+          - Public Internet
+        labels: *provider_limestone_pools_s1_large_labels
+
 diskimages:
   - name: centos-7
   - name: fedora-29
