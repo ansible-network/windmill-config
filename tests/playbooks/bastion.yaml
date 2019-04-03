@@ -5,6 +5,7 @@
       add_host:
         name: "{{ site_windmill_config_bastion.name }}"
         ansible_host: "{{ site_windmill_config_bastion.fqdn }}"
+        ansible_python_interpreter: python3
         ansible_user: "{{ site_windmill_config_bastion.ssh_username }}"
         groups: bastion
 
