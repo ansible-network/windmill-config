@@ -13,6 +13,11 @@
           - ansible/project-config
         untrusted-projects:
           - ansible/ansible-zuul-jobs
+          # Don't load any configuration from these projects because we
+          # don't gate them, so they could wedge our config.
+          - include: []
+            projects:
+              - ansible-network/windmill-config
 
       git.openstack.org:
         untrusted-projects:
