@@ -56,9 +56,11 @@ providers:
           - name: centos-7-1vcpu
             flavor-name: s1.small
             diskimage: centos-7
+            key-name: infra-root-keys
           - name: fedora-29-1vcpu
             flavor-name: s1.small
             diskimage: fedora-29
+            key-name: infra-root-keys
       - name: s1.large
         max-servers: 2
         networks:
@@ -67,9 +69,11 @@ providers:
           - name: centos-7-4vcpu
             flavor-name: s1.large
             diskimage: centos-7
+            key-name: infra-root-keys
           - name: fedora-29-4vcpu
             flavor-name: s1.large
             diskimage: fedora-29
+            key-name: infra-root-keys
 
   - name: limestone-us-slc
     cloud: limestone
