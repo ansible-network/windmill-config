@@ -39,8 +39,6 @@ __windmill_users:
       {{ _windmill_users['windmill'].key }}
       # https://dashboard.zuul.ansible.com/api/tenant/ansible/project-ssh-key/ansible-network/windmill-config.pub
       ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0HlzX4A0i3r+VJjg8T8FCKBrxCg0J9VfYnH41wdtsMj+xJJ+Km9Lf3TBeSsSz/woUDvq0mattTjIsX8muNW2/30Bg4eRKz0lqDXeO5R21cR0TnXp6WVLc5qMYKTxkwZXx7eyeecbWHfZuh9aGpVS7LCSjidrvA5gSe2DGDO3ibgiLZ1kgGmiESOSe/AD0zvZo1ZdfLgAvGLyN8jKKwgqosDlKbhkIwtuVcnBdiMTUxYb8M9U+hXCOIjNfE7PQ3a/qlIUW9pFY+lJRDyv2Q8mAUlL+iaFlhrd87jqpjAV7WVM4S7S3AZddfE0GLOZcgdAhRPlMiCDoenhFlo2f6I5l zuul@zuul.ansible.com
-      # TODO(pabelanger): Remove in a follow up commit
-      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXfZWYKCxQznnrELlXkeHmArdzUJt4CUeKbLNI1dDx1ZDF7xsu+QmSFeXNyLuL8QzZSXw+lgN+DeMiXKuFBvX/xjUXxGWNHF0VKLOdQzcHgkFymX40+2nxxlzOGMYDpihomg6yrSIrkpV63lTB4HVT3pURf5mA8kzj6KD5r+wsX1DFWLrgfPjwMv2mDnzd9jcHP/AvP7sTnaqW6u4TDFEuZSpkbVzLxvhZh3k3zXn3zoPIeIvrXn8ybakobYv+e292Oe29Nt4SYl50AgafrijKLzV+fqiJ8g4rlEYXXfqqWHx2drcIHMI/6RABT6JMuoQuJtt+oMtFKF/jggZ8h/yZ zuul@ansible-network.softwarefactory-project.io
 
 windmill_users: "{{ _windmill_users|combine(__windmill_users, recursive=true) }}"
 
