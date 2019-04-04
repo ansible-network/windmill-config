@@ -8,6 +8,7 @@
       - ansible-network/windmill-config
       - ansible/project-config
     required-projects:
+      - name: github.com/ansible-network/windmill-config
       - name: github.com/ansible/project-config
       - name: git.openstack.org/openstack/windmill
       - name: git.openstack.org/openstack/windmill-backup
