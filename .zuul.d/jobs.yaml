@@ -12,8 +12,6 @@
       - name: git.openstack.org/openstack/windmill
       - name: git.openstack.org/openstack/windmill-backup
       - name: git.openstack.org/openstack/windmill-ops
-    secrets:
-      - site_windmill_config_bastion
     semaphore: windmill-config-deploy
     nodeset:
       nodes: []
