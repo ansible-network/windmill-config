@@ -17,6 +17,7 @@
           # After this point, sorting projects alphabetically will help
           # merge conflicts
           - ansible-network/arista_eos
+          - ansible-network/sandbox
           - ansible-network/windmill-config
 
       git.openstack.org:
