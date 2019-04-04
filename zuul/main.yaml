@@ -12,7 +12,11 @@
         config-projects:
           - ansible/project-config
         untrusted-projects:
+          # Order matters, load common job repos first
           - ansible/ansible-zuul-jobs
+          # After this point, sorting projects alphabetically will help
+          # merge conflicts
+          - ansible-network/arista_eos
           - ansible-network/windmill-config
 
       git.openstack.org:
