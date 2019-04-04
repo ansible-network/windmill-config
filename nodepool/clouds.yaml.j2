@@ -19,6 +19,18 @@ clouds:
       - us-dfw-1
       - us-slc
 
+  vexxhost:
+    profile: vexxhost
+    auth:
+      password: {{ __nodepool_clouds_yaml_vexxhost_password }}
+      username: {{ __nodepool_clouds_yaml_vexxhost_username }}
+      project_name: {{ __nodepool_clouds_yaml_vexxhost_project_name }}
+      project_domain_id: default
+      user_domain_id: default
+    regions:
+      - ca-ymq-1
+      - sjc1
+
   vexxhost-ansible-network:
     profile: vexxhost
     auth:
