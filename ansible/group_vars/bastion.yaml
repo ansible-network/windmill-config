@@ -38,7 +38,9 @@ __windmill_users:
     key: |
       {{ _windmill_users['windmill'].key }}
       # https://dashboard.zuul.ansible.com/api/tenant/ansible/project-ssh-key/ansible-network/windmill-config.pub
-      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0HlzX4A0i3r+VJjg8T8FCKBrxCg0J9VfYnH41wdtsMj+xJJ+Km9Lf3TBeSsSz/woUDvq0mattTjIsX8muNW2/30Bg4eRKz0lqDXeO5R21cR0TnXp6WVLc5qMYKTxkwZXx7eyeecbWHfZuh9aGpVS7LCSjidrvA5gSe2DGDO3ibgiLZ1kgGmiESOSe/AD0zvZo1ZdfLgAvGLyN8jKKwgqosDlKbhkIwtuVcnBdiMTUxYb8M9U+hXCOIjNfE7PQ3a/qlIUW9pFY+lJRDyv2Q8mAUlL+iaFlhrd87jqpjAV7WVM4S7S3AZddfE0GLOZcgdAhRPlMiCDoenhFlo2f6I5l zuul@zuul.ansible.com
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0HlzX4A0i3r+VJjg8T8FCKBrxCg0J9VfYnH41wdtsMj+xJJ+Km9Lf3TBeSsSz/woUDvq0mattTjIsX8muNW2/30Bg4eRKz0lqDXeO5R21cR0TnXp6WVLc5qMYKTxkwZXx7eyeecbWHfZuh9aGpVS7LCSjidrvA5gSe2DGDO3ibgiLZ1kgGmiESOSe/AD0zvZo1ZdfLgAvGLyN8jKKwgqosDlKbhkIwtuVcnBdiMTUxYb8M9U+hXCOIjNfE7PQ3a/qlIUW9pFY+lJRDyv2Q8mAUlL+iaFlhrd87jqpjAV7WVM4S7S3AZddfE0GLOZcgdAhRPlMiCDoenhFlo2f6I5l windmill-config@dashboard.zuul.ansible.com
+      # https://dashboard.zuul.ansible.com/api/tenant/ansible/project-ssh-key/ansible/project-config.pub
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1fEzrwxLpfjuMBkx6GUzCZF/CgHfzkX46tsEeyKeEKsRwuYD0PKen9OLNj+ZSeNEeFBGWxrIZvGLI/7DXsKhkOSNGJHHTRFdAxNNrJKscOFac2zeSNv74DFVzjCPynNf18zfn/EhPeMwvsX8wzR8rn7/+DzGrOvm9EOivrn4324qiiJ191apK/C9igek19NBvTh8DB1wwFSOINzEjfEBQ5te1AzV6xqKFFtJBNJ1Va/Vsp3WsBWUmRXhQpK5AQzsgCXc5GDaKB4VJKbtHq8EoZaw8VbMTtq8dILhwcTyD6VFo3kxYIit9qCYU2st3/TnZ74uZ2/joJvZ8kPjEMh8/ project-config@dashboard.zuul.ansible.com
 
 windmill_users: "{{ _windmill_users|combine(__windmill_users, recursive=true) }}"
 
