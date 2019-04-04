@@ -13,7 +13,7 @@
 # windmill.zuul
 zuul_user_shell: /bin/bash
 
-zuul_file_main_yaml_src: "{{ windmill_config_git_dest }}/zuul/main.yaml"
+zuul_file_main_yaml_src: "{{ project_config_git_dest }}/zuul/tenants.yaml"
 zuul_file_zuul_conf_src: "{{ windmill_config_git_dest }}/zuul/zuul.conf.j2"
 
 zuul_pip_version: 3.7.1

@@ -15,6 +15,10 @@ ansible_python_interpreter: python3
 # windmill.virtualenv
 virtualenv_install_method: package
 
+# project-config
+# TODO(pabelanger): Create project-config project on git.o.o?
+project_config_git_dest: ~/src/github.com/ansible/project-config
+
 # windmill-config
 # TODO(pabelanger): Create windmill-config project on git.o.o.
 windmill_config_git_dest: ~/.config/windmill
