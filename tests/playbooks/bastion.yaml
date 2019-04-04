@@ -1,15 +1,19 @@
 ---
 - hosts: localhost
+  vars:
+    bastion_hostname: bastion01.sjc1.vexxhost.zuul.ansible.com
+    bastion_ssh_user: windmill
+    bastion_ssh_host_key: "{{ bastion_hostname }} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJwUngYI3KGYjZ3kFlX11bo3OS/ZS92wKQGEnIoQjxgS"
+
   tasks:
     - name: Add bastion server
       add_host:
-        name: "{{ site_windmill_config_bastion.name }}"
-        ansible_host: "{{ site_windmill_config_bastion.fqdn }}"
+        name: "{{ bastion_hostname }}"
         ansible_python_interpreter: python3
-        ansible_user: "{{ site_windmill_config_bastion.ssh_username }}"
+        ansible_user: "{{ bastion_ssh_user }}"
         groups: bastion
 
     - name: Add bastion server to known hosts
       known_hosts:
-        name: "{{ site_windmill_config_bastion.fqdn }}"
-        key: "{{ site_windmill_config_bastion.ssh_known_hosts }}"
+        name: "{{ bastion_hostname }}"
+        key: "{{ bastion_ssh_host_key }}"
