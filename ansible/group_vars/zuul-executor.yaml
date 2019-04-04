@@ -30,11 +30,11 @@ zuul_executor_ansible:
     ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.5.15
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.5
   - ansible_pip_name:
-      - ansible==2.6.15
+      - ansible==2.6.16
       - ara
       - openstacksdk
     ansible_pip_virtualenv_python: python3
-    ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.6.15
+    ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.6.16
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.6
   - ansible_pip_name:
       - ansible==2.7.9
