@@ -6,6 +6,7 @@
     post-run: tests/playbooks/post.yaml
     allowed-projects:
       - github.com/ansible-network/windmill-config
+      - github.com/ansible/project-config
     required-projects:
       - name: github.com/ansible/project-config
       - name: git.openstack.org/openstack/windmill
