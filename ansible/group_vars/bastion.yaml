@@ -13,11 +13,11 @@
 # under the License.
 ---
 ansible_pip_name:
-  - ansible==2.7.9
+  - ansible==2.7.10
   - ara
   - netaddr
 ansible_pip_virtualenv_python: python3
-ansible_pip_virtualenv: /opt/venv/ansible-2.7.9
+ansible_pip_virtualenv: /opt/venv/ansible-2.7.10
 ansible_pip_virtualenv_symlink: /opt/venv/ansible
 
 borgbackup_user_groups: windmill
