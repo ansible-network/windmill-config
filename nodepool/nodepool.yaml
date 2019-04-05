@@ -24,6 +24,12 @@ providers:
     rate: 0.001
     diskimages: *provider_diskimages
 
+  - name: vexxhost-ca-ymq-1
+    cloud: vexxhost
+    region-name: ca-ymq-1
+    rate: 0.001
+    diskimages: *provider_diskimages
+
   - name: vexxhost-ansible-network-mtl1
     cloud: vexxhost-ansible-network
     region-name: 'ca-ymq-1'
