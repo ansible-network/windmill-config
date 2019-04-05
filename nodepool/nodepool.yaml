@@ -15,8 +15,6 @@ providers:
         config-drive: true
       - name: fedora-29
         config-drive: true
-      - name: ubuntu-bionic
-        config-drive: true
 
   - name: limestone-us-slc
     cloud: limestone
