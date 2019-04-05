@@ -17,8 +17,6 @@ labels:
     max-ready-age: 600
   - name: fedora-29-4vcpu
     max-ready-age: 600
-  - name: ubuntu-bionic-1vcpu
-    max-ready-age: 600
 
 providers:
   - name: vexxhost-ansible-network-sjc1
