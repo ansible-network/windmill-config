@@ -33,4 +33,3 @@ providers:
 diskimages:
   - name: centos-7
   - name: fedora-29
-  - name: ubuntu-bionic
