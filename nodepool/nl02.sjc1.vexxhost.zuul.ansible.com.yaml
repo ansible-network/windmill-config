@@ -19,6 +19,53 @@ labels:
     max-ready-age: 600
 
 providers:
+  - name: vexxhost-ca-ymq-1
+    cloud: vexxhost
+    region-name: ca-ymq-1
+    boot-timeout: 120
+    launch-timeout: 300
+    rate: 0.001
+    diskimages: &provider_vexxhost_diskimages
+      - name: centos-7
+        config-drive: true
+      - name: fedora-29
+        config-drive: true
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: v2-highcpu-1
+        max-servers: 8
+        labels: &provider_vexxhost_pools_v2_highcpu_1_labels
+          - name: centos-7-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: centos-7
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: fedora-29-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: fedora-29
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+      - name: v2-highcpu-4
+        max-servers: 2
+        labels: &provider_vexxhost_pools_v2_highcpu_4_labels
+          - name: centos-7-4vcpu
+            flavor-name: v2-highcpu-4
+            diskimage: centos-7
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: fedora-29-4vcpu
+            flavor-name: v2-highcpu-4
+            diskimage: fedora-29
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+
   - name: vexxhost-ansible-network-sjc1
     cloud: vexxhost-ansible-network
     region-name: sjc1
