@@ -17,6 +17,8 @@ labels:
     max-ready-age: 600
   - name: fedora-29-4vcpu
     max-ready-age: 600
+  - name: vyos-1.1.8-1vcpu
+    max-ready-age: 600
 
 providers:
   - name: vexxhost-ca-ymq-1
@@ -29,6 +31,9 @@ providers:
       - name: centos-7
         config-drive: true
       - name: fedora-29
+        config-drive: true
+    cloud-images:
+      - name: vyos-1.1.8-20190407
         config-drive: true
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
@@ -47,6 +52,12 @@ providers:
           - name: fedora-29-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-29
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: vyos-1.1.8-1vcpu
+            flavor-name: v2-highcpu-1
+            cloud-image: vyos-1.1.8-20190407
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
