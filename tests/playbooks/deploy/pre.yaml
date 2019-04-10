@@ -1,5 +1,5 @@
 ---
-- import_playbook: bastion.yaml
+- import_playbook: ../bastion.yaml
 
 - hosts: bastion
   tasks:
