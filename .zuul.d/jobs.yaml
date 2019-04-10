@@ -28,5 +28,6 @@
 - job:
     name: project-config-github-promote
     parent: windmill-config-promote-base
+    run: tests/playbooks/project-config-github-promote/run.yaml
     required-projects:
       - name: github.com/ansible/project-config

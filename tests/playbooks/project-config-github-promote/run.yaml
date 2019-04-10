@@ -1,0 +1,7 @@
+---
+- import_playbook: ../bastion.yaml
+
+- hosts: bastion
+  tasks:
+    - name: hello
+      shell: echo world
