@@ -3,5 +3,13 @@
 
 - hosts: bastion
   tasks:
-    - name: hello
-      shell: echo world
+    - name: Bootstrap tox environment
+      args:
+        chdir: ~/src/github.com/ansible/project-config
+      shell: "{{ ansible_user_dir }}/.local/bin/tox -v -evenv --notest"
+
+    - name: Promote ansible/project-config github/projects.yaml
+      args:
+        chdir: ~/src/github.com/ansible/project-config
+        executable: /bin/bash
+      shell: source .tox/venv/bin/activate; ./tools/manage-projects.py
