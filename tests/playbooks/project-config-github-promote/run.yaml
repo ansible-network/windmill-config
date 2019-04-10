@@ -4,8 +4,8 @@
 - hosts: bastion
   tasks:
     - name: Ensure tox is installed
+      become: true
       package:
-        become: true
         name: tox
         state: present
 
