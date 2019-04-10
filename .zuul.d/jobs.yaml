@@ -3,7 +3,7 @@
     name: windmill-config-promote-base
     abstract: true
     pre-run: tests/playbooks/promote-base/pre.yaml
-    post-run: tests/playbooks/deploy/post.yaml
+    post-run: tests/playbooks/promote-base/post.yaml
     allowed-projects:
       - ansible-network/windmill-config
       - ansible/project-config
