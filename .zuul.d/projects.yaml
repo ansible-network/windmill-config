@@ -7,4 +7,5 @@
         - windmill-config-deploy
     promote:
       jobs:
+        - project-config-github-promote
         - windmill-config-deploy

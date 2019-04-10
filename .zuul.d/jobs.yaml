@@ -1,18 +1,32 @@
 ---
 - job:
-    name: windmill-config-deploy
-    pre-run: tests/playbooks/deploy/pre.yaml
-    run: tests/playbooks/deploy/run.yaml
+    name: windmill-config-promote-base
+    abstract: true
+    pre-run: tests/playbooks/promote-base/pre.yaml
     post-run: tests/playbooks/deploy/post.yaml
     allowed-projects:
       - ansible-network/windmill-config
       - ansible/project-config
+    nodeset:
+      nodes: []
+    semaphore: windmill-config-deploy
+
+- job:
+    name: windmill-config-deploy
+    parent: windmill-config-promote-base
+    run: tests/playbooks/deploy/run.yaml
+    dependencies:
+      - name: project-config-github-promote
+        soft: true
     required-projects:
       - name: github.com/ansible-network/windmill-config
       - name: github.com/ansible/project-config
       - name: git.openstack.org/openstack/windmill
       - name: git.openstack.org/openstack/windmill-backup
       - name: git.openstack.org/openstack/windmill-ops
-    semaphore: windmill-config-deploy
-    nodeset:
-      nodes: []
+
+- job:
+    name: project-config-github-promote
+    parent: windmill-config-promote-base
+    required-projects:
+      - name: github.com/ansible/project-config
