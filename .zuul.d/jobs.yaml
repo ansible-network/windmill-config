@@ -31,3 +31,6 @@
     run: tests/playbooks/project-config-github-promote/run.yaml
     required-projects:
       - name: github.com/ansible/project-config
+    files:
+      - github/projects.yaml
+      - tools/manage-projects.py
