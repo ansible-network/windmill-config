@@ -35,6 +35,7 @@ providers:
     cloud-images:
       - name: vyos-1.1.8-20190407
         config-drive: true
+        connection-type: network_cli
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
