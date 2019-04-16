@@ -34,6 +34,12 @@ forward-zone:
   forward-addr: $NODEPOOL_STATIC_NAMESERVER_V4_FALLBACK
 EOF
 
-mv /tmp/forwarding.conf /etc/unbound/conf.d
-chown root:root /etc/unbound/conf.d/forwarding.conf
-chmod 0644 /etc/unbound/conf.d/forwarding.conf
+if [[ "$DISTRO_NAME" =~ (centos|fedora) ]]; then
+    FORWARD_FILE="/etc/unbound/conf.d/forwarding.conf"
+else
+    FORWARD_FILE="/etc/unbound/unbound.conf.d/forwarding.conf"
+fi
+
+mv /tmp/forwarding.conf $FORWARD_FILE
+chown root:root $FORWARD_FILE
+chmod 0644 $FORWARD_FILE
