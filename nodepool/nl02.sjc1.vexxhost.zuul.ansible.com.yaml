@@ -32,7 +32,7 @@ providers:
         config-drive: true
       - name: fedora-29
         config-drive: true
-    cloud-images:
+    cloud-images: &provider_vexxhost_cloud-images
       - name: vyos-1.1.8-20190407
         config-drive: true
     pools:
@@ -76,6 +76,26 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+
+  - name: vexxhost-sjc1
+    cloud: vexxhost
+    region-name: sjc1
+    boot-timeout: 120
+    launch-timeout: 300
+    rate: 0.001
+    diskimages: *provider_vexxhost_diskimages
+    cloud-images: *provider_vexxhost_cloud-images
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: v2-highcpu-1
+        max-servers: 8
+        labels: *provider_vexxhost_pools_v2_highcpu_1_labels
+      - name: v2-highcpu-4
+        max-servers: 2
+        labels: *provider_vexxhost_pools_v2_highcpu_4_labels
 
   - name: vexxhost-ansible-network-sjc1
     cloud: vexxhost-ansible-network

@@ -28,6 +28,12 @@ providers:
     rate: 0.001
     diskimages: *provider_diskimages
 
+  - name: vexxhost-sjc1
+    cloud: vexxhost
+    region-name: sjc1
+    rate: 0.001
+    diskimages: *provider_diskimages
+
   - name: vexxhost-ansible-network-mtl1
     cloud: vexxhost-ansible-network
     region-name: 'ca-ymq-1'
