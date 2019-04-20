@@ -28,7 +28,7 @@
       always:
         - name: Generate static HTML for ARA results
           args:
-            chdir: ~/src/git.openstack.org/openstack/windmill
+            chdir: ~/src/github.com/ansible-network/windmill-config
           shell: "/opt/venv/ansible/bin/ara generate html {{ tmp_logs.path }}/ara-report"
 
         - name: Ensure zuul-output directory exists
