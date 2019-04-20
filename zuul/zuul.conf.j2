@@ -90,3 +90,11 @@ password = {{ __zuul_conf_connection_openstack_password }}
 server = review.openstack.org
 sshkey = {{ zuul_user_home }}/.ssh/gerrit_id_rsa
 user = CaptPants
+
+[connection opendev.org]
+canonical_hostname = opendev.org
+driver = gerrit
+password = {{ __zuul_conf_connection_opendev_password }}
+server = review.opendev.org
+sshkey = {{ zuul_user_home }}/.ssh/gerrit_id_rsa
+user = CaptPants
