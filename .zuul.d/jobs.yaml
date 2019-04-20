@@ -23,9 +23,9 @@
     required-projects:
       - name: github.com/ansible-network/windmill-config
       - name: github.com/ansible/project-config
-      - name: git.openstack.org/openstack/windmill
-      - name: git.openstack.org/openstack/windmill-backup
-      - name: git.openstack.org/openstack/windmill-ops
+      - name: opendev.org/windmill/windmill
+      - name: opendev.org/windmill/windmill-backup
+      - name: opendev.org/windmill/windmill-ops
 
 - job:
     name: windmill-config-dns-promote

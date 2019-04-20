@@ -31,30 +31,30 @@
         executable: /bin/bash
       shell: source /opt/venv/ansible/bin/activate; ./tools/install_roles.sh --force
       with_items:
-        - ~/src/git.openstack.org/openstack/windmill-ops
-        - ~/src/git.openstack.org/openstack/windmill
-        - ~/src/git.openstack.org/openstack/windmill-backup
+        - ~/src/opendev.org/windmill/windmill-ops
+        - ~/src/opendev.org/windmill/windmill
+        - ~/src/opendev.org/windmill/windmill-backup
 
     - block:
         - name: Deploy windmill-ops with ansible-playbook
           args:
-            chdir: ~/src/git.openstack.org/openstack/windmill-ops
+            chdir: ~/src/opendev.org/windmill/windmill-ops
           shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/bootstrap/site.yaml
 
         - name: Deploy windmill with ansible-playbook
           args:
-            chdir: ~/src/git.openstack.org/openstack/windmill
+            chdir: ~/src/opendev.org/windmill/windmill
           shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/site.yaml
 
         - name: Deploy windmill-backup with ansible-playbook
           args:
-            chdir: ~/src/git.openstack.org/openstack/windmill-backup
+            chdir: ~/src/opendev.org/windmill/windmill-backup
           shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/site.yaml
 
       always:
         - name: Generate static HTML for ARA results
           args:
-            chdir: ~/src/git.openstack.org/openstack/windmill
+            chdir: ~/src/opendev.org/windmill/windmill
           shell: "/opt/venv/ansible/bin/ara generate html {{ tmp_logs.path }}/ara-report"
 
         - name: Ensure zuul-output directory exists
