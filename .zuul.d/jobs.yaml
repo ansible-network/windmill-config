@@ -18,12 +18,21 @@
     dependencies:
       - name: project-config-github-promote
         soft: true
+      - name: windmill-config-dns-promote
+        soft: true
     required-projects:
       - name: github.com/ansible-network/windmill-config
       - name: github.com/ansible/project-config
       - name: git.openstack.org/openstack/windmill
       - name: git.openstack.org/openstack/windmill-backup
       - name: git.openstack.org/openstack/windmill-ops
+
+- job:
+    name: windmill-config-dns-promote
+    parent: windmill-config-promote-base
+    run: tests/playbooks/windmill-config-dns-promote/run.yaml
+    required-projects:
+      - name: github.com/ansible-network/windmill-config
 
 - job:
     name: project-config-github-promote

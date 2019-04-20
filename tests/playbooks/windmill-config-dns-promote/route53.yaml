@@ -1,0 +1,28 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Update route53 A records
+      route53:
+        state: present
+        overwrite: true
+        record: "{{ item }}"
+        type: A
+        value: "{{ hostvars[item].node_attributes.public_ipv4 }}"
+        wait: true
+        zone: zuul.ansible.com
+      when: hostvars[item].node_attributes.public_ipv4
+      with_inventory_hostnames:
+        - all
+
+    - name: Update route53 AAAA records
+      route53:
+        state: present
+        overwrite: true
+        record: "{{ item }}"
+        type: AAAA
+        value: "{{ hostvars[item].node_attributes.public_ipv6 }}"
+        wait: true
+        zone: zuul.ansible.com
+      when: hostvars[item].node_attributes.public_ipv6
+      with_inventory_hostnames:
+        - all

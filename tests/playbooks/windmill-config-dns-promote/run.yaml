@@ -1,0 +1,20 @@
+---
+- import_playbook: ../bastion.yaml
+
+- hosts: bastion
+  tasks:
+    - name: Ensure tox is installed
+      become: true
+      package:
+        name: tox
+        state: present
+
+    - name: Bootstrap tox environment
+      args:
+        chdir: ~/src/github.com/ansible-network/windmill-config
+      shell: tox -v -evenv --notest
+
+    - name: Promote DNS in route53
+      args:
+        chdir: ~/src/github.com/ansible-network/windmill-config
+      shell: .tox/venv/bin/ansible-playbook -v tests/playbooks/windmill-config-dns-promote/route53.yaml

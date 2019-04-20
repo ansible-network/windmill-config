@@ -9,3 +9,4 @@
       jobs:
         - project-config-github-promote
         - windmill-config-deploy
+        - windmill-config-dns-promote
