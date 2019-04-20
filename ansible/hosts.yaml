@@ -23,7 +23,7 @@ all:
       ansible_user: windmill
       node_attributes:
         public_ipv4: 38.108.68.31
-        public_ipv6: ''
+        public_ipv6: 2604:e100:3:0:f816:3eff:feac:868f
 
     nb01.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.114
