@@ -31,7 +31,7 @@ all:
       ansible_user: windmill
       node_attributes:
         public_ipv4: 38.108.68.114
-        public_ipv6: ''
+        public_ipv6: 2604:e100:3:0:f816:3eff:fea7:9296
 
     nb02.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.47
@@ -39,7 +39,7 @@ all:
       ansible_user: windmill
       node_attributes:
         public_ipv4: 38.108.68.47
-        public_ipv6: ''
+        public_ipv6: 2604:e100:3:0:f816:3eff:fe8e:94a8
 
     nl01.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.97
@@ -47,7 +47,7 @@ all:
       ansible_user: windmill
       node_attributes:
         public_ipv4: 38.108.68.97
-        public_ipv6: ''
+        public_ipv6: 2604:e100:3:0:f816:3eff:fe45:26e6
 
     nl02.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.81
@@ -55,7 +55,7 @@ all:
       ansible_user: windmill
       node_attributes:
         public_ipv4: 38.108.68.81
-        public_ipv6: ''
+        public_ipv6: 2604:e100:3:0:f816:3eff:fe9c:fd0
 
     statsd01.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.137
