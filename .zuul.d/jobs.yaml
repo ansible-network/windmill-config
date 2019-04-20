@@ -33,6 +33,9 @@
     run: tests/playbooks/windmill-config-dns-promote/run.yaml
     required-projects:
       - name: github.com/ansible-network/windmill-config
+    files:
+      - ansible/hosts.yaml
+      - tests/playbooks/windmill-config-dns-promote/.*
 
 - job:
     name: project-config-github-promote
