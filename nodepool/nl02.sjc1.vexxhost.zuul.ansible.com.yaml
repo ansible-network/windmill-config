@@ -42,8 +42,8 @@ providers:
       # Ansible org.
       - name: v2-highcpu-1
         networks:
-          - private
           - public
+          - private
         max-servers: 8
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
           - name: centos-7-1vcpu
@@ -66,8 +66,8 @@ providers:
             volume-size: 80
       - name: v2-highcpu-4
         networks:
-          - private
           - public
+          - private
         max-servers: 2
         labels: &provider_vexxhost_pools_v2_highcpu_4_labels
           - name: centos-7-4vcpu
