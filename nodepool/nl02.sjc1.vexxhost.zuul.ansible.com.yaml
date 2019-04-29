@@ -41,9 +41,10 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: v2-highcpu-1
-        networks:
+        networks: &provider_vexxhost_pools_v2_highcpu_1_networks
           - public
-          - private
+          - net1
+          - net2
         max-servers: 8
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
           - name: centos-7-1vcpu
@@ -65,9 +66,6 @@ providers:
             boot-from-volume: true
             volume-size: 80
       - name: v2-highcpu-4
-        networks:
-          - public
-          - private
         max-servers: 2
         labels: &provider_vexxhost_pools_v2_highcpu_4_labels
           - name: centos-7-4vcpu
@@ -97,6 +95,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: v2-highcpu-1
+        networks: *provider_vexxhost_pools_v2_highcpu_1_networks
         max-servers: 8
         labels: *provider_vexxhost_pools_v2_highcpu_1_labels
       - name: v2-highcpu-4
