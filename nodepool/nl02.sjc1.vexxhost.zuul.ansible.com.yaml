@@ -9,6 +9,8 @@ images-dir: /opt/nodepool/images
 # nl01 will manage min-ready of our labels.  If nl01 is ever disabled, another
 # launcher will need to assume this logic.
 labels:
+  - name: eos-4.20.10
+    max-ready-age: 600
   - name: centos-7-1vcpu
     max-ready-age: 600
   - name: centos-7-4vcpu
@@ -50,7 +52,7 @@ providers:
         max-servers: 8
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
           - name: eos-4.20.10
-            flavor: v1-standard-2
+            flavor-name: v1-standard-2
             cloud-image: vEOS-4.20.10M-20190501
             key-name: infra-root-keys
           - name: centos-7-1vcpu
