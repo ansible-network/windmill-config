@@ -38,6 +38,7 @@ providers:
       - name: vEOS-4.20.10M-20190501
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
+        connection-type: network_cli
       - name: vyos-1.1.8-20190407
         config-drive: true
     pools:
