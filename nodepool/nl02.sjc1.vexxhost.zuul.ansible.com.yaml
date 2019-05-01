@@ -33,6 +33,8 @@ providers:
       - name: fedora-29
         config-drive: true
     cloud-images: &provider_vexxhost_cloud-images
+      - name: vEOS-4.20.10M-20190501
+        config-drive: true
       - name: vyos-1.1.8-20190407
         config-drive: true
     pools:
@@ -47,6 +49,10 @@ providers:
           - net2
         max-servers: 8
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
+          - name: eos-4.20.10
+            flavor: v1-standard-2
+            cloud-image: vEOS-4.20.10M-20190501
+            key-name: infra-root-keys
           - name: centos-7-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: centos-7
