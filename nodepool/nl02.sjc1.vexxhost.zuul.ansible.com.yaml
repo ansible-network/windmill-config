@@ -26,7 +26,7 @@ providers:
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
     region-name: ca-ymq-1
-    boot-timeout: 120
+    boot-timeout: 300
     launch-timeout: 300
     rate: 0.001
     diskimages: &provider_vexxhost_diskimages
@@ -92,7 +92,7 @@ providers:
   - name: vexxhost-sjc1
     cloud: vexxhost
     region-name: sjc1
-    boot-timeout: 120
+    boot-timeout: 300
     launch-timeout: 300
     rate: 0.001
     diskimages: *provider_vexxhost_diskimages
