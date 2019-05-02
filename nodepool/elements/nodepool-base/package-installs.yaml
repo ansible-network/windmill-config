@@ -2,4 +2,5 @@
 haveged:
 ntp:
 ntpdate:
+tox:
 unbound:

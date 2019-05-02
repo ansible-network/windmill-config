@@ -2,10 +2,14 @@
   "distro": {
     "centos": {
       "haveged": ""
+    },
+    "fedora": {
+      "tox": "python3-tox"
     }
   },
   "default": {
     "haveged": "haveged",
+    "tox": "tox",
     "unbound": "unbound"
   }
 }
