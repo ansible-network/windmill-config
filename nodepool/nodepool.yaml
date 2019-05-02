@@ -83,6 +83,7 @@ diskimages:
       QEMU_IMG_OPTIONS: compat=0.10
 
   - name: fedora-30
+    pause: true
     elements:
       - fedora-minimal
       - growroot
