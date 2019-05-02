@@ -76,6 +76,7 @@ diskimages:
     env-vars:
       DIB_CHECKSUM: '1'
       DIB_GRUB_TIMEOUT: '0'
+      DIB_INSTALLTYPE_pip_and_virtualenv: 'package'
       DIB_RELEASE: '29'
       QEMU_IMG_OPTIONS: compat=0.10
 
@@ -92,4 +93,5 @@ diskimages:
       TMPDIR: /opt/nodepool/tmp
       DIB_CHECKSUM: '1'
       DIB_DEBIAN_COMPONENTS: 'main,universe'
+      DIB_INSTALLTYPE_pip_and_virtualenv: 'package'
       QEMU_IMG_OPTIONS: compat=0.10
