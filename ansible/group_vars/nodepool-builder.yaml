@@ -11,7 +11,7 @@
 # under the License.
 ---
 # windmill.diskimage-builder
-diskimage_builder_pip_version: 2.19.0
+diskimage_builder_pip_version: 2.21.0
 diskimage_builder_pip_virtualenv_python: python3
 diskimage_builder_pip_virtualenv: "{{ nodepool_pip_virtualenv }}"
 
