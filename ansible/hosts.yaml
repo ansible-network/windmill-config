@@ -121,6 +121,14 @@ all:
         public_ipv4: 38.108.68.159
         public_ipv6: 2604:e100:3:0:f816:3eff:fea0:60c8
 
+    zm03.sjc1.vexxhost.zuul.ansible.com:
+      ansible_host: 38.108.68.132
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIHtE8xNk3bjj2eDID/Vtm+CXPO2QM9+LP/mvZ/VWqp4L
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 38.108.68.132
+        public_ipv6: 2604:e100:3:0:f816:3eff:fe00:f625
+
     zs01.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.61
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAICknumOQvR11O5j2BCACtrgcXxloen//i9GGmENDCp8o
@@ -241,6 +249,7 @@ all:
       hosts:
         zm01.sjc1.vexxhost.zuul.ansible.com:
         zm02.sjc1.vexxhost.zuul.ansible.com:
+        zm03.sjc1.vexxhost.zuul.ansible.com:
 
     zuul-scheduler:
       hosts:
