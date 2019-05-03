@@ -174,7 +174,9 @@ all:
 
     # NOTE(pabelanger): Hosts added to the disabled group will not have
     # playbooks run against them.
-    disabled: {}
+    disabled:
+      hosts:
+        zm02.sjc1.vexxhost.zuul.ansible.com:
 
     # NOTE(pabelanger): We currently only support a single gear host in this
     # group.  This means, the first host listed will only be used by our
