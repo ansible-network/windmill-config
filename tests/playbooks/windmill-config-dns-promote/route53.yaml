@@ -12,7 +12,7 @@
         zone: zuul.ansible.com
       when: hostvars[item].node_attributes.public_ipv4
       with_inventory_hostnames:
-        - all
+        - all:!disabled
 
     - name: Update route53 AAAA records
       route53:
@@ -25,4 +25,4 @@
         zone: zuul.ansible.com
       when: hostvars[item].node_attributes.public_ipv6
       with_inventory_hostnames:
-        - all
+        - all:!disabled
