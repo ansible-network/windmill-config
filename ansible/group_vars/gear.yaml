@@ -187,6 +187,10 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 4730
 
+  - address: zm03.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 4730
+
   # zuul-scheduler
   - address: zs01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
