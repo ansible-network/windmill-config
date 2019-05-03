@@ -26,5 +26,5 @@ YUM=${YUM:-yum}
 
 if [[ "$DISTRO_NAME" =~ (centos) ]] ; then
     # NOTE(pabelanger): We do this so we don't enable EPEL by default.
-    $YUM -y install --enablerepo=epel haveged python-tox
+    $YUM -y install --enablerepo=epel haveged python-tox python2-pip
 fi
