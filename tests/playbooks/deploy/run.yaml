@@ -39,17 +39,17 @@
         - name: Deploy windmill-ops with ansible-playbook
           args:
             chdir: ~/src/opendev.org/windmill/windmill-ops
-          shell: /opt/venv/ansible/bin/ansible-playbook -vvvv playbooks/bootstrap/site.yaml
+          shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/bootstrap/site.yaml
 
         - name: Deploy windmill with ansible-playbook
           args:
             chdir: ~/src/opendev.org/windmill/windmill
-          shell: /opt/venv/ansible/bin/ansible-playbook -vvvv playbooks/site.yaml
+          shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/site.yaml
 
         - name: Deploy windmill-backup with ansible-playbook
           args:
             chdir: ~/src/opendev.org/windmill/windmill-backup
-          shell: /opt/venv/ansible/bin/ansible-playbook -vvvv playbooks/site.yaml
+          shell: /opt/venv/ansible/bin/ansible-playbook -v playbooks/site.yaml
 
       always:
         - name: Generate static HTML for ARA results
