@@ -64,6 +64,7 @@ diskimages:
       DIB_CHECKSUM: '1'
       DIB_EPEL_DISABLED: '1'
       DIB_GRUB_TIMEOUT: '0'
+      DIB_INSTALLTYPE_pip_and_virtualenv: 'package'
       DIB_SIMPLE_INIT_NETWORKMANAGER: '1'
       QEMU_IMG_OPTIONS: compat=0.10
 

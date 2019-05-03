@@ -1,7 +1,8 @@
 {
   "distro": {
     "centos": {
-      "haveged": ""
+      "haveged": "",
+      "tox": ""
     },
     "fedora": {
       "tox": "python3-tox python2-pip"
