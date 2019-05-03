@@ -4,7 +4,7 @@
       "haveged": ""
     },
     "fedora": {
-      "tox": "python3-tox"
+      "tox": "python3-tox python2-pip"
     }
   },
   "default": {
