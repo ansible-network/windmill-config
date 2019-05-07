@@ -41,6 +41,11 @@ providers:
         config-drive: true
       - name: fedora-29
         config-drive: true
+    cloud-images: &provider_limestone_cloud-images
+      - name: vEOS-4.20.10M-20190501
+        # NOTE(pabelanger): This seems to mess up the boot-loader for eos
+        config-drive: false
+        connection-type: network_cli
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
@@ -50,7 +55,12 @@ providers:
         max-servers: 8
         networks:
           - Public Internet
+          - Private Network (10.0.0.0/8 only)
+          - Private Network (Floating Public)
         labels: &provider_limestone_pools_s1_small_labels
+          - name: eos-4.20.10
+            flavor-name: s1.small
+            cloud-image: vEOS-4.20.10M-20190501
           - name: centos-7-1vcpu
             flavor-name: s1.small
             diskimage: centos-7
@@ -80,6 +90,7 @@ providers:
     launch-timeout: 300
     rate: 0.001
     diskimages: *provider_limestone_diskimages
+    cloud-images: *provider_limestone_cloud-images
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
@@ -89,6 +100,8 @@ providers:
         max-servers: 0
         networks:
           - Public Internet
+          - Private Network (10.0.0.0/8 only)
+          - Private Network (Floating Public)
         labels: *provider_limestone_pools_s1_small_labels
       - name: s1.large
         max-servers: 0
