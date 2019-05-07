@@ -99,14 +99,14 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: s1.small
-        max-servers: 8
+        max-servers: 0
         networks:
           - db5d9d4d-74d9-4dee-998c-389be8bf4739
           - 11605176-8693-4aff-bd07-9cbddd331797
           - f25ed0fb-a7d9-4ca9-8ad6-c4ef32b0b551
         labels: *provider_limestone_pools_s1_small_labels
       - name: s1.large
-        max-servers: 2
+        max-servers: 0
         networks:
           - Public Internet
         labels: *provider_limestone_pools_s1_large_labels
