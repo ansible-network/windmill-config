@@ -102,7 +102,7 @@ diskimages:
       QEMU_IMG_OPTIONS: compat=0.10
 
   - name: ubuntu-bionic
-    pause: true
+    pause: false
     elements:
       - ubuntu-minimal
       - growroot
