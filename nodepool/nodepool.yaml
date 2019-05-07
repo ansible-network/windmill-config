@@ -52,7 +52,6 @@ providers:
 
 diskimages:
   - name: centos-7
-    pause: false
     elements:
       - centos-minimal
       - epel
@@ -70,7 +69,6 @@ diskimages:
       QEMU_IMG_OPTIONS: compat=0.10
 
   - name: fedora-29
-    pause: false
     elements:
       - fedora-minimal
       - growroot
@@ -87,7 +85,7 @@ diskimages:
       QEMU_IMG_OPTIONS: compat=0.10
 
   - name: fedora-30
-    pause: false
+    pause: true
     elements:
       - fedora-minimal
       - growroot
