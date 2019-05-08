@@ -50,13 +50,15 @@ providers:
       - name: v2-highcpu-1
         networks: &provider_vexxhost_pools_v2_highcpu_1_networks
           - public
-          - net1
-          - net2
         max-servers: 8
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
           - name: eos-4.20.10
             flavor-name: v1-standard-2
             cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - public
+              - net1
+              - net2
           - name: centos-7-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: centos-7
@@ -75,6 +77,10 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+            networks:
+              - public
+              - net1
+              - net2
       - name: v2-highcpu-4
         max-servers: 2
         labels: &provider_vexxhost_pools_v2_highcpu_4_labels
