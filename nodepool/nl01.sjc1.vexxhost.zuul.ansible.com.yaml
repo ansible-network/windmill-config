@@ -57,12 +57,14 @@ providers:
         max-servers: 8
         networks:
           - Public Internet
-          - Private Network (10.0.0.0/8 only)
-          - Private Network (Floating Public)
         labels: &provider_limestone_pools_s1_small_labels
           - name: eos-4.20.10
             flavor-name: s1.small
             cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
           - name: centos-7-1vcpu
             flavor-name: s1.small
             diskimage: centos-7
@@ -101,9 +103,7 @@ providers:
       - name: s1.small
         max-servers: 0
         networks:
-          - db5d9d4d-74d9-4dee-998c-389be8bf4739
-          - 11605176-8693-4aff-bd07-9cbddd331797
-          - f25ed0fb-a7d9-4ca9-8ad6-c4ef32b0b551
+          - Public Internet
         labels: *provider_limestone_pools_s1_small_labels
       - name: s1.large
         max-servers: 0
