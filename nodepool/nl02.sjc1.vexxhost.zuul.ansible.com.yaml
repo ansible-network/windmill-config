@@ -118,17 +118,6 @@ providers:
         max-servers: 2
         labels: *provider_vexxhost_pools_v2_highcpu_4_labels
 
-  - name: vexxhost-ansible-network-sjc1
-    cloud: vexxhost-ansible-network
-    region-name: sjc1
-    boot-timeout: 120
-    launch-timeout: 300
-    rate: 0.001
-    # NOTE(pabelanger): Strip ansible-network from provider.name to keep
-    # hostname length under 64.
-    hostname-format: '{label.name}-vexxhost-sjc1-{node.id}'
-    diskimages: []
-
 diskimages:
   - name: centos-7
   - name: fedora-29
