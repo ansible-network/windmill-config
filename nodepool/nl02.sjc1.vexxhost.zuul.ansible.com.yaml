@@ -50,7 +50,7 @@ providers:
       - name: v2-highcpu-1
         networks: &provider_vexxhost_pools_v2_highcpu_1_networks
           - public
-        max-servers: 8
+        max-servers: 12
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
           - name: eos-4.20.10
             flavor-name: v1-standard-2
@@ -82,7 +82,7 @@ providers:
               - net1
               - net2
       - name: v2-highcpu-4
-        max-servers: 2
+        max-servers: 3
         labels: &provider_vexxhost_pools_v2_highcpu_4_labels
           - name: centos-7-4vcpu
             flavor-name: v2-highcpu-4
@@ -112,10 +112,10 @@ providers:
       # Ansible org.
       - name: v2-highcpu-1
         networks: *provider_vexxhost_pools_v2_highcpu_1_networks
-        max-servers: 8
+        max-servers: 12
         labels: *provider_vexxhost_pools_v2_highcpu_1_labels
       - name: v2-highcpu-4
-        max-servers: 2
+        max-servers: 3
         labels: *provider_vexxhost_pools_v2_highcpu_4_labels
 
 diskimages:
