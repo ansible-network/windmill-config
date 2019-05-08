@@ -30,15 +30,3 @@ clouds:
     regions:
       - ca-ymq-1
       - sjc1
-
-  vexxhost-ansible-network:
-    profile: vexxhost
-    auth:
-      password: {{ __nodepool_clouds_yaml_vexxhost_ansible_network_password }}
-      username: {{ __nodepool_clouds_yaml_vexxhost_ansible_network_username }}
-      project_name: {{ __nodepool_clouds_yaml_vexxhost_ansible_network_project_name }}
-      project_domain_id: default
-      user_domain_id: default
-    regions:
-      - ca-ymq-1
-      - sjc1
