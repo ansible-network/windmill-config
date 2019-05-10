@@ -19,6 +19,10 @@ labels:
     max-ready-age: 600
   - name: fedora-29-4vcpu
     max-ready-age: 600
+  - name: ubuntu-bionic-1vcpu
+    max-ready-age: 600
+  - name: ubuntu-bionic-4vcpu
+    max-ready-age: 600
 
 providers:
   - name: limestone-us-dfw-1
@@ -62,6 +66,10 @@ providers:
             flavor-name: s1.small
             diskimage: fedora-29
             key-name: infra-root-keys
+          - name: ubuntu-bionic-1vcpu
+            flavor-name: s1.small
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
       - name: s1.large
         max-servers: 2
         networks:
@@ -74,6 +82,10 @@ providers:
           - name: fedora-29-4vcpu
             flavor-name: s1.large
             diskimage: fedora-29
+            key-name: infra-root-keys
+          - name: ubuntu-bionic-4vcpu
+            flavor-name: s1.large
+            diskimage: ubuntu-bionic
             key-name: infra-root-keys
 
   - name: limestone-us-slc
@@ -103,3 +115,4 @@ providers:
 diskimages:
   - name: centos-7
   - name: fedora-29
+  - name: ubuntu-bionic
