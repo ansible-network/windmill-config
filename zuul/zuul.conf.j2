@@ -28,6 +28,7 @@ start = False
 tenant_config = {{ zuul_file_main_yaml_dest }}
 log_config = /etc/zuul/scheduler-logging.conf
 pidfile = /var/run/zuul-scheduler/zuul-scheduler.pid
+relative_priority = true
 state_dir = {{ zuul_user_home }}
 
 {% endif -%}
