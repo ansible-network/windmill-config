@@ -23,6 +23,10 @@ labels:
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
     max-ready-age: 600
+  - name: ubuntu-xenial-1vcpu
+    max-ready-age: 600
+  - name: ubuntu-xenial-4vcpu
+    max-ready-age: 600
 
 providers:
   - name: limestone-us-dfw-1
@@ -37,6 +41,8 @@ providers:
       - name: fedora-29
         config-drive: true
       - name: ubuntu-bionic
+        config-drive: true
+      - name: ubuntu-xenial
         config-drive: true
     cloud-images: &provider_limestone_cloud-images
       - name: vEOS-4.20.10M-20190501
@@ -72,6 +78,10 @@ providers:
             flavor-name: s1.small
             diskimage: ubuntu-bionic
             key-name: infra-root-keys
+          - name: ubuntu-xenial-1vcpu
+            flavor-name: s1.small
+            diskimage: ubuntu-xenial
+            key-name: infra-root-keys
       - name: s1.large
         max-servers: 2
         networks:
@@ -88,6 +98,10 @@ providers:
           - name: ubuntu-bionic-4vcpu
             flavor-name: s1.large
             diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-xenial-4vcpu
+            flavor-name: s1.large
+            diskimage: ubuntu-xenial
             key-name: infra-root-keys
 
   - name: limestone-us-slc
@@ -118,3 +132,4 @@ diskimages:
   - name: centos-7
   - name: fedora-29
   - name: ubuntu-bionic
+  - name: ubuntu-xenial
