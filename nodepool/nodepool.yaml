@@ -19,6 +19,8 @@ providers:
         config-drive: true
       - name: ubuntu-bionic
         config-drive: true
+      - name: ubuntu-xenial
+        config-drive: true
 
   - name: limestone-us-slc
     cloud: limestone
@@ -99,6 +101,23 @@ diskimages:
       - simple-init
       - vm
     release: bionic
+    env-vars:
+      TMPDIR: /opt/nodepool/tmp
+      DIB_CHECKSUM: '1'
+      DIB_DEBIAN_COMPONENTS: 'main,universe'
+      DIB_INSTALLTYPE_pip_and_virtualenv: 'package'
+      QEMU_IMG_OPTIONS: compat=0.10
+
+  - name: ubuntu-xenial
+    pause: false
+    elements:
+      - ubuntu-minimal
+      - growroot
+      - nodepool-base
+      - openssh-server
+      - simple-init
+      - vm
+    release: xenial
     env-vars:
       TMPDIR: /opt/nodepool/tmp
       DIB_CHECKSUM: '1'
