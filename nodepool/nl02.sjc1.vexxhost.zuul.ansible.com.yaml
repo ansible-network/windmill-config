@@ -23,6 +23,10 @@ labels:
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
     max-ready-age: 600
+  - name: ubuntu-xenial-1vcpu
+    max-ready-age: 600
+  - name: ubuntu-xenial-4vcpu
+    max-ready-age: 600
   - name: vyos-1.1.8-1vcpu
     max-ready-age: 600
 
@@ -39,6 +43,8 @@ providers:
       - name: fedora-29
         config-drive: true
       - name: ubuntu-bionic
+        config-drive: true
+      - name: ubuntu-xenial
         config-drive: true
     cloud-images: &provider_vexxhost_cloud-images
       - name: vEOS-4.20.10M-20190501
@@ -83,6 +89,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: ubuntu-xenial-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: ubuntu-xenial
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
           - name: vyos-1.1.8-1vcpu
             flavor-name: v2-highcpu-1
             cloud-image: vyos-1.1.8-20190407
@@ -114,6 +126,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: ubuntu-xenial-4vcpu
+            flavor-name: v2-highcpu-4
+            diskimage: ubuntu-xenial
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
 
   - name: vexxhost-sjc1
     cloud: vexxhost
@@ -140,3 +158,4 @@ diskimages:
   - name: centos-7
   - name: fedora-29
   - name: ubuntu-bionic
+  - name: ubuntu-xenial
