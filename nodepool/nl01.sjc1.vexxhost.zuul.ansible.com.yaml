@@ -27,6 +27,8 @@ labels:
     max-ready-age: 600
   - name: ubuntu-xenial-4vcpu
     max-ready-age: 600
+  - name: vyos-1.1.8-1vcpu
+    max-ready-age: 600
 
 providers:
   - name: limestone-us-dfw-1
@@ -48,6 +50,9 @@ providers:
       - name: vEOS-4.20.10M-20190501
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
+        connection-type: network_cli
+      - name: vyos-1.1.8-20190407
+        config-drive: true
         connection-type: network_cli
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
@@ -82,6 +87,14 @@ providers:
             flavor-name: s1.small
             diskimage: ubuntu-xenial
             key-name: infra-root-keys
+          - name: vyos-1.1.8-1vcpu
+            flavor-name: s1.small
+            cloud-image: vyos-1.1.8-20190407
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
       - name: s1.large
         max-servers: 2
         networks:
