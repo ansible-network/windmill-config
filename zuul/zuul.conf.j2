@@ -36,6 +36,7 @@ state_dir = {{ zuul_user_home }}
 {% if inventory_hostname in groups['zuul-executor'] %}
 [executor]
 ansible_root = /var/lib/zuul/venv/ansible
+disk_limit_per_job = 500
 log_config = /etc/zuul/executor-logging.conf
 manage_ansible = false
 private_key_file = {{ zuul_user_home }}/.ssh/nodepool_id_rsa
