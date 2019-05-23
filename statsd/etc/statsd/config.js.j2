@@ -1,10 +1,11 @@
 {
-  flushInterval: 10000,
   graphite: {
     legacyNamespace: false,
     globalPrefix: "{{ __statsd_config_js_graphite_globalPrefix }}"
   },
   graphiteHost: "carbon.hostedgraphite.com",
   graphitePort: 2003,
-  port: 8125
+  port: 8125,
+  deleteTimers: true,
+  deleteCounters: true
 }
