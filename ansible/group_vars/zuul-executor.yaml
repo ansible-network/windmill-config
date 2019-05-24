@@ -26,28 +26,28 @@ zuul_service_zuul_executor_state: started
 zuul_executor_ansible:
   - ansible_pip_name:
       - ansible==2.5.15
-      - ara
+      - ara<1.0.0
       - openstacksdk
     ansible_pip_virtualenv_python: python3
     ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.5.15
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.5
   - ansible_pip_name:
       - ansible==2.6.17
-      - ara
+      - ara<1.0.0
       - openstacksdk
     ansible_pip_virtualenv_python: python3
     ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.6.17
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.6
   - ansible_pip_name:
       - ansible==2.7.11
-      - ara
+      - ara<1.0.0
       - openstacksdk
     ansible_pip_virtualenv_python: python3
     ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.7.11
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.7
   - ansible_pip_name:
       - ansible==2.8.0
-      - ara
+      - ara<1.0.0
       - openstacksdk
     ansible_pip_virtualenv_python: python3
     ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.8.0
