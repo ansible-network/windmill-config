@@ -19,6 +19,8 @@ labels:
     max-ready-age: 600
   - name: fedora-29-4vcpu
     max-ready-age: 600
+  - name: ios-15.6-2T
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
@@ -47,6 +49,9 @@ providers:
       - name: ubuntu-xenial
         config-drive: true
     cloud-images: &provider_limestone_cloud-images
+      - name: ios-15.6-2T-20190524
+        config-drive: false
+        connection-type: network_cli
       - name: vEOS-4.20.10M-20190501
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
@@ -79,6 +84,13 @@ providers:
             flavor-name: s1.small
             diskimage: fedora-29
             key-name: infra-root-keys
+          - name: ios-15.6-2T
+            flavor-name: s1.small
+            cloud-image: ios-15.6-2T-20190524
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1.small
             diskimage: ubuntu-bionic

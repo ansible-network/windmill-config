@@ -21,6 +21,8 @@ labels:
     max-ready-age: 600
   - name: fedora-29-4vcpu
     max-ready-age: 600
+  - name: ios-15.6-2T
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
@@ -52,6 +54,9 @@ providers:
         config-drive: true
     cloud-images: &provider_vexxhost_cloud-images
       - name: iosv-20190524
+        config-drive: false
+        connection-type: network_cli
+      - name: ios-15.6-2T-20190524
         config-drive: false
         connection-type: network_cli
       - name: vEOS-4.20.10M-20190501
@@ -100,6 +105,13 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: ios-15.6-2T
+            flavor-name: v2-highcpu-1
+            cloud-image: ios-15.6-2T-20190524
+            networks:
+              - public
+              - net1
+              - net2
           - name: vsrx3-18.4R1
             flavor-name: v2-highcpu-2
             cloud-image: vsrx3-18.4R1-S2.4-20190514
