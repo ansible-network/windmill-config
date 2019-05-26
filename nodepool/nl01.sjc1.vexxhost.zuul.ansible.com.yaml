@@ -60,7 +60,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: s1.small
-        max-servers: 8
+        max-servers: 20
         networks:
           - Public Internet
         labels: &provider_limestone_pools_s1_small_labels
@@ -96,7 +96,7 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
       - name: s1.large
-        max-servers: 2
+        max-servers: 5
         networks:
           - Public Internet
         labels: &provider_limestone_pools_s1_large_labels
@@ -131,12 +131,12 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: s1.small
-        max-servers: 8
+        max-servers: 20
         networks:
           - Public Internet
         labels: *provider_limestone_pools_s1_small_labels
       - name: s1.large
-        max-servers: 2
+        max-servers: 5
         networks:
           - Public Internet
         labels: *provider_limestone_pools_s1_large_labels
