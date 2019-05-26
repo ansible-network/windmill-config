@@ -15,8 +15,6 @@ labels:
     max-ready-age: 600
   - name: centos-7-4vcpu
     max-ready-age: 600
-  - name: iosv-15.6-2T
-    max-ready-age: 600
   - name: fedora-29-1vcpu
     max-ready-age: 600
   - name: fedora-29-4vcpu
@@ -53,9 +51,6 @@ providers:
       - name: ubuntu-xenial
         config-drive: true
     cloud-images: &provider_vexxhost_cloud-images
-      - name: iosv-20190524
-        config-drive: false
-        connection-type: network_cli
       - name: ios-15.6-2T-20190524
         config-drive: false
         connection-type: network_cli
@@ -79,13 +74,6 @@ providers:
           - public
         max-servers: 16
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
-          - name: iosv-15.6-2T
-            flavor-name: v2-highcpu-1
-            cloud-image: iosv-20190524
-            networks:
-              - public
-              - net1
-              - net2
           - name: eos-4.20.10
             flavor-name: v1-standard-2
             cloud-image: vEOS-4.20.10M-20190501
