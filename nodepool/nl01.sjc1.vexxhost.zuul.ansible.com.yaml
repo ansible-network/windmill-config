@@ -98,6 +98,13 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
+          - name: iosxrv-6.1.3
+            flavor-name: s1.medium
+            cloud-image: iosxrv-6.1.3-20190604
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1.small
             diskimage: ubuntu-bionic
@@ -110,22 +117,6 @@ providers:
             flavor-name: s1.small
             cloud-image: vyos-1.1.8-20190407
             key-name: infra-root-keys
-            networks:
-              - Public Internet
-              - Private Network (10.0.0.0/8 only)
-              - Private Network (Floating Public)
-      # NOTE(pabelanger): This is not a long term solution, we need to
-      # disable host-key-checking for iosxr, since it doesn't have a default
-      # gateway.
-      - name: s1.medium
-        max-servers: 10
-        host-key-checking: false
-        networks:
-          - Public Internet
-        labels: &provider_limestone_pools_s1_medium_labels
-          - name: iosxrv-6.1.3
-            flavor-name: s1.medium
-            cloud-image: iosxrv-6.1.3-20190604
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
@@ -170,12 +161,6 @@ providers:
         networks:
           - Public Internet
         labels: *provider_limestone_pools_s1_small_labels
-      - name: s1.medium
-        max-servers: 10
-        host-key-checking: false
-        networks:
-          - Public Internet
-        labels: *provider_limestone_pools_s1_medium_labels
       - name: s1.large
         max-servers: 5
         networks:
