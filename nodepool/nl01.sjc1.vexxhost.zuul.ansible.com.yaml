@@ -21,6 +21,8 @@ labels:
     max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
+  - name: iosxrv-6.1.3
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
@@ -52,6 +54,11 @@ providers:
       - name: ios-15.6-2T-20190524
         config-drive: false
         connection-type: network_cli
+      - name: iosxrv-6.1.3-20190604
+        config-drive: false
+        # NOTE(pabelanger): We don't have default gateway setup on boot, so
+        # this is an attempt to setup nodepool from doing ssh-keyscan.
+        connection-type: blah
       - name: vEOS-4.20.10M-20190501
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
@@ -87,6 +94,13 @@ providers:
           - name: ios-15.6-2T
             flavor-name: s1.small
             cloud-image: ios-15.6-2T-20190524
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: iosxrv-6.1.3
+            flavor-name: s1.medium
+            cloud-image: iosxrv-6.1.3-20190604
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
