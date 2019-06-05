@@ -101,6 +101,7 @@ providers:
           - name: iosxrv-6.1.3
             flavor-name: s1.medium
             cloud-image: iosxrv-6.1.3-20190604
+            host-key-checking: false
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
