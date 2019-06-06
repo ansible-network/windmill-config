@@ -75,6 +75,7 @@ providers:
         max-servers: 20
         networks:
           - Public Internet
+          - Private Network (10.0.0.0/8 only)
         labels: &provider_limestone_pools_s1_small_labels
           - name: eos-4.20.10
             flavor-name: s1.medium
@@ -126,6 +127,7 @@ providers:
         max-servers: 5
         networks:
           - Public Internet
+          - Private Network (10.0.0.0/8 only)
         labels: &provider_limestone_pools_s1_large_labels
           - name: centos-7-4vcpu
             flavor-name: s1.large
@@ -161,11 +163,13 @@ providers:
         max-servers: 20
         networks:
           - Public Internet
+          - Private Network (10.0.0.0/8 only)
         labels: *provider_limestone_pools_s1_small_labels
       - name: s1.large
         max-servers: 5
         networks:
           - Public Internet
+          - Private Network (10.0.0.0/8 only)
         labels: *provider_limestone_pools_s1_large_labels
 
 diskimages:
