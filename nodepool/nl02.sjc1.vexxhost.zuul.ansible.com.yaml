@@ -116,7 +116,7 @@ providers:
             boot-from-volume: true
             volume-size: 40
           - name: vsrx3-18.4R1
-            flavor-name: v2-highcpu-2
+            flavor-name: v2-standard-2
             cloud-image: vsrx3-18.4R1-S2.4-20190514
             key-name: infra-root-keys
             networks:
