@@ -25,6 +25,16 @@ zuul_service_zuul_scheduler_state: started
 
 # openstack.logrotate
 logrotate_configs:
+  # NOTE(pabelanger): This is needed here because we also install gear on our
+  # zuul-scheduler. This can be removed once we move it to another server.
+  - name: gear
+    log: /var/log/gear/debug.log /var/log/gear/gear.log
+    options:
+      - compress
+      - missingok
+      - rotate 7
+      - daily
+      - notifempty
   - name: zuul-scheduler
     log: /var/log/zuul/scheduler-debug.log /var/log/zuul/scheduler.log
     options:
