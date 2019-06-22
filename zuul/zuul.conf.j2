@@ -40,8 +40,8 @@ disk_limit_per_job = 1024
 log_config = /etc/zuul/executor-logging.conf
 manage_ansible = false
 private_key_file = {{ zuul_user_home }}/.ssh/nodepool_id_rsa
-trusted_ro_paths = /opt/venv
-untrusted_ro_paths = /opt/venv
+trusted_ro_paths = /opt/venv/zuul-ansible
+untrusted_ro_paths = /opt/venv/zuul-ansible
 workspace_root = {{ zuul_user_home }}/workspace
 
 {% endif -%}
