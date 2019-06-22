@@ -190,10 +190,10 @@ providers:
       # Ansible org.
       - name: v2-highcpu-1
         networks: *provider_vexxhost_pools_v2_highcpu_1_networks
-        max-servers: 16
+        max-servers: 12
         labels: *provider_vexxhost_pools_v2_highcpu_1_labels
       - name: v2-highcpu-4
-        max-servers: 4
+        max-servers: 3
         labels: *provider_vexxhost_pools_v2_highcpu_4_labels
 
 diskimages:
