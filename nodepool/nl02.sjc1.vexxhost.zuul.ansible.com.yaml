@@ -147,33 +147,6 @@ providers:
               - public
               - net1
               - net2
-      - name: v2-highcpu-4
-        max-servers: 0
-        labels: &provider_vexxhost_pools_v2_highcpu_4_labels
-          - name: centos-7-4vcpu
-            flavor-name: v2-highcpu-4
-            diskimage: centos-7
-            key-name: infra-root-keys
-            boot-from-volume: true
-            volume-size: 80
-          - name: fedora-29-4vcpu
-            flavor-name: v2-highcpu-4
-            diskimage: fedora-29
-            key-name: infra-root-keys
-            boot-from-volume: true
-            volume-size: 80
-          - name: ubuntu-bionic-4vcpu
-            flavor-name: v2-highcpu-4
-            diskimage: ubuntu-bionic
-            key-name: infra-root-keys
-            boot-from-volume: true
-            volume-size: 80
-          - name: ubuntu-xenial-4vcpu
-            flavor-name: v2-highcpu-4
-            diskimage: ubuntu-xenial
-            key-name: infra-root-keys
-            boot-from-volume: true
-            volume-size: 80
 
   - name: vexxhost-sjc1
     cloud: vexxhost
@@ -192,9 +165,6 @@ providers:
         networks: *provider_vexxhost_pools_v2_highcpu_1_networks
         max-servers: 12
         labels: *provider_vexxhost_pools_v2_highcpu_1_labels
-      - name: v2-highcpu-4
-        max-servers: 0
-        labels: *provider_vexxhost_pools_v2_highcpu_4_labels
 
 diskimages:
   - name: centos-7
