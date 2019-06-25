@@ -136,28 +136,6 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
-      - name: s1.large
-        max-servers: 0
-        networks:
-          - Public Internet
-          - Private Network (10.0.0.0/8 only)
-        labels: &provider_limestone_pools_s1_large_labels
-          - name: centos-7-4vcpu
-            flavor-name: s1.large
-            diskimage: centos-7
-            key-name: infra-root-keys
-          - name: fedora-29-4vcpu
-            flavor-name: s1.large
-            diskimage: fedora-29
-            key-name: infra-root-keys
-          - name: ubuntu-bionic-4vcpu
-            flavor-name: s1.large
-            diskimage: ubuntu-bionic
-            key-name: infra-root-keys
-          - name: ubuntu-xenial-4vcpu
-            flavor-name: s1.large
-            diskimage: ubuntu-xenial
-            key-name: infra-root-keys
 
   - name: limestone-us-slc
     cloud: limestone
@@ -178,12 +156,6 @@ providers:
           - Public Internet
           - Private Network (10.0.0.0/8 only)
         labels: *provider_limestone_pools_s1_small_labels
-      - name: s1.large
-        max-servers: 0
-        networks:
-          - Public Internet
-          - Private Network (10.0.0.0/8 only)
-        labels: *provider_limestone_pools_s1_large_labels
 
 diskimages:
   - name: centos-7
