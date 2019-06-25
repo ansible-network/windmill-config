@@ -148,7 +148,7 @@ providers:
               - net1
               - net2
       - name: v2-highcpu-4
-        max-servers: 4
+        max-servers: 0
         labels: &provider_vexxhost_pools_v2_highcpu_4_labels
           - name: centos-7-4vcpu
             flavor-name: v2-highcpu-4
@@ -193,7 +193,7 @@ providers:
         max-servers: 12
         labels: *provider_vexxhost_pools_v2_highcpu_1_labels
       - name: v2-highcpu-4
-        max-servers: 3
+        max-servers: 0
         labels: *provider_vexxhost_pools_v2_highcpu_4_labels
 
 diskimages:
