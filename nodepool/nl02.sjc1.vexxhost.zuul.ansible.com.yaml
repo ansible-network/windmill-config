@@ -98,6 +98,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: fedora-29-4vcpu
+            flavor-name: v2-highcpu-4
+            diskimage: fedora-29
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
           - name: ios-15.6-2T
             flavor-name: v2-highcpu-1
             cloud-image: ios-15.6-2T-20190524
