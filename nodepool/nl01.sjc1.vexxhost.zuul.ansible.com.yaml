@@ -97,6 +97,10 @@ providers:
             flavor-name: s1.small
             diskimage: fedora-29
             key-name: infra-root-keys
+          - name: fedora-29-4vcpu
+            flavor-name: s1.large
+            diskimage: fedora-29
+            key-name: infra-root-keys
           - name: ios-15.6-2T
             flavor-name: s1.small
             cloud-image: ios-15.6-2T-20190524
