@@ -11,6 +11,7 @@ server {
   ssl_certificate_key /etc/letsencrypt/live/logs.zuul.ansible.com/privkey.pem;
 
   location / {
+    add_header 'Access-Control-Allow-Origin' '*';
     rewrite ^([^.]*[^/])$ $1/ permanent;
     proxy_pass https://object-storage-ca-ymq-1.vexxhost.net/v1/a0b4156a37f9453eb4ec7db5422272df/logs/;
   }
