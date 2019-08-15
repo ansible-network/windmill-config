@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  gather_facts: false
   vars:
     bastion_hostname: bastion01.sjc1.vexxhost.zuul.ansible.com
     bastion_ansible_host: 38.108.68.150
