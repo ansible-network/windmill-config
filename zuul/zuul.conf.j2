@@ -66,15 +66,12 @@ git_user_name = windmill
 
 {% endif -%}
 
-{% if inventory_hostname in groups['zuul-web'] %}
+{% if inventory_hostname in groups['zuul-scheduler'] or inventory_hostname in groups['zuul-web'] %}
 [web]
 log_config = /etc/zuul/web-logging.conf
 listen_address = 127.0.0.1
 root = https://dashboard.zuul.ansible.com
 
-{% endif -%}
-
-{% if inventory_hostname in groups['zuul-scheduler'] or inventory_hostname in groups['zuul-web'] %}
 [connection mysql]
 driver = sql
 dburi = mysql+pymysql://{{ __zuul_zuul_conf_connection_mysql_username_and_password }}@{{ hostvars[groups['database'][0]].ansible_host }}/zuul
