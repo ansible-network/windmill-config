@@ -5,9 +5,11 @@
     check:
       jobs:
         - windmill-config-tox-tools
+        - ansible-tox-docs
     gate:
       jobs:
         - windmill-config-tox-tools
+        - ansible-tox-docs
     periodic-1hr:
       jobs:
         - windmill-config-deploy

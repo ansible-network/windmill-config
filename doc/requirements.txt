@@ -1,0 +1,3 @@
+sphinx!=1.6.6,!=1.6.7 # BSD
+zuul-sphinx >= 0.4.1 # Apache-2.0
+sphinx-rtd-theme >= 0.4.3 # MIT
