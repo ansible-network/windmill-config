@@ -11,7 +11,7 @@
 # under the License.
 ---
 # TODO(pabelanger): Until we rebuild borg01 and bastion01, just add dmellado
-# to zuul-scheduler
+# to nodepool group
 _windmill_root_users_extra:
   - dmellado
 
