@@ -45,9 +45,11 @@ _windmill_users:
 
 windmill_users: "{{ _windmill_users }}"
 
-windmill_root_users:
+_windmill_root_users_base:
   - pabelanger
   - windmill
+_windmill_root_users_extra: []
+windmill_root_users: "{{ _windmill_root_users_base + _windmill_root_users_extra }}"
 
 _iptables_public_tcp_ports_base:
   - 22
