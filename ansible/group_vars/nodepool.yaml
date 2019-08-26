@@ -10,6 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
+# TODO(pabelanger): Until we rebuild borg01 and bastion01, just add dmellado
+# to zuul-scheduler
+_windmill_root_users_extra:
+  - dmellado
+
 # windmill.nodepool
 nodepool_user_shell: /bin/bash
 
