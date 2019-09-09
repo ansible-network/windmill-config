@@ -15,6 +15,8 @@ labels:
     max-ready-age: 600
   - name: centos-7-8vcpu
     max-ready-age: 600
+  - name: centos-7-16vcpu
+    max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
   - name: fedora-29-1vcpu
@@ -101,6 +103,10 @@ providers:
             key-name: infra-root-keys
           - name: centos-7-8vcpu
             flavor-name: s1.xlarge
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-7-16vcpu
+            flavor-name: d1.d1541.0
             diskimage: centos-7
             key-name: infra-root-keys
           - name: fedora-29-1vcpu
