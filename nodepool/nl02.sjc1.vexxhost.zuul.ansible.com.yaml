@@ -92,6 +92,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: centos-7-4vcpu
+            flavor-name: v2-highcpu-4
+            diskimage: centos-7
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
           - name: fedora-29-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-29
