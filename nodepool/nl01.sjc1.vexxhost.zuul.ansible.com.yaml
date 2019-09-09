@@ -93,6 +93,10 @@ providers:
             flavor-name: s1.small
             diskimage: centos-7
             key-name: infra-root-keys
+          - name: centos-7-4vcpu
+            flavor-name: s1.large
+            diskimage: centos-7
+            key-name: infra-root-keys
           - name: fedora-29-1vcpu
             flavor-name: s1.small
             diskimage: fedora-29
