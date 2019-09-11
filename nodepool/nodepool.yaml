@@ -28,6 +28,18 @@ providers:
     rate: 0.001
     diskimages: *provider_diskimages
 
+  - name: limestone2-us-dfw-1
+    cloud: limestone2
+    region-name: us-dfw-1
+    rate: 0.001
+    diskimages: *provider_diskimages
+
+  - name: limestone2-us-slc
+    cloud: limestone2
+    region-name: us-slc
+    rate: 0.001
+    diskimages: *provider_diskimages
+
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
     region-name: ca-ymq-1
