@@ -25,6 +25,25 @@ clouds:
             - name: Private Network (10.0.0.0/8 only)
             - name: Private Network (Floating Public)
 
+  limestone2:
+    profile: limestonenetworks
+    auth:
+      password: {{ __nodepool_clouds_yaml_limestone_password }}
+      username: {{ __nodepool_clouds_yaml_limestone_username }}
+      project_id: {{ __nodepool_clouds_yaml_limestone_project_id }}
+      project_domain_id: default
+      user_domain_id: default
+    floating_ip_source: None
+    regions:
+      - name: us-dfw-1
+      - name: us-slc
+        values:
+          networks:
+            - name: Public Internet
+            - name: Private Network (10.0.0.0/8 only)
+              routes_externally: True
+            - name: Private Network (Floating Public)
+
   vexxhost:
     profile: vexxhost
     auth:
