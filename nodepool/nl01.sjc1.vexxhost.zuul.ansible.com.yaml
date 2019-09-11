@@ -137,7 +137,6 @@ providers:
             networks:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
-              - Public Internet
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1.small
             diskimage: ubuntu-bionic
