@@ -183,6 +183,49 @@ providers:
           - Private Network (10.0.0.0/8 only)
         labels: *provider_limestone_pools_s1_small_labels
 
+  - name: ovh-bhs3
+    cloud: ovh
+    region-name: BHS3
+    boot-timeout: 300
+    launch-timeout: 300
+    rate: 0.001
+    diskimages: &provider_ovh_diskimages
+      - name: centos-7
+        config-drive: true
+      - name: fedora-29
+        config-drive: true
+      - name: ubuntu-bionic
+        config-drive: true
+      - name: ubuntu-xenial
+        config-drive: true
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: main
+        max-servers: 5
+        labels: &provider_ovh_pools_main_labels
+          - name: ubuntu-bionic-1vcpu
+            flavor-name: s1-4
+            diskimage: ubuntu-bionic
+
+  - name: ovh-uk1
+    cloud: ovh
+    region-name: UK1
+    boot-timeout: 300
+    launch-timeout: 300
+    rate: 0.001
+    diskimages: *provider_ovh_diskimages
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: main
+        max-servers: 5
+        labels: *provider_ovh_pools_main_labels
+
 diskimages:
   - name: centos-7
   - name: fedora-29
