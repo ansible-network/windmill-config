@@ -32,13 +32,13 @@ providers:
     cloud: limestone2
     region-name: us-dfw-1
     rate: 0.001
-    diskimages: *provider_diskimages
+    diskimages: []
 
   - name: limestone2-us-slc
     cloud: limestone2
     region-name: us-slc
     rate: 0.001
-    diskimages: *provider_diskimages
+    diskimages: []
 
   - name: ovh-bhs3
     cloud: ovh
