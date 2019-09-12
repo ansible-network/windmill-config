@@ -42,13 +42,13 @@ providers:
 
   - name: ovh-bhs3
     cloud: ovh
-    region-name: bhs3
+    region-name: BHS3
     rate: 0.001
     diskimages: *provider_diskimages
 
   - name: ovh-uk1
     cloud: ovh
-    region-name: uk1
+    region-name: UK1
     rate: 0.001
     diskimages: *provider_diskimages
 
