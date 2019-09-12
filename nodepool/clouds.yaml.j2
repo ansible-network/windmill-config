@@ -44,6 +44,18 @@ clouds:
               routes_externally: True
             - name: Private Network (Floating Public)
 
+  ovh:
+    profile: ovh
+    auth:
+      password: {{ __nodepool_clouds_yaml_ovh_password }}
+      username: {{ __nodepool_clouds_yaml_ovh_username }}
+      project_id: {{ __nodepool_clouds_yaml_ovh_project_id }}
+      project_domain_id: default
+      user_domain_id: default
+    regions:
+      - BHS3
+      - UK1
+
   vexxhost:
     profile: vexxhost
     auth:

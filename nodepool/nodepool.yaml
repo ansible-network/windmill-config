@@ -40,6 +40,18 @@ providers:
     rate: 0.001
     diskimages: *provider_diskimages
 
+  - name: ovh-bhs3
+    cloud: ovh
+    region-name: bhs3
+    rate: 0.001
+    diskimages: *provider_diskimages
+
+  - name: ovh-uk1
+    cloud: ovh
+    region-name: uk1
+    rate: 0.001
+    diskimages: *provider_diskimages
+
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
     region-name: ca-ymq-1
