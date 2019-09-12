@@ -23,6 +23,8 @@ labels:
     max-ready-age: 600
   - name: iosxr-6.1.3
     max-ready-age: 600
+  - name: iosxrv-6.1.3
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
@@ -77,6 +79,7 @@ providers:
       - name: v2-highcpu-1
         networks: &provider_vexxhost_pools_v2_highcpu_1_networks
           - public
+          - net1
         max-servers: 16
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
           - name: eos-4.20.10
