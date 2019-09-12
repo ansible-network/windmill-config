@@ -183,38 +183,6 @@ providers:
           - Private Network (10.0.0.0/8 only)
         labels: *provider_limestone_pools_s1_small_labels
 
-  - name: limestone2-us-dfw-1
-    cloud: limestone2
-    region-name: us-dfw-1
-    boot-timeout: 300
-    launch-timeout: 300
-    rate: 0.001
-    diskimages: []
-    pools:
-      # NOTE(pabelanger): Please contact pabelanger before making changes to
-      # this pool, especially increasing max-servers or changing labels. There
-      # is a real world financial cost in doing so that is charged to the
-      # Ansible org.
-      - name: s1.small
-        max-servers: 0
-        labels: []
-
-  - name: limestone2-us-slc
-    cloud: limestone2
-    region-name: us-slc
-    boot-timeout: 300
-    launch-timeout: 300
-    rate: 0.001
-    diskimages: []
-    pools:
-      # NOTE(pabelanger): Please contact pabelanger before making changes to
-      # this pool, especially increasing max-servers or changing labels. There
-      # is a real world financial cost in doing so that is charged to the
-      # Ansible org.
-      - name: s1.small
-        max-servers: 0
-        labels: []
-
 diskimages:
   - name: centos-7
   - name: fedora-29
