@@ -206,9 +206,22 @@ providers:
       - name: main
         max-servers: 5
         labels: &provider_ovh_pools_main_labels
+          - name: centos-7-1vcpu
+            flavor-name: s1-4
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: fedora-29-1vcpu
+            flavor-name: s1-4
+            diskimage: fedora-29
+            key-name: infra-root-keys
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1-4
             diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-xenial-1vcpu
+            flavor-name: s1-4
+            diskimage: ubuntu-xenial
+            key-name: infra-root-keys
 
   - name: ovh-uk1
     cloud: ovh
