@@ -101,6 +101,7 @@ diskimages:
       DIB_RELEASE: '30'
       DIB_SIMPLE_INIT_NETWORKMANAGER: '1'
       QEMU_IMG_OPTIONS: compat=0.10
+    python-path: /usr/bin/python3
 
   - name: ubuntu-bionic
     pause: false
