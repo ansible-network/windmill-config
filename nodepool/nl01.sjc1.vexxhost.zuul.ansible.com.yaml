@@ -257,5 +257,6 @@ diskimages:
   - name: centos-7
   - name: fedora-29
   - name: fedora-30
+    python-path: /usr/bin/python3
   - name: ubuntu-bionic
   - name: ubuntu-xenial
