@@ -5,7 +5,7 @@
       "tox": ""
     },
     "fedora": {
-      "tox": "python3-tox python2-pip"
+      "tox": "python3-tox python2-pip python3-libselinux"
     },
     "ubuntu": {
       "tox": "tox python-pip"
