@@ -19,6 +19,8 @@ labels:
     max-ready-age: 600
   - name: fedora-29-4vcpu
     max-ready-age: 600
+  - name: fedora-30-1vcpu
+    max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
   - name: iosxrv-6.1.3
@@ -47,6 +49,8 @@ providers:
       - name: centos-7
         config-drive: true
       - name: fedora-29
+        config-drive: true
+      - name: fedora-30
         config-drive: true
       - name: ubuntu-bionic
         config-drive: true
@@ -108,6 +112,12 @@ providers:
           - name: fedora-29-4vcpu
             flavor-name: v2-highcpu-4
             diskimage: fedora-29
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: fedora-30-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: fedora-30
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
@@ -182,5 +192,6 @@ providers:
 diskimages:
   - name: centos-7
   - name: fedora-29
+  - name: fedora-30
   - name: ubuntu-bionic
   - name: ubuntu-xenial
