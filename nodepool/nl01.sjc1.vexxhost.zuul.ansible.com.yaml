@@ -87,7 +87,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: s1.small
-        max-servers: 20
+        max-servers: 0
         networks:
           - Public Internet
           - Private Network (10.0.0.0/8 only)
@@ -185,7 +185,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: s1.small
-        max-servers: 20
+        max-servers: 0
         networks:
           - Public Internet
           - Private Network (10.0.0.0/8 only)
@@ -214,7 +214,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: main
-        max-servers: 5
+        max-servers: 0
         labels: &provider_ovh_pools_main_labels
           - name: centos-7-1vcpu
             flavor-name: s1-4
@@ -250,7 +250,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: main
-        max-servers: 5
+        max-servers: 0
         labels: *provider_ovh_pools_main_labels
 
 diskimages:
