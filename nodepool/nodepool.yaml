@@ -86,6 +86,7 @@ diskimages:
       DIB_EPEL_DISABLED: '1'
       DIB_GRUB_TIMEOUT: '0'
       DIB_INSTALLTYPE_pip_and_virtualenv: 'package'
+      DIB_RELEASE: '8'
       DIB_SIMPLE_INIT_NETWORKMANAGER: '1'
       QEMU_IMG_OPTIONS: compat=0.10
     python-path: /usr/bin/python3
