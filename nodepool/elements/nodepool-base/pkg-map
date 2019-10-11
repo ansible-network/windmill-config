@@ -1,4 +1,12 @@
 {
+  "release": {
+    "centos": {
+      "8": {
+        "ntp": "chrony",
+        "ntpdate": ""
+       }
+    }
+  },
   "distro": {
     "centos": {
       "haveged": "",
