@@ -15,6 +15,8 @@ labels:
     max-ready-age: 600
   - name: centos-7-4vcpu
     max-ready-age: 600
+  - name: centos-8-1vcpu
+    max-ready-age: 600
   - name: fedora-29-1vcpu
     max-ready-age: 600
   - name: fedora-29-4vcpu
@@ -47,6 +49,8 @@ providers:
     rate: 0.001
     diskimages: &provider_vexxhost_diskimages
       - name: centos-7
+        config-drive: true
+      - name: centos-8
         config-drive: true
       - name: fedora-29
         config-drive: true
@@ -100,6 +104,12 @@ providers:
           - name: centos-7-4vcpu
             flavor-name: v2-highcpu-4
             diskimage: centos-7
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: centos-8-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: centos-8
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
@@ -191,6 +201,7 @@ providers:
 
 diskimages:
   - name: centos-7
+  - name: centos-8
   - name: fedora-29
   - name: fedora-30
     python-path: /usr/bin/python3

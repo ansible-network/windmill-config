@@ -17,6 +17,8 @@ labels:
     max-ready-age: 600
   - name: centos-7-16vcpu
     max-ready-age: 600
+  - name: centos-8-1vcpu
+    max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
   - name: fedora-29-1vcpu
@@ -53,6 +55,8 @@ providers:
     rate: 0.001
     diskimages: &provider_limestone_diskimages
       - name: centos-7
+        config-drive: true
+      - name: centos-8
         config-drive: true
       - name: fedora-29
         config-drive: true
@@ -114,6 +118,10 @@ providers:
           - name: centos-7-16vcpu
             flavor-name: d1.d1541.0
             diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-8-1vcpu
+            flavor-name: s1.small
+            diskimage: centos-8
             key-name: infra-root-keys
           - name: fedora-29-1vcpu
             flavor-name: s1.small
@@ -200,6 +208,8 @@ providers:
     diskimages: &provider_ovh_diskimages
       - name: centos-7
         config-drive: true
+      - name: centos-8
+        config-drive: true
       - name: fedora-29
         config-drive: true
       - name: fedora-30
@@ -219,6 +229,10 @@ providers:
           - name: centos-7-1vcpu
             flavor-name: s1-4
             diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-8-1vcpu
+            flavor-name: s1-4
+            diskimage: centos-8
             key-name: infra-root-keys
           - name: fedora-29-1vcpu
             flavor-name: s1-4
@@ -255,6 +269,7 @@ providers:
 
 diskimages:
   - name: centos-7
+  - name: centos-8
   - name: fedora-29
   - name: fedora-30
     python-path: /usr/bin/python3
