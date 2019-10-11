@@ -10,13 +10,25 @@ providers:
     cloud: limestone
     region-name: us-dfw-1
     rate: 0.001
-    diskimages: []
+    diskimages: &provider_diskimages
+      - name: centos-7
+        config-drive: true
+      - name: centos-8
+        config-drive: true
+      - name: fedora-29
+        config-drive: true
+      - name: fedora-30
+        config-drive: true
+      - name: ubuntu-bionic
+        config-drive: true
+      - name: ubuntu-xenial
+        config-drive: true
 
   - name: limestone-us-slc
     cloud: limestone
     region-name: us-slc
     rate: 0.001
-    diskimages: []
+    diskimages: *provider_diskimages
 
   - name: ovh-bhs3
     cloud: ovh
@@ -34,19 +46,7 @@ providers:
     cloud: vexxhost
     region-name: ca-ymq-1
     rate: 0.001
-    diskimages: &provider_diskimages
-      - name: centos-7
-        config-drive: true
-      - name: centos-8
-        config-drive: true
-      - name: fedora-29
-        config-drive: true
-      - name: fedora-30
-        config-drive: true
-      - name: ubuntu-bionic
-        config-drive: true
-      - name: ubuntu-xenial
-        config-drive: true
+    diskimages: *provider_diskimages
 
   - name: vexxhost-sjc1
     cloud: vexxhost

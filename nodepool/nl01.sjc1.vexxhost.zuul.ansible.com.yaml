@@ -91,7 +91,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: s1.small
-        max-servers: 0
+        max-servers: 20
         networks:
           - Public Internet
           - Private Network (10.0.0.0/8 only)
@@ -193,7 +193,7 @@ providers:
       # is a real world financial cost in doing so that is charged to the
       # Ansible org.
       - name: s1.small
-        max-servers: 0
+        max-servers: 20
         networks:
           - Public Internet
           - Private Network (10.0.0.0/8 only)
