@@ -126,6 +126,9 @@ providers:
             flavor-name: s1.small
             diskimage: centos-8
             key-name: infra-root-keys
+          - name: esxi-6.7.0
+            flavor-name: s1.medium
+            cloud-image: esxi-6.7.0-20190802001-STANDARD
           - name: fedora-29-1vcpu
             flavor-name: s1.small
             diskimage: fedora-29
@@ -181,13 +184,6 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
-      - name: esxi-6.7.0
-        flavor-name: s1.medium
-        cloud-image: esxi-6.7.0-20190802001-STANDARD
-        networks:
-          - Public Internet
-          - Private Network (10.0.0.0/8 only)
-          - Private Network (Floating Public)
 
   - name: limestone-us-slc
     cloud: limestone
