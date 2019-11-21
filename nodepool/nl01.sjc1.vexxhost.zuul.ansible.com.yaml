@@ -85,6 +85,9 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
+      - name: esxi-6.7.0-20190802001-STANDARD
+        config-drive: true
+        username: root
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
@@ -178,6 +181,13 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
+      - name: esxi-6.7.0
+        flavor-name: s1.medium
+        cloud-image: esxi-6.7.0-20190802001-STANDARD
+        networks:
+          - Public Internet
+          - Private Network (10.0.0.0/8 only)
+          - Private Network (Floating Public)
 
   - name: limestone-us-slc
     cloud: limestone
