@@ -35,6 +35,8 @@ labels:
     max-ready-age: 600
   - name: ubuntu-xenial-4vcpu
     max-ready-age: 600
+  - name: vmware-vcsa-6.7.0
+    max-ready-age: 600
   - name: vsrx3-18.4R1
     max-ready-age: 600
   - name: vyos-1.1.8-1vcpu
@@ -71,6 +73,8 @@ providers:
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
+      - name: VMware-VCSA-all-6.7.0-14836122
+        config-drive: true
       - name: vsrx3-18.4R1-S2.4-20190514
         config-drive: false
         connection-type: network_cli
@@ -167,6 +171,12 @@ providers:
           - name: ubuntu-xenial-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: ubuntu-xenial
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: vmware-vcsa-6.7.0
+            flavor-name: v2-highcpu-8
+            diskimage: VMware-VCSA-all-6.7.0-14836122
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
