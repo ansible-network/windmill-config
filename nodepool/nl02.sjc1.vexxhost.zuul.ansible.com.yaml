@@ -176,7 +176,7 @@ providers:
             volume-size: 80
           - name: vmware-vcsa-6.7.0
             flavor-name: v2-highcpu-8
-            diskimage: VMware-VCSA-all-6.7.0-14836122
+            cloud-image: VMware-VCSA-all-6.7.0-14836122
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
