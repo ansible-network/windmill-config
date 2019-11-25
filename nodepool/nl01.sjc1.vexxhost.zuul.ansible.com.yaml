@@ -89,7 +89,6 @@ providers:
         connection-type: network_cli
       - name: esxi-6.7.0-20190802001-STANDARD
         config-drive: true
-        username: root
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
