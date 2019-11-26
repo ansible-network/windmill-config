@@ -130,6 +130,10 @@ providers:
           - name: esxi-6.7.0
             flavor-name: s1.medium
             cloud-image: esxi-6.7.0-20190802001-STANDARD
+            userdata: |
+              #cloud-config
+              hostname: vcenter.test
+              fqdn: vcenter.test
           - name: fedora-29-1vcpu
             flavor-name: s1.small
             diskimage: fedora-29
