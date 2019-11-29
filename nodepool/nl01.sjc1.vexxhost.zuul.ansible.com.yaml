@@ -23,12 +23,6 @@ labels:
     max-ready-age: 600
   - name: esxi-6.7.0
     max-ready-age: 600
-  - name: fedora-29-1vcpu
-    max-ready-age: 600
-  - name: fedora-29-4vcpu
-    max-ready-age: 600
-  - name: fedora-29-16vcpu
-    max-ready-age: 600
   - name: fedora-30-1vcpu
     max-ready-age: 600
   - name: ios-15.6-2T
@@ -59,8 +53,6 @@ providers:
       - name: centos-7
         config-drive: true
       - name: centos-8
-        config-drive: true
-      - name: fedora-29
         config-drive: true
       - name: fedora-30
         config-drive: true
@@ -130,18 +122,6 @@ providers:
           - name: esxi-6.7.0
             flavor-name: s1.medium
             cloud-image: esxi-6.7.0-20190802001-STANDARD
-          - name: fedora-29-1vcpu
-            flavor-name: s1.small
-            diskimage: fedora-29
-            key-name: infra-root-keys
-          - name: fedora-29-4vcpu
-            flavor-name: s1.large
-            diskimage: fedora-29
-            key-name: infra-root-keys
-          - name: fedora-29-16vcpu
-            flavor-name: d1.d1541.0
-            diskimage: fedora-29
-            key-name: infra-root-keys
           - name: fedora-30-1vcpu
             flavor-name: s1.small
             diskimage: fedora-30
@@ -217,8 +197,6 @@ providers:
         config-drive: true
       - name: centos-8
         config-drive: true
-      - name: fedora-29
-        config-drive: true
       - name: fedora-30
         config-drive: true
       - name: ubuntu-bionic
@@ -240,10 +218,6 @@ providers:
           - name: centos-8-1vcpu
             flavor-name: s1-4
             diskimage: centos-8
-            key-name: infra-root-keys
-          - name: fedora-29-1vcpu
-            flavor-name: s1-4
-            diskimage: fedora-29
             key-name: infra-root-keys
           - name: fedora-30-1vcpu
             flavor-name: s1-4
@@ -277,7 +251,6 @@ providers:
 diskimages:
   - name: centos-7
   - name: centos-8
-  - name: fedora-29
   - name: fedora-30
     python-path: /usr/bin/python3
   - name: ubuntu-bionic
