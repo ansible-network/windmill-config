@@ -52,6 +52,7 @@ providers:
     cloud-images:
       - name: nxos-7.0.3.I5.1
         config-drive: true
+        connection-port: 8022
         connection-type: network_cli
     diskimages:
       - name: ubuntu-bionic
