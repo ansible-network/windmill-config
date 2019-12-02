@@ -47,6 +47,9 @@ providers:
     boot-timeout: 300
     launch-timeout: 300
     rate: 0.001
+    cloud-images:
+      - name: nxos-7.0.3.I5.1
+        config-drive: true
     diskimages:
       - name: ubuntu-bionic
         config-drive: true
@@ -60,6 +63,14 @@ providers:
           - management-network
         max-servers: 6
         labels:
+          - name: nxos-7.0.3
+            flavor-name: m1.large2
+            cloud-image: nxos-7.0.3.I5.1
+            key-name: infra-root-keys
+            networks:
+              - management-network
+              - data-network
+              - data-network2
           - name: ubuntu-bionic-rdocloud
             flavor-name: m1.small
             diskimage: ubuntu-bionic
