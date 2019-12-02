@@ -39,6 +39,30 @@ labels:
     max-ready-age: 600
 
 providers:
+  - name: rdocloud-regionone
+    cloud: rdocloud
+    region-name: rdocloud
+    boot-timeout: 300
+    launch-timeout: 300
+    rate: 0.001
+    diskimages:
+      - name: ubuntu-bionic
+        config-drive: true
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: main
+        networks:
+          - management-network
+        max-servers: 6
+        labels:
+          - name: ubuntu-bionic-rdocloud
+            flavor-name: m1.small
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
     region-name: ca-ymq-1
