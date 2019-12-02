@@ -27,6 +27,8 @@ labels:
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
     max-ready-age: 600
+  - name: ubuntu-bionic-rdocloud
+    max-ready-age: 600
   - name: ubuntu-xenial-1vcpu
     max-ready-age: 600
   - name: ubuntu-xenial-4vcpu
