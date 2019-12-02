@@ -42,7 +42,7 @@ providers:
 
   - name: rdocloud-regionone
     cloud: rdocloud
-    region-name: regionone
+    region-name: RegionOne
     rate: 0.001
     diskimages: *provider_diskimages
 
