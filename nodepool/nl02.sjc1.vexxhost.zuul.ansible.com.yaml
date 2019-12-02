@@ -43,7 +43,7 @@ labels:
 providers:
   - name: rdocloud-regionone
     cloud: rdocloud
-    region-name: RegionOne
+    region-name: regionOne
     boot-timeout: 300
     launch-timeout: 300
     rate: 0.001
