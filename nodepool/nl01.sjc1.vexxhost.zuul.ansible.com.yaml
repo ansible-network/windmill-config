@@ -39,6 +39,8 @@ labels:
     max-ready-age: 600
   - name: vyos-1.1.8-1vcpu
     max-ready-age: 600
+  - name: vmware-vcsa-6.7.0
+    max-ready-age: 600
 
 providers:
   - name: limestone-us-dfw-1
@@ -78,6 +80,9 @@ providers:
         config-drive: true
         connection-type: network_cli
       - name: esxi-6.7.0-20190802001-STANDARD
+        config-drive: true
+        python-path: /usr/bin/python3
+      - name: VMware-VCSA-all-6.7.0-14836122
         config-drive: true
         python-path: /usr/bin/python3
     pools:
@@ -160,6 +165,10 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
+          - name: vmware-vcsa-6.7.0
+            flavor-name: s1.large
+            cloud-image: VMware-VCSA-all-6.7.0-14836122
+            key-name: infra-root-keys
 
   - name: limestone-us-slc
     cloud: limestone
