@@ -166,7 +166,7 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
-            flavor-name: s1.large
+            flavor-name: r1.medium
             cloud-image: VMware-VCSA-all-6.7.0-14836122
             key-name: infra-root-keys
 
