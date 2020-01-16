@@ -37,7 +37,7 @@ zuul_executor_ansible:
     ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.7.16
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.7
   - ansible_pip_name:
-      - ansible==2.8.9
+      - ansible==2.8.8
       - ara<1.0.0
       - openstacksdk
       - paramiko
