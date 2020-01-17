@@ -37,6 +37,8 @@ labels:
     max-ready-age: 600
   - name: vmware-vcsa-6.7.0
     max-ready-age: 600
+  - name: vqfx-18.1R3
+    max-ready-age: 600
   - name: vsrx3-18.4R1
     max-ready-age: 600
   - name: vyos-1.1.8-1vcpu
@@ -111,6 +113,9 @@ providers:
       - name: VMware-VCSA-all-6.7.0-14836122
         config-drive: true
         python-path: /usr/bin/python3
+      - name: vqfx-18.1R3-S2.5-20200116
+        config-drive: false
+        connection-type: network_cli
       - name: vsrx3-18.4R1-S2.4-20190514
         config-drive: false
         connection-type: network_cli
@@ -204,6 +209,16 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: vqfx-18.1R3
+            flavor-name: v2-highcpu-1
+            cloud-image: vqfx-18.1R3-S2.5-20200116
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+            networks:
+              - public
+              - net1
+              - net2
           - name: vyos-1.1.8-1vcpu
             flavor-name: v2-highcpu-2
             cloud-image: vyos-1.1.8-20190407
