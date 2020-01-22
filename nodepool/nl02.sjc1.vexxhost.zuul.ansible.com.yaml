@@ -19,6 +19,8 @@ labels:
     max-ready-age: 600
   - name: fedora-30-1vcpu
     max-ready-age: 600
+  - name: fedora-31-1vcpu
+    max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
   - name: iosxrv-6.1.3
@@ -95,6 +97,8 @@ providers:
         config-drive: true
       - name: fedora-30
         config-drive: true
+      - name: fedora-31
+        config-drive: true
       - name: ubuntu-bionic
         config-drive: true
       - name: ubuntu-xenial
@@ -161,6 +165,12 @@ providers:
           - name: fedora-30-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-30
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: fedora-31-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: fedora-31
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
@@ -252,6 +262,8 @@ diskimages:
   - name: centos-7
   - name: centos-8
   - name: fedora-30
+    python-path: /usr/bin/python3
+  - name: fedora-31
     python-path: /usr/bin/python3
   - name: ubuntu-bionic
   - name: ubuntu-xenial
