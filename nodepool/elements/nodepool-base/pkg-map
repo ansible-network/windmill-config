@@ -5,11 +5,6 @@
         "ntp": "chrony",
         "ntpdate": ""
        }
-    },
-    "fedora": {
-      "30": {
-        "tox": "python3-tox python3-pip python3-libselinux"
-       }
     }
   },
   "distro": {
@@ -18,7 +13,7 @@
       "tox": ""
     },
     "fedora": {
-      "tox": "python3-tox python2-pip python2-libselinux"
+      "tox": "python3-tox python3-pip python3-libselinux"
     },
     "ubuntu": {
       "tox": "tox python-pip"
