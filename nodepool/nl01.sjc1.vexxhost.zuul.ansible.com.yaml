@@ -162,7 +162,7 @@ providers:
             diskimage: ubuntu-xenial
             key-name: infra-root-keys
           - name: vqfx-18.1R3
-            flavor-name: s1.tiny
+            flavor-name: s1.medium
             cloud-image: vqfx-18.1R3-S2.5-20200116
             key-name: infra-root-keys
             networks:
