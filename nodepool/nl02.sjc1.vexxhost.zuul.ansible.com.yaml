@@ -220,7 +220,7 @@ providers:
             boot-from-volume: true
             volume-size: 80
           - name: vqfx-18.1R3
-            flavor-name: v2-highcpu-1
+            flavor-name: v2-highcpu-4
             cloud-image: vqfx-18.1R3-S2.5-20200116
             key-name: infra-root-keys
             boot-from-volume: true
