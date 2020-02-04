@@ -114,7 +114,7 @@ providers:
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
-      - name: VMware-VCSA-all-6.7.0-14836122
+      - name: VMware-VCSA-all-6.7.0-14836122-20200204
         config-drive: true
         python-path: /usr/bin/python3
       - name: vqfx-18.1R3-S2.5-20200116
