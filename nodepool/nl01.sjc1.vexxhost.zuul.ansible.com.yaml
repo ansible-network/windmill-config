@@ -188,7 +188,7 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
             flavor-name: s1.large
-            cloud-image: VMware-VCSA-all-6.7.0-14836122
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200204
             key-name: infra-root-keys
 
   - name: limestone-us-slc
