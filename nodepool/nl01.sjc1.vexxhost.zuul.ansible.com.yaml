@@ -128,7 +128,8 @@ providers:
             diskimage: centos-8
             key-name: infra-root-keys
           - name: esxi-6.7.0
-            flavor-name: s1.medium
+            # flavor-name: s1.medium
+            flavor-name: c1.hwetest.1
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200204
           - name: fedora-30-1vcpu
             flavor-name: s1.small
