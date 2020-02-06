@@ -17,6 +17,8 @@ labels:
     max-ready-age: 600
   - name: centos-8-1vcpu
     max-ready-age: 600
+  - name: centos-8-8vcpu-8gb
+    max-ready-age: 600
   - name: fedora-30-1vcpu
     max-ready-age: 600
   - name: fedora-31-1vcpu
@@ -158,6 +160,12 @@ providers:
             volume-size: 80
           - name: centos-8-1vcpu
             flavor-name: v2-highcpu-1
+            diskimage: centos-8
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: centos-8-8vcpu-8gb
+            flavor-name: v2-highcpu-8
             diskimage: centos-8
             key-name: infra-root-keys
             boot-from-volume: true
