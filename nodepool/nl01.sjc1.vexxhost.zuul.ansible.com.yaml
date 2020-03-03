@@ -9,6 +9,8 @@ images-dir: /opt/nodepool/images
 # nl01 will manage min-ready of our labels.  If nl01 is ever disabled, another
 # launcher will need to assume this logic.
 labels:
+  - name: asav9-12-3
+    max-ready-age: 600
   - name: centos-7-1vcpu
     max-ready-age: 600
   - name: centos-7-4vcpu
@@ -67,6 +69,9 @@ providers:
       - name: ubuntu-xenial
         config-drive: true
     cloud-images: &provider_limestone_cloud-images
+      - name: asav9-12-3-20200302
+        config-drive: true
+        connection-type: network_cli
       - name: ios-15.6-2T-20190524
         config-drive: false
         connection-type: network_cli
@@ -104,6 +109,13 @@ providers:
           - Public Internet
           - Private Network (10.0.0.0/8 only)
         labels: &provider_limestone_pools_s1_small_labels
+          - name: asav9-12-3
+            flavor-name: s1.small
+            cloud-image: asav9-12-3-20200302
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
           - name: eos-4.20.10
             flavor-name: s1.medium
             cloud-image: vEOS-4.20.10M-20190501
