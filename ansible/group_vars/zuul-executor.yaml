@@ -37,20 +37,20 @@ zuul_executor_ansible:
     ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.7.16
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.7
   - ansible_pip_name:
-      - ansible==2.8.8
+      - ansible==2.8.9
       - ara<1.0.0
       - openstacksdk
       - paramiko
     ansible_pip_virtualenv_python: python3
-    ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.8.8
+    ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.8.9
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.8
   - ansible_pip_name:
-      - ansible==2.9.4
+      - ansible==2.9.6
       - ara<1.0.0
       - openstacksdk
       - paramiko
     ansible_pip_virtualenv_python: python3
-    ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.9.4
+    ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.9.6
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.9
 
 # openstack.logrotate
