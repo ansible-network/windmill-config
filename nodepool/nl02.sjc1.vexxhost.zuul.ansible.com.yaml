@@ -169,6 +169,10 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: esxi-6.7.0_exp
+            # flavor-name: s1.medium
+            flavor-name: v2-standard-N-iops
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200206
           - name: fedora-30-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-30
