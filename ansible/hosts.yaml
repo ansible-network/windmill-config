@@ -9,6 +9,14 @@ all:
         public_ipv4: 38.108.68.150
         public_ipv6: 2604:e100:3:0:f816:3eff:fe71:4f45
 
+    bastion02.ca-ymq-1.vexxhost.zuul.ansible.com:
+      ansible_host: 199.204.45.138
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAID6TTEV3fEi9x6iPZzkVStJBDvT4OY19oc5BiqQ49wMU
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 199.204.45.138
+        public_ipv6: 2604:e100:1:0:f816:3eff:fe82:690a
+
     borg01.ca-ymq-1.vexxhost.zuul.ansible.com:
       ansible_host: 199.204.45.30
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIAFZWe0wD8u5CdNUOwhs9y2v4HySn808mu/oZtlF1+6O
@@ -141,6 +149,7 @@ all:
     bastion:
       hosts:
         bastion01.sjc1.vexxhost.zuul.ansible.com:
+        bastion02.ca-ymq-1.vexxhost.zuul.ansible.com:
 
     borg:
       children:
