@@ -2,10 +2,10 @@
 - hosts: localhost
   gather_facts: false
   vars:
-    bastion_hostname: bastion01.sjc1.vexxhost.zuul.ansible.com
-    bastion_ansible_host: 38.108.68.150
+    bastion_hostname: bastion02.ca-ymq-1.vexxhost.zuul.ansible.com
+    bastion_ansible_host: 199.204.45.138
     bastion_ssh_user: windmill
-    bastion_ssh_host_key: "{{ bastion_hostname }},{{ bastion_ansible_host}} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJwUngYI3KGYjZ3kFlX11bo3OS/ZS92wKQGEnIoQjxgS"
+    bastion_ssh_host_key: "{{ bastion_hostname }},{{ bastion_ansible_host}} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID6TTEV3fEi9x6iPZzkVStJBDvT4OY19oc5BiqQ49wMU"
 
   tasks:
     - name: Add bastion server
