@@ -53,6 +53,7 @@ windmill_users: "{{ _windmill_users }}"
 
 _windmill_root_users_base:
   - dmellado
+  - goneri
   - pabelanger
   - windmill
 _windmill_root_users_extra: []
