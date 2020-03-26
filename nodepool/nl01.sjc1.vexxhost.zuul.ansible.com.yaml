@@ -100,6 +100,9 @@ providers:
       - name: VMware-VCSA-all-6.7.0-14836122-20200204
         config-drive: true
         python-path: /usr/bin/python3
+      - name: VMware-VCSA-all-7.0.0-15525994-20200324
+        config-drive: true
+        python-path: /usr/bin/python3
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
