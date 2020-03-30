@@ -49,6 +49,8 @@ labels:
     max-ready-age: 600
   - name: vmware-vcsa-7.0.0
     max-ready-age: 600
+  - name: esxi-6.7.0_exp
+    max-ready-age: 600
 
 providers:
   - name: rdocloud-regionone
