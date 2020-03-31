@@ -1,2 +1,1 @@
-CentOS-8.1.1911-x86_64-boot.iso file /opt/cache/files/CentOS-8.1.1911-x86_64-boot.iso http://mirror.csclub.uwaterloo.ca/centos/8.1.1911/isos/x86_64/CentOS-8.1.1911-x86_64-boot.iso
-Fedora-Workstation-Live-x86_64-31-1.9.iso file /opt/cache/files/Fedora-Workstation-Live-x86_64-31-1.9.iso https://download.fedoraproject.org/pub/fedora/linux/releases/31/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-31-1.9.iso
+fedora-open-vm-tools-livecd.iso file /opt/cache/files/fedora-open-vm-tools-livecd.iso https://virt-lightning.org/fedora-open-vm-tools-livecd.iso
