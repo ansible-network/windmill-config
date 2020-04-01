@@ -46,3 +46,18 @@
     files:
       - github/projects.yaml
       - tools/manage-projects.py
+
+- job:
+    name: windmill-config-tox-tools
+    parent: tox
+    description: |
+      Runs the scripts from the tools directory
+
+      Uses tox with the ``tools`` environment.
+    vars:
+      tox_envlist: tools
+      test_setup_skip: true
+    files:
+      - ^nodepool
+      - tox.ini
+      - ^tools

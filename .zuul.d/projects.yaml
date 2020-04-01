@@ -2,6 +2,12 @@
 - project:
     templates:
       - ansible-python-jobs
+    check:
+      jobs:
+        - windmill-config-tox-tools
+    gate:
+      jobs:
+        - windmill-config-tox-tools
     periodic-1hr:
       jobs:
         - windmill-config-deploy
