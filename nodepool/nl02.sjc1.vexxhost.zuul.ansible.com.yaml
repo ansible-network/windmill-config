@@ -185,6 +185,11 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          # based on v2-standard-1-iops, for troubleshooting
+          - name: centos-8_v2-standard-1-iops
+            flavor-name: v2-standard-1-iops
+            diskimage: centos-8
+            key-name: infra-root-keys
           - name: esxi-6.7.0_exp
             # flavor-name: s1.medium
             flavor-name: v2-standard-1-iops
