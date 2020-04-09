@@ -239,7 +239,106 @@ providers:
         networks:
           - Public Internet
           - Private Network (10.0.0.0/8 only)
-        labels: *provider_limestone_pools_s1_small_labels
+        labels:
+          - name: asav9-12-3
+            flavor-name: s1.small
+            cloud-image: asav9-12-3-20200302
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: eos-4.20.10
+            flavor-name: s1.medium
+            cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: centos-7-1vcpu
+            flavor-name: s1.small
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-7-4vcpu
+            flavor-name: s1.large
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-7-8vcpu
+            flavor-name: s1.xlarge
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-8-1vcpu
+            flavor-name: s1.small
+            diskimage: centos-8
+            key-name: infra-root-keys
+          - name: esxi-6.7.0-with-nested
+            flavor-name: s1.medium
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200206
+          - name: esxi-6.7.0-without-nested
+            flavor-name: s1.medium
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200206
+          - name: fedora-30-1vcpu
+            flavor-name: s1.small
+            diskimage: fedora-30
+            key-name: infra-root-keys
+          - name: fedora-31-1vcpu
+            flavor-name: s1.small
+            diskimage: fedora-31
+            key-name: infra-root-keys
+          - name: ios-15.6-2T
+            flavor-name: s1.small
+            cloud-image: ios-15.6-2T-20190524
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: iosxrv-6.1.3
+            flavor-name: s1.large
+            cloud-image: iosxrv-6.1.3-20190604
+            host-key-checking: false
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+              - Public Internet
+          - name: ubuntu-bionic-1vcpu
+            flavor-name: s1.small
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-xenial-1vcpu
+            flavor-name: s1.small
+            diskimage: ubuntu-xenial
+            key-name: infra-root-keys
+          - name: vqfx-18.1R3
+            flavor-name: s1.medium
+            cloud-image: vqfx-18.1R3-S2.5-20200116
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vsrx3-18.4R1
+            flavor-name: s1.medium
+            cloud-image: vsrx3-18.4R1-S2.4-20190514
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vyos-1.1.8-1vcpu
+            flavor-name: s1.medium
+            cloud-image: vyos-1.1.8-20190407
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vmware-vcsa-6.7.0
+            flavor-name: s1.large
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200320
+            key-name: infra-root-keys
+          - name: vmware-vcsa-7.0.0
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-7.0.0-15525994-20200327
+            key-name: infra-root-keys
 
 diskimages:
   - name: centos-7
