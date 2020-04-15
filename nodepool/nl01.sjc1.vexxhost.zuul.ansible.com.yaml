@@ -96,10 +96,10 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20200206
+      - name: esxi-6.7.0-20190802001-STANDARD-20200415
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-6.7.0-14836122-20200320
+      - name: VMware-VCSA-all-6.7.0-14836122-20200415
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-7.0.0-15525994-20200327
@@ -148,10 +148,10 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested
             flavor-name: c1.hwetest.1
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200206
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: esxi-6.7.0-without-nested
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200206
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: fedora-30-1vcpu
             flavor-name: s1.small
             diskimage: fedora-30
@@ -209,7 +209,7 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
             flavor-name: s1.large
-            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200320
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200415
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.0
             flavor-name: s1.xlarge
@@ -267,10 +267,10 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200206
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: esxi-6.7.0-without-nested
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200206
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: fedora-30-1vcpu
             flavor-name: s1.small
             diskimage: fedora-30
@@ -328,7 +328,7 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
             flavor-name: s1.large
-            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200320
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200415
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.0
             flavor-name: s1.xlarge
