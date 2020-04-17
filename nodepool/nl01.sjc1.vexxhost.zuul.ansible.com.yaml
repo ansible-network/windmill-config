@@ -265,9 +265,10 @@ providers:
             flavor-name: s1.small
             diskimage: centos-8
             key-name: infra-root-keys
-          - name: esxi-6.7.0-with-nested
-            flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
+            # Temporarily disabled until we resolve the stability issue
+            # - name: esxi-6.7.0-with-nested
+            #   flavor-name: s1.medium
+            #   cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: esxi-6.7.0-without-nested
             flavor-name: s1.medium
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
