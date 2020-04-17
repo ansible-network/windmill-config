@@ -21,6 +21,8 @@ labels:
     max-ready-age: 600
   - name: esxi-6.7.0-without-nested
     max-ready-age: 600
+  - name: esxi-6.7.0-with-nested
+    max-ready-age: 600
   - name: fedora-30-1vcpu
     max-ready-age: 600
   - name: fedora-31-1vcpu
@@ -186,6 +188,9 @@ providers:
             boot-from-volume: true
             volume-size: 80
           - name: esxi-6.7.0-without-nested
+            flavor-name: v2-standard-1-iops
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
+          - name: esxi-6.7.0-with-nested
             flavor-name: v2-standard-1-iops
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: fedora-30-1vcpu
