@@ -21,7 +21,7 @@ labels:
     max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
-  - name: esxi-6.7.0-with-nested
+  - name: esxi-6.7.0-with-nested-unstable
     max-ready-age: 600
   - name: esxi-6.7.0-without-nested
     max-ready-age: 600
@@ -146,7 +146,7 @@ providers:
             flavor-name: s1.small
             diskimage: centos-8
             key-name: infra-root-keys
-          - name: esxi-6.7.0-with-nested
+          - name: esxi-6.7.0-with-nested-unstable
             flavor-name: c1.hwetest.1
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: esxi-6.7.0-without-nested
@@ -265,7 +265,7 @@ providers:
             flavor-name: s1.small
             diskimage: centos-8
             key-name: infra-root-keys
-          - name: esxi-6.7.0-with-nested
+          - name: esxi-6.7.0-with-nested-unstable
             flavor-name: s1.medium
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: esxi-6.7.0-without-nested
