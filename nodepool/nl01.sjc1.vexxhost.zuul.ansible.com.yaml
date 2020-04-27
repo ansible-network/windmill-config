@@ -51,8 +51,44 @@ labels:
     max-ready-age: 600
   - name: vmware-vcsa-7.0.0
     max-ready-age: 600
+  - name: qradarce-7.3
+    max-ready-age: 600
 
 providers:
+  - name: ec2-us-east-2
+    driver: aws
+    region-name: us-east-2
+    cloud-images:
+      - name: AnsibleSecurity-QRadarCE-7.3.1-RHEL75EUS-20200214.0
+        # NOTE: I cannot find the original image, I use RHEL76 instead for now
+        # aws ec2 describe-images --region us-east-2 --filters 'Name=name,Values=RHEL-7.6_HVM_GA-20181017-x86_64-0-Hourly2-GP2'| jq -r .Images[].ImageId
+        image-id: ami-0b500ef59d8335eee
+        username: ec2-user
+      # NOTE: We should be able to use regular centos-{7,8} if nodepool is
+      # able to upload the images produced by DI if nodepool is
+      # able to upload the images produced by DIB
+      - name: centos-7-aws
+        # aws ec2 describe-images --region us-east-2 --owners aws-marketplace --filters Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce| jq -r '.Images|sort_by(.CreationDate)[-1].ImageId'
+        image-id: ami-01e36b7901e884a10
+        username: centos
+    pools:
+      - name: main
+        max-servers: 5
+        subnet-id: subnet-0eb42065e8c196f38
+        security-group-id: sg-0dea0b7beee7f8b88
+        labels:
+          - name: qradarce-7.3
+            cloud-image: AnsibleSecurity-QRadarCE-7.3.1-RHEL75EUS-20200214.0
+            instance-type: t2.xlarge
+            key-name: zuul
+          - name: centos-7-1vcpu
+            flavor-name: t2.small
+            diskimage: centos-7-aws
+            key-name: zuul
+          - name: centos-7-4vcpu
+            flavor-name: t2.xlarge
+            diskimage: centos-7-aws
+            key-name: zuul
   - name: limestone-us-dfw-1
     cloud: limestone
     region-name: us-dfw-1
