@@ -35,6 +35,8 @@ labels:
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
+  - name: ubuntu-bionic-1vcpu-aws
+    max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
     max-ready-age: 600
   - name: ubuntu-xenial-1vcpu
@@ -53,6 +55,23 @@ labels:
     max-ready-age: 600
 
 providers:
+  - name: ec2-us-east-2
+    driver: aws
+    region-name: us-east-2
+    cloud-images:
+      - name: ubuntu-bionic
+        image-id: ami-07c1207a9d40bc3bd
+        username: ec2-user
+    pools:
+      - name: main
+        max-servers: 5
+        subnet-id: subnet-0eb42065e8c196f38
+        security-group-id: sg-0dea0b7beee7f8b88
+        labels:
+          - name: ubuntu-bionic-1vcpu-aws
+            cloud-image: ubuntu-bionic
+            instance-type: t2.small
+            key-name: zuul
   - name: limestone-us-dfw-1
     cloud: limestone
     region-name: us-dfw-1
