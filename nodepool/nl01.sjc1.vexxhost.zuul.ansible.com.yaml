@@ -328,6 +328,14 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
               - Public Internet
+          - name: nxos-7.0.3
+            flavor-name: s1.xlarge
+            cloud-image: nxos-7.0.3.I5.1-20200505
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1.small
             diskimage: ubuntu-bionic
