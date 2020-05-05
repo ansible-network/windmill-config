@@ -47,6 +47,8 @@ labels:
     max-ready-age: 600
   - name: nxos-7.0.3
     max-ready-age: 600
+  - name: QRadarCE-7.3
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu-aws
@@ -88,6 +90,9 @@ providers:
         # aws ec2 describe-images --region us-east-2 --owners 125523088429 --filters 'Name=name,Values=Fedora-Cloud-Base-32*' 'Name=image-type,Values=machine' 'Name=architecture,Values=x86_64'| jq -r '.Images|sort_by(.CreationDate)[-1].ImageId'
         image-id: ami-09b1522897fbc8c04
         username: fedora
+      - name: AnsibleSecurity-QRadarCE-7.3.1-RHEL75EUS-20200214.0
+        image-id: ami-09477933a629d44bf
+        username: ec2-user
     pools:
       - name: main
         max-servers: 5
@@ -113,6 +118,10 @@ providers:
           - name: fedora-32-1vcpu
             cloud-image: fedora-32
             instance-type: t2.small
+            key-name: zuul
+          - name: QRadarCE-7.3
+            cloud-image: AnsibleSecurity-QRadarCE-7.3.1-RHEL75EUS-20200214.0
+            instance-type: t2.xlarge
             key-name: zuul
   - name: limestone-us-dfw-1
     cloud: limestone
