@@ -63,7 +63,7 @@ providers:
     cloud-images:
       - name: ubuntu-bionic
         image-id: ami-07c1207a9d40bc3bd
-        username: ec2-user
+        username: ubuntu
     pools:
       - name: main
         max-servers: 5
