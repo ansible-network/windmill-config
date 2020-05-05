@@ -33,6 +33,8 @@ labels:
     max-ready-age: 600
   - name: iosxrv-6.1.3
     max-ready-age: 600
+  - name: nxos-7.0.3
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu-aws
@@ -72,6 +74,7 @@ providers:
             cloud-image: ubuntu-bionic
             instance-type: t2.small
             key-name: zuul
+
   - name: limestone-us-dfw-1
     cloud: limestone
     region-name: us-dfw-1
@@ -102,6 +105,10 @@ providers:
         config-drive: false
         # NOTE(pabelanger): We don't have default gateway setup on boot, so
         # this is an attempt to setup nodepool from doing ssh-keyscan.
+        connection-type: network_cli
+      - name: nxos-7.0.3.I5.1-20200505
+        config-drive: true
+        connection-port: 8022
         connection-type: network_cli
       - name: vEOS-4.20.10M-20190501
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
@@ -194,6 +201,14 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
               - Public Internet
+          - name: nxos-7.0.3
+            flavor-name: s1.xlarge
+            cloud-image: nxos-7.0.3.I5.1-20200505
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1.small
             diskimage: ubuntu-bionic
