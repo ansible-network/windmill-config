@@ -234,6 +234,8 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
+            boot-from-volume: true
+            volume-size: 150
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1.small
             diskimage: ubuntu-bionic
@@ -361,6 +363,8 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
+            boot-from-volume: true
+            volume-size: 150
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1.small
             diskimage: ubuntu-bionic
