@@ -200,19 +200,19 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
           - name: centos-7-1vcpu
-            flavor-name: s1.small
+            flavor-name: l1.small
             diskimage: centos-7
             key-name: infra-root-keys
           - name: centos-7-4vcpu
-            flavor-name: s1.large
+            flavor-name: l1.large
             diskimage: centos-7
             key-name: infra-root-keys
           - name: centos-7-8vcpu
-            flavor-name: s1.xlarge
+            flavor-name: l1.xlarge
             diskimage: centos-7
             key-name: infra-root-keys
           - name: centos-8-1vcpu
-            flavor-name: s1.small
+            flavor-name: l1.small
             diskimage: centos-8
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
@@ -222,11 +222,11 @@ providers:
             flavor-name: s1.medium
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: fedora-30-1vcpu
-            flavor-name: s1.small
+            flavor-name: l1.small
             diskimage: fedora-30
             key-name: infra-root-keys
           - name: fedora-31-1vcpu
-            flavor-name: s1.small
+            flavor-name: l1.small
             diskimage: fedora-31
             key-name: infra-root-keys
           - name: ios-15.6-2T
@@ -254,11 +254,11 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Public Internet
           - name: ubuntu-bionic-1vcpu
-            flavor-name: s1.small
+            flavor-name: l1.small
             diskimage: ubuntu-bionic
             key-name: infra-root-keys
           - name: ubuntu-xenial-1vcpu
-            flavor-name: s1.small
+            flavor-name: l1.small
             diskimage: ubuntu-xenial
             key-name: infra-root-keys
           - name: vqfx-18.1R3
