@@ -230,7 +230,7 @@ providers:
             diskimage: fedora-31
             key-name: infra-root-keys
           - name: ios-15.6-2T
-            flavor-name: s1.small
+            flavor-name: l1.small
             cloud-image: ios-15.6-2T-20190524
             networks:
               - Public Internet
