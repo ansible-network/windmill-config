@@ -97,18 +97,22 @@ providers:
           - name: ubuntu-bionic-1vcpu-aws
             cloud-image: ubuntu-bionic
             instance-type: t2.small
+            volume-size: 80
             key-name: zuul
           - name: centos-7-1vcpu-aws
             cloud-image: centos-7
             instance-type: t2.small
+            volume-size: 80
             key-name: zuul
           - name: centos-7-4vcpu-aws
             cloud-image: centos-7
             instance-type: t2.small
+            volume-size: 80
             key-name: zuul
           - name: fedora-31-1vcpu-aws
             cloud-image: fedora-31
             instance-type: t2.small
+            volume-size: 80
             key-name: zuul
           - name: QRadarCE-7.3.1
             cloud-image: QRadarCE-7.3.1-RHEL75EUS-20200214.0
