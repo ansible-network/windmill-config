@@ -197,7 +197,7 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
           - name: eos-4.20.10
-            flavor-name: s1.medium
+            flavor-name: l1.medium
             cloud-image: vEOS-4.20.10M-20190501
             networks:
               - Public Internet
@@ -223,7 +223,7 @@ providers:
             flavor-name: c1.hwetest.1
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: esxi-6.7.0-without-nested
-            flavor-name: s1.medium
+            flavor-name: l1.medium
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
           - name: fedora-30-1vcpu
             flavor-name: l1.small
@@ -266,7 +266,7 @@ providers:
             diskimage: ubuntu-xenial
             key-name: infra-root-keys
           - name: vqfx-18.1R3
-            flavor-name: s1.medium
+            flavor-name: l1.medium
             cloud-image: vqfx-18.1R3-S2.5-20200116
             key-name: infra-root-keys
             networks:
@@ -274,7 +274,7 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
           - name: vsrx3-18.4R1
-            flavor-name: s1.medium
+            flavor-name: l1.medium
             cloud-image: vsrx3-18.4R1-S2.4-20190514
             key-name: infra-root-keys
             networks:
@@ -282,7 +282,7 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
           - name: vyos-1.1.8-1vcpu
-            flavor-name: s1.medium
+            flavor-name: l1.medium
             cloud-image: vyos-1.1.8-20190407
             key-name: infra-root-keys
             networks:
