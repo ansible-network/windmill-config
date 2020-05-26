@@ -94,7 +94,7 @@ providers:
         # This subnet comes with 172.16/16 CIDR. This is a requirement for
         # the QRadar image.
         subnet-id: subnet-049b1e99211b42502
-        security-group-id: sg-0dea0b7beee7f8b88
+        security-group-id: sg-0bc8090db4886b59f
         labels:
           - name: ubuntu-bionic-1vcpu-aws
             cloud-image: ubuntu-bionic
