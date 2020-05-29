@@ -36,23 +36,16 @@ _windmill_users:
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCuP0CZE8AYnbm8gxecCxKeRw0wHRyryd+FKmNNsdr0d3UvfCbqNzLigrqEBZsKpofi3M4qCWNpKRyfhnjPynLTQjP1vnX9AbL9UGoiHxScfvh3skntTYMs9ezJRd0rMJJZO76FPo8bJLDlwxAQl8m/nuj3HfYiO5hYE7P+a3rhsJh4nEfBb7xh+Q5yM0PWObkkBl6IRiBYjlcsXNZHgTA5kNuihUk5bHqAw54sHh05DhpgOITpTw4LFbh4Ew2NKq49dEb2xbTuAyAr2DHNOGgIwKEZpwtKZEIGEuiLbb4DQRsfivrvyOjnK2NFjQzGyNOHfsOldWHRQwUKUs8nrxKdXvqcrfMnSVaibeYK2TRL+6jd9kc5SIhWI3XLm7HbX7uXMD7/JQrkL25Rcs6nndDCH72DJLz+ynA/T5umMbNBQ9tybL5z73IOpfShRGjQYego22CxDOy7e/5OEMHNoksbFb1S02viM9O2puS7LDqqfT9JIbbPqCrbRi/zOXo0f4EXo6xKUAmd8qlV+6f/p57/qFihzQDaRFVlFEH3k7qwsw7PYGUTwkPaThe6xyZN6D5jqxCZU3aSYu+FGb0oYo+M5IxOm0Cb4NNsvvkRPxWtwSayfFGu6+m/+/RyA3GBcAMev7AuyKN+K2vGMsLagHOx4i+5ZAcUwGzLeXAENNum3w==
     gid: 2001
     uid: 2001
-  dmellado:
-    comment: Daniel Mellado
-    email: dmellado@redhat.com
-    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvLBCvbloQQwbvlrAEU/txha1cvX0lQ1eGCNddiXfE8u/a+C9IVCs8YxyOV5r2MTC+8GLbMMF4XYgizl1Xtsm0VW4YBtJ1jXo36W+eZZJ8GCwWdjYcyjqFyfHBDA1qLR/G09u45wFDf+ohvUMCwPsCk87T5MuwLLkhD3hFpizkpou2rsop3KOd6d8GBUVQ1z29aOIqE1yrsCKqqD2i8f1eA3uhu0r9Rx22YZWnjx7nZ4PVKZrzH1i6KwPw4aO6Ximd7y9dDXnFVSogpN1gwtL1XgqRfmBH9RiGRWtON/vuvXtw4JoWpy8R6t9tXmNM/SjFkwdNMSaHMGgxtKp+YTXF
-    gid: 2002
-    uid: 2002
   goneri:
     comment: Gonéri Le bouder
     email: goneri@redhat.com
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyiXfE1zHKdj6odbysr917Cn88ov0VQaPJtLKJyMNuRYAeMOFQHd50X8JO4dfZbmSo3YdJlVfz9FLRxE64mqj9bkN8hPFbkTG2F1AWXGPON5cmm4uiLPfQkWhX/LnClrhzZpNtMJYs5AEFeDs0POijcRugZsQA+wvLi0lSlhOfkqtjAJKpPUwy1wrJFDdvqdQBjpNQh/LB8c15XfQV2JT/3NX26dQe8zvHhL6NvfhBnAikodYkBr7UjSl36CBk0cPebZMZEBBiHdo76xORVkpmqDvkhFByXXeAsvRa2YWS4wxpiNJFswlRhjubGau7LrT113WMcPvgYXHYHf2IYJWD goneri@redhat.com
-    gid: 2003
-    uid: 2003
+    gid: 2002
+    uid: 2002
 
 windmill_users: "{{ _windmill_users }}"
 
 _windmill_root_users_base:
-  - dmellado
   - goneri
   - pabelanger
   - windmill
