@@ -174,7 +174,7 @@ providers:
       - name: esxi-6.7.0-20190802001-STANDARD-20200415
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-6.7.0-14836122-20200415
+      - name: VMware-VCSA-all-6.7.0-14836122-20200530
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-7.0.0-16189094-20200529
@@ -293,7 +293,7 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
             flavor-name: s1.large
-            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200415
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200530
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.0
             flavor-name: s1.xlarge
@@ -421,7 +421,7 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
             flavor-name: s1.large
-            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200415
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200530
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.0
             flavor-name: s1.xlarge
