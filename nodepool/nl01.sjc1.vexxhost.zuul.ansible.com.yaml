@@ -86,7 +86,7 @@ providers:
         image-id: ami-09477933a629d44bf
         username: ec2-user
       - name: SplunkEnterprise-SES-8.0.0-RHEL77-20191105.0
-        image-id: ami-001a95e1d7059acad
+        image-id: ami-0f4c5eea6ed526742
         username: ec2-user
     pools:
       - name: main
