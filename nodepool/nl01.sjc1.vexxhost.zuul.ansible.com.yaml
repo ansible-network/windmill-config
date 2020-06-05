@@ -73,11 +73,9 @@ providers:
     cloud-images:
       - name: ubuntu-bionic
         image-id: ami-07c1207a9d40bc3bd
-        username: ubuntu
       - name: centos-7
         # aws ec2 describe-images --region us-east-2 --owners aws-marketplace --filters Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce| jq -r '.Images|sort_by(.CreationDate)[-1].ImageId'
         image-id: ami-01e36b7901e884a10
-        username: centos
       - name: fedora-31
         # aws ec2 describe-images --region us-east-2 --owners 125523088429 --filters 'Name=name,Values=Fedora-Cloud-Base-31*' 'Name=image-type,Values=machine' 'Name=architecture,Values=x86_64'| jq -r '.Images|sort_by(.CreationDate)[-1].ImageId'
         image-id: ami-0a7b53d11c7a9b9e4
