@@ -106,6 +106,8 @@ providers:
                 - virtualenv
                 - tox
                 - unbound
+                - python3.6-dev
+                - python3.8-dev
               users:
                 - name: zuul
                   gecos: Zuul user
