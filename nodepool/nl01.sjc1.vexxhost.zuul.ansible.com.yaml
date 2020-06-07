@@ -255,7 +255,7 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20200415
+      - name: esxi-6.7.0-20190802001-STANDARD-20200606
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-6.7.0-14836122-20200530
@@ -307,10 +307,10 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
             flavor-name: c1.hwetest.1
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
           - name: esxi-6.7.0-without-nested
             flavor-name: l1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
           - name: fedora-30-1vcpu
             flavor-name: l1.small
             diskimage: fedora-30
@@ -435,10 +435,10 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
           - name: esxi-6.7.0-without-nested
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200415
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
           - name: fedora-30-1vcpu
             flavor-name: s1.small
             diskimage: fedora-30
