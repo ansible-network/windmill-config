@@ -19,6 +19,8 @@ providers:
         config-drive: true
       - name: fedora-31
         config-drive: true
+      - name: fedora-32
+        config-drive: true
       - name: ubuntu-bionic
         config-drive: true
       - name: ubuntu-xenial

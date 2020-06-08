@@ -519,5 +519,7 @@ diskimages:
     python-path: /usr/bin/python3
   - name: fedora-31
     python-path: /usr/bin/python3
+  - name: fedora-32
+    python-path: /usr/bin/python3
   - name: ubuntu-bionic
   - name: ubuntu-xenial
