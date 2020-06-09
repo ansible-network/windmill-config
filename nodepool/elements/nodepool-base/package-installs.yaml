@@ -4,3 +4,4 @@ ntp:
 ntpdate:
 tox:
 unbound:
+jq:

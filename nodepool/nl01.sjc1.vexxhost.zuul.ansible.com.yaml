@@ -100,11 +100,12 @@ providers:
               #cloud-config
               package_update: true
               packages:
-                - virtualenv
-                - tox
-                - unbound
+                - jq
                 - python3.6-dev
                 - python3.8-dev
+                - tox
+                - unbound
+                - virtualenv
               users:
                 - name: zuul
                   gecos: Zuul user
@@ -123,6 +124,7 @@ providers:
               #cloud-config
               package_update: true
               packages:
+                - jq
                 - python-virtualenv
                 - python-tox
                 - unbound
@@ -144,6 +146,8 @@ providers:
               #cloud-config
               package_update: true
               packages:
+                - jq
+                - python-virtualenv
                 - python-virtualenv
                 - python-tox
                 - unbound
@@ -165,6 +169,7 @@ providers:
               #cloud-config
               package_update: true
               packages:
+                - jq
                 - python-virtualenv
                 - python-tox
                 - unbound
