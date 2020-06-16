@@ -376,7 +376,7 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
-            flavor-name: s1.large
+            flavor-name: s1.xlarge
             cloud-image: VMware-VCSA-all-6.7.0-14836122-20200530
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.0
@@ -504,7 +504,7 @@ providers:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
-            flavor-name: s1.large
+            flavor-name: s1.xlarge
             cloud-image: VMware-VCSA-all-6.7.0-14836122-20200530
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.0
