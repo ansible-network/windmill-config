@@ -17,15 +17,13 @@ labels:
     max-ready-age: 600
   - name: centos-7-1vcpu
     max-ready-age: 600
-  - name: centos-7-1vcpu-aws
-    max-ready-age: 600
   - name: centos-7-4vcpu
-    max-ready-age: 600
-  - name: centos-7-4vcpu-aws
     max-ready-age: 600
   - name: centos-7-8vcpu
     max-ready-age: 600
   - name: centos-8-1vcpu
+    max-ready-age: 600
+  - name: centos-8-1vcpu-aws
     max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
@@ -36,8 +34,6 @@ labels:
   - name: fedora-30-1vcpu
     max-ready-age: 600
   - name: fedora-31-1vcpu
-    max-ready-age: 600
-  - name: fedora-31-1vcpu-aws
     max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
@@ -73,12 +69,9 @@ providers:
     cloud-images:
       - name: ubuntu-bionic
         image-id: ami-07c1207a9d40bc3bd
-      - name: centos-7
-        # aws ec2 describe-images --region us-east-2 --owners aws-marketplace --filters Name=product-code,Values=aw0evgkw8e5c1q413zgy5pjce| jq -r '.Images|sort_by(.CreationDate)[-1].ImageId'
-        image-id: ami-01e36b7901e884a10
-      - name: fedora-31
-        # aws ec2 describe-images --region us-east-2 --owners 125523088429 --filters 'Name=name,Values=Fedora-Cloud-Base-31*' 'Name=image-type,Values=machine' 'Name=architecture,Values=x86_64'| jq -r '.Images|sort_by(.CreationDate)[-1].ImageId'
-        image-id: ami-0a7b53d11c7a9b9e4
+      - name: centos-8
+        # https://wiki.centos.org/Cloud/AWS
+        image-id: ami-000e7ce4dd68e7a11
       - name: QRadarCE-7.3.1-RHEL75EUS-20200214.0
         image-id: ami-09477933a629d44bf
       - name: SplunkEnterprise-SES-8.0.0-RHEL77-20191105.0
@@ -114,8 +107,8 @@ providers:
                   ssh_authorized_keys:
                     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
                   sudo: ALL=(ALL) NOPASSWD:ALL
-          - name: centos-7-1vcpu-aws
-            cloud-image: centos-7
+          - name: centos-8-1vcpu-aws
+            cloud-image: centos-8
             instance-type: t2.small
             volume-size: 80
             key-name: zuul
@@ -123,51 +116,14 @@ providers:
               #cloud-config
               package_update: true
               packages:
-                - python-virtualenv
-                - python-tox
+                - python3-virtualenv
                 - unbound
-              users:
-                - name: zuul
-                  gecos: Zuul user
-                  primary_group: foobar
-                  groups: adm, wheel, systemd-journal
-                  lock_passwd: true
-                  ssh_authorized_keys:
-                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
-                  sudo: ALL=(ALL) NOPASSWD:ALL
-          - name: centos-7-4vcpu-aws
-            cloud-image: centos-7
-            instance-type: t2.small
-            volume-size: 80
-            key-name: zuul
-            userdata: |
-              #cloud-config
-              package_update: true
               packages:
-                - python-virtualenv
-                - python-tox
+                - python3-virtualenv
                 - unbound
-              users:
-                - name: zuul
-                  gecos: Zuul user
-                  primary_group: foobar
-                  groups: adm, wheel, systemd-journal
-                  lock_passwd: true
-                  ssh_authorized_keys:
-                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
-                  sudo: ALL=(ALL) NOPASSWD:ALL
-          - name: fedora-31-1vcpu-aws
-            cloud-image: fedora-31
-            instance-type: t2.small
-            volume-size: 80
-            key-name: zuul
-            userdata: |
-              #cloud-config
-              package_update: true
-              packages:
-                - python-virtualenv
-                - python-tox
-                - unbound
+              runcmd:
+                - dnf install -y epel-release
+                - dnf install -y python3-tox
               users:
                 - name: zuul
                   gecos: Zuul user
