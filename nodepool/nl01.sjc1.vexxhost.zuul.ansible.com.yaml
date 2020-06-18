@@ -102,7 +102,7 @@ providers:
               users:
                 - name: zuul
                   gecos: Zuul user
-                  primary_group: foobar
+                  primary_group: zuul
                   groups: ubuntu, adm, sudo
                   lock_passwd: true
                   ssh_authorized_keys:
@@ -124,11 +124,10 @@ providers:
                 - git
                 - python3-virtualenv
                 - unbound
-                - python3-tox
               users:
                 - name: zuul
                   gecos: Zuul user
-                  primary_group: foobar
+                  primary_group: zuul
                   groups: adm, wheel, systemd-journal
                   lock_passwd: true
                   ssh_authorized_keys:
@@ -136,6 +135,8 @@ providers:
                   sudo: ALL=(ALL) NOPASSWD:ALL
               runcmd:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
+                - python3 -m pip install --upgrade pip
+                - python3 -m pip install --upgrade tox
           - name: QRadarCE-7.3.1
             cloud-image: QRadarCE-7.3.1-RHEL75EUS-20200214.0
             instance-type: t2.xlarge
