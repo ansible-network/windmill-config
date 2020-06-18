@@ -53,3 +53,6 @@ iptables_allowed_hosts:
   - address: ze02.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
     port: 19885
+  - address: ze03.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 19885
