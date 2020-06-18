@@ -153,7 +153,7 @@ providers:
         networks: &provider_vexxhost_pools_v2_highcpu_1_networks
           - public
           - net1
-        max-servers: 20
+        max-servers: 40
         labels: &provider_vexxhost_pools_v2_highcpu_1_labels
           - name: asav9-12-3
             flavor-name: v1-standard-2
@@ -292,7 +292,7 @@ providers:
       # Ansible org.
       - name: v2-highcpu-1
         networks: *provider_vexxhost_pools_v2_highcpu_1_networks
-        max-servers: 20
+        max-servers: 40
         labels: *provider_vexxhost_pools_v2_highcpu_1_labels
 
 diskimages:
