@@ -156,7 +156,7 @@ providers:
           - public
           - net1
         max-servers: 40
-        labels: &provider_vexxhost_pools_v2_highcpu_1_labels
+        labels:
           - name: asav9-12-3
             flavor-name: v1-standard-2
             cloud-image: asav9-12-3-20200302
@@ -295,7 +295,128 @@ providers:
       - name: v2-highcpu-1
         networks: *provider_vexxhost_pools_v2_highcpu_1_networks
         max-servers: 40
-        labels: *provider_vexxhost_pools_v2_highcpu_1_labels
+        labels:
+          - name: asav9-12-3
+            flavor-name: v1-standard-2
+            cloud-image: asav9-12-3-20200302
+            networks:
+              - public
+              - net1
+              - net2
+          - name: eos-4.20.10
+            flavor-name: v1-standard-2
+            cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - public
+              - net1
+              - net2
+          - name: centos-7-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: centos-7
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: centos-7-4vcpu
+            flavor-name: v2-highcpu-4
+            diskimage: centos-7
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: centos-8-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: centos-8
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: esxi-6.7.0-without-nested
+            flavor-name: v2-highcpu-4
+            boot-from-volume: true
+            volume-size: 2
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
+          - name: fedora-30-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: fedora-30
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: fedora-31-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: fedora-31
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: ios-15.6-2T
+            flavor-name: v2-highcpu-1
+            cloud-image: ios-15.6-2T-20190524
+            networks:
+              - public
+              - net1
+              - net2
+          - name: iosxrv-6.1.3
+            flavor-name: v2-highcpu-8
+            cloud-image: iosxrv-6.1.3-20190604
+            host-key-checking: false
+            networks:
+              - net1
+              - net2
+              - public
+            boot-from-volume: true
+            volume-size: 40
+          - name: vsrx3-18.4R1
+            flavor-name: v2-highcpu-4
+            cloud-image: vsrx3-18.4R1-S2.4-20190514
+            key-name: infra-root-keys
+            networks:
+              - public
+              - net1
+              - net2
+            boot-from-volume: true
+            volume-size: 40
+          - name: ubuntu-bionic-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: ubuntu-xenial-1vcpu
+            flavor-name: v2-highcpu-1
+            diskimage: ubuntu-xenial
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: vqfx-18.1R3
+            flavor-name: v2-highcpu-4
+            cloud-image: vqfx-18.1R3-S2.5-20200116
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+            networks:
+              - public
+              - net1
+              - net2
+          - name: vyos-1.1.8-1vcpu
+            flavor-name: v2-highcpu-2
+            cloud-image: vyos-1.1.8-20190407
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 40
+            networks:
+              - public
+              - net1
+              - net2
+          - name: vmware-vcsa-6.7.0
+            flavor-name: v2-standard-4
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200530
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 40
+          - name: vmware-vcsa-7.0.0
+            flavor-name: v2-standard-4
+            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200529
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 55
+
 
 diskimages:
   - name: centos-7
