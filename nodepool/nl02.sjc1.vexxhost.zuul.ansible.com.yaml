@@ -187,12 +187,6 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
-          - name: esxi-6.7.0-without-nested
-            flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
-          - name: esxi-6.7.0-with-nested
-            flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
           - name: fedora-30-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-30
@@ -276,6 +270,19 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
+      - name: esxi-pool
+        networks: *provider_vexxhost_pools_v2_highcpu_1_networks
+        max-servers: 10
+        labels:
+          - name: esxi-6.7.0-without-nested
+            flavor-name: v2-highcpu-4
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
+            boot-from-volume: true
+            volume-size: 2
+          - name: esxi-6.7.0-with-nested
+            flavor-name: v2-standard-1-iops
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
+
 
   - name: vexxhost-sjc1
     cloud: vexxhost
@@ -294,6 +301,15 @@ providers:
         networks: *provider_vexxhost_pools_v2_highcpu_1_networks
         max-servers: 40
         labels: *provider_vexxhost_pools_v2_highcpu_1_labels
+      - name: esxi-pool
+        networks: *provider_vexxhost_pools_v2_highcpu_1_networks
+        max-servers: 10
+        labels:
+          - name: esxi-6.7.0-without-nested
+            flavor-name: v2-highcpu-4
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
+            boot-from-volume: true
+            volume-size: 2
 
 diskimages:
   - name: centos-7
