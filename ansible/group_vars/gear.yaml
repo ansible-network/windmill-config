@@ -182,6 +182,10 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 4730
 
+  - address: ze04.ca-ymq-1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 4730
+
   # zuul-merger
   - address: zm01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
