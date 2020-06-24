@@ -103,6 +103,7 @@ Ansible Zuul Hosts
   ze01.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Executor
   ze02.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Executor
   ze03.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Executor
+  ze04.ca-ymq-1.vexxhost.zuul.ansible.com    vexxhost  Zuul Executor
   zk01.sjc1.vexxhost.zuul.ansible.com        vexxhost  ZooKeeper Node
   zk02.sjc1.vexxhost.zuul.ansible.com        vexxhost  ZooKeeper Node
   zk03.sjc1.vexxhost.zuul.ansible.com        vexxhost  ZooKeeper Node
