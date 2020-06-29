@@ -331,7 +331,7 @@ providers:
           - name: esxi-6.7.0-without-nested
             flavor-name: v2-highcpu-4
             boot-from-volume: true
-            volume-size: 2
+            volume-size: 5
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
           - name: fedora-30-1vcpu
             flavor-name: v2-highcpu-1
