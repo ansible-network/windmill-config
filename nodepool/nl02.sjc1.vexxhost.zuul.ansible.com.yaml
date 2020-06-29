@@ -37,8 +37,6 @@ labels:
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
     max-ready-age: 600
-  - name: ubuntu-bionic-rdocloud
-    max-ready-age: 600
   - name: ubuntu-xenial-1vcpu
     max-ready-age: 600
   - name: ubuntu-xenial-4vcpu
@@ -55,43 +53,6 @@ labels:
     max-ready-age: 600
 
 providers:
-  - name: rdocloud-regionone
-    cloud: rdocloud
-    region-name: regionOne
-    boot-timeout: 300
-    launch-timeout: 300
-    rate: 0.001
-    cloud-images:
-      - name: nxos-7.0.3.I5.1
-        config-drive: true
-        connection-port: 8022
-        connection-type: network_cli
-    diskimages:
-      - name: ubuntu-bionic
-        config-drive: true
-    pools:
-      # NOTE(pabelanger): Please contact pabelanger before making changes to
-      # this pool, especially increasing max-servers or changing labels. There
-      # is a real world financial cost in doing so that is charged to the
-      # Ansible org.
-      - name: main
-        networks:
-          - management-network
-        max-servers: 6
-        labels:
-          - name: nxos-7.0.3
-            flavor-name: m1.large2
-            cloud-image: nxos-7.0.3.I5.1
-            key-name: infra-root-keys
-            networks:
-              - data-network2
-              - data-network
-              - management-network
-          - name: ubuntu-bionic-rdocloud
-            flavor-name: m1.small
-            diskimage: ubuntu-bionic
-            key-name: infra-root-keys
-
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
     region-name: ca-ymq-1
