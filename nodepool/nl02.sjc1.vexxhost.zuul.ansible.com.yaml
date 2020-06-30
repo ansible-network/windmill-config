@@ -136,7 +136,7 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20200606
+      - name: esxi-6.7.0-20190802001-STANDARD-20200630
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-6.7.0-14836122-20200530
@@ -191,10 +191,18 @@ providers:
             volume-size: 80
           - name: esxi-6.7.0-without-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630
+            userdata: |
+              #cloud-config
+              hostname: esxi.test
+              fqdn: esxi.test
           - name: esxi-6.7.0-with-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630
+            userdata: |
+              #cloud-config
+              hostname: esxi.test
+              fqdn: esxi.test
           - name: fedora-30-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-30
@@ -332,7 +340,11 @@ providers:
             flavor-name: v2-highcpu-4
             boot-from-volume: true
             volume-size: 5
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200606
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630
+            userdata: |
+              #cloud-config
+              hostname: esxi.test
+              fqdn: esxi.test
           - name: fedora-30-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-30
