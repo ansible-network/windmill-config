@@ -209,7 +209,7 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20200630
+      - name: esxi-6.7.0-20190802001-STANDARD-20200630-2
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-6.7.0-14836122-20200530
@@ -261,14 +261,14 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
             flavor-name: c1.hwetest.1
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630-2
             userdata: |
               #cloud-config
               hostname: esxi.test
               fqdn: esxi.test
           - name: esxi-6.7.0-without-nested
             flavor-name: l1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630-2
             userdata: |
               #cloud-config
               hostname: esxi.test
@@ -393,14 +393,14 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630-2
             userdata: |
               #cloud-config
               hostname: esxi.test
               fqdn: esxi.test
           - name: esxi-6.7.0-without-nested
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630-2
             userdata: |
               #cloud-config
               hostname: esxi.test
