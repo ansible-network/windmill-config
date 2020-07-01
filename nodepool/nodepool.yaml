@@ -15,8 +15,6 @@ providers:
         config-drive: true
       - name: centos-8
         config-drive: true
-      - name: fedora-30
-        config-drive: true
       - name: fedora-31
         config-drive: true
       - name: fedora-32
@@ -95,23 +93,6 @@ diskimages:
       DIB_GRUB_TIMEOUT: '0'
       DIB_INSTALLTYPE_pip_and_virtualenv: 'package'
       DIB_RELEASE: '8'
-      DIB_SIMPLE_INIT_NETWORKMANAGER: '1'
-      QEMU_IMG_OPTIONS: compat=0.10
-    python-path: /usr/bin/python3
-
-  - name: fedora-30
-    elements:
-      - fedora-minimal
-      - growroot
-      - nodepool-base
-      - openssh-server
-      - simple-init
-      - vm
-    env-vars:
-      DIB_CHECKSUM: '1'
-      DIB_GRUB_TIMEOUT: '0'
-      DIB_INSTALLTYPE_pip_and_virtualenv: 'package'
-      DIB_RELEASE: '30'
       DIB_SIMPLE_INIT_NETWORKMANAGER: '1'
       QEMU_IMG_OPTIONS: compat=0.10
     python-path: /usr/bin/python3
