@@ -31,6 +31,8 @@ labels:
     max-ready-age: 600
   - name: fedora-31-1vcpu
     max-ready-age: 600
+  - name: fedora-32-1vcpu
+    max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
   - name: iosxrv-6.1.3
@@ -177,6 +179,8 @@ providers:
         config-drive: true
       - name: fedora-31
         config-drive: true
+      - name: fedora-32
+        config-drive: true
       - name: ubuntu-bionic
         config-drive: true
       - name: ubuntu-xenial
@@ -276,6 +280,10 @@ providers:
           - name: fedora-31-1vcpu
             flavor-name: l1.small
             diskimage: fedora-31
+            key-name: infra-root-keys
+          - name: fedora-32-1vcpu
+            flavor-name: l1.small
+            diskimage: fedora-32
             key-name: infra-root-keys
           - name: ios-15.6-2T
             flavor-name: l1.small
@@ -409,6 +417,10 @@ providers:
             flavor-name: s1.small
             diskimage: fedora-31
             key-name: infra-root-keys
+          - name: fedora-32-1vcpu
+            flavor-name: s1.small
+            diskimage: fedora-32
+            key-name: infra-root-keys
           - name: ios-15.6-2T
             flavor-name: s1.small
             cloud-image: ios-15.6-2T-20190524
@@ -478,6 +490,8 @@ diskimages:
   - name: centos-7
   - name: centos-8
   - name: fedora-31
+    python-path: /usr/bin/python3
+  - name: fedora-32
     python-path: /usr/bin/python3
   - name: ubuntu-bionic
   - name: ubuntu-xenial
