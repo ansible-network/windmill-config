@@ -44,7 +44,7 @@
     required-projects:
       - name: github.com/ansible/project-config
     files:
-      - github/projects.yaml
+      - ^github
       - tools/manage-projects.py
 
 - job:
