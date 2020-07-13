@@ -334,15 +334,6 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
-          - name: esxi-6.7.0-without-nested
-            flavor-name: v2-highcpu-4
-            boot-from-volume: true
-            volume-size: 5
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200630-2
-            userdata: |
-              #cloud-config
-              hostname: esxi.test
-              fqdn: esxi.test
           - name: fedora-31-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-31
