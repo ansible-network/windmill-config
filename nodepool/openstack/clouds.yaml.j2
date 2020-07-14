@@ -37,18 +37,6 @@ clouds:
       - BHS3
       - UK1
 
-  rdocloud:
-    auth:
-      auth_url: {{ __nodepool_clouds_yaml_rdocloud_auth_url }}
-      password: {{ __nodepool_clouds_yaml_rdocloud_password }}
-      username: {{ __nodepool_clouds_yaml_rdocloud_username }}
-      project_name: {{ __nodepool_clouds_yaml_rdocloud_project_name }}
-      project_domain_id: default
-      user_domain_id: default
-    regions:
-      - regionOne
-    image_format: raw
-
   vexxhost:
     profile: vexxhost
     auth:
