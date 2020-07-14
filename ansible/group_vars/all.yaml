@@ -51,8 +51,9 @@ _windmill_users:
 
 windmill_users: "{{ _windmill_users }}"
 
-_windmill_root_users_base:
+windmill_disable_users:
   - dmellado
+_windmill_root_users_base:
   - goneri
   - pabelanger
   - windmill
