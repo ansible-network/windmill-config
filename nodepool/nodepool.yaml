@@ -42,12 +42,6 @@ providers:
     rate: 0.001
     diskimages: []
 
-  - name: rdocloud-regionone
-    cloud: rdocloud
-    region-name: regionOne
-    rate: 0.001
-    diskimages: *provider_diskimages
-
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
     region-name: ca-ymq-1
