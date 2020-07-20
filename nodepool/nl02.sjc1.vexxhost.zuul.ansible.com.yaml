@@ -153,15 +153,15 @@ providers:
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200713-2
             userdata: |
               #cloud-config
-              hostname: esxi.test
-              fqdn: esxi.test
+              hostname: esxi1.test
+              fqdn: esxi1.test
           - name: esxi-6.7.0-with-nested
             flavor-name: v2-standard-1-iops
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20200713-2
             userdata: |
               #cloud-config
-              hostname: esxi.test
-              fqdn: esxi.test
+              hostname: esxi1.test
+              fqdn: esxi1.test
           - name: fedora-31-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-31
