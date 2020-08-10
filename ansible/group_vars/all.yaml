@@ -48,10 +48,17 @@ _windmill_users:
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyiXfE1zHKdj6odbysr917Cn88ov0VQaPJtLKJyMNuRYAeMOFQHd50X8JO4dfZbmSo3YdJlVfz9FLRxE64mqj9bkN8hPFbkTG2F1AWXGPON5cmm4uiLPfQkWhX/LnClrhzZpNtMJYs5AEFeDs0POijcRugZsQA+wvLi0lSlhOfkqtjAJKpPUwy1wrJFDdvqdQBjpNQh/LB8c15XfQV2JT/3NX26dQe8zvHhL6NvfhBnAikodYkBr7UjSl36CBk0cPebZMZEBBiHdo76xORVkpmqDvkhFByXXeAsvRa2YWS4wxpiNJFswlRhjubGau7LrT113WMcPvgYXHYHf2IYJWD goneri@redhat.com
     gid: 2003
     uid: 2003
+  gosriniv:
+    comment: Gomathi Selvi Srinivasan
+    email: gosriniv@redhat.com
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQChvWGP5I66E3ZZat0D1jpTXbZN5aeM3Ky+dlM6LBESVKtxP1Ee4hbxei3mWBz/nJQcWqXZEEzBab6BsORk8+kt3RSpap08DHY5UMGaXZJzXWr6Iqj8Voz6+GxWBiBmpPrZc2cWKedmL4PsSDFX9X0Bz8bOllSnk1CFGiEISv0GNzDFGjqjAuXYFlCB4EDNnNvsexuT6DUnDPhpl8nTabI0AzU8d22QGfb2X4iUEt/rtogRpSS/ftZcYoVxmZKk/yLo8LvuohiS1IqACIyzDYtwb2oBVYV+Fd0fdkkvnyERS8oxjnQVC9XwSK8aXj+TlQn2oYtgw7CzJyvbkmSXGvq0wTL0lHhM6loGodM6yUI6W3HD17bkDlJbiIP1NroLtaDlQ6XIlH9XOs151hwHM3ED7fDLjXfkxa2NlvvuMYNkgq0seDmalcjJyPQuEOd4OCLyfhiiNkqlge9aNPgFl0H+gxnsqPzLe6eOE++8EJ91btLAe9xEzilvG8qVHIyXWaNo62PguUBMX7zUeKkLFxWxWCln10B5QIEZ70xbMv/mmD09jynduaQS/qk1tt9zq0P4EbOwB6wIbbTXUERiMC0OJN5W+YBhsaqLzUAEqjzMJ9RKfnsQifh8lgt4oh3/i5dKQn4RPHZCac1ipHcEPsL4jXLc3pCd4LP5GdksCCbhVQ== gomathiselvi@gmail.com
+    gid: 2004
+    uid: 2004
 
 windmill_users: "{{ _windmill_users }}"
 
 _windmill_root_users_base:
+  - gosriniv
   - dmellado
   - goneri
   - pabelanger
