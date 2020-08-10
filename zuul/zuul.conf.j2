@@ -77,6 +77,12 @@ driver = sql
 dburi = mysql+pymysql://{{ __zuul_zuul_conf_connection_mysql_username_and_password }}@{{ hostvars[groups['database'][0]].ansible_host }}/zuul
 {% endif %}
 
+{% if inventory_hostname in groups['zuul-scheduler'] %}
+[connection smtp]
+driver = smtp
+
+{% endif -%}
+
 [connection github.com]
 driver = github
 app_id = {{ __zuul_conf_connection_github_app_id }}
