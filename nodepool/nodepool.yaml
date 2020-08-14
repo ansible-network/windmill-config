@@ -126,7 +126,7 @@ diskimages:
     python-path: /usr/bin/python3
 
   - name: ubuntu-bionic
-    pause: false
+    pause: true
     elements:
       - ubuntu-minimal
       - growroot
