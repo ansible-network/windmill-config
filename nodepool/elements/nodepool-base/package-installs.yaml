@@ -3,5 +3,6 @@ haveged:
 ntp:
 ntpdate:
 git:
+  phase: post-install.d
 tox:
 unbound:
