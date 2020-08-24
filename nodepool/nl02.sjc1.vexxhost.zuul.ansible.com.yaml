@@ -114,7 +114,7 @@ providers:
         networks: &provider_vexxhost_pools_v2_highcpu_1_networks
           - public
           - net1
-        max-servers: 40
+        max-servers: 0
         labels:
           - name: asav9-12-3
             flavor-name: v1-standard-2
