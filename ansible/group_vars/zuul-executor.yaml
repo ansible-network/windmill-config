@@ -45,12 +45,12 @@ zuul_executor_ansible:
     ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.8.9
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.8
   - ansible_pip_name:
-      - ansible==2.9.12
+      - ansible==2.9.13
       - ara<1.0.0
       - openstacksdk
       - paramiko
     ansible_pip_virtualenv_python: python3
-    ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.9.12
+    ansible_pip_virtualenv: /opt/venv/zuul-ansible/2.9.13
     ansible_pip_virtualenv_symlink: /var/lib/zuul/venv/ansible/2.9
 
 # openstack.logrotate
