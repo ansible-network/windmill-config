@@ -29,8 +29,6 @@ labels:
     max-ready-age: 600
   - name: esxi-6.7.0-without-nested
     max-ready-age: 600
-  - name: fedora-31-1vcpu
-    max-ready-age: 600
   - name: fedora-32-1vcpu
     max-ready-age: 600
   - name: ios-15.6-2T
@@ -205,8 +203,6 @@ providers:
         config-drive: true
       - name: centos-8
         config-drive: true
-      - name: fedora-31
-        config-drive: true
       - name: fedora-32
         config-drive: true
       - name: ubuntu-bionic
@@ -305,10 +301,6 @@ providers:
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
-          - name: fedora-31-1vcpu
-            flavor-name: l1.small
-            diskimage: fedora-31
-            key-name: infra-root-keys
           - name: fedora-32-1vcpu
             flavor-name: l1.small
             diskimage: fedora-32
@@ -441,10 +433,6 @@ providers:
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
-          - name: fedora-31-1vcpu
-            flavor-name: s1.small
-            diskimage: fedora-31
-            key-name: infra-root-keys
           - name: fedora-32-1vcpu
             flavor-name: s1.small
             diskimage: fedora-32
@@ -517,8 +505,6 @@ providers:
 diskimages:
   - name: centos-7
   - name: centos-8
-  - name: fedora-31
-    python-path: /usr/bin/python3
   - name: fedora-32
     python-path: /usr/bin/python3
   - name: ubuntu-bionic
