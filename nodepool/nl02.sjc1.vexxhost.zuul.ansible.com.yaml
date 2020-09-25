@@ -91,13 +91,13 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20200713-2
+      - name: esxi-6.7.0-20190802001-STANDARD-20200924
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-6.7.0-14836122-20200729
+      - name: VMware-VCSA-all-6.7.0-14836122-20200924
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.0-16189094-20200730
+      - name: VMware-VCSA-all-7.0.0-16189094-20200924
         config-drive: true
         python-path: /usr/bin/python3
 
@@ -146,14 +146,14 @@ providers:
             volume-size: 80
           - name: esxi-6.7.0-without-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200713-2
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200924
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-6.7.0-with-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200713-2
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200924
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -225,13 +225,13 @@ providers:
               - net2
           - name: vmware-vcsa-6.7.0
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200729
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200924
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 40
           - name: vmware-vcsa-7.0.0
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200730
+            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200924
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
@@ -352,13 +352,13 @@ providers:
               - net2
           - name: vmware-vcsa-6.7.0
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200729
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200924
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 40
           - name: vmware-vcsa-7.0.0
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200730
+            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200924
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
