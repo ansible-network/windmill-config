@@ -90,7 +90,7 @@ providers:
             userdata: |
               #cloud-config
               package_update: true
-              udackages:
+              packages:
                 - git
                 - python3-virtualenv
                 - unbound
