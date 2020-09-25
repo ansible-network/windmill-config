@@ -241,13 +241,13 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20200713-2
+      - name: esxi-6.7.0-20190802001-STANDARD-20200924
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-6.7.0-14836122-20200729
+      - name: VMware-VCSA-all-6.7.0-14836122-20200924
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.0-16189094-20200730
+      - name: VMware-VCSA-all-7.0.0-16189094-20200924
         config-drive: true
         python-path: /usr/bin/python3
     pools:
@@ -293,14 +293,14 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
             flavor-name: c1.hwetest.1
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200713-2
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200924
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-6.7.0-without-nested
             flavor-name: l1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200713-2
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200924
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -371,11 +371,11 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200729
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200924
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.0
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200730
+            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200924
             key-name: infra-root-keys
 
   - name: limestone-us-slc
@@ -429,14 +429,14 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200713-2
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200924
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-6.7.0-without-nested
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200713-2
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20200924
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -507,11 +507,11 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-6.7.0
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200729
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20200924
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.0
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200730
+            cloud-image: VMware-VCSA-all-7.0.0-16189094-20200924
             key-name: infra-root-keys
 
 diskimages:
