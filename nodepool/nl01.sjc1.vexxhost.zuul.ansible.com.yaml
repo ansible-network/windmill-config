@@ -4,6 +4,7 @@
 ---
 elements-dir: /etc/nodepool/elements
 images-dir: /opt/nodepool/images
+max-hold-age: 86400
 
 # NOTE(pabelanger): To avoid a race conditions between multiple launchers, only
 # nl01 will manage min-ready of our labels.  If nl01 is ever disabled, another

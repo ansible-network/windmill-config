@@ -4,6 +4,7 @@
 ---
 elements-dir: /etc/nodepool/elements
 images-dir: /opt/nodepool/images
+max-hold-age: 86400
 
 providers:
   - name: limestone-us-dfw-1
