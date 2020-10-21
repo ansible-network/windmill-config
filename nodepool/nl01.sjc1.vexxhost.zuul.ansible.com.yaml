@@ -24,6 +24,8 @@ labels:
     max-ready-age: 600
   - name: centos-8-1vcpu
     max-ready-age: 600
+  - name: centos-8-1vcpu-without-nested
+    max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
   - name: esxi-6.7.0-with-nested-unstable
@@ -31,6 +33,8 @@ labels:
   - name: esxi-6.7.0-without-nested
     max-ready-age: 600
   - name: fedora-32-1vcpu
+    max-ready-age: 600
+  - name: fedora-32-1vcpu-without-nested
     max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
@@ -40,7 +44,7 @@ labels:
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
-  - name: ubuntu-bionic-1vcpu-aws
+  - name: ubuntu-bionic-1vcpu-without-nested
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
     max-ready-age: 600
@@ -64,8 +68,13 @@ providers:
     driver: aws
     region-name: us-east-2
     cloud-images:
+      - name: fedora-32
+        image-id: ami-0677b95262b16499f
       - name: ubuntu-bionic
         image-id: ami-07c1207a9d40bc3bd
+      - name: centos-8
+        # https://wiki.centos.org/Cloud/AWS
+        image-id: ami-000e7ce4dd68e7a11
       - name: QRadarCE-7.3.1-RHEL75EUS-20200214.0
         image-id: ami-09477933a629d44bf
       - name: SplunkEnterprise-SES-8.0.0-RHEL77-20191105.0
@@ -78,7 +87,33 @@ providers:
         subnet-id: subnet-049b1e99211b42502
         security-group-id: sg-0bc8090db4886b59f
         labels:
-          - name: ubuntu-bionic-1vcpu-aws
+          - name: fedora-32-1vcpu-without-nested
+            cloud-image: fedora-32
+            instance-type: t2.small
+            volume-size: 80
+            key-name: zuul
+            userdata: |
+              #cloud-config
+              package_update: true
+              packages:
+                - git
+                - python3-virtualenv
+                - unbound
+              users:
+                - name: zuul
+                  gecos: Zuul user
+                  primary_group: zuul
+                  groups: adm, wheel, systemd-journal
+                  lock_passwd: true
+                  ssh_authorized_keys:
+                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
+                  sudo: ALL=(ALL) NOPASSWD:ALL
+              runcmd:
+                - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
+                - python3 -m pip install --upgrade pip
+                - python3 -m pip install --upgrade tox
+
+          - name: ubuntu-bionic-1vcpu-without-nested
             cloud-image: ubuntu-bionic
             instance-type: t2.small
             volume-size: 80
@@ -104,6 +139,33 @@ providers:
                   sudo: ALL=(ALL) NOPASSWD:ALL
               runcmd:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
+          - name: centos-8-1vcpu-without-nested
+            cloud-image: centos-8
+            instance-type: t2.small
+            volume-size: 80
+            key-name: zuul
+            userdata: |
+              #cloud-config
+              package_update: true
+              bootcmd:
+                - dnf install -y epel-release
+              packages:
+                - git
+                - python3-virtualenv
+                - unbound
+              users:
+                - name: zuul
+                  gecos: Zuul user
+                  primary_group: zuul
+                  groups: adm, wheel, systemd-journal
+                  lock_passwd: true
+                  ssh_authorized_keys:
+                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
+                  sudo: ALL=(ALL) NOPASSWD:ALL
+              runcmd:
+                - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
+                - python3 -m pip install --upgrade pip
+                - python3 -m pip install --upgrade tox
           - name: QRadarCE-7.3.1
             cloud-image: QRadarCE-7.3.1-RHEL75EUS-20200214.0
             instance-type: t2.xlarge
