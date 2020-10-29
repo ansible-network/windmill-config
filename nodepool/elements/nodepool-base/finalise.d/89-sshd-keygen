@@ -23,7 +23,7 @@ set -e
 
 # We want to enable FIPs mode for centos-8, default to a good ssh host key
 # format.
-if [ ${DISTRO_NAME} = "centos" -a ${DIB_RELEASE} -lt 8 ]; then
+if [ ${DISTRO_NAME} = "centos" -a ${DIB_RELEASE} -gt 7 ]; then
     sshd_keygen_path_dib="/etc/systemd/system"
     nodepool_base="$(dirname $0)/../ssh-keygen.target"
     cp -RP $nodepool_base /etc/systemd/system/sshd-keygen.target
