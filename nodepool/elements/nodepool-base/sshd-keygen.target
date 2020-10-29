@@ -1,0 +1,3 @@
+[Unit]
+Wants=sshd-keygen@ecdsa.service
+PartOf=sshd.service
