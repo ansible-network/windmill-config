@@ -25,6 +25,6 @@ set -e
 # format.
 if [ ${DISTRO_NAME} = "centos" -a ${DIB_RELEASE} -gt 7 ]; then
     sshd_keygen_path_dib="/etc/systemd/system"
-    nodepool_base="$(dirname $0)/../ssh-keygen.target"
+    nodepool_base="$(dirname $0)/../sshd-keygen.target"
     cp -RP $nodepool_base /etc/systemd/system/sshd-keygen.target
 fi
