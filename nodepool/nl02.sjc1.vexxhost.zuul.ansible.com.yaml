@@ -198,6 +198,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: ubuntu-bionic-4vcpu
+            flavor-name: v2-highcpu-4
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
           - name: ubuntu-xenial-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: ubuntu-xenial
@@ -321,6 +327,12 @@ providers:
             volume-size: 40
           - name: ubuntu-bionic-1vcpu
             flavor-name: v2-highcpu-1
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: ubuntu-bionic-4vcpu
+            flavor-name: v2-highcpu-4
             diskimage: ubuntu-bionic
             key-name: infra-root-keys
             boot-from-volume: true
