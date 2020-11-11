@@ -10,7 +10,7 @@ max-hold-age: 86400
 # nl01 will manage min-ready of our labels.  If nl01 is ever disabled, another
 # launcher will need to assume this logic.
 labels:
-  - name: Trendmicro-DeepSecurity-12.5.855
+  - name: Trendmicro-DeepSecurity-20.0.198
     max-ready-age: 600
   - name: QRadarCE-7.3.1
     max-ready-age: 600
@@ -81,8 +81,8 @@ providers:
         image-id: ami-09477933a629d44bf
       - name: SplunkEnterprise-SES-8.0.0-RHEL77-20191105.0
         image-id: ami-0f4c5eea6ed526742
-      - name: Trendmicro-DeepSecurity-12.5.855-20201109.0
-        image-id: ami-0556a6e419a35e363
+      - name: Trendmicro-DeepSecurity-20.0.198-20201109.0
+        image-id: ami-0b2b0fa917364fe75
     pools:
       - name: main
         max-servers: 5
@@ -200,8 +200,8 @@ providers:
                   ssh_authorized_keys:
                     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
                   sudo: ALL=(ALL) NOPASSWD:ALL
-          - name: Trendmicro-DeepSecurity-12.5.855
-            cloud-image: Trendmicro-DeepSecurity-12.5.855-20201109.0
+          - name: Trendmicro-DeepSecurity-20.0.198
+            cloud-image: Trendmicro-DeepSecurity-20.0.198-20201109.0
             instance-type: m4.2xlarge
             key-name: zuul
             userdata: |
