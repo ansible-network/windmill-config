@@ -1,0 +1,44 @@
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+---
+# windmill.zuul-registry
+zuul_registry_user_shell: /bin/bash
+
+zuul_registry_file_registry_yaml_src: "{{ windmill_config_git_dest }}/zuul-registry/etc/zuul-registry/registry.yaml"
+
+zuul_registry_pip_version: 1.0.0
+zuul_registry_pip_virtualenv_python: python3
+zuul_registry_pip_virtualenv: "/opt/venv/zuul-registry-{{ zuul_registry_pip_version }}"
+zuul_registry_pip_virtualenv_symlink: /opt/venv/zuul-registry
+
+__zuul_registry_yaml_registry_secret: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  31333439333830646431646635346532666466386362623533323136613735366230396534373530
+  6235623261363832303130353865356166383662303166340a393963343465656562356632646137
+  31323436373239323766383136646438303232323561653233613535393134636664646137396363
+  3162363335636638360a663933313162346331356539613633333165366637376235643237373264
+  61313138346661333638353631343635666533396137663438333634373136663335626564666330
+  3339353331323964373433343635393366636630393839646439
+
+__zuul_registry_yaml_registry_user_name: zuul
+
+__zuul_registry_yaml_registry_user_pass: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  66353062363961373637616565326435633339623631646335306565383765366263356439306165
+  3436343837323439643139313961313238353733356132300a306433313231663166343361326539
+  35623465356136383232383765326262333733313036386335643061633732616132373433376565
+  6133383334383931620a653765653630663635376439396565353031323533343934333932633138
+  65373638303263323366643062356263363031353464313764323032313466383163313236333039
+  6261353034386337626533333163343565306431343063343338
+
+_iptables_public_tcp_ports_extra:
+  - 5000

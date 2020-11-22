@@ -1,0 +1,15 @@
+---
+registry:
+  address: '{{ ansible_host }}'
+  port: 5000
+  tls-cert: /etc/zuul-registry/ssl/cert.pem
+  tls-key: /etc/zuul-registry/ssl/cert.key
+  secret: '{{ __zuul_registry_yaml_registry_secret }}'
+  public-url: 'https://{{ inventory_hostname }}:5000'
+  users:
+    - name: '{{ __zuul_registry_yaml_registry_user_name }}'
+      pass: '{{ __zuul_registry_yaml_registry_user_pass }}'
+      access: write
+  storage:
+    driver: filesystem
+    root: /var/lib/zuul-registry/storage
