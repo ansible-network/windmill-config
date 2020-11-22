@@ -2,8 +2,8 @@
 registry:
   address: '{{ ansible_host }}'
   port: 5000
-  tls-cert: /etc/zuul-registry/ssl/cert.pem
-  tls-key: /etc/zuul-registry/ssl/cert.key
+  tls-cert: /etc/letsencrypt/live/{{ inventory_hostname }}/cert.pem
+  tls-key: /etc/letsencrypt/live/{{ inventory_hostname }}/privkey.pem
   secret: '{{ __zuul_registry_yaml_registry_secret }}'
   public-url: 'https://{{ inventory_hostname }}:5000'
   users:
