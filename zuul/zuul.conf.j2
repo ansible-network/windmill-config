@@ -97,7 +97,6 @@ app_key = {{ zuul_user_home }}/.ssh/github_3pci_id_rsa
 webhook_token = {{ __zuul_conf_connection_github_3pci_webhook_token }}
 
 [connection opendev.org]
-auth_type = digest
 canonical_hostname = opendev.org
 driver = gerrit
 password = {{ __zuul_conf_connection_opendev_password }}
