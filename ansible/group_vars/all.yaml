@@ -54,12 +54,19 @@ _windmill_users:
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQChvWGP5I66E3ZZat0D1jpTXbZN5aeM3Ky+dlM6LBESVKtxP1Ee4hbxei3mWBz/nJQcWqXZEEzBab6BsORk8+kt3RSpap08DHY5UMGaXZJzXWr6Iqj8Voz6+GxWBiBmpPrZc2cWKedmL4PsSDFX9X0Bz8bOllSnk1CFGiEISv0GNzDFGjqjAuXYFlCB4EDNnNvsexuT6DUnDPhpl8nTabI0AzU8d22QGfb2X4iUEt/rtogRpSS/ftZcYoVxmZKk/yLo8LvuohiS1IqACIyzDYtwb2oBVYV+Fd0fdkkvnyERS8oxjnQVC9XwSK8aXj+TlQn2oYtgw7CzJyvbkmSXGvq0wTL0lHhM6loGodM6yUI6W3HD17bkDlJbiIP1NroLtaDlQ6XIlH9XOs151hwHM3ED7fDLjXfkxa2NlvvuMYNkgq0seDmalcjJyPQuEOd4OCLyfhiiNkqlge9aNPgFl0H+gxnsqPzLe6eOE++8EJ91btLAe9xEzilvG8qVHIyXWaNo62PguUBMX7zUeKkLFxWxWCln10B5QIEZ70xbMv/mmD09jynduaQS/qk1tt9zq0P4EbOwB6wIbbTXUERiMC0OJN5W+YBhsaqLzUAEqjzMJ9RKfnsQifh8lgt4oh3/i5dKQn4RPHZCac1ipHcEPsL4jXLc3pCd4LP5GdksCCbhVQ== gomathiselvi@gmail.com
     gid: 2004
     uid: 2004
+  dmsimard:
+    comment: David Moreau Simard
+    email: dmsimard@redhat.com
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDyXfFj44OTsJZnHbecbYrwA8zXuMiULb+o326maOh3wh5/6fk+MzivkUzJC2uZqAlKvBnNXsrb/07eV1gRjaIQBQJxaV9HQUwMNX7AkjkDzaMXVDjG/JOium90R23gVGMukzp9IamezUscAqAxVK+2C10k3tq8dZ/GeZfHl3NFGRHlIAXsJ/SIQoxJAEA0IQ/8Y50nR1Hp2mV2xsfxH9oZhLR/eiFdhJpNupdfw/oE9+vpCHS8SG88KGeLYbn+EhH6LSCD+6WNthF6oE7NANnScqn1Fl0ZpSd3RlRb+kDVKGqNxfB7EJTeimYvqaYmrTiTZTaTJua5Bj5yBTudqnBgdHCz3xMb2Nv2s2INNcJmP/CKpivYQ8AJs6cVlqRWnLJiNQQYCj+xAXBvY5T0Xq/qOhVifLiWZvZQOTHFWqFP9asZkrGa1mFWIaR9VPQY0FoYlUOT9t6J6TRbzktJIuP5AiOVoJLL6wjZuUMjghHfkYbqtyBqE4BbCY8YF3JSf8jx+9eWy+sD+dRwKXBCrGV0dNidioZR7ZJpBb6ye8wElebjPZizKhppsNpwtRxPfiAM52f55lXGD7IDpz9CZrOKUcV2uc3Rhl50u7T3psZfX7GysZvlnAH+Yr+UM+LPBAabXAfKlMnJp+SskLuOplTeQrvAwMluBmFnla8TnwnxQ== dmsimard@redhat.com
+    gid: 2005
+    uid: 2005
 
 windmill_users: "{{ _windmill_users }}"
 
 _windmill_root_users_base:
   - gosriniv
   - dmellado
+  - dmsimard
   - goneri
   - pabelanger
   - windmill
