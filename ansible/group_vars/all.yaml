@@ -39,7 +39,7 @@ _windmill_users:
   dmellado:
     comment: Daniel Mellado
     email: dmellado@redhat.com
-    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvLBCvbloQQwbvlrAEU/txha1cvX0lQ1eGCNddiXfE8u/a+C9IVCs8YxyOV5r2MTC+8GLbMMF4XYgizl1Xtsm0VW4YBtJ1jXo36W+eZZJ8GCwWdjYcyjqFyfHBDA1qLR/G09u45wFDf+ohvUMCwPsCk87T5MuwLLkhD3hFpizkpou2rsop3KOd6d8GBUVQ1z29aOIqE1yrsCKqqD2i8f1eA3uhu0r9Rx22YZWnjx7nZ4PVKZrzH1i6KwPw4aO6Ximd7y9dDXnFVSogpN1gwtL1XgqRfmBH9RiGRWtON/vuvXtw4JoWpy8R6t9tXmNM/SjFkwdNMSaHMGgxtKp+YTXF
+    key: ''
     gid: 2002
     uid: 2002
   goneri:
