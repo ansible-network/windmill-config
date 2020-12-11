@@ -7,6 +7,9 @@ registry:
   secret: '{{ __zuul_registry_yaml_registry_secret }}'
   public-url: 'https://{{ inventory_hostname }}:5000'
   users:
+    - name: anonymous
+      pass: ''
+      access: read
     - name: '{{ __zuul_registry_yaml_registry_user_name }}'
       pass: '{{ __zuul_registry_yaml_registry_user_pass }}'
       access: write
