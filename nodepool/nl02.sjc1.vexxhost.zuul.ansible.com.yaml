@@ -34,6 +34,8 @@ labels:
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
+  - name: ubuntu-bionic-2vcpu
+    max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
     max-ready-age: 600
   - name: ubuntu-xenial-1vcpu
@@ -198,6 +200,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
+          - name: ubuntu-bionic-2vcpu
+            flavor-name: v2-highcpu-2
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
           - name: ubuntu-bionic-4vcpu
             flavor-name: v2-highcpu-4
             diskimage: ubuntu-bionic
@@ -327,6 +335,12 @@ providers:
             volume-size: 40
           - name: ubuntu-bionic-1vcpu
             flavor-name: v2-highcpu-1
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 80
+          - name: ubuntu-bionic-2vcpu
+            flavor-name: v2-highcpu-2
             diskimage: ubuntu-bionic
             key-name: infra-root-keys
             boot-from-volume: true
