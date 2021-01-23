@@ -46,6 +46,8 @@ labels:
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
+  - name: ubuntu-bionic-2vcpu
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu-without-nested
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
@@ -356,6 +358,10 @@ providers:
             flavor-name: l1.small
             diskimage: ubuntu-bionic
             key-name: infra-root-keys
+          - name: ubuntu-bionic-2vcpu
+            flavor-name: l1.medium
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
           - name: ubuntu-bionic-4vcpu
             flavor-name: l1.large
             diskimage: ubuntu-bionic
@@ -490,6 +496,10 @@ providers:
               - Public Internet
           - name: ubuntu-bionic-1vcpu
             flavor-name: s1.small
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-bionic-2vcpu
+            flavor-name: s1.medium
             diskimage: ubuntu-bionic
             key-name: infra-root-keys
           - name: ubuntu-bionic-4vcpu
