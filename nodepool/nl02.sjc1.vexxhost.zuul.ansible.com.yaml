@@ -100,7 +100,7 @@ providers:
       - name: VMware-VCSA-all-6.7.0-14836122-20201125
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.1-16860138-20201214
+      - name: VMware-VCSA-all-7.0.1-16860138-20210215
         config-drive: true
         python-path: /usr/bin/python3
 
@@ -240,7 +240,7 @@ providers:
             volume-size: 40
           - name: vmware-vcsa-7.0.0
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.1-16860138-20201214
+            cloud-image: VMware-VCSA-all-7.0.1-16860138-20210215
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
@@ -379,7 +379,7 @@ providers:
             volume-size: 40
           - name: vmware-vcsa-7.0.0
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.1-16860138-20201214
+            cloud-image: VMware-VCSA-all-7.0.1-16860138-20210215
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
