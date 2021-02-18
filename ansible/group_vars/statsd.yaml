@@ -65,7 +65,7 @@ iptables_allowed_hosts:
     protocol: udp
     port: 8125
 
-  - address: ze04.ca-ymq-1.vexxhost.zuul.ansible.com
+  - address: ze04.us-dfw-1.limestone.zuul.ansible.com
     protocol: udp
     port: 8125
 

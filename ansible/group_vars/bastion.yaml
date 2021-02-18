@@ -56,6 +56,6 @@ iptables_allowed_hosts:
   - address: ze03.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
     port: 19885
-  - address: ze04.ca-ymq-1.vexxhost.zuul.ansible.com
+  - address: ze04.us-dfw-1.limestone.zuul.ansible.com
     protocol: tcp
     port: 19885

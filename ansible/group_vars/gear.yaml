@@ -182,7 +182,7 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 4730
 
-  - address: ze04.ca-ymq-1.vexxhost.zuul.ansible.com
+  - address: ze04.us-dfw-1.limestone.zuul.ansible.com
     protocol: tcp
     port: 4730
 

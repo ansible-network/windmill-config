@@ -121,6 +121,14 @@ all:
         public_ipv4: 38.108.68.251
         public_ipv6: 2604:e100:3:0:f816:3eff:fecc:bdea
 
+    ze04.us-dfw-1.limestone.zuul.ansible.com:
+      ansible_host: 162.253.42.14
+      ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAIEHa9HMRVv3vT1Euuuv5QhEB6ct4mzHkDEXkWCxozKOY
+      ansible_user: windmill
+      node_attributes:
+        public_ipv4: 162.253.42.14
+        public_ipv6: 2607:ff68:100:a::8f
+
     zm01.sjc1.vexxhost.zuul.ansible.com:
       ansible_host: 38.108.68.49
       ansible_ssh_host_key_ed25519_public: AAAAC3NzaC1lZDI1NTE5AAAAINeofBzQGRkZrmRxHLF62VlAgFsEAX/g81toILZVocZE
@@ -256,6 +264,7 @@ all:
         ze01.sjc1.vexxhost.zuul.ansible.com:
         ze02.sjc1.vexxhost.zuul.ansible.com:
         ze03.sjc1.vexxhost.zuul.ansible.com:
+        ze04.us-dfw-1.limestone.zuul.ansible.com:
 
     # NOTE(pabelanger): We currently only support a single zuul-fingergw host
     # in this group.  This means, the first host listed will only be used by
