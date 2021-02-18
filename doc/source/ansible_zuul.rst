@@ -89,29 +89,29 @@ Ansible Zuul Hosts
 
 .. table:: **Ansible Zuul Hosts**
 
-  =========================================  ========  =================
-  Host                                       Provider  Role
-  =========================================  ========  =================
-  bastion01.sjc1.vexxhost.zuul.ansible.com   vexxhost  Bastion Node
-  borg01.ca-ymq-1.vexxhost.zuul.ansible.com  vexxhost  Borg Backups
-  db01.sjc1.vexxhost.zuul.ansible.com        vexxhost  DiskImage Builder
-  nb01.sjc1.vexxhost.zuul.ansible.com        vexxhost  Nodepool Builder
-  nb02.sjc1.vexxhost.zuul.ansible.com        vexxhost  Nodepool Builder
-  nl01.sjc1.vexxhost.zuul.ansible.com        vexxhost  Nodepool Launcher
-  nl02.sjc1.vexxhost.zuul.ansible.com        vexxhost  Nodepool launcher
-  statsd01.sjc1.vexxhost.zuul.ansible.com    vexxhost  Zuul Executor
-  ze01.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Executor
-  ze02.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Executor
-  ze03.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Executor
-  ze04.ca-ymq-1.vexxhost.zuul.ansible.com    vexxhost  Zuul Executor
-  zk01.sjc1.vexxhost.zuul.ansible.com        vexxhost  ZooKeeper Node
-  zk02.sjc1.vexxhost.zuul.ansible.com        vexxhost  ZooKeeper Node
-  zk03.sjc1.vexxhost.zuul.ansible.com        vexxhost  ZooKeeper Node
-  zm01.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Merger
-  zm02.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Merger
-  zs01.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Scheduler
-  zs02.sjc1.vexxhost.zuul.ansible.com        vexxhost  Zuul Scheduler
-  =========================================  ========  =================
+  =========================================  =========  =================
+  Host                                       Provider   Role
+  =========================================  =========  =================
+  bastion01.sjc1.vexxhost.zuul.ansible.com   vexxhost   Bastion Node
+  borg01.ca-ymq-1.vexxhost.zuul.ansible.com  vexxhost   Borg Backups
+  db01.sjc1.vexxhost.zuul.ansible.com        vexxhost   DiskImage Builder
+  nb01.sjc1.vexxhost.zuul.ansible.com        vexxhost   Nodepool Builder
+  nb02.sjc1.vexxhost.zuul.ansible.com        vexxhost   Nodepool Builder
+  nl01.sjc1.vexxhost.zuul.ansible.com        vexxhost   Nodepool Launcher
+  nl02.sjc1.vexxhost.zuul.ansible.com        vexxhost   Nodepool launcher
+  statsd01.sjc1.vexxhost.zuul.ansible.com    vexxhost   Zuul Executor
+  ze01.sjc1.vexxhost.zuul.ansible.com        vexxhost   Zuul Executor
+  ze02.sjc1.vexxhost.zuul.ansible.com        vexxhost   Zuul Executor
+  ze03.sjc1.vexxhost.zuul.ansible.com        vexxhost   Zuul Executor
+  ze04.us-dfw-1.limestone.zuul.ansible.com   limestone  Zuul Executor
+  zk01.sjc1.vexxhost.zuul.ansible.com        vexxhost   ZooKeeper Node
+  zk02.sjc1.vexxhost.zuul.ansible.com        vexxhost   ZooKeeper Node
+  zk03.sjc1.vexxhost.zuul.ansible.com        vexxhost   ZooKeeper Node
+  zm01.sjc1.vexxhost.zuul.ansible.com        vexxhost   Zuul Merger
+  zm02.sjc1.vexxhost.zuul.ansible.com        vexxhost   Zuul Merger
+  zs01.sjc1.vexxhost.zuul.ansible.com        vexxhost   Zuul Scheduler
+  zs02.sjc1.vexxhost.zuul.ansible.com        vexxhost   Zuul Scheduler
+  =========================================  =========  =================
 
 .. note:: Where is zuul web?
 
