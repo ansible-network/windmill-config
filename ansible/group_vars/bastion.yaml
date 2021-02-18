@@ -59,3 +59,6 @@ iptables_allowed_hosts:
   - address: ze04.us-dfw-1.limestone.zuul.ansible.com
     protocol: tcp
     port: 19885
+  - address: ze05.us-dfw-1.limestone.zuul.ansible.com
+    protocol: tcp
+    port: 19885
