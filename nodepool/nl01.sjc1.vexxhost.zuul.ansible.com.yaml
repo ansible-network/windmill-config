@@ -26,6 +26,8 @@ labels:
     max-ready-age: 600
   - name: centos-8-1vcpu
     max-ready-age: 600
+  - name: centos-8-1vcpu-without-nested
+    max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
   - name: esxi-6.7.0-with-nested-unstable
@@ -33,6 +35,8 @@ labels:
   - name: esxi-6.7.0-without-nested
     max-ready-age: 600
   - name: fedora-32-1vcpu
+    max-ready-age: 600
+  - name: fedora-32-1vcpu-without-nested
     max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
@@ -43,6 +47,8 @@ labels:
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-2vcpu
+    max-ready-age: 600
+  - name: ubuntu-bionic-1vcpu-without-nested
     max-ready-age: 600
   - name: ubuntu-bionic-4vcpu
     max-ready-age: 600
@@ -87,7 +93,7 @@ providers:
         subnet-id: subnet-049b1e99211b42502
         security-group-id: sg-0bc8090db4886b59f
         labels:
-          - name: fedora-32-1vcpu
+          - name: fedora-32-1vcpu-without-nested
             cloud-image: fedora-32
             instance-type: t2.small
             volume-size: 80
@@ -113,7 +119,7 @@ providers:
                 - python3 -m pip install --upgrade pip
                 - python3 -m pip install --upgrade tox
 
-          - name: ubuntu-bionic-1vcpu
+          - name: ubuntu-bionic-1vcpu-without-nested
             cloud-image: ubuntu-bionic
             instance-type: t2.small
             volume-size: 80
@@ -139,7 +145,7 @@ providers:
                   sudo: ALL=(ALL) NOPASSWD:ALL
               runcmd:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
-          - name: centos-8-1vcpu
+          - name: centos-8-1vcpu-without-nested
             cloud-image: centos-8
             instance-type: t2.small
             volume-size: 80
