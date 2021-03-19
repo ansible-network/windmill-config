@@ -186,7 +186,7 @@ providers:
               - net2
               - public
           - name: iosxrv-7.0.2
-            flavor-name: v2-standard-8
+            flavor-name: v1-standard-8
             cloud-image: iosxrv-7.0.2-20211703
             host-key-checking: false
             networks:
