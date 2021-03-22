@@ -324,6 +324,16 @@ providers:
               - public
             boot-from-volume: true
             volume-size: 40
+          - name: iosxrv-7.0.2
+            flavor-name: v2-highcpu-8
+            cloud-image: iosxrv-7.0.2-20211703
+            host-key-checking: false
+            networks:
+              - net1
+              - net2
+              - public
+            boot-from-volume: true
+            volume-size: 40
           - name: vsrx3-18.4R1
             flavor-name: v2-highcpu-4
             cloud-image: vsrx3-18.4R1-S2.4-20190514
