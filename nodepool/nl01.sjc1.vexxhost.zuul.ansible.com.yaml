@@ -38,6 +38,8 @@ labels:
     max-ready-age: 600
   - name: iosxrv-6.1.3
     max-ready-age: 600
+  - name: iosxrv-7.0.2
+    max-ready-age: 600
   - name: nxos-7.0.3
     max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
@@ -237,6 +239,8 @@ providers:
         connection-type: network_cli
       - name: iosxrv-6.1.3-20190604
         config-drive: false
+      - name: iosxrv-7.0.2-20211703
+        config-drive: false
         # NOTE(pabelanger): We don't have default gateway setup on boot, so
         # this is an attempt to setup nodepool from doing ssh-keyscan.
         connection-type: network_cli
@@ -334,6 +338,14 @@ providers:
           - name: iosxrv-6.1.3
             flavor-name: s1.large
             cloud-image: iosxrv-6.1.3-20190604
+            host-key-checking: false
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+              - Public Internet
+          - name: iosxrv-7.0.2
+            flavor-name: s1.large
+            cloud-image: iosxrv-7.0.2-20211703
             host-key-checking: false
             networks:
               - Private Network (10.0.0.0/8 only)
@@ -474,6 +486,14 @@ providers:
           - name: iosxrv-6.1.3
             flavor-name: s1.large
             cloud-image: iosxrv-6.1.3-20190604
+            host-key-checking: false
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+              - Public Internet
+          - name: iosxrv-7.0.2
+            flavor-name: s1.large
+            cloud-image: iosxrv-7.0.2-20211703
             host-key-checking: false
             networks:
               - Private Network (10.0.0.0/8 only)
