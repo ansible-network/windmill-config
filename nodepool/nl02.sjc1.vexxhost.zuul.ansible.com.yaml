@@ -54,7 +54,8 @@ labels:
     max-ready-age: 600
   - name: vmware-vcsa-7.0.0
     max-ready-age: 600
-
+  - name: vmware-vcsa-7.0.2
+    max-ready-age: 600
 providers:
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
@@ -108,7 +109,9 @@ providers:
       - name: VMware-VCSA-all-7.0.1-16860138-20210217-3
         config-drive: true
         python-path: /usr/bin/python3
-
+      - name: VMware-VCSA-all-7.0.2-17694817-20210326
+        config-drive: true
+        python-path: /usr/bin/python3
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
@@ -249,7 +252,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
-
+          - name: vmware-vcsa-7.0.2
+            flavor-name: v2-standard-4
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210326
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 55
   - name: vexxhost-sjc1
     cloud: vexxhost
     region-name: sjc1
@@ -400,7 +408,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
-
+          - name: vmware-vcsa-7.0.2
+            flavor-name: v2-standard-4
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210326
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 55
 
 diskimages:
   - name: centos-7

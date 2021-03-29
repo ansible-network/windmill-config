@@ -64,7 +64,8 @@ labels:
     max-ready-age: 600
   - name: vmware-vcsa-7.0.0
     max-ready-age: 600
-
+  - name: vmware-vcsa-7.0.2
+    max-ready-age: 600
 providers:
   - name: ec2-us-east-2
     driver: aws
@@ -287,6 +288,9 @@ providers:
       - name: VMware-VCSA-all-7.0.1-16860138-20210217-3
         config-drive: true
         python-path: /usr/bin/python3
+      - name: VMware-VCSA-all-7.0.2-17694817-20210326
+        config-drive: true
+        python-path: /usr/bin/python3
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
@@ -426,7 +430,10 @@ providers:
             flavor-name: s1.xlarge
             cloud-image: VMware-VCSA-all-7.0.1-16860138-20210217-3
             key-name: infra-root-keys
-
+          - name: vmware-vcsa-7.0.2
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210326
+            key-name: infra-root-keys
   - name: limestone-us-slc
     cloud: limestone
     region-name: us-slc
@@ -574,7 +581,10 @@ providers:
             flavor-name: s1.xlarge
             cloud-image: VMware-VCSA-all-7.0.1-16860138-20210217-3
             key-name: infra-root-keys
-
+          - name: vmware-vcsa-7.0.2
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210326
+            key-name: infra-root-keys
 diskimages:
   - name: centos-7
   - name: centos-8
