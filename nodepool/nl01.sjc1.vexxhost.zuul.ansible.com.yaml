@@ -70,6 +70,7 @@ providers:
   - name: ec2-us-east-2
     driver: aws
     region-name: us-east-2
+    boot-timeout: 300
     cloud-images:
       - name: fedora-32
         image-id: ami-0677b95262b16499f
