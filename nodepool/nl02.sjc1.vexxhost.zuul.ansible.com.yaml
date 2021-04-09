@@ -100,7 +100,7 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20210408
+      - name: esxi-6.7.0-20190802001-STANDARD-20210409
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-6.7.0-14836122-20201125
@@ -155,14 +155,14 @@ providers:
             volume-size: 80
           - name: esxi-6.7.0-without-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210408
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-6.7.0-with-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210408
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
             userdata: |
               #cloud-config
               hostname: esxi1.test
