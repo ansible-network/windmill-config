@@ -316,7 +316,359 @@ providers:
                     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
                   sudo: ALL=(ALL) NOPASSWD:ALL
 
-
+  - name: limestone-us-dfw-1
+    cloud: limestone
+    region-name: us-dfw-1
+    boot-timeout: 300
+    launch-timeout: 300
+    rate: 0.001
+    diskimages: &provider_limestone_diskimages
+      - name: centos-7
+        config-drive: true
+      - name: centos-8
+        config-drive: true
+      - name: fedora-32
+        config-drive: true
+      - name: ubuntu-bionic
+        config-drive: true
+      - name: ubuntu-xenial
+        config-drive: true
+    cloud-images: &provider_limestone_cloud-images
+      - name: asav9-12-3-20200302
+        config-drive: true
+        connection-type: network_cli
+      - name: ios-15.6-2T-20190524
+        config-drive: false
+        connection-type: network_cli
+      - name: iosxrv-6.1.3-20190604
+        config-drive: false
+      - name: iosxrv-7.0.2-20211703
+        config-drive: false
+        # NOTE(pabelanger): We don't have default gateway setup on boot, so
+        # this is an attempt to setup nodepool from doing ssh-keyscan.
+        connection-type: network_cli
+      - name: nxos-7.0.3.I5.1-20200505
+        config-drive: true
+        connection-port: 8022
+        connection-type: network_cli
+      - name: vEOS-4.20.10M-20190501
+        # NOTE(pabelanger): This seems to mess up the boot-loader for eos
+        config-drive: false
+        connection-type: network_cli
+      - name: vqfx-18.1R3-S2.5-20200116
+        config-drive: false
+      - name: vsrx3-18.4R1-S2.4-20190514
+        config-drive: false
+        connection-type: network_cli
+      - name: vyos-1.1.8-20190407
+        config-drive: true
+        connection-type: network_cli
+      - name: esxi-6.7.0-20190802001-STANDARD-20210409
+        config-drive: true
+        python-path: /usr/bin/python3
+      - name: VMware-VCSA-all-6.7.0-14836122-20201125
+        config-drive: true
+        python-path: /usr/bin/python3
+      - name: VMware-VCSA-all-7.0.1-16860138-20210217-3
+        config-drive: true
+        python-path: /usr/bin/python3
+      - name: VMware-VCSA-all-7.0.2-17694817-20210326
+        config-drive: true
+        python-path: /usr/bin/python3
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: s1.small
+        max-servers: 0
+        networks:
+          - Public Internet
+          - Private Network (10.0.0.0/8 only)
+        labels: &provider_limestone_pools_s1_small_labels
+          - name: asav9-12-3
+            flavor-name: s1.small
+            cloud-image: asav9-12-3-20200302
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: eos-4.20.10
+            flavor-name: l1.medium
+            cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: centos-7-1vcpu
+            flavor-name: l1.small
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-7-4vcpu
+            flavor-name: l1.large
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-7-8vcpu
+            flavor-name: l1.xlarge
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-8-1vcpu
+            flavor-name: l1.small
+            diskimage: centos-8
+            key-name: infra-root-keys
+          - name: esxi-6.7.0-with-nested-unstable
+            flavor-name: c1.hwetest.1
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
+          - name: esxi-6.7.0-without-nested
+            flavor-name: l1.medium
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
+          - name: fedora-32-1vcpu
+            flavor-name: l1.small
+            diskimage: fedora-32
+            key-name: infra-root-keys
+          - name: ios-15.6-2T
+            flavor-name: l1.small
+            cloud-image: ios-15.6-2T-20190524
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: iosxrv-6.1.3
+            flavor-name: s1.large
+            cloud-image: iosxrv-6.1.3-20190604
+            host-key-checking: false
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+              - Public Internet
+          - name: iosxrv-7.0.2
+            flavor-name: s1.large
+            cloud-image: iosxrv-7.0.2-20211703
+            host-key-checking: false
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+              - Public Internet
+          - name: nxos-7.0.3
+            flavor-name: s1.xlarge
+            cloud-image: nxos-7.0.3.I5.1-20200505
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 150
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Public Internet
+          - name: ubuntu-bionic-1vcpu
+            flavor-name: l1.small
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-bionic-2vcpu
+            flavor-name: l1.medium
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-bionic-4vcpu
+            flavor-name: l1.large
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-xenial-1vcpu
+            flavor-name: l1.small
+            diskimage: ubuntu-xenial
+            key-name: infra-root-keys
+          - name: vqfx-18.1R3
+            flavor-name: l1.medium
+            cloud-image: vqfx-18.1R3-S2.5-20200116
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vsrx3-18.4R1
+            flavor-name: l1.medium
+            cloud-image: vsrx3-18.4R1-S2.4-20190514
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vyos-1.1.8-1vcpu
+            flavor-name: l1.medium
+            cloud-image: vyos-1.1.8-20190407
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vmware-vcsa-6.7.0
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20201125
+            key-name: infra-root-keys
+          - name: vmware-vcsa-7.0.0
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-7.0.1-16860138-20210217-3
+            key-name: infra-root-keys
+          - name: vmware-vcsa-7.0.2
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210326
+            key-name: infra-root-keys
+  - name: limestone-us-slc
+    cloud: limestone
+    region-name: us-slc
+    boot-timeout: 300
+    launch-timeout: 300
+    rate: 0.001
+    diskimages: *provider_limestone_diskimages
+    cloud-images: *provider_limestone_cloud-images
+    pools:
+      # NOTE(pabelanger): Please contact pabelanger before making changes to
+      # this pool, especially increasing max-servers or changing labels. There
+      # is a real world financial cost in doing so that is charged to the
+      # Ansible org.
+      - name: s1.small
+        max-servers: 0
+        networks:
+          - Public Internet
+          - Private Network (10.0.0.0/8 only)
+        labels:
+          - name: asav9-12-3
+            flavor-name: s1.small
+            cloud-image: asav9-12-3-20200302
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: eos-4.20.10
+            flavor-name: s1.medium
+            cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: centos-7-1vcpu
+            flavor-name: s1.small
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-7-4vcpu
+            flavor-name: s1.large
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-7-8vcpu
+            flavor-name: s1.xlarge
+            diskimage: centos-7
+            key-name: infra-root-keys
+          - name: centos-8-1vcpu
+            flavor-name: s1.small
+            diskimage: centos-8
+            key-name: infra-root-keys
+          - name: esxi-6.7.0-with-nested-unstable
+            flavor-name: s1.medium
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
+          - name: esxi-6.7.0-without-nested
+            flavor-name: s1.medium
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
+          - name: fedora-32-1vcpu
+            flavor-name: s1.small
+            diskimage: fedora-32
+            key-name: infra-root-keys
+          - name: ios-15.6-2T
+            flavor-name: s1.small
+            cloud-image: ios-15.6-2T-20190524
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: iosxrv-6.1.3
+            flavor-name: s1.large
+            cloud-image: iosxrv-6.1.3-20190604
+            host-key-checking: false
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+              - Public Internet
+          - name: iosxrv-7.0.2
+            flavor-name: s1.large
+            cloud-image: iosxrv-7.0.2-20211703
+            host-key-checking: false
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+              - Public Internet
+          - name: nxos-7.0.3
+            flavor-name: s1.xlarge
+            cloud-image: nxos-7.0.3.I5.1-20200505
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 150
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Public Internet
+          - name: ubuntu-bionic-1vcpu
+            flavor-name: s1.small
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-bionic-2vcpu
+            flavor-name: s1.medium
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-bionic-4vcpu
+            flavor-name: s1.large
+            diskimage: ubuntu-bionic
+            key-name: infra-root-keys
+          - name: ubuntu-xenial-1vcpu
+            flavor-name: s1.small
+            diskimage: ubuntu-xenial
+            key-name: infra-root-keys
+          - name: vqfx-18.1R3
+            flavor-name: s1.medium
+            cloud-image: vqfx-18.1R3-S2.5-20200116
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vsrx3-18.4R1
+            flavor-name: s1.medium
+            cloud-image: vsrx3-18.4R1-S2.4-20190514
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vyos-1.1.8-1vcpu
+            flavor-name: s1.medium
+            cloud-image: vyos-1.1.8-20190407
+            key-name: infra-root-keys
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: vmware-vcsa-6.7.0
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-6.7.0-14836122-20201125
+            key-name: infra-root-keys
+          - name: vmware-vcsa-7.0.0
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-7.0.1-16860138-20210217-3
+            key-name: infra-root-keys
+          - name: vmware-vcsa-7.0.2
+            flavor-name: s1.xlarge
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210326
+            key-name: infra-root-keys
 diskimages:
   - name: centos-7
   - name: centos-8
