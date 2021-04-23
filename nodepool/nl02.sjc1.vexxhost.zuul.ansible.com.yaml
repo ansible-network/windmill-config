@@ -56,6 +56,8 @@ labels:
     max-ready-age: 600
   - name: vmware-vcsa-7.0.2
     max-ready-age: 600
+  - name: esxi-6.7.0-with-nested_exp
+    max-ready-age: 600
 providers:
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
@@ -414,6 +416,16 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
+          - name: esxi-6.7.0-with-nested_exp
+            flavor-name: v2-highcpu-4
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 1o
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
 
 diskimages:
   - name: centos-7
