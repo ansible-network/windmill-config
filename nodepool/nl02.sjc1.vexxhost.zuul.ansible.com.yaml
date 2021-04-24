@@ -421,7 +421,7 @@ providers:
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
             key-name: infra-root-keys
             boot-from-volume: true
-            volume-size: 1o
+            volume-size: 20
             userdata: |
               #cloud-config
               hostname: esxi1.test
