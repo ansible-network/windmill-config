@@ -92,7 +92,7 @@ providers:
         image-id: ami-01c8ed64
     pools:
       - name: main
-        max-servers: 5
+        max-servers: 15
         # This subnet comes with 172.16/16 CIDR. This is a requirement for
         # the QRadar image.
         subnet-id: subnet-049b1e99211b42502
