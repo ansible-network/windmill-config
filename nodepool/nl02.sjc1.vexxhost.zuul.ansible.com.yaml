@@ -58,6 +58,8 @@ labels:
     max-ready-age: 600
   - name: esxi-6.7.0-with-nested_exp
     max-ready-age: 600
+  - name: esxi-7.0.2
+    max-ready-age: 600
 providers:
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
@@ -103,6 +105,9 @@ providers:
         config-drive: true
         connection-type: network_cli
       - name: esxi-6.7.0-20190802001-STANDARD-20210409
+        config-drive: true
+        python-path: /usr/bin/python3
+      - name: esxi-7.0.2-17630552-STANDARD-20210430
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-6.7.0-14836122-20201125
@@ -165,6 +170,13 @@ providers:
           - name: esxi-6.7.0-with-nested
             flavor-name: v2-standard-1-iops
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20210409
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
+          - name: esxi-7.0.2
+            flavor-name: v2-standard-1-iops
+            cloud-image: esxi-7.0.2-17630552-STANDARD-20210430
             userdata: |
               #cloud-config
               hostname: esxi1.test
