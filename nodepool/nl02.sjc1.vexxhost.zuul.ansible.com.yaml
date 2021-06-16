@@ -54,7 +54,12 @@ labels:
     max-ready-age: 600
   - name: vmware-vcsa-7.0.0
     max-ready-age: 600
-
+  - name: vmware-vcsa-7.0.2
+    max-ready-age: 600
+  - name: esxi-6.7.0-with-nested_exp
+    max-ready-age: 600
+  - name: esxi-7.0.2
+    max-ready-age: 600
 providers:
   - name: vexxhost-ca-ymq-1
     cloud: vexxhost
@@ -99,7 +104,10 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20210215
+      - name: esxi-6.7.0-20190802001-STANDARD-20210611
+        config-drive: true
+        python-path: /usr/bin/python3
+      - name: esxi-7.0.2-17630552-STANDARD-20210430
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-6.7.0-14836122-20201125
@@ -108,7 +116,9 @@ providers:
       - name: VMware-VCSA-all-7.0.1-16860138-20210217-3
         config-drive: true
         python-path: /usr/bin/python3
-
+      - name: VMware-VCSA-all-7.0.2-17694817-20210526
+        config-drive: true
+        python-path: /usr/bin/python3
     pools:
       # NOTE(pabelanger): Please contact pabelanger before making changes to
       # this pool, especially increasing max-servers or changing labels. There
@@ -118,7 +128,7 @@ providers:
         networks: &provider_vexxhost_pools_v2_highcpu_1_networks
           - public
           - net1
-        max-servers: 35
+        max-servers: 40
         labels:
           - name: asav9-12-3
             flavor-name: v1-standard-2
@@ -152,14 +162,21 @@ providers:
             volume-size: 80
           - name: esxi-6.7.0-without-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210215
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-6.7.0-with-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210215
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
+          - name: esxi-7.0.2
+            flavor-name: v2-standard-1-iops
+            cloud-image: esxi-7.0.2-17630552-STANDARD-20210430
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -249,7 +266,12 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
-
+          - name: vmware-vcsa-7.0.2
+            flavor-name: v2-standard-4
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 55
   - name: vexxhost-sjc1
     cloud: vexxhost
     region-name: sjc1
@@ -400,7 +422,22 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
-
+          - name: vmware-vcsa-7.0.2
+            flavor-name: v2-standard-4
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 55
+          - name: esxi-6.7.0-with-nested_exp
+            flavor-name: v2-highcpu-4
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 20
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
 
 diskimages:
   - name: centos-7
