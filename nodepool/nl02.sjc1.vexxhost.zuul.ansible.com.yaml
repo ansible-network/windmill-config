@@ -14,6 +14,8 @@ labels:
     max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
+  - name: eos-4.26.1
+    max-ready-age: 600
   - name: centos-7-1vcpu
     max-ready-age: 600
   - name: centos-7-4vcpu
@@ -91,7 +93,7 @@ providers:
       - name: iosxrv-7.0.2-20211703
         config-drive: false
         connection-type: network_cli
-      - name: vEOS-4.20.10M-20190501
+      - name: vEOS-4.26.1F-20210616
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
@@ -137,9 +139,9 @@ providers:
               - public
               - net1
               - net2
-          - name: eos-4.20.10
+          - name: eos-4.26.1
             flavor-name: v1-standard-2
-            cloud-image: vEOS-4.20.10M-20190501
+            cloud-image: vEOS-4.26.1F-20210616
             networks:
               - public
               - net1
