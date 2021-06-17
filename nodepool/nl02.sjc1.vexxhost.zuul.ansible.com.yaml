@@ -95,6 +95,10 @@ providers:
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
+      - name: vEOS-4.26.1F-20210617
+        # NOTE(pabelanger): This seems to mess up the boot-loader for eos
+        config-drive: false
+        connection-type: network_cli
       - name: vqfx-18.1R3-S2.5-20200116
         config-drive: false
         connection-type: network_cli
@@ -140,6 +144,13 @@ providers:
           - name: eos-4.20.10
             flavor-name: v1-standard-2
             cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - public
+              - net1
+              - net2
+          - name: eos-4.26.1
+            flavor-name: v1-standard-2
+            cloud-image: vEOS-4.26.1F-20210617
             networks:
               - public
               - net1
