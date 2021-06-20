@@ -217,7 +217,6 @@ all:
     disabled:
       hosts:
         bastion01.sjc1.vexxhost.zuul.ansible.com:
-        zk01.sjc1.vexxhost.zuul.ansible.com:
         zk02.sjc1.vexxhost.zuul.ansible.com:
         zk03.sjc1.vexxhost.zuul.ansible.com:
 
