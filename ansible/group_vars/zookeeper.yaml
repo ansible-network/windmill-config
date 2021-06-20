@@ -21,6 +21,9 @@ __borgmatic_encryption_passphrase: !vault |
   3537353836633837640a326233663765363638656537343766393539363535393866623130343134
   62343835363637666663393436386337343335386635363037353765396232346564
 
+zookeeper_install_method: tarball
+zookeeper_tarball_version: 3.9.5
+
 zookeeper_file_myid_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/myid"
 zookeeper_file_zoo_conf_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/zoo.cfg"
 
