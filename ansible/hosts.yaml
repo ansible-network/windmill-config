@@ -217,7 +217,6 @@ all:
     disabled:
       hosts:
         bastion01.sjc1.vexxhost.zuul.ansible.com:
-        zk02.sjc1.vexxhost.zuul.ansible.com:
 
     # NOTE(pabelanger): We currently only support a single gear host in this
     # group.  This means, the first host listed will only be used by our
