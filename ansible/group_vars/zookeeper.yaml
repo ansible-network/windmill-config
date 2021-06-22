@@ -27,6 +27,88 @@ zookeeper_tarball_version: 3.5.9
 zookeeper_file_myid_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/myid"
 zookeeper_file_zoo_conf_src: "{{ windmill_config_git_dest }}/zookeeper/etc/zookeeper/conf/zoo.cfg"
 
+zookeeper_file_ssl_truststore_content: |
+  Certificate:
+      Data:
+          Version: 3 (0x2)
+          Serial Number:
+              27:58:0c:a7:1b:de:63:1f:e4:7d:de:7a:95:00:91:09:de:f8:fd:c8
+          Signature Algorithm: sha256WithRSAEncryption
+          Issuer: C=US, ST=California, O=Company Name, OU=Org, CN=caroot
+          Validity
+              Not Before: Jun 22 13:46:39 2021 GMT
+              Not After : Mar 22 13:46:39 2031 GMT
+          Subject: C=US, ST=California, O=Company Name, OU=Org, CN=caroot
+          Subject Public Key Info:
+              Public Key Algorithm: rsaEncryption
+                  RSA Public-Key: (2048 bit)
+                  Modulus:
+                      00:9b:a1:4c:16:95:3c:09:e2:94:4d:3f:11:dd:e4:
+                      5a:53:17:ed:f6:c9:ea:a9:0a:f1:01:90:1b:c6:cb:
+                      f4:27:c1:2c:0d:1e:4d:e5:04:87:fd:1b:b6:44:d1:
+                      3b:01:20:ef:a2:8f:c5:be:61:15:da:fc:1d:f1:df:
+                      10:1a:5c:b7:e5:26:16:08:c8:ca:74:05:9e:2f:a8:
+                      95:7d:ed:6a:61:23:cc:9d:5d:8c:85:e9:3a:b3:13:
+                      21:28:61:5c:2f:4b:44:05:0b:59:87:28:8f:a7:39:
+                      e2:15:f3:e7:60:32:e2:4a:73:56:26:64:13:62:87:
+                      0a:10:fb:a6:9e:ab:1c:54:c1:8d:ac:bd:68:65:4e:
+                      bb:e7:95:b0:57:49:c2:27:7b:06:5e:58:a1:73:65:
+                      5a:f4:ab:c6:3f:b8:67:21:07:8b:5c:e9:4b:eb:12:
+                      35:47:c6:71:98:df:bb:85:36:91:a8:83:d5:e6:61:
+                      91:c1:58:67:e3:49:fa:fc:9f:28:35:2c:0e:20:92:
+                      a8:ff:60:67:7b:70:59:6a:d6:43:15:35:c3:4a:21:
+                      56:63:0b:62:09:08:15:42:be:a4:8b:c2:d4:ed:63:
+                      2a:62:dc:78:b8:75:bd:b5:67:92:59:f0:0c:77:9f:
+                      fc:9e:64:6e:ea:e1:bf:50:e5:c9:00:86:8c:67:b2:
+                      78:eb
+                  Exponent: 65537 (0x10001)
+          X509v3 extensions:
+              X509v3 Subject Key Identifier:
+                  69:83:5C:70:67:34:E3:86:75:C0:A5:6A:C6:86:0C:6D:CC:AB:D7:E5
+              X509v3 Authority Key Identifier:
+                  keyid:69:83:5C:70:67:34:E3:86:75:C0:A5:6A:C6:86:0C:6D:CC:AB:D7:E5
+
+              X509v3 Basic Constraints: critical
+                  CA:TRUE
+      Signature Algorithm: sha256WithRSAEncryption
+           03:4d:f1:3c:a8:ff:6c:42:0c:da:1c:ae:b8:21:be:31:37:45:
+           2f:c5:f2:b5:b3:8c:1d:25:8f:5a:69:0e:12:48:e4:82:e0:ae:
+           88:57:33:3d:6b:82:15:3c:0b:a5:fb:83:9a:a9:79:13:3b:1f:
+           36:9f:23:64:8f:1b:e3:7e:e6:07:47:a1:70:31:04:6d:e2:68:
+           11:70:e9:5e:17:77:da:46:54:a1:55:06:1c:9c:5d:4a:b8:bc:
+           5b:bd:48:11:98:5f:f6:2e:e5:59:9c:2e:7f:6b:2c:e4:28:02:
+           4b:63:0e:59:40:e7:0d:a7:68:cc:38:ab:fb:32:8b:92:18:60:
+           f1:15:a4:c3:06:04:d7:56:15:fb:d5:23:d5:4c:25:40:f9:e5:
+           0c:ec:ce:c4:11:77:6d:25:ad:bc:10:c7:ec:1b:84:4d:c3:ea:
+           24:70:74:cd:0f:73:8a:ca:fd:b5:9a:ec:8b:b9:78:3e:7c:21:
+           48:41:28:25:95:e2:d1:90:46:48:52:13:3c:4d:11:5f:81:1a:
+           b7:66:5f:f8:fb:6a:e2:fc:cc:5b:f3:c4:fd:52:96:c9:2d:91:
+           f4:cb:f8:29:00:aa:9a:8a:78:a0:36:8b:da:b8:2b:09:19:cc:
+           d8:db:7f:63:66:c9:b6:98:49:61:43:47:e3:76:8a:81:54:63:
+           56:c6:be:2c
+  -----BEGIN CERTIFICATE-----
+  MIIDkTCCAnmgAwIBAgIUJ1gMpxveYx/kfd56lQCRCd74/cgwDQYJKoZIhvcNAQEL
+  BQAwWDELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFTATBgNVBAoM
+  DENvbXBhbnkgTmFtZTEMMAoGA1UECwwDT3JnMQ8wDQYDVQQDDAZjYXJvb3QwHhcN
+  MjEwNjIyMTM0NjM5WhcNMzEwMzIyMTM0NjM5WjBYMQswCQYDVQQGEwJVUzETMBEG
+  A1UECAwKQ2FsaWZvcm5pYTEVMBMGA1UECgwMQ29tcGFueSBOYW1lMQwwCgYDVQQL
+  DANPcmcxDzANBgNVBAMMBmNhcm9vdDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
+  AQoCggEBAJuhTBaVPAnilE0/Ed3kWlMX7fbJ6qkK8QGQG8bL9CfBLA0eTeUEh/0b
+  tkTROwEg76KPxb5hFdr8HfHfEBpct+UmFgjIynQFni+olX3tamEjzJ1djIXpOrMT
+  IShhXC9LRAULWYcoj6c54hXz52Ay4kpzViZkE2KHChD7pp6rHFTBjay9aGVOu+eV
+  sFdJwid7Bl5YoXNlWvSrxj+4ZyEHi1zpS+sSNUfGcZjfu4U2kaiD1eZhkcFYZ+NJ
+  +vyfKDUsDiCSqP9gZ3twWWrWQxU1w0ohVmMLYgkIFUK+pIvC1O1jKmLceLh1vbVn
+  klnwDHef/J5kburhv1DlyQCGjGeyeOsCAwEAAaNTMFEwHQYDVR0OBBYEFGmDXHBn
+  NOOGdcClasaGDG3Mq9flMB8GA1UdIwQYMBaAFGmDXHBnNOOGdcClasaGDG3Mq9fl
+  MA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAANN8Tyo/2xCDNoc
+  rrghvjE3RS/F8rWzjB0lj1ppDhJI5ILgrohXMz1rghU8C6X7g5qpeRM7HzafI2SP
+  G+N+5gdHoXAxBG3iaBFw6V4Xd9pGVKFVBhycXUq4vFu9SBGYX/Yu5VmcLn9rLOQo
+  AktjDllA5w2naMw4q/syi5IYYPEVpMMGBNdWFfvVI9VMJUD55QzszsQRd20lrbwQ
+  x+wbhE3D6iRwdM0Pc4rK/bWa7Iu5eD58IUhBKCWV4tGQRkhSEzxNEV+BGrdmX/j7
+  auL8zFvzxP1SlsktkfTL+CkAqpqKeKA2i9q4KwkZzNjbf2NmybaYSWFDR+N2ioFU
+  Y1bGviw=
+  -----END CERTIFICATE-----
+
 iptables_allowed_hosts:
   # nodepool-builder
   - address: nb01.sjc1.vexxhost.zuul.ansible.com
