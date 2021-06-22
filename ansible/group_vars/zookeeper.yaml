@@ -113,14 +113,6 @@ iptables_allowed_hosts:
   # nodepool-builder
   - address: nb01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
-    port: 2181
-
-  - address: nb02.sjc1.vexxhost.zuul.ansible.com
-    protocol: tcp
-    port: 2181
-
-  - address: nb01.sjc1.vexxhost.zuul.ansible.com
-    protocol: tcp
     port: 2281
 
   - address: nb02.sjc1.vexxhost.zuul.ansible.com
@@ -128,14 +120,6 @@ iptables_allowed_hosts:
     port: 2281
 
   # nodepool-launcher
-  - address: nl01.sjc1.vexxhost.zuul.ansible.com
-    protocol: tcp
-    port: 2181
-
-  - address: nl02.sjc1.vexxhost.zuul.ansible.com
-    protocol: tcp
-    port: 2181
-
   - address: nl01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
     port: 2281
