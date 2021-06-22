@@ -5,6 +5,11 @@ zookeeper-servers:
 {% if 'zookeeper' in groups %}
 {% for host in groups['zookeeper'] %}
   - host: '{{ hostvars[host].ansible_host | ipwrap }}'
-    port: 2181
+    port: 2281
 {% endfor %}
 {% endif %}
+
+zookeeper-tls:
+  ca: {{ nodepool_file_zookeeper_tls_cacert_dest }}
+  cert: {{ nodepool_file_zookeeper_tls_cert_dest }}
+  key: {{ nodepool_file_zookeeper_tls_key_dest }}
