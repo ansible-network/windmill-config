@@ -34,6 +34,9 @@ pidfile = /var/run/zuul-scheduler/zuul-scheduler.pid
 relative_priority = true
 state_dir = {{ zuul_user_home }}
 
+[keystore]
+password = __zuul_conf_keystore_password
+
 {% endif -%}
 
 {% if inventory_hostname in groups['zuul-executor'] %}
