@@ -128,6 +128,36 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 2281
 
+  # zuul-executors
+  - address: ze01.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2281
+
+  - address: ze02.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2281
+
+  - address: ze03.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2281
+
+  - address: ze04.us-dfw-1.limestone.zuul.ansible.com
+    protocol: tcp
+    port: 2281
+
+  - address: ze05.us-dfw-1.limestone.zuul.ansible.com
+    protocol: tcp
+    port: 2281
+
+  # zuul-mergers
+  - address: zm01.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2281
+
+  - address: zm02.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2281
+
   # zuul-scheduler
   - address: zs01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
