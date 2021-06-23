@@ -19,8 +19,6 @@ zuul_file_web_logging_conf_manage: true
 
 zuul_file_zuul_web_service_manage: true
 
-zuul_pip_name: zuul[mysql_reporter]
-
 zuul_service_zuul_web_enabled: true
 zuul_service_zuul_web_manage: true
 zuul_service_zuul_web_state: started
