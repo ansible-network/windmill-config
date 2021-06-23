@@ -16,7 +16,7 @@ zuul_user_shell: /bin/bash
 zuul_file_main_yaml_src: "{{ project_config_git_dest }}/zuul/tenants.yaml"
 zuul_file_zuul_conf_src: "{{ windmill_config_git_dest }}/zuul/zuul.conf.j2"
 
-zuul_pip_version: 3.19.1
+zuul_pip_version: 4.5.1
 zuul_pip_virtualenv_python: python3
 zuul_pip_virtualenv: "/opt/venv/zuul-{{ zuul_pip_version }}"
 zuul_pip_virtualenv_symlink: /opt/venv/zuul
