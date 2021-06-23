@@ -131,17 +131,9 @@ iptables_allowed_hosts:
   # zuul-scheduler
   - address: zs01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
-    port: 2181
-
-  - address: zs01.sjc1.vexxhost.zuul.ansible.com
-    protocol: tcp
     port: 2281
 
   # zuul-web
-  - address: zw01.sjc1.vexxhost.zuul.ansible.com
-    protocol: tcp
-    port: 2181
-
   - address: zw01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
     port: 2281
