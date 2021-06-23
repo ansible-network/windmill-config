@@ -3,7 +3,10 @@
 #
 {% if inventory_hostname in groups['zuul-scheduler'] or inventory_hostname in groups['zuul-web'] %}
 [zookeeper]
-hosts = {{ groups['zookeeper'] | map('extract', hostvars, ['ansible_host']) | join(':2181,') }}:2181
+hosts = {{ groups['zookeeper'] | map('extract', hostvars, ['ansible_host']) | join(':2281,') }}:2281
+tls_ca = {{ zuul_file_zookeeper_tls_cacert_dest }}
+tls_cert = {{ zuul_file_zookeeper_tls_cert_dest }}
+tls_key = {{ zuul_file_zookeeper_tls_key_dest }}
 
 {% endif -%}
 

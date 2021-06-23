@@ -133,10 +133,18 @@ iptables_allowed_hosts:
     protocol: tcp
     port: 2181
 
+  - address: zs01.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2281
+
   # zuul-web
   - address: zw01.sjc1.vexxhost.zuul.ansible.com
     protocol: tcp
     port: 2181
+
+  - address: zw01.sjc1.vexxhost.zuul.ansible.com
+    protocol: tcp
+    port: 2281
 
   # zookeeper election
   - address: zk01.sjc1.vexxhost.zuul.ansible.com
