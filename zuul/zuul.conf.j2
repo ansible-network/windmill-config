@@ -7,6 +7,9 @@ tls_ca = {{ zuul_file_zookeeper_tls_cacert_dest }}
 tls_cert = {{ zuul_file_zookeeper_tls_cert_dest }}
 tls_key = {{ zuul_file_zookeeper_tls_key_dest }}
 
+[keystore]
+password = {{ __zuul_conf_keystore_password }}
+
 [gearman]
 port = 4730
 server = {{ hostvars[groups['gear'][0]].ansible_host }}
@@ -30,9 +33,6 @@ log_config = /etc/zuul/scheduler-logging.conf
 pidfile = /var/run/zuul-scheduler/zuul-scheduler.pid
 relative_priority = true
 state_dir = {{ zuul_user_home }}
-
-[keystore]
-password = {{ __zuul_conf_keystore_password }}
 
 {% endif -%}
 
