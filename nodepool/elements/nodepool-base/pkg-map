@@ -13,7 +13,9 @@
       "tox": ""
     },
     "fedora": {
-      "tox": "python3-tox python3-pip python3-libselinux"
+      "tox": "python3-tox python3-pip python3-libselinux",
+      "ntp": "chrony",
+      "ntpdate": ""
     },
     "ubuntu": {
       "tox": "tox python-pip"
