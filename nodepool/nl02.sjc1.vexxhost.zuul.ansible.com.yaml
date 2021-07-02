@@ -152,6 +152,7 @@ providers:
               - net2
           - name: eos-4.26.1
             flavor-name: v1-standard-2
+            key-name: infra-root-keys
             cloud-image: vEOS-4.26.1F-20210617
             networks:
               - public
