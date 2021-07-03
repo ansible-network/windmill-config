@@ -1,0 +1,27 @@
+#!/bin/bash
+
+if [ ${DIB_DEBUG_TRACE:-0} -gt 0 ]; then
+    set -x
+fi
+set -eu
+set -o pipefail
+
+DIB_DISTRIBUTION_MIRROR=${DIB_DISTRIBUTION_MIRROR:-}
+
+[ -n "$DIB_DISTRIBUTION_MIRROR" ] || exit 0
+
+if [[ ${DIB_RELEASE} -gt 27 ]]; then
+    # urgh, the repo is wrong in the "baseurl" line, see
+    #  https://pagure.io/fedora/repos/issue/70
+    for FILE in /etc/yum.repos.d/fedora-updates.repo /etc/yum.repos.d/fedora-updates-testing.repo; do
+        sed -i "s,/os/,," $FILE
+    done
+fi
+
+for FILE in /etc/yum.repos.d/fedora.repo /etc/yum.repos.d/fedora-updates.repo /etc/yum.repos.d/fedora-updates-testing.repo; do
+    # In >=32 this became "download.example" not
+    # "download.fedoraproject.org"
+    cat $FILE
+    sudo sed -e "s,^#baseurl=http[s]*://download.\(fedoraproject.org\|example\)/pub/fedora/linux,baseurl=$DIB_DISTRIBUTION_MIRROR,;/^metalink/d" -i $FILE
+    cat $FILE
+done

@@ -128,7 +128,7 @@ diskimages:
 
   - name: fedora-34
     elements:
-      - fedora-minimal
+      - fedora-fork
       - growroot
       - nodepool-base
       - openssh-server
