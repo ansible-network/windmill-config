@@ -326,6 +326,13 @@ providers:
               - public
               - net1
               - net2
+          - name: eos-4.24.6
+            flavor-name: v1-standard-2
+            cloud-image: vEOS-4.24.6F-20210712
+            networks:
+              - public
+              - net1
+              - net2
           - name: centos-7-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: centos-7

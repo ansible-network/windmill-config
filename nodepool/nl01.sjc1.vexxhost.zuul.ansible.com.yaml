@@ -30,6 +30,8 @@ labels:
     max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
+  - name: eos-4.24.6
+    max-ready-age: 600
   - name: esxi-6.7.0-with-nested-unstable
     max-ready-age: 600
   - name: esxi-6.7.0-without-nested
@@ -398,6 +400,10 @@ providers:
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
+      - name: vEOS-4.24.6F-20210712
+        # NOTE(pabelanger): This seems to mess up the boot-loader for eos
+        config-drive: false
+        connection-type: network_cli
       - name: vqfx-18.1R3-S2.5-20200116
         config-drive: false
       - name: vsrx3-18.4R1-S2.4-20190514
@@ -439,6 +445,13 @@ providers:
           - name: eos-4.20.10
             flavor-name: l1.medium
             cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: eos-4.24.6
+            flavor-name: l1.medium
+            cloud-image: vEOS-4.24.6F-20210712
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
@@ -594,6 +607,13 @@ providers:
           - name: eos-4.20.10
             flavor-name: s1.medium
             cloud-image: vEOS-4.20.10M-20190501
+            networks:
+              - Public Internet
+              - Private Network (10.0.0.0/8 only)
+              - Private Network (Floating Public)
+          - name: eos-4.24.6
+            flavor-name: s1.medium
+            cloud-image: vEOS-4.24.6F-20210712
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
