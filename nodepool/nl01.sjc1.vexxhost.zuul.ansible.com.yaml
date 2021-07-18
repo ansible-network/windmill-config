@@ -523,9 +523,6 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 150
-            networks:
-              - Private Network (10.0.0.0/8 only)
-              - Public Internet
           - name: ubuntu-bionic-1vcpu
             flavor-name: l1.small
             diskimage: ubuntu-bionic
@@ -685,9 +682,6 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 150
-            networks:
-              - Private Network (10.0.0.0/8 only)
-              - Public Internet
           - name: ubuntu-bionic-1vcpu
             flavor-name: l1.small
             diskimage: ubuntu-bionic
