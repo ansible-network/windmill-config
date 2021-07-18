@@ -84,7 +84,7 @@ providers:
         image-id: ami-0c54097900b6afcbe
       - name: fedora-34
         # https://alt.fedoraproject.org/cloud/
-        image-id: ami-00a4fdd3db8bb2851
+        image-id: ami-04d6c97822332a0a6
       - name: ubuntu-bionic
         image-id: ami-07c1207a9d40bc3bd
       - name: centos-8
