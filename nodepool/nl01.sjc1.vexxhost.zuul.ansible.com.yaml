@@ -412,7 +412,7 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20210611
+      - name: esxi-6.7.0-20190802001-STANDARD-20210719
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-6.7.0-14836122-20201125
@@ -421,7 +421,7 @@ providers:
       - name: VMware-VCSA-all-7.0.1-16860138-20210217-3
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.2-17694817-20210526
+      - name: VMware-VCSA-all-7.0.2-17694817-20210719
         config-drive: true
         python-path: /usr/bin/python3
     pools:
@@ -474,14 +474,14 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
             flavor-name: c1.hwetest.1
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210719
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-6.7.0-without-nested
             flavor-name: l1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210719
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -576,7 +576,7 @@ providers:
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.2
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210719
             key-name: infra-root-keys
   - name: limestone-us-slc
     cloud: limestone
@@ -636,14 +636,14 @@ providers:
             key-name: infra-root-keys
           - name: esxi-6.7.0-with-nested-unstable
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210719
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-6.7.0-without-nested
             flavor-name: s1.medium
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210719
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -738,7 +738,7 @@ providers:
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.2
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210719
             key-name: infra-root-keys
 diskimages:
   - name: centos-7

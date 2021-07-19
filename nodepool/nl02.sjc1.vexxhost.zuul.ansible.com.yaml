@@ -114,7 +114,7 @@ providers:
       - name: vyos-1.1.8-20190407
         config-drive: true
         connection-type: network_cli
-      - name: esxi-6.7.0-20190802001-STANDARD-20210611
+      - name: esxi-6.7.0-20190802001-STANDARD-20210719
         config-drive: true
         python-path: /usr/bin/python3
       - name: esxi-7.0.2-17630552-STANDARD-20210430
@@ -126,7 +126,7 @@ providers:
       - name: VMware-VCSA-all-7.0.1-16860138-20210217-3
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.2-17694817-20210526
+      - name: VMware-VCSA-all-7.0.2-17694817-20210719
         config-drive: true
         python-path: /usr/bin/python3
     pools:
@@ -179,14 +179,14 @@ providers:
             volume-size: 80
           - name: esxi-6.7.0-without-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210719
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-6.7.0-with-nested
             flavor-name: v2-standard-1-iops
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210719
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -291,7 +291,7 @@ providers:
             volume-size: 55
           - name: vmware-vcsa-7.0.2
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210719
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
@@ -460,13 +460,13 @@ providers:
             volume-size: 55
           - name: vmware-vcsa-7.0.2
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210719
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
           - name: esxi-6.7.0-with-nested_exp
             flavor-name: v2-highcpu-4
-            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210611
+            cloud-image: esxi-6.7.0-20190802001-STANDARD-20210719
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 20
