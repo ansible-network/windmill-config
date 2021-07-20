@@ -281,14 +281,14 @@ providers:
         max-servers: 35
         labels:
           - name: asav9-12-3
-            flavor-name:  v2-highcpu-4
+            flavor-name: v2-highcpu-4
             cloud-image: asav9-12-3-20200302
             networks:
               - public
               - net1
               - net2
           - name: eos-4.24.6
-            flavor-name:  v2-highcpu-4
+            flavor-name: v2-highcpu-4
             cloud-image: vEOS-4.24.6F-20210712
             networks:
               - public
