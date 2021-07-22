@@ -112,7 +112,7 @@ providers:
       - name: esxi-7.0.2-17630552-STANDARD-20210430
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.2-17694817-20210526
+      - name: VMware-VCSA-all-7.0.2-17694817-20210720
         config-drive: true
         python-path: /usr/bin/python3
     pools:
@@ -258,7 +258,7 @@ providers:
               - net2
           - name: vmware-vcsa-7.0.2
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210720
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
@@ -415,7 +415,7 @@ providers:
               - net2
           - name: vmware-vcsa-7.0.2
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210720
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
