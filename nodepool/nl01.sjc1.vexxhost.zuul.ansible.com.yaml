@@ -409,7 +409,7 @@ providers:
       - name: esxi-6.7.0-20190802001-STANDARD-20210719
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.2-17694817-20210720
+      - name: VMware-VCSA-all-7.0.2-17694817-20210526
         config-drive: true
         python-path: /usr/bin/python3
     pools:
@@ -542,7 +542,7 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-7.0.2
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210720
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
             key-name: infra-root-keys
   - name: limestone-us-slc
     cloud: limestone
@@ -682,7 +682,7 @@ providers:
               - Private Network (Floating Public)
           - name: vmware-vcsa-7.0.2
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210720
+            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210526
             key-name: infra-root-keys
 diskimages:
   - name: centos-7
