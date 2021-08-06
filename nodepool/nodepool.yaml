@@ -16,6 +16,8 @@ providers:
         config-drive: true
       - name: centos-8
         config-drive: true
+      - name: centos-8-stream
+        config-drive: true
       - name: fedora-32
         config-drive: true
       - name: fedora-34
@@ -91,6 +93,25 @@ diskimages:
       DIB_SIMPLE_INIT_NETWORKMANAGER: '1'
       QEMU_IMG_OPTIONS: compat=0.10
     python-path: /usr/bin/python3
+
+  - name: centos-8-stream
+    elements:
+      - centos-minimal
+      - epel
+      - growroot
+      - nodepool-base
+      - openssh-server
+      - simple-init
+      - vm
+    env-vars:
+      DIB_CHECKSUM: '1'
+      DIB_EPEL_DISABLED: '1'
+      DIB_GRUB_TIMEOUT: '0'
+      DIB_INSTALLTYPE_pip_and_virtualenv: 'package'
+      DIB_SIMPLE_INIT_NETWORKMANAGER: '1'
+      QEMU_IMG_OPTIONS: compat=0.10
+    python-path: /usr/bin/python3
+    release: 8-stream
 
   - name: fedora-31
     elements:
