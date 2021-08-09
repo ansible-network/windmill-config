@@ -30,6 +30,8 @@ labels:
     max-ready-age: 600
   - name: centos-8-stream-1vcpu
     max-ready-age: 600
+  - name: centos-8-stream-2vcpu
+    max-ready-age: 600
   - name: eos-4.20.10
     max-ready-age: 600
   - name: eos-4.24.6
@@ -503,6 +505,10 @@ providers:
             flavor-name: l1.small
             diskimage: centos-8-stream
             key-name: infra-root-keys
+          - name: centos-8-stream-2vcpu
+            flavor-name: l1.medium
+            diskimage: centos-8-stream
+            key-name: infra-root-keys
           - name: fedora-32-1vcpu
             flavor-name: l1.small
             diskimage: fedora-32
@@ -645,6 +651,10 @@ providers:
             key-name: infra-root-keys
           - name: centos-8-stream-1vcpu
             flavor-name: l1.small
+            diskimage: centos-8-stream
+            key-name: infra-root-keys
+          - name: centos-8-stream-2vcpu
+            flavor-name: l1.medium
             diskimage: centos-8-stream
             key-name: infra-root-keys
           - name: fedora-32-1vcpu
