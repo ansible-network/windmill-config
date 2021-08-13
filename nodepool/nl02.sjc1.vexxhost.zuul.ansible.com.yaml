@@ -22,9 +22,7 @@ labels:
     max-ready-age: 600
   - name: centos-8-1vcpu
     max-ready-age: 600
-  - name: centos-8-stream-1vcpu
-    max-ready-age: 600
-  - name: centos-8-stream-2vcpu
+  - name: centos-8-stream
     max-ready-age: 600
   - name: esxi-6.7.0
     max-ready-age: 600
@@ -169,18 +167,10 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
-          - name: centos-8-stream-1vcpu
-            flavor-name: v2-highcpu-1
+          - name: centos-8-stream
+            flavor-name: v3-standard-4
             diskimage: centos-8-stream
             key-name: infra-root-keys
-            boot-from-volume: true
-            volume-size: 80
-          - name: centos-8-stream-2vcpu
-            flavor-name: v3-standard-2
-            diskimage: centos-8-stream
-            key-name: infra-root-keys
-            boot-from-volume: true
-            volume-size: 80
           - name: esxi-6.7.0
             flavor-name: v2-standard-1-iops
             cloud-image: esxi-6.7.0-20190802001-STANDARD-20210719
@@ -336,14 +326,8 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
-          - name: centos-8-stream-1vcpu
-            flavor-name: v2-highcpu-1
-            diskimage: centos-8-stream
-            key-name: infra-root-keys
-            boot-from-volume: true
-            volume-size: 80
-          - name: centos-8-stream-2vcpu
-            flavor-name: v2-highcpu-2
+          - name: centos-8-stream
+            flavor-name: v2-highcpu-4
             diskimage: centos-8-stream
             key-name: infra-root-keys
             boot-from-volume: true
