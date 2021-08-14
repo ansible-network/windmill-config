@@ -1,1 +1,0 @@
-ansible git /opt/git/github.com/ansible/ansible https://github.com/ansible/ansible.git *
