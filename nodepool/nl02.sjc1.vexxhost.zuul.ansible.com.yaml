@@ -12,8 +12,6 @@ max-hold-age: 86400
 labels:
   - name: asav9-12-3
     max-ready-age: 600
-  - name: eos-4.20.10
-    max-ready-age: 600
   - name: eos-4.24.6
     max-ready-age: 600
   - name: centos-7-1vcpu
@@ -93,10 +91,6 @@ providers:
       - name: iosxrv-7.0.2-20211703
         config-drive: false
         connection-type: network_cli
-      - name: vEOS-4.20.10M-20190501
-        # NOTE(pabelanger): This seems to mess up the boot-loader for eos
-        config-drive: false
-        connection-type: network_cli
       - name: vEOS-4.24.6F-20210712
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
@@ -133,13 +127,6 @@ providers:
           - name: asav9-12-3
             flavor-name: v1-standard-2
             cloud-image: asav9-12-3-20200302
-            networks:
-              - public
-              - net1
-              - net2
-          - name: eos-4.20.10
-            flavor-name: v1-standard-2
-            cloud-image: vEOS-4.20.10M-20190501
             networks:
               - public
               - net1
@@ -290,13 +277,6 @@ providers:
           - name: asav9-12-3
             flavor-name: v1-standard-2
             cloud-image: asav9-12-3-20200302
-            networks:
-              - public
-              - net1
-              - net2
-          - name: eos-4.20.10
-            flavor-name: v1-standard-2
-            cloud-image: vEOS-4.20.10M-20190501
             networks:
               - public
               - net1
