@@ -30,8 +30,6 @@ labels:
     max-ready-age: 600
   - name: centos-8-stream
     max-ready-age: 600
-  - name: eos-4.20.10
-    max-ready-age: 600
   - name: eos-4.24.6
     max-ready-age: 600
   - name: esxi-6.7.0
@@ -429,10 +427,6 @@ providers:
         config-drive: true
         connection-port: 8022
         connection-type: network_cli
-      - name: vEOS-4.20.10M-20190501
-        # NOTE(pabelanger): This seems to mess up the boot-loader for eos
-        config-drive: false
-        connection-type: network_cli
       - name: vEOS-4.24.6F-20210712
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
@@ -465,13 +459,6 @@ providers:
           - name: asav9-12-3
             flavor-name: s1.small
             cloud-image: asav9-12-3-20200302
-            networks:
-              - Public Internet
-              - Private Network (10.0.0.0/8 only)
-              - Private Network (Floating Public)
-          - name: eos-4.20.10
-            flavor-name: l1.medium
-            cloud-image: vEOS-4.20.10M-20190501
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
@@ -609,13 +596,6 @@ providers:
           - name: asav9-12-3
             flavor-name: s1.small
             cloud-image: asav9-12-3-20200302
-            networks:
-              - Public Internet
-              - Private Network (10.0.0.0/8 only)
-              - Private Network (Floating Public)
-          - name: eos-4.20.10
-            flavor-name: s1.medium
-            cloud-image: vEOS-4.20.10M-20190501
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
