@@ -40,8 +40,6 @@ labels:
     max-ready-age: 600
   - name: fedora-34-1vcpu
     max-ready-age: 600
-  - name: fedora-34-4vcpu
-    max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
   - name: iosxrv-6.1.3
@@ -138,39 +136,6 @@ providers:
           - name: fedora-34-1vcpu
             cloud-image: fedora-34
             instance-type: t2.small
-            volume-size: 80
-            key-name: zuul
-            userdata: |
-              #cloud-config
-              package_update: true
-              packages:
-                - git
-                - python3-virtualenv
-                - unbound
-              users:
-                - name: op
-                  gecos: Zuul operator
-                  lock_passwd: true
-                  ssh_authorized_keys:
-                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDj/f5Cj95XTjd8LA6ZUf9nSp+KJVuHfrh8y7bX9WZY2QnFn2mTmVNwUjczax748ZjNSw0nBMgYRuuFT2i8puv4tU2bhMkNAcLiyqbMdFVDRHp5GAmXbhHr6wCvYpOo7+Cc0tQFPPMd4Mj4OSFVtC9x/YMxHiu6R8MvHEa1yDx+lrkZjJbnqodTI8B2L2DkqmnZ2NEwtppxIcA8NVXpqx7tkdnyZQAakXIh49yC7vVD/k7n6z3DApoY2bqIKAECL8xqpmBlU1gDJ6c5GrfA9BK+A2+hrH4NITPVvMPLkizTPzh1V0R7KaWATJymadJ40cbJHkhL61yCnp8I6N5Fv0+3 justjais
-                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCuP0CZE8AYnbm8gxecCxKeRw0wHRyryd+FKmNNsdr0d3UvfCbqNzLigrqEBZsKpofi3M4qCWNpKRyfhnjPynLTQjP1vnX9AbL9UGoiHxScfvh3skntTYMs9ezJRd0rMJJZO76FPo8bJLDlwxAQl8m/nuj3HfYiO5hYE7P+a3rhsJh4nEfBb7xh+Q5yM0PWObkkBl6IRiBYjlcsXNZHgTA5kNuihUk5bHqAw54sHh05DhpgOITpTw4LFbh4Ew2NKq49dEb2xbTuAyAr2DHNOGgIwKEZpwtKZEIGEuiLbb4DQRsfivrvyOjnK2NFjQzGyNOHfsOldWHRQwUKUs8nrxKdXvqcrfMnSVaibeYK2TRL+6jd9kc5SIhWI3XLm7HbX7uXMD7/JQrkL25Rcs6nndDCH72DJLz+ynA/T5umMbNBQ9tybL5z73IOpfShRGjQYego22CxDOy7e/5OEMHNoksbFb1S02viM9O2puS7LDqqfT9JIbbPqCrbRi/zOXo0f4EXo6xKUAmd8qlV+6f/p57/qFihzQDaRFVlFEH3k7qwsw7PYGUTwkPaThe6xyZN6D5jqxCZU3aSYu+FGb0oYo+M5IxOm0Cb4NNsvvkRPxWtwSayfFGu6+m/+/RyA3GBcAMev7AuyKN+K2vGMsLagHOx4i+5ZAcUwGzLeXAENNum3w== paul
-                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQChvWGP5I66E3ZZat0D1jpTXbZN5aeM3Ky+dlM6LBESVKtxP1Ee4hbxei3mWBz/nJQcWqXZEEzBab6BsORk8+kt3RSpap08DHY5UMGaXZJzXWr6Iqj8Voz6+GxWBiBmpPrZc2cWKedmL4PsSDFX9X0Bz8bOllSnk1CFGiEISv0GNzDFGjqjAuXYFlCB4EDNnNvsexuT6DUnDPhpl8nTabI0AzU8d22QGfb2X4iUEt/rtogRpSS/ftZcYoVxmZKk/yLo8LvuohiS1IqACIyzDYtwb2oBVYV+Fd0fdkkvnyERS8oxjnQVC9XwSK8aXj+TlQn2oYtgw7CzJyvbkmSXGvq0wTL0lHhM6loGodM6yUI6W3HD17bkDlJbiIP1NroLtaDlQ6XIlH9XOs151hwHM3ED7fDLjXfkxa2NlvvuMYNkgq0seDmalcjJyPQuEOd4OCLyfhiiNkqlge9aNPgFl0H+gxnsqPzLe6eOE++8EJ91btLAe9xEzilvG8qVHIyXWaNo62PguUBMX7zUeKkLFxWxWCln10B5QIEZ70xbMv/mmD09jynduaQS/qk1tt9zq0P4EbOwB6wIbbTXUERiMC0OJN5W+YBhsaqLzUAEqjzMJ9RKfnsQifh8lgt4oh3/i5dKQn4RPHZCac1ipHcEPsL4jXLc3pCd4LP5GdksCCbhVQ== gomathiselvi@gmail.com
-                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyiXfE1zHKdj6odbysr917Cn88ov0VQaPJtLKJyMNuRYAeMOFQHd50X8JO4dfZbmSo3YdJlVfz9FLRxE64mqj9bkN8hPFbkTG2F1AWXGPON5cmm4uiLPfQkWhX/LnClrhzZpNtMJYs5AEFeDs0POijcRugZsQA+wvLi0lSlhOfkqtjAJKpPUwy1wrJFDdvqdQBjpNQh/LB8c15XfQV2JT/3NX26dQe8zvHhL6NvfhBnAikodYkBr7UjSl36CBk0cPebZMZEBBiHdo76xORVkpmqDvkhFByXXeAsvRa2YWS4wxpiNJFswlRhjubGau7LrT113WMcPvgYXHYHf2IYJWD goneri@redhat.com
-                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
-                  sudo: ALL=(ALL) NOPASSWD:ALL
-                - name: zuul
-                  gecos: Zuul user
-                  lock_passwd: true
-                  ssh_authorized_keys:
-                    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDI3XA0A84nUpCr9mfkrDjBdoNFtYMXqXMm2+WsGrOJUA2ESodUDDfTKmsA/xEygdCnj8JfSC3SYhc0uKHVe0RdG20mzntUqD50kB0STFeOHh3ee7FXmMxcLqLlyY9pJkn1V5WOi/D1Lbz8MwRUVBfqufryavwHla/9CPuAtPcut8mTUB0+Rapnv8W3n4dA6PqHNW1tylJUXj6P4trJPnFrdfMaIxc21tfd/QrMM4h90phW3zNILE0qF9UHpQxP0zew/LcD9rc+IhnbgC3DeCQDyiqJOsJRDo58RuwWmQHCF0SfiFQJ4qwrc6TFSJqSdi2aRY0S/vRMbXkD+6Hg2KWQyz6Z6EpY7RARletqJwNnzuuhXr2HSCj5QALe+0U/aUEX+dnydYBX6Nqa+0Rz/qV5aUk4YP1C2/dBCAdbYXPotBT6QBfekE428mJV8Mr7G/M7kwZ8v9WjytyJ8/FYNuekYDWonk6QTwDgQhMTiQI3Yxnu3ID63BL959lfUIv96bsifVI6/D36KTAdFi/dl7Omn5MZ9A5JXA7l+yEJKf4pcPTpQcPbjGSKyaPu0uffEjV9CTr3+VMwzq1uenxGDQ9cT/ud4pEEjwU/ihr6yttouTCvDu9ydrflHljUXxf+X00NW7HkrHnvS43AGnxQzi9g2lTOC9yDlDGbQjmnVjec7w== zuul-executor
-                  sudo: ALL=(ALL) NOPASSWD:ALL
-              runcmd:
-                - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
-                - python3 -m pip install --upgrade pip
-                - python3 -m pip install --upgrade tox
-          - name: fedora-34-4vcpu
-            cloud-image: fedora-34
-            instance-type: t2.xlarge
             volume-size: 80
             key-name: zuul
             userdata: |
