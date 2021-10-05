@@ -33,6 +33,9 @@ log_config = /etc/zuul/scheduler-logging.conf
 pidfile = /var/run/zuul-scheduler/zuul-scheduler.pid
 relative_priority = true
 state_dir = {{ zuul_user_home }}
+# 24 hours by default, up to 7 days
+default_hold_expiration=86400
+max_hold_expiration=604800
 
 {% endif -%}
 
