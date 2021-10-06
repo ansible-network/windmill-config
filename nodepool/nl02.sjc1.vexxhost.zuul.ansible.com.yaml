@@ -12,7 +12,7 @@ max-hold-age: 86400
 labels:
   - name: asav9-12-3
     max-ready-age: 600
-  - name: eos-4.24.6_remove
+  - name: eos-4.24.6
     max-ready-age: 600
   - name: centos-7-1vcpu
     max-ready-age: 600
@@ -131,7 +131,7 @@ providers:
               - public
               - net1
               - net2
-          - name: eos-4.24.6_remove
+          - name: eos-4.24.6
             flavor-name: v1-standard-2
             cloud-image: vEOS-4.24.6F-20210712
             networks:
@@ -281,7 +281,7 @@ providers:
               - public
               - net1
               - net2
-          - name: eos-4.24.6_remove
+          - name: eos-4.24.6
             flavor-name: v1-standard-2
             cloud-image: vEOS-4.24.6F-20210712
             networks:

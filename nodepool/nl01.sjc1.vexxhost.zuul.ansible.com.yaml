@@ -30,7 +30,7 @@ labels:
     max-ready-age: 600
   - name: centos-8-stream
     max-ready-age: 600
-  - name: eos-4.24.6
+  - name: eos-4.24.6_remove
     max-ready-age: 600
   - name: esxi-6.7.0
     max-ready-age: 600
@@ -428,7 +428,8 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
-          - name: eos-4.24.6
+          # Temporarily remove eos form limestone
+          - name: eos-4.24.6_remove
             flavor-name: l1.medium
             cloud-image: vEOS-4.24.6F-20210712
             networks:
@@ -565,7 +566,8 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
-          - name: eos-4.24.6
+          # Temporarily remove eos form limestone
+          - name: eos-4.24.6_remove
             flavor-name: s1.medium
             cloud-image: vEOS-4.24.6F-20210712
             networks:
