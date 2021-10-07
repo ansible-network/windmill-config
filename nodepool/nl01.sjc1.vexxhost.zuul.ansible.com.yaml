@@ -28,6 +28,8 @@ labels:
     max-ready-age: 600
   - name: centos-8-1vcpu
     max-ready-age: 600
+  - name: centos-8-stream-small
+    max-ready-age: 600
   - name: centos-8-stream
     max-ready-age: 600
   - name: eos-4.24.6_remove
@@ -448,9 +450,13 @@ providers:
             flavor-name: l1.xlarge
             diskimage: centos-7
             key-name: infra-root-keys
-          - name: centos-8-1vcpu
+          - name: centos-8-1vcpu  # use centos-8-stream-small instead
             flavor-name: l1.small
             diskimage: centos-8
+            key-name: infra-root-keys
+          - name: centos-8-stream-small
+            flavor-name: l1.small
+            diskimage: centos-8-stream
             key-name: infra-root-keys
           - name: centos-8-stream
             flavor-name: l1.large
@@ -586,9 +592,13 @@ providers:
             flavor-name: l1.xlarge
             diskimage: centos-7
             key-name: infra-root-keys
-          - name: centos-8-1vcpu
+          - name: centos-8-1vcpu  # use centos-8-stream-small instead
             flavor-name: l1.small
             diskimage: centos-8
+            key-name: infra-root-keys
+          - name: centos-8-stream-small
+            flavor-name: l1.small
+            diskimage: centos-8-stream
             key-name: infra-root-keys
           - name: centos-8-stream
             flavor-name: l1.large
