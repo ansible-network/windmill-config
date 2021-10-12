@@ -15,7 +15,7 @@ zuul_registry_user_shell: /bin/bash
 
 zuul_registry_file_registry_yaml_src: "{{ windmill_config_git_dest }}/zuul-registry/etc/zuul-registry/registry.yaml.j2"
 
-zuul_registry_pip_version: 1.0.0
+zuul_registry_pip_version: 1.1.0
 zuul_registry_pip_virtualenv_python: python3
 zuul_registry_pip_virtualenv: "/opt/venv/zuul-registry-{{ zuul_registry_pip_version }}"
 zuul_registry_pip_virtualenv_symlink: /opt/venv/zuul-registry
