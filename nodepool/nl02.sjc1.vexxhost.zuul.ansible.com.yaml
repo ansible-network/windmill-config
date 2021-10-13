@@ -134,7 +134,7 @@ providers:
               - net1
               - net2
           - name: eos-4.24.6
-            flavor-name: v1-standard-2
+            flavor-name: v3-standard-2
             cloud-image: vEOS-4.24.6F-20210712
             networks:
               - public
@@ -288,7 +288,7 @@ providers:
               - net1
               - net2
           - name: eos-4.24.6
-            flavor-name: v2-highcpu-4
+            flavor-name: v3-standard-2
             cloud-image: vEOS-4.24.6F-20210712
             networks:
               - public
