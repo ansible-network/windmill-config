@@ -136,7 +136,6 @@ providers:
           - name: eos-4.24.6
             flavor-name: v1-standard-2
             cloud-image: vEOS-4.24.6F-20210712
-            host-key-checking: false
             networks:
               - public
               - net1
