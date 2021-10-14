@@ -106,9 +106,6 @@ webhook_token = {{ __zuul_conf_connection_github_3pci_webhook_token }}
 canonical_hostname = opendev.org
 driver = gerrit
 password = {{ __zuul_conf_connection_opendev_password }}
-# ensure we use IPv4 to reach this host until the IPv6 routing problem is resolved.
-# See: https://secure.vexxhost.com/billing/viewticket.php?tid=VYJ-277323&c=KYYHhrX4
-# server = review.opendev.org
-server = 199.204.45.33
+server = review.opendev.org
 sshkey = {{ zuul_user_home }}/.ssh/gerrit_id_rsa
 user = ansible-zuul
