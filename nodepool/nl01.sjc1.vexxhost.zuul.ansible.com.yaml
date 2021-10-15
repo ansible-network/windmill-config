@@ -137,7 +137,7 @@ providers:
                 - python3 -m pip install --upgrade tox
           - name: fedora-34-1vcpu
             cloud-image: fedora-34
-            instance-type: t2.small
+            instance-type: t3.small
             volume-size: 80
             key-name: zuul
             userdata: |
