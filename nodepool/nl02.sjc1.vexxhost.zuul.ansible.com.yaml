@@ -103,6 +103,10 @@ providers:
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
+      - name: eos_goneri
+        # NOTE(gomathi): Temp image name to test
+        config-drive: false
+        connection-type: network_cli
       - name: vqfx-18.1R3-S2.5-20200116
         config-drive: false
         connection-type: network_cli
@@ -141,7 +145,7 @@ providers:
               - net2
           - name: eos-4.24.6_new
             flavor-name: v1-standard-2
-            cloud-image: vEOS-4.24.6F-20211018
+            cloud-image: eos_goneri
             networks:
               - public
               - net1
