@@ -105,7 +105,7 @@ providers:
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
-      - name: eos_goneri2
+      - name: eos_goneri3
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
@@ -154,7 +154,7 @@ providers:
               - net2
           - name: eos_goneri
             flavor-name: v1-standard-2
-            cloud-image: eos_goneri2
+            cloud-image: eos_goneri3
             networks:
               - public
               - net1
