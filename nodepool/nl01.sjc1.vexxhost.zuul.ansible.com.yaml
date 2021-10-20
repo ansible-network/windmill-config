@@ -394,7 +394,7 @@ providers:
         config-drive: true
         connection-port: 8022
         connection-type: network_cli
-      - name: vEOS-4.24.6F-20210712
+      - name: vEOS-4.24.6F-20211018
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
@@ -433,7 +433,7 @@ providers:
           # Temporarily remove eos form limestone
           - name: eos-4.24.6
             flavor-name: l1.medium
-            cloud-image: vEOS-4.24.6F-20210712
+            cloud-image: vEOS-4.24.6F-20211018
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
@@ -575,7 +575,7 @@ providers:
           # Temporarily remove eos form limestone
           - name: eos-4.24.6
             flavor-name: s1.medium
-            cloud-image: vEOS-4.24.6F-20210712
+            cloud-image: vEOS-4.24.6F-20211018
             networks:
               - Public Internet
               - Private Network (10.0.0.0/8 only)

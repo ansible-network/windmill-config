@@ -14,10 +14,6 @@ labels:
     max-ready-age: 600
   - name: eos-4.24.6
     max-ready-age: 600
-  - name: eos-4.24.6_new
-    max-ready-age: 600
-  - name: eos_goneri
-    max-ready-age: 600
   - name: centos-7-1vcpu
     max-ready-age: 600
   - name: centos-7-4vcpu
@@ -97,15 +93,7 @@ providers:
       - name: iosxrv-7.0.2-20211703
         config-drive: false
         connection-type: network_cli
-      - name: vEOS-4.24.6F-20210712
-        # NOTE(pabelanger): This seems to mess up the boot-loader for eos
-        config-drive: false
-        connection-type: network_cli
       - name: vEOS-4.24.6F-20211018
-        # NOTE(pabelanger): This seems to mess up the boot-loader for eos
-        config-drive: false
-        connection-type: network_cli
-      - name: eos_goneri3
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
         connection-type: network_cli
@@ -145,16 +133,9 @@ providers:
               - public
               - net1
               - net2
-          - name: eos-4.24.6_new
+          - name: eos-4.24.6
             flavor-name: v1-standard-2
             cloud-image: vEOS-4.24.6F-20211018
-            networks:
-              - public
-              - net1
-              - net2
-          - name: eos_goneri
-            flavor-name: v1-standard-2
-            cloud-image: eos_goneri3
             networks:
               - public
               - net1
@@ -308,7 +289,7 @@ providers:
               - net2
           - name: eos-4.24.6
             flavor-name: v1-standard-2
-            cloud-image: vEOS-4.24.6F-20210712
+            cloud-image: vEOS-4.24.6F-20211018
             networks:
               - public
               - net1
