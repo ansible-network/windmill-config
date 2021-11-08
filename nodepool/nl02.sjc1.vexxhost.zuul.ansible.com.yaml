@@ -30,6 +30,8 @@ labels:
     max-ready-age: 600
   - name: esxi-7.0.2
     max-ready-age: 600
+  - name: esxi-7.0.3
+    max-ready-age: 600
   - name: fedora-32-1vcpu
     max-ready-age: 600
   - name: fedora-34-1vcpu
@@ -59,6 +61,8 @@ labels:
   - name: vyos-1.1.8-1vcpu
     max-ready-age: 600
   - name: vmware-vcsa-7.0.2
+    max-ready-age: 600
+  - name: vmware-vcsa-7.0.3
     max-ready-age: 600
 providers:
   - name: vexxhost-ca-ymq-1
@@ -118,7 +122,13 @@ providers:
       - name: esxi-7.0.2-17630552-STANDARD-20210430
         config-drive: true
         python-path: /usr/bin/python3
+      - name: esxi-7.0U3-18644231-STANDARD-20211029
+        config-drive: true
+        python-path: /usr/bin/python3
       - name: VMware-VCSA-all-7.0.2-17694817-20210924
+        config-drive: true
+        python-path: /usr/bin/python3
+      - name: VMware-VCSA-all-7.0.3-18778458-20211029
         config-drive: true
         python-path: /usr/bin/python3
     pools:
@@ -187,6 +197,13 @@ providers:
           - name: esxi-7.0.2
             flavor-name: v2-standard-1-iops
             cloud-image: esxi-7.0.2-17630552-STANDARD-20210430
+            userdata: |
+              #cloud-config
+              hostname: esxi1.test
+              fqdn: esxi1.test
+          - name: esxi-7.0.3
+            flavor-name: v2-standard-1-iops
+            cloud-image: esxi-7.0U3-18644231-STANDARD-20211029
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -273,6 +290,12 @@ providers:
           - name: vmware-vcsa-7.0.2
             flavor-name: v2-standard-4
             cloud-image: VMware-VCSA-all-7.0.2-17694817-20210924
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 55
+          - name: vmware-vcsa-7.0.3
+            flavor-name: v2-standard-4
+            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211029
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
@@ -435,6 +458,12 @@ providers:
           - name: vmware-vcsa-7.0.2
             flavor-name: v2-standard-4
             cloud-image: VMware-VCSA-all-7.0.2-17694817-20210924
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 55
+          - name: vmware-vcsa-7.0.3
+            flavor-name: v2-standard-4
+            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211029
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
