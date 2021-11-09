@@ -202,7 +202,7 @@ providers:
               hostname: esxi1.test
               fqdn: esxi1.test
           - name: esxi-7.0.3
-            flavor-name: v2-standard-1-iops
+            flavor-name: v2-highcpu-4-iops
             cloud-image: esxi-7.0U3-18644231-STANDARD-20211029
             userdata: |
               #cloud-config
