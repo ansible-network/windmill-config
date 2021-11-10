@@ -294,11 +294,9 @@ providers:
             boot-from-volume: true
             volume-size: 55
           - name: vmware-vcsa-7.0.3
-            flavor-name: v2-standard-4
+            flavor-name: v2-standard-4-iops
             cloud-image: VMware-VCSA-all-7.0.3-18778458-20211029
             key-name: infra-root-keys
-            boot-from-volume: true
-            volume-size: 55
   - name: vexxhost-sjc1
     cloud: vexxhost
     region-name: sjc1
