@@ -187,6 +187,7 @@ providers:
                 - git
                 - python3-virtualenv
                 - unbound
+                - pip
               users:
                 - name: op
                   gecos: Zuul operator
@@ -530,6 +531,7 @@ providers:
                 - git
                 - python3-virtualenv
                 - unbound
+                - pip
               users:
                 - name: op
                   gecos: Zuul operator
@@ -710,6 +712,7 @@ providers:
                 - git
                 - python3-virtualenv
                 - unbound
+                - pip
               users:
                 - name: op
                   gecos: Zuul operator
