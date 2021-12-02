@@ -521,7 +521,7 @@ providers:
             diskimage: fedora-34
             key-name: infra-root-keys
           - name: fedora-35-1vcpu
-            flavor-name: l1.small
+            flavor-name: s1.small
             cloud-image: Fedora-Cloud-Base-35-1.2.x86_64-20211108
             key-name: infra-root-keys
             userdata: |
@@ -702,7 +702,7 @@ providers:
             diskimage: fedora-34
             key-name: infra-root-keys
           - name: fedora-35-1vcpu
-            flavor-name: l1.small
+            flavor-name: s1.small
             cloud-image: Fedora-Cloud-Base-35-1.2.x86_64-20211108
             key-name: infra-root-keys
             userdata: |
