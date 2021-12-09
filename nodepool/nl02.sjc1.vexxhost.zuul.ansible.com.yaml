@@ -124,13 +124,13 @@ providers:
       - name: esxi-7.0.2-17630552-STANDARD-20210430
         config-drive: true
         python-path: /usr/bin/python3
-      - name: esxi-7.0U3-18644231-STANDARD-20211029
+      - name: esxi-7.0U3-18644231-STANDARD-20211208
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-7.0.2-17694817-20210924
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.3-18778458-20211029
+      - name: VMware-VCSA-all-7.0.3-18778458-20211202
         config-drive: true
         python-path: /usr/bin/python3
       - name: Fedora-Cloud-Base-35-1.2.x86_64-20211108
@@ -208,7 +208,7 @@ providers:
               fqdn: esxi1.test
           - name: esxi-7.0.3
             flavor-name: v2-highcpu-4-iops
-            cloud-image: esxi-7.0U3-18644231-STANDARD-20211029
+            cloud-image: esxi-7.0U3-18644231-STANDARD-20211208
             userdata: |
               #cloud-config
               hostname: esxi1.test
@@ -336,7 +336,7 @@ providers:
             volume-size: 55
           - name: vmware-vcsa-7.0.3
             flavor-name: v2-standard-4-iops
-            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211029
+            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211202
             key-name: infra-root-keys
   - name: vexxhost-sjc1
     cloud: vexxhost
@@ -538,7 +538,7 @@ providers:
             volume-size: 55
           - name: vmware-vcsa-7.0.3
             flavor-name: v2-standard-4
-            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211029
+            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211202
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55

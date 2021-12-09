@@ -450,13 +450,13 @@ providers:
       - name: esxi-6.7.0-20190802001-STANDARD-20210928
         config-drive: true
         python-path: /usr/bin/python3
-      - name: esxi-7.0U3-18644231-STANDARD-20211029
+      - name: esxi-7.0U3-18644231-STANDARD-20211208
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-7.0.2-17694817-20210924
         config-drive: true
         python-path: /usr/bin/python3
-      - name: VMware-VCSA-all-7.0.3-18778458-20211029
+      - name: VMware-VCSA-all-7.0.3-18778458-20211202
         config-drive: true
         python-path: /usr/bin/python3
       - name: Fedora-Cloud-Base-35-1.2.x86_64-20211108
@@ -632,7 +632,7 @@ providers:
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.3
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211029
+            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211202
             key-name: infra-root-keys
 
   - name: limestone-us-slc
@@ -812,7 +812,7 @@ providers:
             key-name: infra-root-keys
           - name: vmware-vcsa-7.0.3
             flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211029
+            cloud-image: VMware-VCSA-all-7.0.3-18778458-20211202
             key-name: infra-root-keys
 diskimages:
   - name: centos-7
