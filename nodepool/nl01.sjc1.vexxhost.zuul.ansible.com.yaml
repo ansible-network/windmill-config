@@ -72,6 +72,8 @@ labels:
     max-ready-age: 600
   - name: vmware-vcsa-7.0.3
     max-ready-age: 600
+  - name: ansible-vmware-vcsa-7.0.3
+    max-ready-age: 600
 providers:
   - name: ec2-us-east-2
     driver: aws
@@ -630,10 +632,13 @@ providers:
             flavor-name: s1.xlarge
             cloud-image: VMware-VCSA-all-7.0.2-17694817-20210924
             key-name: infra-root-keys
-          - name: vmware-vcsa-7.0.3
+          - &vmware-vcsa-7-0-3-limestone-dfw-1
+            name: vmware-vcsa-7.0.3
             flavor-name: s1.xlarge
             cloud-image: VMware-VCSA-all-7.0.3-18778458-20211202
             key-name: infra-root-keys
+          - <<: *vmware-vcsa-7-0-3-limestone-dfw-1
+            name: ansible-vmware-vcsa-7.0.3
 
   - name: limestone-us-slc
     cloud: limestone
@@ -806,14 +811,14 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
-          - name: vmware-vcsa-7.0.2
-            flavor-name: s1.xlarge
-            cloud-image: VMware-VCSA-all-7.0.2-17694817-20210924
-            key-name: infra-root-keys
-          - name: vmware-vcsa-7.0.3
+          - &vmware-vcsa-7-0-3-limestone-us-slc
+            name: vmware-vcsa-7.0.3
             flavor-name: s1.xlarge
             cloud-image: VMware-VCSA-all-7.0.3-18778458-20211202
-            key-name: infra-root-keys
+            key-name: infra-root-key
+          - <<: *vmware-vcsa-7-0-3-limestone-us-slc
+            name: ansible-vmware-vcsa-7.0.3
+
 diskimages:
   - name: centos-7
   - name: centos-8

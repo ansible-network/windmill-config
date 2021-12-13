@@ -32,6 +32,8 @@ labels:
     max-ready-age: 600
   - name: esxi-7.0.3
     max-ready-age: 600
+  - name: ansible-esxi-7.0.3
+    max-ready-age: 600
   - name: fedora-32-1vcpu
     max-ready-age: 600
   - name: fedora-34-1vcpu
@@ -65,6 +67,8 @@ labels:
   - name: vmware-vcsa-7.0.2
     max-ready-age: 600
   - name: vmware-vcsa-7.0.3
+    max-ready-age: 600
+  - name: ansible-vmware-vcsa-7.0.3
     max-ready-age: 600
 providers:
   - name: vexxhost-ca-ymq-1
@@ -206,13 +210,16 @@ providers:
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
-          - name: esxi-7.0.3
+          - &esxi-7-0-3-vexxhost-ca-ymq-1
+            name: esxi-7.0.3
             flavor-name: v2-highcpu-4-iops
             cloud-image: esxi-7.0U3-18644231-STANDARD-20211208
             userdata: |
               #cloud-config
               hostname: esxi1.test
               fqdn: esxi1.test
+          - <<: *esxi-7-0-3-vexxhost-ca-ymq-1
+            name: ansible-esxi-7.0.3
           - name: fedora-32-1vcpu
             flavor-name: v2-highcpu-1
             diskimage: fedora-32
@@ -334,10 +341,13 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
-          - name: vmware-vcsa-7.0.3
+          - &vmware-vcsa-7-0-3-vexxhost-ca-ymq-1
+            name: vmware-vcsa-7.0.3
             flavor-name: v2-standard-4-iops
             cloud-image: VMware-VCSA-all-7.0.3-18778458-20211202
             key-name: infra-root-keys
+          - <<: *vmware-vcsa-7-0-3-vexxhost-ca-ymq-1
+            name: ansible-vmware-vcsa-7.0.3
   - name: vexxhost-sjc1
     cloud: vexxhost
     region-name: sjc1
@@ -536,12 +546,15 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
-          - name: vmware-vcsa-7.0.3
+          - &vmware-vcsa-7-0-3-limestone-sjc1
+            name: vmware-vcsa-7.0.3
             flavor-name: v2-standard-4
             cloud-image: VMware-VCSA-all-7.0.3-18778458-20211202
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 55
+          - <<: *vmware-vcsa-7-0-3-limestone-sjc1
+            name: ansible-vmware-vcsa-7.0.3
 
 diskimages:
   - name: centos-7
