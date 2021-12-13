@@ -44,6 +44,8 @@ labels:
     max-ready-age: 600
   - name: fedora-35-1vcpu
     max-ready-age: 600
+  - name: ansible-fedora-35-1vcpu
+    max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
   - name: iosxrv-6.1.3
@@ -175,7 +177,8 @@ providers:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
                 - python3 -m pip install --upgrade pip
                 - python3 -m pip install --upgrade tox
-          - name: fedora-35-1vcpu
+          - &fedora-35-1vcpu-aws
+            name: fedora-35-1vcpu
             cloud-image: fedora-35
             instance-type: t3.small
             volume-size: 80
@@ -209,7 +212,8 @@ providers:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
                 - python3 -m pip install --upgrade pip
                 - python3 -m pip install --upgrade tox
-
+          - <<: *fedora-35-1vcpu-aws
+            name: ansible-fedora-35-1vcpu
           - name: ubuntu-bionic-1vcpu
             cloud-image: ubuntu-bionic
             instance-type: t2.small
@@ -520,7 +524,8 @@ providers:
             flavor-name: l1.small
             diskimage: fedora-34
             key-name: infra-root-keys
-          - name: fedora-35-1vcpu
+          - &fedora-35-1vcpu-limestone-us-dfw-1
+            name: fedora-35-1vcpu
             flavor-name: s1.small
             cloud-image: Fedora-Cloud-Base-35-1.2.x86_64-20211108
             key-name: infra-root-keys
@@ -553,6 +558,8 @@ providers:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
                 - python3 -m pip install --upgrade pip
                 - python3 -m pip install --upgrade tox
+          - <<: *fedora-35-1vcpu-limestone-us-dfw-1
+            name: ansible-fedora-35-1vcpu
 
           - name: ios-15.6-2T
             flavor-name: l1.small
@@ -701,7 +708,8 @@ providers:
             flavor-name: l1.small
             diskimage: fedora-34
             key-name: infra-root-keys
-          - name: fedora-35-1vcpu
+          - &fedora-35-1vcpu-limestone-us-slc
+            name: fedora-35-1vcpu
             flavor-name: s1.small
             cloud-image: Fedora-Cloud-Base-35-1.2.x86_64-20211108
             key-name: infra-root-keys
@@ -734,6 +742,9 @@ providers:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
                 - python3 -m pip install --upgrade pip
                 - python3 -m pip install --upgrade tox
+
+          - <<: *fedora-35-1vcpu-limestone-us-slc
+            name: ansible-fedora-35-1vcpu
           - name: ios-15.6-2T
             flavor-name: s1.small
             cloud-image: ios-15.6-2T-20190524

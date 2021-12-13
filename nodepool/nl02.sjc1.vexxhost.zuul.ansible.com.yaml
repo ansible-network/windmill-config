@@ -38,6 +38,8 @@ labels:
     max-ready-age: 600
   - name: fedora-35-1vcpu
     max-ready-age: 600
+  - name: ansible-fedora-35-1vcpu
+    max-ready-age: 600
   - name: ios-15.6-2T
     max-ready-age: 600
   - name: iosxrv-6.1.3
@@ -225,7 +227,8 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
-          - name: fedora-35-1vcpu
+          - &fedora-35-1vcpu-vexxhost-ca-ymq-1
+            name: fedora-35-1vcpu
             flavor-name: v2-highcpu-2-iops
             cloud-image: Fedora-Cloud-Base-35-1.2.x86_64-20211108
             key-name: infra-root-keys
@@ -260,6 +263,8 @@ providers:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
                 - python3 -m pip install --upgrade pip
                 - python3 -m pip install --upgrade tox
+          - <<: *fedora-35-1vcpu-vexxhost-ca-ymq-1
+            name: ansible-fedora-35-1vcpu
 
           - name: ios-15.6-2T
             flavor-name: v3-standard-2
@@ -411,7 +416,8 @@ providers:
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 80
-          - name: fedora-35-1vcpu
+          - &fedora-35-1vcpu-vexxhost-sjc1
+            name: fedora-35-1vcpu
             flavor-name: v2-highcpu-1
             cloud-image: Fedora-Cloud-Base-35-1.2.x86_64-20211108
             key-name: infra-root-keys
@@ -446,6 +452,8 @@ providers:
                 - mv /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/zuul
                 - python3 -m pip install --upgrade pip
                 - python3 -m pip install --upgrade tox
+          - <<: *fedora-35-1vcpu-vexxhost-sjc1
+            name: ansible-fedora-35-1vcpu
 
           - name: ios-15.6-2T
             flavor-name: v2-highcpu-1
