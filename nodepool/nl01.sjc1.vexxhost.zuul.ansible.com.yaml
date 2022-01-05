@@ -456,7 +456,7 @@ providers:
       - name: esxi-6.7.0-20190802001-STANDARD-20210928
         config-drive: true
         python-path: /usr/bin/python3
-      - name: esxi-7.0U3-18644231-STANDARD-20211208
+      - name: esxi-7.0U3-18644231-STANDARD
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-7.0.2-17694817-20210924
