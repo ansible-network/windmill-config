@@ -130,7 +130,7 @@ providers:
       - name: esxi-7.0.2-17630552-STANDARD-20210430
         config-drive: true
         python-path: /usr/bin/python3
-      - name: esxi-7.0U3-18644231-STANDARD-20211208
+      - name: esxi-7.0U3-18644231-STANDARD
         config-drive: true
         python-path: /usr/bin/python3
       - name: VMware-VCSA-all-7.0.2-17694817-20210924
@@ -215,7 +215,7 @@ providers:
           - &esxi-7-0-3-vexxhost-ca-ymq-1
             name: esxi-7.0.3
             flavor-name: v2-highcpu-4-iops
-            cloud-image: esxi-7.0U3-18644231-STANDARD-20211208
+            cloud-image: esxi-7.0U3-18644231-STANDARD
             userdata: |
               #cloud-config
               hostname: esxi1.test
