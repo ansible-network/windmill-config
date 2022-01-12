@@ -60,10 +60,17 @@ _windmill_users:
     key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDDyXfFj44OTsJZnHbecbYrwA8zXuMiULb+o326maOh3wh5/6fk+MzivkUzJC2uZqAlKvBnNXsrb/07eV1gRjaIQBQJxaV9HQUwMNX7AkjkDzaMXVDjG/JOium90R23gVGMukzp9IamezUscAqAxVK+2C10k3tq8dZ/GeZfHl3NFGRHlIAXsJ/SIQoxJAEA0IQ/8Y50nR1Hp2mV2xsfxH9oZhLR/eiFdhJpNupdfw/oE9+vpCHS8SG88KGeLYbn+EhH6LSCD+6WNthF6oE7NANnScqn1Fl0ZpSd3RlRb+kDVKGqNxfB7EJTeimYvqaYmrTiTZTaTJua5Bj5yBTudqnBgdHCz3xMb2Nv2s2INNcJmP/CKpivYQ8AJs6cVlqRWnLJiNQQYCj+xAXBvY5T0Xq/qOhVifLiWZvZQOTHFWqFP9asZkrGa1mFWIaR9VPQY0FoYlUOT9t6J6TRbzktJIuP5AiOVoJLL6wjZuUMjghHfkYbqtyBqE4BbCY8YF3JSf8jx+9eWy+sD+dRwKXBCrGV0dNidioZR7ZJpBb6ye8wElebjPZizKhppsNpwtRxPfiAM52f55lXGD7IDpz9CZrOKUcV2uc3Rhl50u7T3psZfX7GysZvlnAH+Yr+UM+LPBAabXAfKlMnJp+SskLuOplTeQrvAwMluBmFnla8TnwnxQ== dmsimard@redhat.com
     gid: 2005
     uid: 2005
+  komal:
+    comment: Komal Desai
+    email: kodesai@redhat.com
+    key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCoJCMoIjIgk+5vePS/xiSnXXWMYPheE89q8Oz7OSowFy+tTsXBB7QVNXVSA9zavqV5otsMNrkKBpFvXhhsDoOc0BZs1u5mDX6BW6d/t60sNLRZ4HZ1vqR1oqzVKODL01Yms70p99+u8ls4jrUaeq4HJjbn1xPSzXnOscy6DJ8GPekGM7N8nAzOh7VsnP/8UWfMcOCBMWW5pvdgE6x8CZiiJyUlxfwb+G0dM5weP8IlsGzhvZU4aSWjvOd2LScfERGeKu+rpWNZYz5muazh7lXFAxHog0ZQY9JG+hHQg40AxR7O62jY1VAlK5424JstuggOyoWDdxiZ604VsX3hCduRWDsAAYZJ5YdREQCPUrVjhrtMDAOkxASarrifIONAm/RxtEt9OH53jq90pbgiU0rgWyut1XiNDV6d0UYHSQiuygxiZ3xW+PzEl7MHMip06sBMEu5NGtTxADYXAz3KMbnHC49krhMDsi3PP1q/3XO4VKgn0v/flZt7bbbYfB6OKtc= kodesairedhat.com@MacBook-Pro
+    gid: 2006
+    uid: 2006
 
 windmill_users: "{{ _windmill_users }}"
 
 _windmill_root_users_base:
+  - komal
   - gosriniv
   - dmellado
   - dmsimard
