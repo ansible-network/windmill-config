@@ -761,8 +761,6 @@ providers:
 
           - <<: *fedora-35-1vcpu-limestone-us-slc
             name: ansible-fedora-35-1vcpu
-         
-   
           - name: iosxrv-6.1.3
             flavor-name: s1.large
             cloud-image: iosxrv-6.1.3-20190604
