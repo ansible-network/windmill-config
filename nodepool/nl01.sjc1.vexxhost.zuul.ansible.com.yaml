@@ -761,13 +761,6 @@ providers:
 
           - <<: *fedora-35-1vcpu-limestone-us-slc
             name: ansible-fedora-35-1vcpu
-          - name: ios-15.6-2T
-            flavor-name: s1.small
-            cloud-image: ios-15.6-2T-20190524
-            networks:
-              - Public Internet
-              - Private Network (10.0.0.0/8 only)
-              - Private Network (Floating Public)
           - name: iosxrv-6.1.3
             flavor-name: s1.large
             cloud-image: iosxrv-6.1.3-20190604
