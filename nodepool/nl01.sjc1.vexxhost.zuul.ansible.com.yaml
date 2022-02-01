@@ -54,6 +54,8 @@ labels:
     max-ready-age: 600
   - name: nxos-7.0.3
     max-ready-age: 600
+  - name: nxos9kv-9.3.6
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-2vcpu
@@ -450,6 +452,10 @@ providers:
         config-drive: true
         connection-port: 8022
         connection-type: network_cli
+      - name: nxos9kv-9.3.6
+        config-drive: true
+        connection-port: 8022
+        connection-type: network_cli
       - name: vEOS-4.24.6F-20211018
         # NOTE(pabelanger): This seems to mess up the boot-loader for eos
         config-drive: false
@@ -599,6 +605,15 @@ providers:
           - name: nxos-7.0.3
             flavor-name: s1.xlarge
             cloud-image: nxos-7.0.3.I5.1-20200505
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 150
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Public Internet
+          - name: nxos9kv-9.3.6
+            flavor-name: s1.xlarge
+            cloud-image: nxos9kv-9.3.6
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 150
@@ -780,6 +795,15 @@ providers:
           - name: nxos-7.0.3
             flavor-name: s1.xlarge
             cloud-image: nxos-7.0.3.I5.1-20200505
+            key-name: infra-root-keys
+            boot-from-volume: true
+            volume-size: 150
+            networks:
+              - Private Network (10.0.0.0/8 only)
+              - Public Internet
+          - name: nxos9kv-9.3.6
+            flavor-name: s1.xlarge
+            cloud-image: nxos9kv-9.3.6
             key-name: infra-root-keys
             boot-from-volume: true
             volume-size: 150

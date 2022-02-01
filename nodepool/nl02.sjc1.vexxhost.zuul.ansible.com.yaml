@@ -50,6 +50,8 @@ labels:
     max-ready-age: 600
   - name: nxos-7.0.3
     max-ready-age: 600
+  - name: nxos9kv-9.3.6
+    max-ready-age: 600
   - name: ubuntu-bionic-1vcpu
     max-ready-age: 600
   - name: ubuntu-bionic-2vcpu
