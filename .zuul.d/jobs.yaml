@@ -50,6 +50,7 @@
 - job:
     name: windmill-config-tox-tools
     parent: tox
+    nodeset: fedora-latest-1vcpu
     description: |
       Runs the scripts from the tools directory
 
