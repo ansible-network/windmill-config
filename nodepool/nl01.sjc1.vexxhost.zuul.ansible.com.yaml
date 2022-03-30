@@ -97,7 +97,7 @@ providers:
       - name: QRadarCE-7.3.1-RHEL75EUS-20200214.0
         image-id: ami-09477933a629d44bf
       - name: SplunkEnterprise-SES-8.0.0-RHEL77-20191105.0
-        image-id: ami-0f4c5eea6ed526742
+        image-id: ami-0c22deb9fc3c775d9
       - name: Trendmicro-DeepSecurity-20.0.344
         image-id: ami-0b7b2073b93259233
       - name: Symantec-Endpoint-Protection-SEP-14-MP1
