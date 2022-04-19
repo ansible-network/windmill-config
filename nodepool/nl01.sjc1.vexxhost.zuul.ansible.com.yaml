@@ -95,7 +95,7 @@ providers:
       - name: ubuntu-bionic
         image-id: ami-07c1207a9d40bc3bd
       - name: QRadarCE-7.3.1-RHEL75EUS-20200214.0
-        image-id: ami-09477933a629d44bf
+        image-id: ami-0fc2dca68ecfdc5df
       - name: SplunkEnterprise-SES-8.0.0-RHEL77-20191105.0
         image-id: ami-0c22deb9fc3c775d9
       - name: Trendmicro-DeepSecurity-20.0.344
