@@ -767,14 +767,14 @@ providers:
               - Public Internet
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
-          - name: vsrx3-18.4R1
-            flavor-name: s1.medium
-            cloud-image: vsrx3-18.4R1-S2.4-20190514
-            key-name: infra-root-keys
-            networks:
-              - Public Internet
-              - Private Network (10.0.0.0/8 only)
-              - Private Network (Floating Public)
+          # - name: vsrx3-18.4R1
+          #  flavor-name: s1.medium
+          #  cloud-image: vsrx3-18.4R1-S2.4-20190514
+          #  key-name: infra-root-keys
+          #  networks:
+          #    - Public Internet
+          #    - Private Network (10.0.0.0/8 only)
+          #    - Private Network (Floating Public)
           # - name: vyos-1.1.8-1vcpu
           #  flavor-name: s1.medium
           #  cloud-image: vyos-1.1.8-20190407
