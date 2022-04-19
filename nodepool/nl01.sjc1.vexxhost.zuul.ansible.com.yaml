@@ -98,7 +98,7 @@ providers:
         # https://wiki.centos.org/Cloud/AWS
         image-id: ami-000e7ce4dd68e7a11
       - name: QRadarCE-7.3.1-RHEL75EUS-20200214.0
-        image-id: ami-09477933a629d44bf
+        image-id: ami-0fc2dca68ecfdc5df
       - name: SplunkEnterprise-SES-8.0.0-RHEL77-20191105.0
         image-id: ami-0f4c5eea6ed526742
       - name: Trendmicro-DeepSecurity-20.0.344
