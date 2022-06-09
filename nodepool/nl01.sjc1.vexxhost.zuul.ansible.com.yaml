@@ -546,9 +546,11 @@ providers:
               - Private Network (Floating Public)
               - Public Internet
           - name: iosxrv-7.0.2
-            flavor-name: s1.large
+            flavor-name: s1.xlarge
             cloud-image: iosxrv-7.0.2-20211703
             host-key-checking: false
+            boot-from-volume: true
+            volume-size: 150
             networks:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
@@ -727,9 +729,11 @@ providers:
               - Private Network (Floating Public)
               - Public Internet
           - name: iosxrv-7.0.2
-            flavor-name: s1.large
+            flavor-name: s1.xlarge
             cloud-image: iosxrv-7.0.2-20211703
             host-key-checking: false
+            boot-from-volume: true
+            volume-size: 150
             networks:
               - Private Network (10.0.0.0/8 only)
               - Private Network (Floating Public)
